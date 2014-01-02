@@ -3,18 +3,14 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.fajnSvaca"
-        version   = "0.0.3">
+        id        = "cz.inited.fajnsvaca"
+        version   = "0.0.4">
 
-    <name>fajnSvaca</name>
+    <name>Fajn Sváča</name>
 
-    <description>
-        fajnSvaca mobilni app
-    </description>
+    <description>Revoluce ve školním stravování</description>
 
-    <author href="http://inited.cz" email="info@inited.cz">
-        Inited
-    </author>
+    <author href="http://inited.cz" email="info@inited.cz">INITED Solutions s.r.o.</author>
 
     <!--
         Enable individual API permissions here.
