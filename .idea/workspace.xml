@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/dobit_kredit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/dokoncit_platbu_negativni.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/dokoncit_platbu_pozitivni.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/koupit_svacu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/koupit_svacu_kosik.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/koupit_svacu_menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/koupit_svacu_zaplatit_svacu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/moje_oblibene.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/partneri.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/podpora-hledame kuryra.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/podpora.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/potvrzeni_platby.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/pozadi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/prihlaseni.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/profil.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/registrace1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/registrace11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/psdScreens/vychytavky.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -252,19 +270,23 @@
       <created>1388660545662</created>
       <updated>1388660545662</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="gtrdfdfg&#10;dxfgds">
+      <created>1388660635910</created>
+      <updated>1388660635910</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-188" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15416667" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15416667" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13663967" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -294,7 +316,8 @@
     <MESSAGE value="asdasd" />
     <MESSAGE value="asdasd&#10;" />
     <MESSAGE value="gtrdfdfg" />
-    <option name="LAST_COMMIT_MESSAGE" value="gtrdfdfg" />
+    <MESSAGE value="gtrdfdfg&#10;dxfgds" />
+    <option name="LAST_COMMIT_MESSAGE" value="gtrdfdfg&#10;dxfgds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
