@@ -20,7 +20,8 @@ $(document).ready(function(){
 });
 
 function transition(toPage, type) {
- console.log("asd")
+
+    $('#menuLeft').css('display','none');
   var toPage = $(toPage),
     fromPage = $("#pages .current");
     

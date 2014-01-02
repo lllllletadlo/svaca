@@ -11,6 +11,15 @@
 </head>
 <body>
 
+<script>
+
+    function leftMenuShow()
+    {
+        $('#menuLeft').toggle();
+    }
+
+</script>
+
 <style type="text/css">
 /* Phone @media handheld { */
 
@@ -24,7 +33,9 @@ html, body {
     padding: 0px;
     color: #000;
     margin: 0;
-    width: 100%;
+
+    width: 800px;   /* test jinak 100%*/
+
     height: 100%;
 }
 #sidebar, #footer {
@@ -90,7 +101,8 @@ a:hover, a:active {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+
+    width: 800px;     /* test jinak 100%*/
 }
 
 #pages > div.current {
@@ -125,7 +137,7 @@ a:hover, a:active {
     .avatar
     {
         width: 200px;
-        height: 70px;
+        height: 96px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -200,13 +212,13 @@ a:hover, a:active {
     background : url(svaca/images/btnKoupit.png) no-repeat center;
 }
 .menu{
-    height: 70px;
+    height: 96px;
     width: 95%;
     background-color: white;
 }
 
 .menu a{
-    height: 70px;
+    height: 96px;
 
     line-height: 70px;
     text-decoration: none;
@@ -338,31 +350,48 @@ a:hover, a:active {
 
 }
 
+.menuLeft {
+    width: 112px;
+    height: 875px;
+    position: absolute;
+    z-index: 10;
+    top: 95px;
+}
 
 </style>
 
 
 <div id="pages">
 
+<div id="menuLeft" >
+    <img class="menuLeft" src="svaca/psdScreens/menuLeft.png" width="800" height="1227" usemap="#menuLeftMap">
+    <map name="menuLeftMap">
+        <area shape="rect" coords="0,0,110,125" alt="Sun" href="javascript:transition('#page-koupit','fade')">
+        <area shape="rect" coords="0,125,110,250" alt="Sun" href="javascript:transition('#page-mojeOblibene','fade')">
+        <area shape="rect" coords="0,250,110,375" alt="Sun" href="javascript:transition('#page-dobitKredit','fade')">
+        <area shape="rect" coords="0,375,110,500" alt="Sun" href="javascript:transition('#page-profil','fade')">
+        <area shape="rect" coords="0,500,110,625" alt="Sun" href="javascript:transition('#page-vychytavky','fade')">
+        <area shape="rect" coords="0,625,110,750" alt="Sun" href="javascript:transition('#page-partneri','fade')">
+        <area shape="rect" coords="0,750,110,875" alt="Sun" href="javascript:transition('#page-podpora','fade')">
+    </map>
+</div>
 
 
 
-
-
-<div id="page-home" class="page-home">
+<div id="page-homeHTML" class="page-homeHTML">
     <img class="fajnSvacaText"  >
     <div class="btnQuatroMenu">
         <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
-        <a class="btnQuatro2" href="#" ><div class="btnText">VYCHYTÁVKY</div></a>
-        <a class="btnQuatro3" href="#"><div class="btnText">PARTNEŘI</div></a>
-        <a class="btnQuatro4" href="#"><div class="btnText">PODPORA</div></a>
+        <a class="btnQuatro2" href="#page-vychytavky" ><div class="btnText">VYCHYTÁVKY</div></a>
+        <a class="btnQuatro3" href="#page-partneri"><div class="btnText">PARTNEŘI</div></a>
+        <a class="btnQuatro4" href="#page-podpora"><div class="btnText">PODPORA</div></a>
     </div>
 </div>
 
 
-<div id="page-koupit" class="page-koupit">
+<div id="page-koupitHTML" class="page-koupitHTML">
     <div class="menu" style="position: absolute; width: 20%">
-        <a class="btnMenuMenu" style="width: 100%" href="#page-home" >MENU</a>
+        <a class="btnMenuMenu" style="width: 100%" onclick="javascript:leftMenuShow()" href="" >MENU</a>
     </div>
     <div class="menuUzivatel">
         <div>
@@ -372,17 +401,18 @@ a:hover, a:active {
     <img class="fajnSvacaText"  >
     <div class="btnQuatroMenu">
         <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
-        <a class="btnQuatroMojeOblibene" href="#" ><div class="btnText">MOJE OBLIBENE</div></a>
-        <a class="btnQuatroDobitKredit" href="#"><div class="btnText">DOBÍT KREDIT</div></a>
-        <a class="btnQuatroProfil" href="#"><div class="btnText">PROFIL</div></a>
+        <a class="btnQuatroMojeOblibene" href="#page-mojeOblibene" ><div class="btnText">MOJE OBLIBENE</div></a>
+        <a class="btnQuatroDobitKredit" href="#page-dobitKredit"><div class="btnText">DOBÍT KREDIT</div></a>
+        <a class="btnQuatroProfil" href="#page-profil"><div class="btnText">PROFIL</div></a>
     </div>
 </div>
+
 
 
     <div id="page-vybratSvacu" class="page-vybratSvacu">
 
         <div class="menu">
-            <a class="btnMenuMenu" href="#page-koupit" >MENU</a>
+            <a class="btnMenuMenu" onclick="javascript:leftMenuShow()" href="" >MENU</a>
             <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
             <a class="btnMenuKosik" href="#page-kosik" >Košík</a>
             <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit</a>
@@ -435,28 +465,55 @@ a:hover, a:active {
     </div>
 
 
-<div id="page-kosik" class="page-kosik current">
+    <div id="page-home" class="page-home current">
+        <img src="svaca/psdScreens/menu.png" usemap="#menu">
+        <map name="menu">
+            <area shape="rect" coords="50,267,400,615" onclick="javascript:transition('#page-koupit','fade')" href="#">
+            <area shape="rect" coords="400,267,748,615" onclick="javascript:transition('#page-vychytavky','fade')" href="#">
+            <area shape="rect" coords="50,615,400,963" onclick="javascript:transition('#page-partneri','fade')" href="#">
+            <area shape="rect" coords="400,615,748,963" onclick="javascript:transition('#page-podpora','fade')" href="#">
+
+        </map>
+    </div>
+
+<div id="page-koupit" class="page-koupit">
+    <img src="svaca/psdScreens/koupit_svacuMenu.png" usemap="#koupit">
+    <map name="koupit">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
+        <area shape="rect" coords="50,267,400,615" onclick="javascript:transition('#page-vybratSvacu','fade')" href="#">
+        <area shape="rect" coords="400,267,748,615" onclick="javascript:transition('#page-mojeOblibene','fade')" href="#">
+        <area shape="rect" coords="50,615,400,963" onclick="javascript:transition('#page-dobitKredit','fade')" href="#">
+        <area shape="rect" coords="400,615,748,963" onclick="javascript:transition('#page-profil','fade')" href="#">
+
+    </map>
+</div>
+
+<div id="page-kosik" class="page-kosik">
     <img src="svaca/psdScreens/koupit_svacu_kosik.png" width="800" height="1227" usemap="#koupit_svacu_kosik">
+
     <map name="koupit_svacu_kosik">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
         <area shape="rect" coords="578,0,752,100" alt="Venus" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
     </map>
 </div>
 
 <div id="page-koupitSvacuZaplatit" class="page-koupitSvacuZaplatit">
     <img src="svaca/psdScreens/koupit_svacu_zaplatit_svacu.png" usemap="#koupitSvacuZaplatit">
+    <div style="position: absolute;bottom: 180px;left: 100px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-dokoncitPlatbuNegativni','fade')" >FAIL</div>
+    <div style="position: absolute;bottom: 180px;left: 600px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')">SUCCESS</div>
     <map name="koupitSvacuZaplatit">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="">
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
-        <area shape="rect" coords="50,985,750,1085" alt="Venus" href="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')">
+        <area shape="rect" coords="50,985,400,1085" alt="Venus" href="javascript:transition('#page-dokoncitPlatbuNegativni','fade')">
+        <area shape="rect" coords="401,985,750,1085" alt="Venus" href="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')">
     </map>
 </div>
 
 <div id="page-dokoncitPlatbuPozitivni" class="page-dokoncitPlatbuPozitivni">
     <img src="svaca/psdScreens/dokoncit_platbu_pozitivni.png" usemap="#dokoncitPlatbuPozitivni">
     <map name="dokoncitPlatbuPozitivni">
-        <area shape="rect" coords="0,0,150,98" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
-        <area shape="rect" coords="400,0,570,100"  href="#">
+        <area shape="rect" coords="0,0,150,98" onclick="javascript:leftMenuShow()" href="">
+        <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
         <area shape="rect" coords="50,895,750,995" href="javascript:transition('#page-potvrzeniPlatby','fade')">
     </map>
 </div>
@@ -464,19 +521,59 @@ a:hover, a:active {
 <div id="page-dokoncitPlatbuNegativni" class="page-dokoncitPlatbuNegativni">
     <img src="svaca/psdScreens/dokoncit_platbu_negativni.png" usemap="#dokoncitPlatbuNegativni">
     <map name="dokoncitPlatbuNegativni">
-        <area shape="rect" coords="0,0,150,98" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
-        <area shape="rect" coords="50,985,750,1085"  href="javascript:transition('#page-home','fade')">
+        <area shape="rect" coords="0,0,150,98" onclick="javascript:leftMenuShow()" href="">
+        <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
+        <area shape="rect" coords="50,895,750,995" href="javascript:transition('#page-dobitKredit','fade')">
     </map>
 </div>
 
 <div id="page-potvrzeniPlatby" class="page-potvrzeniPlatby">
     <img src="svaca/psdScreens/potvrzeni_platby.png" usemap="#potvrzeni_platby">
     <map name="potvrzeni_platby">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="">
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="#">
         <area shape="rect" coords="50,896,750,995" alt="Venus" href="javascript:transition('#page-home','fade')">
     </map>
 </div>
+
+    <div id="page-vychytavky" class="page-vychytavky">
+        <img src="svaca/psdScreens/vychytavky.png" usemap="#proMenu">
+    </div>
+
+    <div id="page-partneri" class="page-parnertneri">
+        <img src="svaca/psdScreens/partneri.png" usemap="#proMenu">
+    </div>
+
+    <div id="page-podpora" class="page-podpora">
+        <img src="svaca/psdScreens/podpora.png" usemap="#proMenu">
+        <div style="position: absolute;left: 580px;top: 365px;width: 167px;height: 276px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-podporaHledameKuryra','fade')" ></div>
+    </div>
+
+    <div id="page-podporaHledameKuryra" class="page-podporaHledameKuryra">
+        <img src="svaca/psdScreens/podpora-hledameKuryra.png" usemap="#proMenu">
+
+    </div>
+
+    <div id="page-mojeOblibene" class="page-mojeOblibene">
+        <img src="svaca/psdScreens/moje_oblibene.png" usemap="#proMenu">
+    </div>
+
+    <div id="page-dobitKredit" class="page-dobitKredit">
+        <img src="svaca/psdScreens/dobit_kredit.png" usemap="#proMenu">
+    </div>
+
+    <div id="page-profil" class="page-profil">
+        <img src="svaca/psdScreens/profil.png" usemap="#proMenu">
+        <div style="position: absolute;left: 550px;top: 315px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-registrace','fade')" >Registrace</div>
+    </div>
+
+    <div id="page-registrace" class="page-registrace">
+        <img src="svaca/psdScreens/registrace1.png" usemap="#proMenu">
+    </div>
+
+    <map name="proMenu">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
+    </map>
 
 </div>
 <script type="text/javascript" src="js/index.js"></script>
