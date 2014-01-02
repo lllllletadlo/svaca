@@ -20,6 +20,7 @@ $(document).ready(function(){
 });
 
 function transition(toPage, type) {
+ console.log("asd")
   var toPage = $(toPage),
     fromPage = $("#pages .current");
     
