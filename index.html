@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<script src="svaca/js/jquery-1.8.3.min.js"></script>
+<script src="svaca/js/scripts.js"></script>
+<title>fajnSvaca</title>
+</head>
+<body>
+
+<style type="text/css">
+/* Phone @media handheld { */
+
+
+
+
+html, body {
+
+    font: 12px/15px sans-serif;
+    background: #ff5;
+    padding: 0px;
+    color: #000;
+    margin: 0;
+    max-width: 540px;
+}
+#sidebar, #footer {
+    display: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+img {
+    max-width: 540px;
+}
+.center {
+    width: 100% !important;
+    text-align: center;
+}
+a:link, a:visited {
+    text-decoration: underline;
+    color: #0000CC;
+}
+a:hover, a:active {
+    text-decoration: underline;
+    color: #660066;
+}
+
+.menuUzivatel {
+    text-align: center;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* widgets */
+.btnQuatro {
+    width: 236px;
+    height: 238px;
+    display: inline-block;
+
+}
+
+.btnKosik {
+    width: 120px;
+    height: 65px;
+    display: block;
+
+}
+.btnBack {
+    width: 102px;
+    height: 65px;
+    display: block;
+
+}
+
+
+/* transitions */
+#pages {
+
+    background-image: url("svaca/images/mainBackground.png");
+    width: 540px;
+    height: 960px;
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+#pages > div {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#pages > div.current {
+    display: block;
+}
+
+.in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 50ms;
+}
+@-webkit-keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.fade.in {
+    -webkit-animation-name: fade-in;
+    z-index: 10;
+}
+.fade.out {
+    z-index: 0;
+}
+
+/* iPhone-specific styles */
+@media only screen and (max-device-width: 480px) {
+
+    html {
+        -webkit-text-size-adjust: none;
+    }
+
+}
+
+    .avatar
+    {
+        width: 200px;
+        height: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: url("svaca/images/avatar.png") no-repeat;
+        background-position: left;
+        line-height: 50px;
+        list-style-type: none;
+    }
+
+    .fajnSvacaText
+    {
+        content: url("svaca/images/fajnSvacaText.png");
+        width: 90%;
+        height: 20%;
+        margin-left: 5%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+
+
+    }
+
+.btnQuatroMenu {
+    position: relative;
+    width: 90%;
+    padding-bottom: 90%;
+    margin-left: 5%; margin-right: 5%;
+}
+
+.btnQuatroMenu a {
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    background-size:50%;
+    text-decoration: none;
+    text-shadow: 1px 1px #555555;
+    color: #FFFFFF;
+    font-family: "Arial Black", Arial;
+    font-weight: 900;
+    font-size: 4vw;
+}
+.btnQuatro1 {
+    background : url(svaca/images/btnKoupit.png) no-repeat center;
+    background-color: #f8c300;
+
+}
+.btnQuatro2 {
+    left: 50%;
+    background : url(svaca/images/btnVychytavky.png) no-repeat center;
+    background-color: #b251a5;
+}
+.btnQuatro3 {
+    top: 50%;
+    background : url(svaca/images/btnPartneri.png) no-repeat center;
+    background-color: #0099d9;
+}
+.btnQuatro4 {
+    left: 50%;
+    top: 50%;
+    background : url(svaca/images/btnPodpora.png) no-repeat center;
+    background-color: #00d36b;
+}
+
+.btnText {
+    margin-top: 75%;
+
+
+}
+.btnObr1 {
+    margin-top: 75%;
+    background : url(svaca/images/btnKoupit.png) no-repeat center;
+}
+.menu{
+    height: 70px;
+    width: 95%;
+    background-color: white;
+}
+
+.menu a{
+    height: 70px;
+
+    line-height: 70px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: Myriad Pro;
+    font-size: 4vw;
+    display: block;
+    float: left;
+    text-indent: 5px;
+}
+
+.btnMenuMenu {
+    width: 20%;
+    background-color: #009ee0;
+}
+.btnMenuCastka {
+    width: 40%;
+    color: #000000; !important
+}
+.btnMenuKosik {
+    width: 20%;
+    background-color: #965ab8;
+}
+.btnMenuKoupit {
+    width: 20%;
+    background-color: #4fcc6a;
+}
+
+
+.btnQuatroVybratSvacu {
+    background : url(svaca/images/btnVybratSvacu.png) no-repeat center;
+    background-color: #f8c300;
+
+}
+.btnQuatroMojeOblibene {
+    left: 50%;
+    background : url(svaca/images/btnMojeOblibene.png) no-repeat center;
+    background-color: #a256af;
+}
+.btnQuatroDobitKredit {
+    top: 50%;
+    background : url(svaca/images/btnDobitKredit.png) no-repeat center;
+    background-color: #0099d9;
+}
+.btnQuatroProfil {
+    left: 50%;
+    top: 50%;
+    background : url(svaca/images/btnProfil.png) no-repeat center;
+    background-color: #00cf6a;
+}
+
+/* kokretni upravy pro stranky */
+
+.page-home .fajnSvacaText {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.produtkSeznam {
+    padding: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.produtkSeznam li {
+
+    list-style-type: none;
+    display: block;
+}
+
+.produktTyp a {
+
+    text-decoration: none;
+    color: white;
+}
+
+.produkt a {
+
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+.produkt img {
+
+    float: left;
+    margin-right: 10px;
+}
+
+.produktTyp {
+
+    background: #edc400;
+}
+
+.produkt {
+
+    background: white;
+}
+
+.produkt .cena {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+}
+
+.produktPopis {
+    width: 70%;
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+
+}
+.produktKosik {
+    float: right;
+    width: 19%;
+    background : url(svaca/images/productsKosik.png) no-repeat center 15px;
+    background-color: #00cf6a;
+    padding-top: 64px;
+    padding-bottom: 5px;
+    text-align: center;
+
+}
+
+.produktTyp {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+
+}
+
+
+</style>
+
+
+<div id="pages">
+
+
+
+    <div id="page-vybratSvacu" class="page-vybratSvacu current">
+
+        <div class="menu">
+            <a class="btnMenuMenu" href="#page-koupit" >MENU</a>
+            <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
+            <a class="btnMenuKosik" href="#page-koupit" >Košík</a>
+            <a class="btnMenuKoupit" href="#page-koupit" >Koupit</a>
+        </div>
+        <img class="fajnSvacaText"  >
+        <ul class="produtkSeznam">
+            <li class="produktTyp">
+                <a href="">
+                    <h2>Bagety</h2>
+                </a>
+            </li>
+            <li class="produkt">
+                <a class="produktPopis" href="">
+                    <img src="svaca/images/productsOblozenaBageta.png"  >
+                    <h2>Obložená bageta</h2>
+                    <span>Bageta, Máslo, Sýr, Rajče</span>
+                    <span class="cena">43 kč</span>
+                </a>
+                <a class="produktKosik" href="">Přidat do<br>košíku</a>
+                <div style="clear:both;"></div>
+            </li>
+            <li class="produkt">
+                <a class="produktPopis" href="">
+                    <img src="svaca/images/productsVegetBageta.png"  >
+                    <h2>Vegetariánská bageta</h2>
+                    <span>Bageta, Máslo, Sýr, Rajče</span>
+                    <span class="cena">43 kč</span>
+                </a>
+                <a class="produktKosik" href="">Přidat do<br>košíku</a>
+                <div style="clear:both;"></div>
+            </li>
+            <li class="produktTyp">
+                <a href="">
+                    <h2>Housky</h2>
+                </a>
+            </li>
+            <li class="produkt">
+                <a class="produktPopis" href="">
+                    <img src="svaca/images/productsVegetBageta.png"  >
+                    <h2>Vegetariánská bageta</h2>
+                    <span>Bageta, Máslo, Sýr, Rajče</span>
+                    <span class="cena">43 kč</span>
+                </a>
+                <a class="produktKosik" href="">Přidat do<br>košíku</a>
+                <div style="clear:both;"></div>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+<div id="page-home" class="page-home">
+    <img class="fajnSvacaText"  >
+    <div class="btnQuatroMenu">
+        <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
+        <a class="btnQuatro2" href="#" ><div class="btnText">VYCHYTÁVKY</div></a>
+        <a class="btnQuatro3" href="#"><div class="btnText">PARTNEŘI</div></a>
+        <a class="btnQuatro4" href="#"><div class="btnText">PODPORA</div></a>
+    </div>
+</div>
+
+
+<div id="page-koupit" class="page-koupit">
+    <div class="menu" style="position: absolute; width: 20%">
+        <a class="btnMenuMenu" style="width: 100%" href="#page-home" >MENU</a>
+    </div>
+    <div class="menuUzivatel">
+        <div>
+            <li class="avatar">David Nonák</li>
+        </div>
+    </div>
+    <img class="fajnSvacaText"  >
+    <div class="btnQuatroMenu">
+        <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
+        <a class="btnQuatroMojeOblibene" href="#" ><div class="btnText">MOJE OBLIBENE</div></a>
+        <a class="btnQuatroDobitKredit" href="#"><div class="btnText">DOBÍT KREDIT</div></a>
+        <a class="btnQuatroProfil" href="#"><div class="btnText">PROFIL</div></a>
+    </div>
+</div>
+
+
+
+
+
+<div id="page-kosik" class="page-kosik">
+    <div style="position: absolute; left: 0px;top: 0px; ">
+        <a href="#page-vybratSvacu" class="btnBack"></a>
+    </div>
+    <img src="svaca/imagesTest/kosikScreen.png">
+</div>
+
+
+
+
+
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+app.initialize();
+</script>
+</body>
+</html>
