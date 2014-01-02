@@ -24,7 +24,8 @@ html, body {
     padding: 0px;
     color: #000;
     margin: 0;
-    max-width: 540px;
+    width: 100%;
+    height: 100%;
 }
 #sidebar, #footer {
     display: none;
@@ -32,9 +33,7 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
-img {
-    max-width: 540px;
-}
+
 .center {
     width: 100% !important;
     text-align: center;
@@ -81,8 +80,8 @@ a:hover, a:active {
 #pages {
 
     background-image: url("svaca/images/mainBackground.png");
-    width: 540px;
-    height: 960px;
+    width: 800px;
+    height: 1227px;
     background-repeat:no-repeat;
     background-size:100%;
 }
@@ -347,13 +346,46 @@ a:hover, a:active {
 
 
 
+
+
+
+<div id="page-home" class="page-home">
+    <img class="fajnSvacaText"  >
+    <div class="btnQuatroMenu">
+        <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
+        <a class="btnQuatro2" href="#" ><div class="btnText">VYCHYTÁVKY</div></a>
+        <a class="btnQuatro3" href="#"><div class="btnText">PARTNEŘI</div></a>
+        <a class="btnQuatro4" href="#"><div class="btnText">PODPORA</div></a>
+    </div>
+</div>
+
+
+<div id="page-koupit" class="page-koupit">
+    <div class="menu" style="position: absolute; width: 20%">
+        <a class="btnMenuMenu" style="width: 100%" href="#page-home" >MENU</a>
+    </div>
+    <div class="menuUzivatel">
+        <div>
+            <li class="avatar">David Nonák</li>
+        </div>
+    </div>
+    <img class="fajnSvacaText"  >
+    <div class="btnQuatroMenu">
+        <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
+        <a class="btnQuatroMojeOblibene" href="#" ><div class="btnText">MOJE OBLIBENE</div></a>
+        <a class="btnQuatroDobitKredit" href="#"><div class="btnText">DOBÍT KREDIT</div></a>
+        <a class="btnQuatroProfil" href="#"><div class="btnText">PROFIL</div></a>
+    </div>
+</div>
+
+
     <div id="page-vybratSvacu" class="page-vybratSvacu">
 
         <div class="menu">
             <a class="btnMenuMenu" href="#page-koupit" >MENU</a>
             <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
-            <a class="btnMenuKosik" href="#page-koupit" >Košík</a>
-            <a class="btnMenuKoupit" href="#page-koupit" >Koupit</a>
+            <a class="btnMenuKosik" href="#page-kosik" >Košík</a>
+            <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit</a>
         </div>
         <img class="fajnSvacaText"  >
         <ul class="produtkSeznam">
@@ -403,50 +435,48 @@ a:hover, a:active {
     </div>
 
 
-
-<div id="page-home" class="page-home current">
-    <img class="fajnSvacaText"  >
-    <div class="btnQuatroMenu">
-        <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
-        <a class="btnQuatro2" href="#" ><div class="btnText">VYCHYTÁVKY</div></a>
-        <a class="btnQuatro3" href="#"><div class="btnText">PARTNEŘI</div></a>
-        <a class="btnQuatro4" href="#"><div class="btnText">PODPORA</div></a>
-    </div>
+<div id="page-kosik" class="page-kosik current">
+    <img src="svaca/psdScreens/koupit_svacu_kosik.png" width="800" height="1227" usemap="#koupit_svacu_kosik">
+    <map name="koupit_svacu_kosik">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="578,0,752,100" alt="Venus" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+    </map>
 </div>
 
-
-<div id="page-koupit" class="page-koupit">
-    <div class="menu" style="position: absolute; width: 20%">
-        <a class="btnMenuMenu" style="width: 100%" href="#page-home" >MENU</a>
-    </div>
-    <div class="menuUzivatel">
-        <div>
-            <li class="avatar">David Nonák</li>
-        </div>
-    </div>
-    <img class="fajnSvacaText"  >
-    <div class="btnQuatroMenu">
-        <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
-        <a class="btnQuatroMojeOblibene" href="#" ><div class="btnText">MOJE OBLIBENE</div></a>
-        <a class="btnQuatroDobitKredit" href="#"><div class="btnText">DOBÍT KREDIT</div></a>
-        <a class="btnQuatroProfil" href="#"><div class="btnText">PROFIL</div></a>
-    </div>
+<div id="page-koupitSvacuZaplatit" class="page-koupitSvacuZaplatit">
+    <img src="svaca/psdScreens/koupit_svacu_zaplatit_svacu.png" usemap="#koupitSvacuZaplatit">
+    <map name="koupitSvacuZaplatit">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
+        <area shape="rect" coords="50,985,750,1085" alt="Venus" href="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')">
+    </map>
 </div>
 
-
-
-
-
-<div id="page-kosik" class="page-kosik">
-    <div style="position: absolute; left: 0px;top: 0px; ">
-        <a href="#page-vybratSvacu" class="btnBack"></a>
-    </div>
-    <img src="svaca/imagesTest/kosikScreen.png">
+<div id="page-dokoncitPlatbuPozitivni" class="page-dokoncitPlatbuPozitivni">
+    <img src="svaca/psdScreens/dokoncit_platbu_pozitivni.png" usemap="#dokoncitPlatbuPozitivni">
+    <map name="dokoncitPlatbuPozitivni">
+        <area shape="rect" coords="0,0,150,98" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="400,0,570,100"  href="#">
+        <area shape="rect" coords="50,895,750,995" href="javascript:transition('#page-potvrzeniPlatby','fade')">
+    </map>
 </div>
 
+<div id="page-dokoncitPlatbuNegativni" class="page-dokoncitPlatbuNegativni">
+    <img src="svaca/psdScreens/dokoncit_platbu_negativni.png" usemap="#dokoncitPlatbuNegativni">
+    <map name="dokoncitPlatbuNegativni">
+        <area shape="rect" coords="0,0,150,98" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="50,985,750,1085"  href="javascript:transition('#page-home','fade')">
+    </map>
+</div>
 
-
-
+<div id="page-potvrzeniPlatby" class="page-potvrzeniPlatby">
+    <img src="svaca/psdScreens/potvrzeni_platby.png" usemap="#potvrzeni_platby">
+    <map name="potvrzeni_platby">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
+        <area shape="rect" coords="400,0,570,100" alt="Venus" href="#">
+        <area shape="rect" coords="50,896,750,995" alt="Venus" href="javascript:transition('#page-home','fade')">
+    </map>
+</div>
 
 </div>
 <script type="text/javascript" src="js/index.js"></script>
