@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="format-detection" content="telephone=no" />
 <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-<meta name="viewport" content="user-scalable=yes, initial-scale=0.7, maximum-scale=1, minimum-scale=0.7, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <script src="svaca/js/jquery-1.8.3.min.js"></script>
 <script src="svaca/js/scripts.js"></script>
 <title>Fajn sváča</title>
@@ -13,9 +13,12 @@
 
 <script>
 
-    function leftMenuShow()
+    var kosikPocetVeci = 0;
+
+
+    function menuLeftShow()
     {
-        $('#menuLeft').toggle();
+        $('#menuLeftDiv').toggle();
     }
 
 </script>
@@ -34,15 +37,19 @@ html, body {
     color: #000;
     margin: 0;
 
-    width: 800px;   /* test jinak 100%*/
+    width: 100%;   /* test jinak 100%*/
 
     height: 100%;
 }
+
+
 #sidebar, #footer {
     display: none;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+    margin: 0px;
+    padding: 0px;
 }
 
 .center {
@@ -91,18 +98,18 @@ a:hover, a:active {
 #pages {
 
     background-image: url("svaca/images/mainBackground.png");
-    width: 800px;
-    height: 1227px;
+    width: 100%;
+    padding-bottom: 5%;
     background-repeat:no-repeat;
-    background-size:100%;
+    background-size:cover;
+    min-height: 100%;
+
 }
 #pages > div {
     display:none;
-    position: absolute;
     top: 0;
     left: 0;
-
-    width: 800px;     /* test jinak 100%*/
+    width: 100%;     /* test jinak 100%*/
 }
 
 #pages > div.current {
@@ -111,7 +118,7 @@ a:hover, a:active {
 
 .in, .out {
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 50ms;
+    -webkit-animation-duration: 10ms;
 }
 @-webkit-keyframes fade-in {
     from { opacity: 0; }
@@ -137,7 +144,7 @@ a:hover, a:active {
     .avatar
     {
         width: 200px;
-        height: 96px;
+        padding: 5px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -212,15 +219,14 @@ a:hover, a:active {
     background : url(svaca/images/btnKoupit.png) no-repeat center;
 }
 .menu{
-    height: 96px;
     width: 95%;
-    background-color: white;
+    height: 60px;
 }
 
 .menu a{
-    height: 96px;
+    height: 60px;
 
-    line-height: 70px;
+    line-height: 60px;
     text-decoration: none;
     color: #FFFFFF;
     font-family: Myriad Pro;
@@ -236,7 +242,8 @@ a:hover, a:active {
 }
 .btnMenuCastka {
     width: 40%;
-    color: #000000; !important
+    color: #000000 !important;
+    background-color: white !important;
 }
 .btnMenuKosik {
     width: 20%;
@@ -270,6 +277,14 @@ a:hover, a:active {
     background-color: #00cf6a;
 }
 
+.menuLeftImg {
+    width: 112px;
+    height: 875px;
+    position: absolute;
+    z-index: 10;
+    top: 95px;
+}
+
 /* kokretni upravy pro stranky */
 
 .page-home .fajnSvacaText {
@@ -289,11 +304,20 @@ a:hover, a:active {
     display: block;
 }
 
+.produktTyp {
+    padding: 4vw;
+    background: #edc400;
+}
+
 .produktTyp a {
 
     text-decoration: none;
     color: white;
+    font-family: Myriad Pro;
+    font-size: 4vw;
 }
+
+
 
 .produkt a {
 
@@ -308,10 +332,6 @@ a:hover, a:active {
     margin-right: 10px;
 }
 
-.produktTyp {
-
-    background: #edc400;
-}
 
 .produkt {
 
@@ -319,52 +339,130 @@ a:hover, a:active {
 }
 
 .produkt .cena {
-    position: absolute;
-    right: 5px;
-    top: 0px;
+    right: 70px;
+    top: 5px;
+    font-family: Myriad Pro;
+    font-size: 4vw;
+    float: right;
 }
 
 .produktPopis {
-    width: 70%;
-    float: left;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 2vw;
     padding-left: 10px;
+    font-family: Myriad Pro;
+    font-size: 4vw;
 
 }
+.produktPopis h3{
+    margin: 2vw;
+}
+
+.produktPopis span{
+    margin: 2.5vw;
+    font-family: Myriad Pro;
+    font-size: 3vw;
+    margin-left: 0px;
+}
+
+
+
 .produktKosik {
     float: right;
-    width: 19%;
     background : url(svaca/images/productsKosik.png) no-repeat center 15px;
     background-color: #00cf6a;
     padding-top: 64px;
     padding-bottom: 5px;
     text-align: center;
+    padding-left: 2px;
+    padding-right: 4px;
+    color: #ffffff !important;
+    width: 15%;
+    cursor: pointer;
+}
+
+.produktKosik a {
+    color: #ffffff;
+
+}
+.produktHeaderZaplatitSvacu {
+    background: #4fcc6a;
+}
+
+.blueOblibene {
+    background-color: #009ee0;
+}
+.produktHeaderZaplatit {
+    background: #4fcc6a;
+    text-align: center;
+}
+.produktHeaderSpace {
+    background: none;
 
 }
 
-.produktTyp {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 10px;
+
+.listTlacitko {
+    text-decoration: none;
+    text-align: center;
+    padding: 2px;
 
 }
+.listTlacitko > a {
+    text-decoration: none;
+    color: white;
+    padding: 5vw;
+    font-family: Myriad Pro;
+    font-size: 5vw;
+}
 
-.menuLeft {
-    width: 112px;
-    height: 875px;
+.tlacZelene {
+    background: #4fcc6a;
+}
+.tlacModre {
+    background: #009ee0;
+}
+.bila {
+    background: #ffffff;
+    color: #000000;
+}
+.bila >a {
+    color: #000000;
+}
+
+.listText h3{
+    margin: 2vw;
+    font-size: 4vw;
+}
+.listTextStred h3{
+    text-align: center;
+    margin: 2vw;
+    font-size: 4vw;
+}
+
+.circleKosik
+{
+    display: none;
+    padding: 2vw;
+    background: red;
+    text-align: center;
+    font: 3vw Arial, sans-serif;
+    border-radius: 999px;
     position: absolute;
-    z-index: 10;
-    top: 95px;
+    left: 70%;
+    top: 44px;
+    margin-left: -20px;
+    color: white;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
 }
-
 </style>
 
 
 <div id="pages">
 
-<div id="menuLeft" >
-    <img class="menuLeft" src="svaca/psdScreens/menuLeft.png" width="800" height="1227" usemap="#menuLeftMap">
+<div id="menuLeftDiv">
+    <img class="menuLeftImg" src="svaca/psdScreens/menuLeft.png" width="800" height="1227" usemap="#menuLeftMap">
     <map name="menuLeftMap">
         <area shape="rect" coords="0,0,110,125" alt="Sun" href="javascript:transition('#page-koupit','fade')">
         <area shape="rect" coords="0,125,110,250" alt="Sun" href="javascript:transition('#page-mojeOblibene','fade')">
@@ -378,7 +476,205 @@ a:hover, a:active {
 
 
 
-<div id="page-homeHTML" class="page-homeHTML">
+<div id="page-vybratSvacu" class="page-vybratSvacu current">
+
+    <div class="menu">
+        <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
+        <a class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
+        <h1 id="circleKosikH1" class="circleKosik">12</h1>
+
+    </div>
+    <img class="fajnSvacaText"  >
+    <ul class="produtkSeznam">
+        <li class="produktTyp">
+            <a href="">
+                <h2>Bagety</h2>
+            </a>
+        </li>
+        <li class="produkt">
+            <div class="produktKosik" href="#kosik">Přidat do<br>košíku</div>
+            <div class="produktPopis" href="">
+                <img src="svaca/images/productsOblozenaBageta.png"  >
+                <span class="cena">43 kč</span>
+                <h3>Obložená bageta2</h3>
+                <span>Bageta, Máslo, Sýr, Rajče</span>
+            </div>
+            <div style="clear:both;"></div>
+        </li>
+        <li class="produkt">
+            <div class="produktKosik" href="#kosik">Přidat do<br>košíku</div>
+            <div class="produktPopis" href="">
+                <img src="svaca/images/productsVegetBageta.png"  >
+                <span class="cena">43 kč</span>
+                <h3>Vegetariánská bageta</h3>
+                <span>Bageta, Máslo, Sýr, Rajče</span>
+            </div>
+            <div style="clear:both;"></div>
+        </li>
+        <li class="produktTyp">
+            <a href="">
+                <h2>Housky</h2>
+            </a>
+        </li>
+        <li class="produkt">
+            <div class="produktKosik" href="#kosik">Přidat do<br>košíku</div>
+            <div class="produktPopis" href="">
+                <img src="svaca/images/productsVegetBageta.png"  >
+                <span class="cena">43 kč</span>
+                <h3>Vegetariánská bageta</h3>
+                <span>Bageta, Máslo, Sýr, Rajče</span>
+            </div>
+            <div style="clear:both;"></div>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div id="page-potvrzeniPlatby" class="page-potvrzeniPlatby">
+    <div class="menu">
+        <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
+        <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
+    </div>
+    <ul class="produtkSeznam">
+        <li class="produktTyp produktHeaderZaplatitSvacu">
+            <a href="">
+                <h3>Potvrzení</h3>
+            </a>
+        </li>
+        <li class="produktTyp bila listTextStred">
+                <h3><br></h3>
+                <h3>Děkujeme za využití</h3>
+                <h3>FAJN SVÁČI</h3>
+                <h3><br></h3>
+                <h3><br></h3>
+                <h3>Vaše objednávka byla přijata.</h3>
+                <h3>O možném času vyzvednutí</h3>
+                <h3>budete informování sms zprávou</h3>
+                <h3><br></h3>
+                <h3><br></h3>
+        </li>
+        <li class="produktTyp produktHeaderSpace">
+            <div style="height: 20px"></div>
+        </li>
+        <li class="listTlacitko tlacModre">
+            <a onclick="javascript:transition('#page-home','fade')" href="#">
+                <h3>Zpět do menu</h3>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div id="page-koupitSvacuZaplatit" class="page-koupitSvacuZaplatit">
+
+    <div class="menu">
+        <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
+        <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
+    </div>
+
+    <ul class="produtkSeznam">
+        <li class="produktTyp produktHeaderZaplatitSvacu">
+            <a href="">
+                <h3>Zaplatit sváču</h3>
+            </a>
+        </li>
+        <li class="produkt">
+            <a class="produktKosik blueOblibene" href="">Přidat do<br>oblíbených</a>
+            <a class="produktPopis" href="">
+                <img src="svaca/images/productsOblozenaBageta.png"  >
+                <span class="cena">43 kč</span>
+                <h3>Obložená bageta</h3>
+                <span>Bageta, Máslo, Sýr, Rajče</span>
+            </a>
+            <div style="clear:both;"></div>
+        </li>
+        <li class="produkt">
+            <a class="produktKosik blueOblibene" href="">Přidat do<br>oblíbených</a>
+            <a class="produktPopis" href="">
+                <img src="svaca/images/productsVegetBageta.png"  >
+                <span class="cena">43 kč</span>
+                <h3>Vegetariánská bageta</h3>
+                <span>Bageta, Máslo, Sýr, Rajče</span>
+            </a>
+            <div style="clear:both;"></div>
+        </li>
+        <li class="produkt">
+            <a class="produktKosik blueOblibene" href="">Přidat do<br>oblíbených</a>
+            <a class="produktPopis" href="">
+                <img src="svaca/images/productsVegetBageta.png"  >
+                <span class="cena">43 kč</span>
+                <h3>Vegetariánská bageta</h3>
+                <span>Bageta, Máslo, Sýr, Rajče</span>
+            </a>
+            <div style="clear:both;"></div>
+        </li>
+        <li class="produktTyp produktHeaderZaplatitCastka">
+            <a href="">
+                <h3>Celkem 115Kč</h3>
+            </a>
+        </li>
+        <li class="produktTyp produktHeaderSpace">
+            <div style="height: 20px"></div>
+        </li>
+        <li class="listTlacitko tlacZelene">
+            <a onclick="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')" href="#">
+                <h3>Zaplatit</h3>
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+
+
+<div id="page-dokoncitPlatbuPozitivni" class="page-dokoncitPlatbuPozitivni">
+    <div class="menu">
+        <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
+        <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
+    </div>
+    <ul class="produtkSeznam">
+        <li class="produktTyp produktHeaderZaplatitSvacu">
+            <a href="">
+                <h3>Zaplatit sváču</h3>
+            </a>
+        </li>
+        <li class="produktTyp bila listText">
+                <h3>Objednávka ve výši</h3>
+                <h3>Aktuální kredit</h3>
+                <h3>Budoucí zůstatek</h3>
+                <h3><br></h3>
+                <h3>Zvolte způsob doručení</h3>
+                <h3><br></h3>
+                <input type="checkbox" name="vehicle" value="Bike" style="float: left;">
+            <h3>Vyzvednout u bufetu</h3>
+                <input type="checkbox" name="vehicle" value="Bike" style="float: left;">
+                <h3>donáška kurýrem + 15 kč</h3>
+        </li>
+        <li class="produktTyp produktHeaderSpace">
+            <div style="height: 20px"></div>
+        </li>
+        <li class="listTlacitko tlacZelene">
+            <a onclick="javascript:transition('#page-potvrzeniPlatby','fade')" href="#">
+                <h3>Potvrdit objednávku</h3>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+
+
+<div id="page-home" class="page-home">
     <img class="fajnSvacaText"  >
     <div class="btnQuatroMenu">
         <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
@@ -389,9 +685,10 @@ a:hover, a:active {
 </div>
 
 
-<div id="page-koupitHTML" class="page-koupitHTML">
+
+<div id="page-koupit" class="page-koupit">
     <div class="menu" style="position: absolute; width: 20%">
-        <a class="btnMenuMenu" style="width: 100%" onclick="javascript:leftMenuShow()" href="" >MENU</a>
+        <a class="btnMenuMenu" style="width: 100%" onclick="javascript:menuLeftShow()" href="" >&lt;&lt; MENU</a>
     </div>
     <div class="menuUzivatel">
         <div>
@@ -409,63 +706,7 @@ a:hover, a:active {
 
 
 
-    <div id="page-vybratSvacuHTML" class="page-vybratSvacuHTML">
-
-        <div class="menu">
-            <a class="btnMenuMenu" onclick="javascript:leftMenuShow()" href="#" >MENU</a>
-            <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
-            <a class="btnMenuKosik" href="#page-kosik" >Košík</a>
-            <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit</a>
-        </div>
-        <img class="fajnSvacaText"  >
-        <ul class="produtkSeznam">
-            <li class="produktTyp">
-                <a href="">
-                    <h2>Bagety</h2>
-                </a>
-            </li>
-            <li class="produkt">
-                <a class="produktPopis" href="">
-                    <img src="svaca/images/productsOblozenaBageta.png"  >
-                    <h2>Obložená bageta</h2>
-                    <span>Bageta, Máslo, Sýr, Rajče</span>
-                    <span class="cena">43 kč</span>
-                </a>
-                <a class="produktKosik" href="">Přidat do<br>košíku</a>
-                <div style="clear:both;"></div>
-            </li>
-            <li class="produkt">
-                <a class="produktPopis" href="">
-                    <img src="svaca/images/productsVegetBageta.png"  >
-                    <h2>Vegetariánská bageta</h2>
-                    <span>Bageta, Máslo, Sýr, Rajče</span>
-                    <span class="cena">43 kč</span>
-                </a>
-                <a class="produktKosik" href="">Přidat do<br>košíku</a>
-                <div style="clear:both;"></div>
-            </li>
-            <li class="produktTyp">
-                <a href="">
-                    <h2>Housky</h2>
-                </a>
-            </li>
-            <li class="produkt">
-                <a class="produktPopis" href="">
-                    <img src="svaca/images/productsVegetBageta.png"  >
-                    <h2>Vegetariánská bageta</h2>
-                    <span>Bageta, Máslo, Sýr, Rajče</span>
-                    <span class="cena">43 kč</span>
-                </a>
-                <a class="produktKosik" href="">Přidat do<br>košíku</a>
-                <div style="clear:both;"></div>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div id="page-home" class="page-home current">
+    <div id="page-homeIMG" class="page-homeIMG">
         <img src="svaca/psdScreens/menu.png" usemap="#menu">
         <map name="menu">
             <area shape="rect" coords="50,267,400,615" onclick="javascript:transition('#page-koupit','fade')" href="#">
@@ -476,10 +717,10 @@ a:hover, a:active {
         </map>
     </div>
 
-<div id="page-koupit" class="page-koupit">
+<div id="page-koupitIMG" class="page-koupitIMG">
     <img src="svaca/psdScreens/koupit_svacuMenu.png" usemap="#koupit">
     <map name="koupit">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="#" >
         <area shape="rect" coords="50,267,400,615" onclick="javascript:transition('#page-vybratSvacu','fade')" href="#">
         <area shape="rect" coords="400,267,748,615" onclick="javascript:transition('#page-mojeOblibene','fade')" href="#">
         <area shape="rect" coords="50,615,400,963" onclick="javascript:transition('#page-dobitKredit','fade')" href="#">
@@ -488,40 +729,40 @@ a:hover, a:active {
     </map>
 </div>
 
-<div id="page-vybratSvacu" class="page-vybratSvacu">
+<div id="page-vybratSvacuIMG" class="page-vybratSvacuIMG">
     <img src="svaca/psdScreens/koupit_svacu.png" usemap="#vybratSvacu">
     <map name="vybratSvacu">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="#" >
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
         <area shape="rect" coords="578,0,752,100" alt="Venus" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
     </map>
 </div>
 
-<div id="page-kosik" class="page-kosik">
+<div id="page-kosikIMG" class="page-kosikIMG">
     <img src="svaca/psdScreens/koupit_svacu_kosik.png" width="800" height="1227" usemap="#koupit_svacu_kosik">
 
     <map name="koupit_svacu_kosik">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="#" >
         <area shape="rect" coords="578,0,752,100" alt="Venus" href="javascript:transition('#page-koupitSvacuZaplatit','fade')">
     </map>
 </div>
 
-<div id="page-koupitSvacuZaplatit" class="page-koupitSvacuZaplatit">
+<div id="page-koupitSvacuZaplatitIMG" class="page-koupitSvacuZaplatitIMG">
     <img src="svaca/psdScreens/koupit_svacu_zaplatit_svacu.png" usemap="#koupitSvacuZaplatit">
     <div style="position: absolute;bottom: 180px;left: 100px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-dokoncitPlatbuNegativni','fade')" >FAIL</div>
     <div style="position: absolute;bottom: 180px;left: 600px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')">SUCCESS</div>
     <map name="koupitSvacuZaplatit">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="">
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
         <area shape="rect" coords="50,985,400,1085" alt="Venus" href="javascript:transition('#page-dokoncitPlatbuNegativni','fade')">
         <area shape="rect" coords="401,985,750,1085" alt="Venus" href="javascript:transition('#page-dokoncitPlatbuPozitivni','fade')">
     </map>
 </div>
 
-<div id="page-dokoncitPlatbuPozitivni" class="page-dokoncitPlatbuPozitivni">
+<div id="page-dokoncitPlatbuPozitivniIMG" class="page-dokoncitPlatbuPozitivniIMG">
     <img src="svaca/psdScreens/dokoncit_platbu_pozitivni.png" usemap="#dokoncitPlatbuPozitivni">
     <map name="dokoncitPlatbuPozitivni">
-        <area shape="rect" coords="0,0,150,98" onclick="javascript:leftMenuShow()" href="">
+        <area shape="rect" coords="0,0,150,98" onclick="javascript:menuLeftShow()" href="">
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
         <area shape="rect" coords="50,895,750,995" href="javascript:transition('#page-potvrzeniPlatby','fade')">
     </map>
@@ -530,16 +771,16 @@ a:hover, a:active {
 <div id="page-dokoncitPlatbuNegativni" class="page-dokoncitPlatbuNegativni">
     <img src="svaca/psdScreens/dokoncit_platbu_negativni.png" usemap="#dokoncitPlatbuNegativni">
     <map name="dokoncitPlatbuNegativni">
-        <area shape="rect" coords="0,0,150,98" onclick="javascript:leftMenuShow()" href="">
+        <area shape="rect" coords="0,0,150,98" onclick="javascript:menuLeftShow()" href="">
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="javascript:transition('#page-kosik','fade')">
         <area shape="rect" coords="50,895,750,995" href="javascript:transition('#page-dobitKredit','fade')">
     </map>
 </div>
 
-<div id="page-potvrzeniPlatby" class="page-potvrzeniPlatby">
+<div id="page-potvrzeniPlatbyIMG" class="page-potvrzeniPlatbyIMG">
     <img src="svaca/psdScreens/potvrzeni_platby.png" usemap="#potvrzeni_platby">
     <map name="potvrzeni_platby">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="">
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="">
         <area shape="rect" coords="400,0,570,100" alt="Venus" href="#">
         <area shape="rect" coords="50,896,750,995" alt="Venus" href="javascript:transition('#page-home','fade')">
     </map>
@@ -586,7 +827,7 @@ a:hover, a:active {
     </div>
 
     <map name="proMenu">
-        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:leftMenuShow()" href="#" >
+        <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="#" >
     </map>
 
 </div>

@@ -1,27 +1,30 @@
 $(document).ready(function(){
 
   $("#pages a").click(function(e){
+    //if(e.target.hash.slice(1)=="") console.log("nic");
     e.preventDefault();
     var nextPage = $(e.target.hash);
-    transition(nextPage, 'fade');
+     if(e.target.hash.slice(1)!="")transition(nextPage, 'fade');
     $("#pages").attr("className", e.target.hash.slice(1));
   });
-  
-  $("#spots-list li").click(function(e){
-    e.preventDefault();
-    transition("#page-spot", "push");
+
+  $(".produkt .produktKosik").click(function(e){
+      console.log("asdasd")
+    kosikPocetVeci ++;
+      $("#circleKosikH1").text(kosikPocetVeci);
+      $("#circleKosikH1").css('display','block');
+
+
+
+
   });
-  $("#stars-list li").click(function(e){
-    e.preventDefault();
-    transition("#page-star", "push");
-  });
-  
+
 
 });
 
 function transition(toPage, type) {
 
-    $('#menuLeft').css('display','none');
+    $('#menuLeftDiv').css('display','none');
   var toPage = $(toPage),
     fromPage = $("#pages .current");
     
