@@ -60,7 +60,7 @@
       <file leaf-file-name="css.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="350" column="20" selection-start="6731" selection-end="6733" vertical-scroll-proportion="1.9580537" vertical-offset="4783" max-vertical-offset="6919">
+            <state line="345" column="17" selection-start="6640" selection-end="6640" vertical-scroll-proportion="0.41778523" vertical-offset="5616" max-vertical-offset="6936">
               <folding />
             </state>
           </provider>
@@ -368,7 +368,11 @@
       <created>1388780703560</created>
       <updated>1388780703560</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;">
+      <created>1388783784802</created>
+      <updated>1388783784802</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -608,7 +612,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="350" column="20" selection-start="6731" selection-end="6733" vertical-scroll-proportion="1.9580537" vertical-offset="4783" max-vertical-offset="6919">
+        <state line="345" column="17" selection-start="6640" selection-end="6640" vertical-scroll-proportion="0.41778523" vertical-offset="5616" max-vertical-offset="6936">
           <folding />
         </state>
       </provider>

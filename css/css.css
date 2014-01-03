@@ -187,11 +187,11 @@ a:hover, a:active {
     text-indent: 5px;
 }
 .btnMenuMenu {
-    width: 20%;
+    width: 25%;
     background-color: #009ee0;
 }
 .btnMenuCastka {
-    width: 40%;
+    width: 35%;
     color: #000000 !important;
     background-color: white !important;
 }
@@ -343,7 +343,8 @@ a:hover, a:active {
 .listTlacitko > a {
     text-decoration: none;
     color: white;
-    padding: 5%;
+    padding: 20px;
+    display: block;
     /*padding: 5vw;
 */
     font-family: Myriad Pro;
