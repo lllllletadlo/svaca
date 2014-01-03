@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="imageVerze 2.0&#10;uprava scale&#10;uprava scale2&#10;oprava klik na menu ve vyberu svaciny, pridano prihlaseni, scale 0.7&#10;">
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\dokoncit_platbu_pozitivni.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\koupit_svacu.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\koupit_svacuMenu.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\koupit_svacu_zaplatit_svacu.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\menu.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\potvrzeni_platby.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\registrace11.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/images/productsKosik.png" afterPath="$PROJECT_DIR$/svaca/images/productsKosik.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/MyriadPro-Regular.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -36,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="695" column="14" selection-start="17142" selection-end="17142" vertical-scroll-proportion="-4.6710525" vertical-offset="11460" max-vertical-offset="14365">
+            <state line="246" column="44" selection-start="9382" selection-end="9382" vertical-scroll-proportion="0.33333334" vertical-offset="3992" max-vertical-offset="7021">
               <folding>
                 <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -67,10 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/css.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="22" selection-start="1659" selection-end="1664" vertical-scroll-proportion="28.8" vertical-offset="2267" max-vertical-offset="7446">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="26" selection-start="282" selection-end="282" vertical-scroll-proportion="0.1086262" vertical-offset="0" max-vertical-offset="1717">
+            <state line="21" column="55" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -98,9 +99,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/css/css.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -160,6 +162,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -172,6 +202,11 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Inited\projekty\svaca\webStorm\svaca\css" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/svaca/index.html">
@@ -314,28 +349,52 @@
       <created>1388679831986</created>
       <updated>1388679831986</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;">
+      <created>1388776868947</created>
+      <updated>1388776868947</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-188" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32953367" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18378094" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13663967" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -367,7 +426,8 @@
     <MESSAGE value="imageVerze 2.0&#10;uprava scale" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale&#10;uprava scale2" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale&#10;uprava scale2&#10;oprava klik na menu ve vyberu svaciny, pridano prihlaseni, scale 0.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="imageVerze 2.0&#10;uprava scale&#10;uprava scale2&#10;oprava klik na menu ve vyberu svaciny, pridano prihlaseni, scale 0.7" />
+    <MESSAGE value="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -488,9 +548,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="55" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="14" selection-start="1813" selection-end="1815" vertical-scroll-proportion="-7.92" vertical-offset="1434" max-vertical-offset="5270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="22" selection-start="1659" selection-end="1664" vertical-scroll-proportion="28.8" vertical-offset="2267" max-vertical-offset="7446">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="695" column="14" selection-start="17142" selection-end="17142" vertical-scroll-proportion="-4.6710525" vertical-offset="11460" max-vertical-offset="14365">
+        <state line="246" column="44" selection-start="9382" selection-end="9382" vertical-scroll-proportion="0.33333334" vertical-offset="3992" max-vertical-offset="7021">
           <folding>
             <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -514,13 +595,6 @@
             <element signature="n#style#0;n#div#0;n#div#21;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#21;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="282" selection-end="282" vertical-scroll-proportion="0.1086262" vertical-offset="0" max-vertical-offset="1717">
-          <folding />
         </state>
       </provider>
     </entry>

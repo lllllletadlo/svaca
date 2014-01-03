@@ -1,0 +1,433 @@
+/* Phone @media handheld { */
+
+    @font-face {
+        font-family: Myriad Pro;
+        font-weight: normal;
+        src: url("MyriadPro-Regular.otf") format("opentype");
+    }
+
+    html, body {
+
+        font: 12px/15px sans-serif;
+        background: #ff5;
+        padding: 0px;
+        color: #000;
+        margin: 0;
+
+        width: 100%;   /* test jinak 100%*/
+
+        height: 100%;
+    }
+
+
+    #sidebar, #footer {
+        display: none;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .center {
+        width: 100% !important;
+        text-align: center;
+    }
+    a:link, a:visited {
+        text-decoration: underline;
+        color: #0000CC;
+    }
+    a:hover, a:active {
+        text-decoration: underline;
+        color: #660066;
+    }
+
+    .menuUzivatel {
+        text-align: center;
+        background-color: white;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    /* widgets */
+    .btnQuatro {
+        width: 236px;
+        height: 238px;
+        display: inline-block;
+
+    }
+
+    .btnKosik {
+        width: 120px;
+        height: 65px;
+        display: block;
+
+    }
+    .btnBack {
+        width: 102px;
+        height: 65px;
+        display: block;
+
+    }
+
+
+    /* transitions */
+    #pages {
+
+        background-image: url("../svaca/images/mainBackground.png");
+        width: 100%;
+        padding-bottom: 5%;
+        background-repeat:no-repeat;
+        background-size:cover;
+        min-height: 100%;
+
+    }
+    #pages > div {
+        display:none;
+        top: 0;
+        left: 0;
+        width: 100%;     /* test jinak 100%*/
+    }
+
+    #pages > div.current {
+        display: block;
+    }
+
+    .in, .out {
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 10ms;
+    }
+    @-webkit-keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .fade.in {
+        -webkit-animation-name: fade-in;
+        z-index: 10;
+    }
+    .fade.out {
+        z-index: 0;
+    }
+
+    /* iPhone-specific styles */
+    @media only screen and (max-device-width: 480px) {
+
+        html {
+            -webkit-text-size-adjust: none;
+        }
+
+    }
+
+    .avatar
+    {
+        width: 200px;
+        padding: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: url("../svaca/images/avatar.png") no-repeat;
+        background-position: left;
+        line-height: 50px;
+        list-style-type: none;
+    }
+
+    .fajnSvacaText
+    {
+        content: url("../svaca/images/fajnSvacaText.png");
+        width: 90%;
+        height: 20%;
+        margin-left: 5%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+    }
+
+    .btnQuatroMenu {
+        position: relative;
+        width: 90%;
+        padding-bottom: 90%;
+        margin-left: 5%; margin-right: 5%;
+    }
+
+    .btnQuatroMenu a {
+        position: absolute;
+        text-align: center;
+        width: 50%;
+        height: 50%;
+        background-size:50%;
+        text-decoration: none;
+        text-shadow: 1px 1px #555555;
+        color: #FFFFFF;
+        font-family: "Arial Black", Arial;
+        font-weight: 900;
+        font-size: 4vw;
+    }
+    .btnQuatro1 {
+        background : url(../svaca/images/btnKoupit.png) no-repeat center;
+        background-color: #f8c300;
+
+    }
+    .btnQuatro2 {
+        left: 50%;
+        background : url(../svaca/images/btnVychytavky.png) no-repeat center;
+        background-color: #b251a5;
+    }
+    .btnQuatro3 {
+        top: 50%;
+        background : url(../svaca/images/btnPartneri.png) no-repeat center;
+        background-color: #0099d9;
+    }
+    .btnQuatro4 {
+        left: 50%;
+        top: 50%;
+        background : url(../svaca/images/btnPodpora.png) no-repeat center;
+        background-color: #00d36b;
+    }
+
+    .btnText {
+        margin-top: 75%;
+
+
+    }
+    .btnObr1 {
+        margin-top: 75%;
+        background : url(../svaca/images/btnKoupit.png) no-repeat center;
+    }
+    .menu{
+        width: 95%;
+        height: 60px;
+    }
+
+    .menu a{
+        height: 60px;
+
+        line-height: 60px;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: Myriad Pro;
+        font-size: 4vw;
+        display: block;
+        float: left;
+        text-indent: 5px;
+    }
+
+    .btnMenuMenu {
+        width: 20%;
+        background-color: #009ee0;
+    }
+    .btnMenuCastka {
+        width: 40%;
+        color: #000000 !important;
+        background-color: white !important;
+    }
+    .btnMenuKosik {
+        width: 20%;
+        background-color: #965ab8;
+    }
+    .btnMenuKoupit {
+        width: 20%;
+        background-color: #4fcc6a;
+    }
+
+
+    .btnQuatroVybratSvacu {
+        background : url(../svaca/images/btnVybratSvacu.png) no-repeat center;
+        background-color: #f8c300;
+
+    }
+    .btnQuatroMojeOblibene {
+        left: 50%;
+        background : url(../svaca/images/btnMojeOblibene.png) no-repeat center;
+        background-color: #a256af;
+    }
+    .btnQuatroDobitKredit {
+        top: 50%;
+        background : url(../svaca/images/btnDobitKredit.png) no-repeat center;
+        background-color: #0099d9;
+    }
+    .btnQuatroProfil {
+        left: 50%;
+        top: 50%;
+        background : url(../svaca/images/btnProfil.png) no-repeat center;
+        background-color: #00cf6a;
+    }
+
+    .menuLeftImg {
+        width: 112px;
+        height: 875px;
+        position: absolute;
+        z-index: 10;
+        top: 95px;
+    }
+
+    /* kokretni upravy pro stranky */
+
+    .page-home .fajnSvacaText {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    .produtkSeznam {
+        padding: 0px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+
+    .produtkSeznam li {
+
+        list-style-type: none;
+        display: block;
+    }
+
+    .produktTyp {
+        padding: 4vw;
+        background: #edc400;
+    }
+
+    .produktTyp a {
+
+        text-decoration: none;
+        color: white;
+        font-family: Myriad Pro;
+        font-size: 4vw;
+    }
+
+
+
+    .produkt a {
+
+        color: #000000;
+        text-decoration: none;
+        display: block;
+        position: relative;
+    }
+    .produkt img {
+
+        float: left;
+        margin-right: 10px;
+    }
+
+
+    .produkt {
+
+        background: white;
+    }
+
+    .produkt .cena {
+        right: 70px;
+        top: 5px;
+        font-family: Myriad Pro;
+        font-size: 4vw;
+        float: right;
+    }
+
+    .produktPopis {
+        padding-top: 2vw;
+        padding-left: 10px;
+        font-family: Myriad Pro;
+        font-size: 4vw;
+
+    }
+    .produktPopis h3{
+        margin: 2vw;
+    }
+
+    .produktPopis span{
+        margin: 2.5vw;
+        font-family: Myriad Pro;
+        font-size: 3vw;
+        margin-left: 0px;
+    }
+
+
+
+    .produktKosik {
+        float: right;
+        background : url(../svaca/images/productsKosik.png) no-repeat center 15px;
+        background-color: #00cf6a;
+        padding-top: 64px;
+        padding-bottom: 5px;
+        text-align: center;
+        padding-left: 2px;
+        padding-right: 4px;
+        color: #ffffff !important;
+        width: 15%;
+        cursor: pointer;
+    }
+
+    .produktKosik a {
+        color: #ffffff;
+
+    }
+    .produktHeaderZaplatitSvacu {
+        background: #4fcc6a;
+    }
+
+    .blueOblibene {
+        background-color: #009ee0;
+    }
+    .produktHeaderZaplatit {
+        background: #4fcc6a;
+        text-align: center;
+    }
+    .produktHeaderSpace {
+        background: none;
+
+    }
+
+
+    .listTlacitko {
+        text-decoration: none;
+        text-align: center;
+        padding: 2px;
+
+    }
+    .listTlacitko > a {
+        text-decoration: none;
+        color: white;
+        padding: 5vw;
+        font-family: Myriad Pro;
+        font-size: 5vw;
+    }
+
+    .tlacZelene {
+        background: #4fcc6a;
+    }
+    .tlacModre {
+        background: #009ee0;
+    }
+    .bila {
+        background: #ffffff;
+        color: #000000;
+    }
+    .bila >a {
+        color: #000000;
+    }
+
+    .listText h3{
+        margin: 2vw;
+        font-size: 4vw;
+    }
+    .listTextStred h3{
+        text-align: center;
+        margin: 2vw;
+        font-size: 4vw;
+    }
+
+    .circleKosik
+    {
+        display: none;
+        padding: 2vw;
+        background: red;
+        text-align: center;
+        font: 3vw Arial, sans-serif;
+        border-radius: 999px;
+        position: absolute;
+        left: 70%;
+        top: 44px;
+        margin-left: -20px;
+        color: white;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+    }
