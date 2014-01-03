@@ -60,7 +60,7 @@
       <file leaf-file-name="css.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="23" selection-start="3239" selection-end="3239" vertical-scroll-proportion="0.61744964" vertical-offset="2403" max-vertical-offset="7480">
+            <state line="350" column="20" selection-start="6731" selection-end="6733" vertical-scroll-proportion="1.9580537" vertical-offset="4783" max-vertical-offset="6919">
               <folding />
             </state>
           </provider>
@@ -112,7 +112,16 @@
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
-      <profile-state />
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+      </profile-state>
     </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -195,7 +204,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.idesettings.debugger.javascript" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -355,7 +364,11 @@
       <created>1388779119475</created>
       <updated>1388779119475</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;">
+      <created>1388780703560</created>
+      <updated>1388780703560</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -595,7 +608,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="23" selection-start="3239" selection-end="3239" vertical-scroll-proportion="0.61744964" vertical-offset="2403" max-vertical-offset="7480">
+        <state line="350" column="20" selection-start="6731" selection-end="6733" vertical-scroll-proportion="1.9580537" vertical-offset="4783" max-vertical-offset="6919">
           <folding />
         </state>
       </provider>
