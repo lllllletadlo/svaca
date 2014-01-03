@@ -160,7 +160,9 @@
         color: #FFFFFF;
         font-family: "Arial Black", Arial;
         font-weight: 900;
+        font-size: 200%;
         font-size: 4vw;
+
     }
     .btnQuatro1 {
         background : url(../svaca/images/btnKoupit.png) no-repeat center;

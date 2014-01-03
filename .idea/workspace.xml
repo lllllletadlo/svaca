@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/MyriadPro-Regular.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/css.css" afterPath="$PROJECT_DIR$/css/css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -28,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="44" selection-start="9382" selection-end="9382" vertical-scroll-proportion="0.33333334" vertical-offset="3992" max-vertical-offset="7021">
+            <state line="13" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="7021">
               <folding>
                 <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -59,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="css.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="22" selection-start="1659" selection-end="1664" vertical-scroll-proportion="28.8" vertical-offset="2267" max-vertical-offset="7446">
+            <state line="163" column="23" selection-start="3239" selection-end="3239" vertical-scroll-proportion="0.61744964" vertical-offset="2403" max-vertical-offset="7480">
               <folding />
             </state>
           </provider>
@@ -101,8 +99,8 @@
       <list>
         <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/css/css.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/css.css" />
       </list>
     </option>
   </component>
@@ -353,7 +351,11 @@
       <created>1388776868947</created>
       <updated>1388776868947</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;">
+      <created>1388779119475</created>
+      <updated>1388779119475</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -562,16 +564,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="22" selection-start="1659" selection-end="1664" vertical-scroll-proportion="28.8" vertical-offset="2267" max-vertical-offset="7446">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="44" selection-start="9382" selection-end="9382" vertical-scroll-proportion="0.33333334" vertical-offset="3992" max-vertical-offset="7021">
+        <state line="13" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="7021">
           <folding>
             <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -595,6 +590,13 @@
             <element signature="n#style#0;n#div#0;n#div#21;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#21;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="23" selection-start="3239" selection-end="3239" vertical-scroll-proportion="0.61744964" vertical-offset="2403" max-vertical-offset="7480">
+          <folding />
         </state>
       </provider>
     </entry>
