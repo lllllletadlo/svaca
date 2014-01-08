@@ -362,6 +362,7 @@ function odeslatObjednavku(objednavka, typ) {
                     transition("#page-dokoncitPlatbuPozitivni","fade");
                 } else
                 {
+                    alert(data.msg);
                     transition("#page-dokoncitNegativnii","fade");
                 }
 
