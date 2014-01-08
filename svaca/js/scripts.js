@@ -65,8 +65,8 @@ function transition(toPage, type) {
     if(toPage.selector=="#page-koupit")
     {
 
-        alert("Načítám data");
-        nactiData();
+        //alert("Načítám data");
+        //nactiData();
     }
     if(toPage.selector=="#page-koupitSvacuZaplatit") {
         kosikRefresh();
@@ -142,7 +142,7 @@ function profilUpdate()
 
 }
 
-function prihlaseniZobrazDialog(msg)
+function prihlaseniZobrazDialog()
 {
 
     //prihlaseniProceed();
@@ -188,17 +188,20 @@ function logout()
 function registrovat() {
     if(validateRegistrace())
     {
-        $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&fullName='+$('#registraceJmeno').val()+ '&password='+$('#registraceHeslo').val(),
+        $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&firstName='+$('#registraceJmeno').val()+ '&lastName='+$('#registracePrijmeni').val()+ '&password='+$('#registraceHeslo').val()+ '&email='+$('#registraceEmail').val(),
             success: function(data) {
                 if( data.status == "error")
                 {
-                    ajaxError2(data);
+                    //ajaxError2(data);
+                    alertZobraz(data.msg);
                     return;
                 }
                 if( data.status == "ok")
                 {
                     alert("Zaregistrováno!");
                     //nactiZbozi(data);
+                    prihlaseniZobrazDialog();
+
                 }
             },
             error: ajaxError2
@@ -215,7 +218,8 @@ function nactiZboziAjax() {
             {
                 console.log(data.msg);
                 console.log("neprihlasen");
-                prihlaseniZobrazDialog(data.msg);
+                alertZobraz(data.msg);
+                prihlaseniZobrazDialog();
                 return;
             }
             if( data.status == "error")
