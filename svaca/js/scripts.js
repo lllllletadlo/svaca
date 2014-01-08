@@ -12,15 +12,15 @@ $(document).ready(function(){
     $("#pages a").click(function(e){
         //if(e.target.hash.slice(1)=="") console.log("nic");
         e.preventDefault();
+        if(e.target.hash == null) return;
         var nextPage = $(e.target.hash);
         if(e.target.hash.slice(1)!="") {
             transition(nextPage, 'fade');
             //console.log(e.target.hash.slice(1));
+            $("#pages").attr("className", e.target.hash.slice(1));
         }
-        if(e.target.hash.slice(1)=="page-koupitSvacuZaplatit") {
-            kosikRefresh();
-        }
-        $("#pages").attr("className", e.target.hash.slice(1));
+
+
     });
 
 
@@ -67,6 +67,9 @@ function transition(toPage, type) {
 
         alert("Načítám data");
         nactiData();
+    }
+    if(toPage.selector=="#page-koupitSvacuZaplatit") {
+        kosikRefresh();
     }
 }
 
@@ -166,6 +169,15 @@ function prihlaseniProceed()
         {
             ajaxError2(data);
         }
+    });
+
+
+}
+
+function logout()
+{
+    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/logout' }).done(function(data) {
+
     });
 
 
