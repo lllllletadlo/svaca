@@ -199,9 +199,6 @@ function registrovat() {
 function nactiZboziAjax() {
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/listProducts',
         success: function(data) {
-            alert("data prisla zobrazuji");
-            alert($.param(data));
-            alert("konec zobrazeni");
             if( data.status == "error" && data.code == "not logged")
             {
                 console.log(data.msg);
