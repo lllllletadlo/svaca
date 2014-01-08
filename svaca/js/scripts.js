@@ -110,6 +110,7 @@ function ajaxError2(data){
 
 function nactiData() {
 
+    objednavka = "";
     nactiZboziAjax();
     //nactiZbozi();
     //alert(zbozi.list[1].name);
@@ -162,6 +163,7 @@ function prihlaseniProceed()
             alert("přihlášen ok");
             //transition("#page-dokoncitPlatbuPozitivni","fade");
             nactiData();
+            $('#koupitUserName').text($('#prihlaseniJmeno').val());
             transition("#page-home","fade");
 
         }
