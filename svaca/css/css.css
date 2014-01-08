@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     margin: 0px;
     padding: 0px;
+    line-height: 1em;
 }
 .center {
     width: 100% !important;
@@ -59,9 +60,8 @@ a:hover, a:active {
 }
 /* transitions */
 #pages {
-    background-image: url("../svaca/images/mainBackground.png");
+    background-image: url("../imagesApp/mainBackground.png");
     width: 100%;
-    padding-bottom: 5%;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
@@ -71,14 +71,16 @@ a:hover, a:active {
     top: 0;
     left: 0;
     width: 100%;
-    /* test jinak 100%*/
+    position: absolute;
+    min-height: 100%;
+
 }
 #pages > div.current {
     display: block;
 }
 .in, .out {
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 10ms;
+    -webkit-animation-duration: 100ms;
 }
 @-webkit-keyframes fade-in {
     from {
@@ -107,13 +109,18 @@ a:hover, a:active {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background: url("../svaca/images/avatar.png") no-repeat;
+    background: url("../imagesApp/avatar.png") no-repeat;
     background-position: left;
     line-height: 50px;
     list-style-type: none;
 }
+.avatarBig {
+    background: url("../imagesApp/avatarBig.png") no-repeat;
+    height: 126px;
+    margin-left: -76px;
+}
 .fajnSvacaText {
-    content: url("../svaca/images/fajnSvacaText.png");
+    content: url("../imagesApp/fajnSvacaText.png");
     width: 90%;
     height: 20%;
     margin-left: 5%;
@@ -143,23 +150,23 @@ a:hover, a:active {
 */
 }
 .btnQuatro1 {
-    background: url(../svaca/images/btnKoupit.png) no-repeat center;
+    background: url(../imagesApp/btnKoupit.png) no-repeat center;
     background-color: #f8c300;
 }
 .btnQuatro2 {
     left: 50%;
-    background: url(../svaca/images/btnVychytavky.png) no-repeat center;
+    background: url(../imagesApp/btnVychytavky.png) no-repeat center;
     background-color: #b251a5;
 }
 .btnQuatro3 {
     top: 50%;
-    background: url(../svaca/images/btnPartneri.png) no-repeat center;
+    background: url(../imagesApp/btnPartneri.png) no-repeat center;
     background-color: #0099d9;
 }
 .btnQuatro4 {
     left: 50%;
     top: 50%;
-    background: url(../svaca/images/btnPodpora.png) no-repeat center;
+    background: url(../imagesApp/btnPodpora.png) no-repeat center;
     background-color: #00d36b;
 }
 .btnText {
@@ -167,7 +174,7 @@ a:hover, a:active {
 }
 .btnObr1 {
     margin-top: 75%;
-    background: url(../svaca/images/btnKoupit.png) no-repeat center;
+    background: url(../imagesApp/btnKoupit.png) no-repeat center;
 }
 .menu {
     width: 95%;
@@ -179,7 +186,7 @@ a:hover, a:active {
     text-decoration: none;
     color: #FFFFFF;
     font-family: Myriad Pro;
-    font-size: 200%;
+    font-size: 180%;
     /*font-size: 4vw;
 */
     display: block;
@@ -187,11 +194,11 @@ a:hover, a:active {
     text-indent: 5px;
 }
 .btnMenuMenu {
-    width: 25%;
+    width: 20%;
     background-color: #009ee0;
 }
 .btnMenuCastka {
-    width: 35%;
+    width: 40%;
     color: #000000 !important;
     background-color: white !important;
 }
@@ -204,31 +211,38 @@ a:hover, a:active {
     background-color: #4fcc6a;
 }
 .btnQuatroVybratSvacu {
-    background: url(../svaca/images/btnVybratSvacu.png) no-repeat center;
+    background: url(../imagesApp/btnVybratSvacu.png) no-repeat center;
     background-color: #f8c300;
 }
 .btnQuatroMojeOblibene {
     left: 50%;
-    background: url(../svaca/images/btnMojeOblibene.png) no-repeat center;
+    background: url(../imagesApp/btnMojeOblibene.png) no-repeat center;
     background-color: #a256af;
 }
 .btnQuatroDobitKredit {
     top: 50%;
-    background: url(../svaca/images/btnDobitKredit.png) no-repeat center;
+    background: url(../imagesApp/btnDobitKredit.png) no-repeat center;
     background-color: #0099d9;
 }
 .btnQuatroProfil {
     left: 50%;
     top: 50%;
-    background: url(../svaca/images/btnProfil.png) no-repeat center;
+    background: url(../imagesApp/btnProfil.png) no-repeat center;
     background-color: #00cf6a;
 }
 .menuLeftImg {
     width: 112px;
     height: 875px;
+}
+.menuLeftDiv {
+    display: none;
+    overflow: scroll;
     position: absolute;
-    z-index: 10;
-    top: 95px;
+    z-index: 100;
+    top: 60px !important;
+    bottom: 0px;
+    padding: 0px;
+    min-height: 90% !important;
 }
 /* kokretni upravy pro stranky */
 .page-home .fajnSvacaText {
@@ -239,24 +253,40 @@ a:hover, a:active {
     padding: 0px;
     margin-left: 5%;
     margin-right: 5%;
+    position: absolute;
+    height: 70%;
+    overflow: auto;
+    margin-top: 0px;
+    width: 90%;
 }
 .produtkSeznam li {
     list-style-type: none;
     display: block;
 }
+.produktTypImg {
+    display: inline-block;
+
+}
 .produktTyp {
-    padding: 4%;
+    padding: 0.5em;
     /*padding: 4vw;
 */
-    background: #edc400;
 }
 .produktTyp a {
     text-decoration: none;
     color: white;
     font-family: Myriad Pro;
     font-size: 200%;
-    /*font-size: 4vw;
-*/
+    top: 35px;
+    position: relative;
+    margin-top: -0.5em;
+    /*font-size: 4vw;*/
+    display: inline-block;
+    position: relative;
+    top: 35px;
+    vertical-align: top;
+    margin-top: -0.5em;
+
 }
 .produkt a {
     color: #000000;
@@ -308,7 +338,7 @@ a:hover, a:active {
 }
 .produktKosik {
     float: right;
-    background: url(../svaca/images/productsKosik.png) no-repeat center 15px;
+    background: url(../imagesApp/productsKosik.png) no-repeat center 15px;
     background-color: #00cf6a;
     padding-top: 64px;
     padding-bottom: 5px;
@@ -322,6 +352,26 @@ a:hover, a:active {
 .produktKosik a {
     color: #ffffff;
 }
+.produktLine {
+    clear: both;
+    border-bottom: 2px solid #d0d0d0;
+    position: relative;
+    left: 3px;
+    width: 80%;
+}
+.ulKosik {
+    height: 60%;
+}
+.ulKosikHeader {
+    position: relative;
+    margin: 0px 5% 0px 5%;
+}
+.ulKosikFooter {
+    height: auto;
+    position: absolute;
+    top: 80%;
+}
+
 .produktHeaderZaplatitSvacu {
     background: #4fcc6a;
 }
@@ -335,28 +385,21 @@ a:hover, a:active {
 .produktHeaderSpace {
     background: none;
 }
-.listTlacitko {
-    text-decoration: none;
-    text-align: center;
-    padding: 2px;
-}
-.listTlacitko > a {
-    text-decoration: none;
-    color: white;
-    padding: 20px;
-    display: block;
-    /*padding: 5vw;
-*/
-    font-family: Myriad Pro;
-    font-size: 250%;
-    /*font-size: 5vw;
-*/
-}
-.tlacZelene {
+
+
+
+
+.zelena {
     background: #4fcc6a;
 }
-.tlacModre {
+.modra {
     background: #009ee0;
+}
+.zluta {
+    background: #edc400;
+}
+.fialova {
+    background: #965ab8;
 }
 .bila {
     background: #ffffff;
@@ -364,6 +407,15 @@ a:hover, a:active {
 }
 .bila >a {
     color: #000000;
+}
+.listHeader {
+    color: white;
+    font-size: 250%;
+    font-family: Myriad Pro;
+    padding: 0.5em 0 0.5em 70px;
+}
+.listText {
+    padding: 2em 70px 2em 70px;
 }
 .listText h3 {
     /*margin: 2vw;
@@ -382,6 +434,210 @@ a:hover, a:active {
 */
     line-height: 120%;
 }
+.listTextProfil {
+    color: #666666;
+    white-space: pre-line;
+    padding: 2em 1em 2em 1em;
+}
+.listTextProfil h3 {
+//display: inline;
+    line-height: 1.5em;
+}
+.listTextProfil div {
+    display: inline-block;
+
+}
+.listTextProfil div:nth-child(odd) {
+    width: 50%;
+    text-align: right;
+
+}
+
+.listTlacitko {
+    text-decoration: none;
+    text-align: center;
+
+}
+.listAvatarBig {
+    text-align: center;
+    padding-left: 50%;
+}
+.listTlacitko > a {
+    text-decoration: none;
+    color: white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    display: block;
+    /*padding: 5vw;
+*/
+    font-family: Myriad Pro;
+    font-size: 250%;
+    /*font-size: 5vw;
+*/
+}
+
+.prihlaseniTrvale {
+    background: white;
+    float: left;
+    margin-top: 0.5%;
+    width: 49.5%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+
+}
+.prihlaseniTrvale a {
+    color: #b9b9b9 !important;
+
+}
+
+.prihlaseniPrihlasit {
+    background: #4fcc6a;
+    margin-top: 0.5%;
+    float: right;
+    width: 50%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+}
+.prihlaseniInputy {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+.prihlaseniInput {
+    border: 2px solid;
+    border-color: #965ab8;
+    font-size: 200%;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.5em;
+}
+.prihlaseniObr{
+    background-size: 100% 100% !important;
+    background-color: #965ab8 !important;
+    display: inline;
+    margin-left: 0px !important;
+    color: transparent;
+}
+
+.prihlaseniInputJmeno {
+    background: url("../imagesApp/spritesPrihlaseniClovek.png") no-repeat;
+}
+.prihlaseniInputHeslo {
+    background: url(../imagesApp/spritesPrihlaseniKlic.png) no-repeat;
+}
+
+.checkBoxZaplatitSvacu {
+    float: left;
+    margin: 0px 10px 0px 0px
+}
+.checkBoxPrihlaseniTrvale {
+    padding: 0px;
+    float: left;
+    top: 1em;
+    left: 2em;
+    margin-right: 15px;
+}
+.checkBox {
+    width: 25px;
+    position: relative;
+}
+.checkBox label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:1px solid #ddd;
+}
+.checkBox label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.checkBox label:hover::after {
+    opacity: 0.5;
+}
+
+.checkBox input[type=checkbox]:checked + label:after {
+    opacity: 1;
+    border-color: white;
+}
+
+.checkBox input[type=checkbox]:checked + label {
+    background: #4fcc6a;
+}
+
+
+
+.radioButtZaplatitSvacu {
+    float: left;
+    margin: 0px 10px 0px 0px
+}
+.radioButt {
+    width: 25px;
+    position: relative;
+}
+.radioButt label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:1px solid #ddd;
+}
+.radioButt label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.radioButt label:hover::after {
+    opacity: 0.5;
+}
+
+.radioButt input[type=radio]:checked + label:after {
+    opacity: 1;
+    border-color: white;
+}
+
+.radioButt input[type=radio]:checked + label {
+    background: #4fcc6a;
+}
+
+
+
+
 .circleKosik {
     display: none;
     padding: 2%;

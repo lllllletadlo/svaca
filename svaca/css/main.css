@@ -53,7 +53,7 @@ hr {
 }
 
 /*
- * Remove the gap between images, videos, audio and canvas and the bottom of
+ * Remove the gap between imagesApp, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
 
@@ -258,7 +258,7 @@ textarea {
     }
 
     /*
-     * Don't show links for images, or javascript/internal links
+     * Don't show links for imagesApp, or javascript/internal links
      */
 
     .ir a:after,
