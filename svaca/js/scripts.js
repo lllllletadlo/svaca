@@ -62,6 +62,12 @@ function transition(toPage, type) {
         console.log("profilUpdate");
         profilUpdate();
     }
+    if(toPage.selector=="#page-koupit")
+    {
+
+        alert("Načítám data");
+        nactiData();
+    }
 }
 
 function kosikZobrazCisloVkolecku() {
@@ -193,6 +199,7 @@ function registrovat() {
 function nactiZboziAjax() {
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/listProducts',
         success: function(data) {
+            alert("data prisla");
             if( data.status == "error" && data.code == "not logged")
             {
                 console.log(data.msg);
