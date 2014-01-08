@@ -94,7 +94,9 @@ function ajaxError(xhr, textStatus, error){
 function ajaxError2(data){
     console.log(data);
     console.log("alertuji");
-    alert($.param(data));
+    alert("Nelze se připojit k serveru!")
+    //alert($.param(data));
+;
 }
 
 function nactiData() {

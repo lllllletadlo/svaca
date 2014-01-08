@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\menuLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\pozadi.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\prihlaseni.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\profil.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\registrace1.png" afterPath="" />
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;k ukazce&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/avatarBig.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/menuLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/spritesPrihlaseniClovek.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/spritesPrihlaseniKlic.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -30,10 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="345" column="50" selection-start="14912" selection-end="14915" vertical-scroll-proportion="0.33225283" vertical-offset="5660" max-vertical-offset="8942">
+            <state line="8" column="30" selection-start="536" selection-end="536" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="8942">
               <folding>
                 <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -86,12 +86,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="scripts.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="479" column="1" selection-start="16491" selection-end="16491" vertical-scroll-proportion="0.0" vertical-offset="7509" max-vertical-offset="8245">
+            <state line="96" column="39" selection-start="2121" selection-end="2121" vertical-scroll-proportion="0.17964073" vertical-offset="1512" max-vertical-offset="8279">
               <folding>
-                <marker date="1389200839474" expanded="true" signature="10046:10056" placeholder="..." />
+                <marker date="1389202039979" expanded="true" signature="10092:10102" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -111,10 +111,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/css.css" />
-        <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/svaca/css/css.css" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
       </list>
     </option>
   </component>
@@ -418,7 +418,11 @@
       <created>1389201068733</created>
       <updated>1389201068733</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;k ukazce&#10;">
+      <created>1389201307417</created>
+      <updated>1389201307417</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -546,7 +550,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="850">
           <folding>
-            <marker date="1389200839474" expanded="true" signature="10046:10056" placeholder="..." />
+            <marker date="1389202039979" expanded="true" signature="10092:10102" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -591,7 +595,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="850">
           <folding>
-            <marker date="1389200839474" expanded="true" signature="10046:10056" placeholder="..." />
+            <marker date="1389202039979" expanded="true" signature="10092:10102" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -646,15 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="479" column="1" selection-start="16491" selection-end="16491" vertical-scroll-proportion="0.0" vertical-offset="7509" max-vertical-offset="8245">
-          <folding>
-            <marker date="1389200839474" expanded="true" signature="10046:10056" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="26" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
@@ -671,7 +666,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="50" selection-start="14912" selection-end="14915" vertical-scroll-proportion="0.33225283" vertical-offset="5660" max-vertical-offset="8942">
+        <state line="8" column="30" selection-start="536" selection-end="536" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="8942">
           <folding>
             <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -701,6 +696,15 @@
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#23;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#li#4;n#ul#0;n#div#23;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#li#6;n#ul#0;n#div#23;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="39" selection-start="2121" selection-end="2121" vertical-scroll-proportion="0.17964073" vertical-offset="1512" max-vertical-offset="8279">
+          <folding>
+            <marker date="1389202039979" expanded="true" signature="10092:10102" placeholder="..." />
           </folding>
         </state>
       </provider>
