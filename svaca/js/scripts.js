@@ -142,7 +142,10 @@ function profilNacti()
             if(data.status == "ok")
             {
                 $('#koupitUserName').text(data.fullName==null?"":data.fullName);
-                $('#vybratSvacuKredit').text(data.fullName==null?"0 Kč":(data.balance + " Kč"));
+                $('#vybratSvacuKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
+                $('#potvrzeniPlatbyKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
+                $('#koupitSvacuZaplatitKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
+                $('#dokoncitPlatbuPozitivniKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
 
 
                 $( "#profilUsernameH" ).text(data.username==null?"":data.username);
@@ -190,11 +193,15 @@ function prihlaseniAjax()
             console.log("prihlaseni ok");
             alert("přihlášen ok");
             //transition("#page-dokoncitPlatbuPozitivni","fade");
-            zboziNactiAjax();
-            profilNacti();
+            transition("#page-home","fade");
+
+            kosikPocetPolozek = 0;
             kosik =[];
             kosikSoucetCeny = 0;
-            transition("#page-home","fade");
+            kosikZobrazCisloVkolecku();
+            profilNacti();
+            kosikRefresh();
+            zboziNactiAjax();
 
         }
         else
@@ -389,6 +396,7 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                 // TODO dokoncit negativni cast
                 if(data.status=="ok")
                 {
+                    $('#potvrzeniPlatbyKredit').text(data.balanceAfter==null?"0 Kč":("Kredit: " + data.balanceAfter + " Kč"));
                     transition("#page-potvrzeniPlatby","fade");
                     kosik = [];
                     kosikRefresh();
