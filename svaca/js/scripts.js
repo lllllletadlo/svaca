@@ -7,7 +7,7 @@ var appPreffix = "svaca/";
 
 $(document).ready(function(){
 
-    nactiData();
+    zboziNactiAjax();
 
     $("#pages a").click(function(e){
         //if(e.target.hash.slice(1)=="") console.log("nic");
@@ -56,17 +56,17 @@ function transition(toPage, type) {
     }
 
     // operace nad strankamy
-    console.log(toPage.selector);
+    console.log("zmena stranky na:" + toPage.selector);
     if(toPage.selector=="#page-profil")
     {
-        console.log("profilUpdate");
-        profilUpdate();
+        console.log("profilNacti");
+        profilNacti();
     }
-    if(toPage.selector=="#page-koupit")
+    if(toPage.selector=="#page-vybratSvacu")
     {
-
+        zboziNactiAjax();
+        profilNacti();  // update kreditu
         //alert("Načítám data");
-        //nactiData();
     }
     if(toPage.selector=="#page-koupitSvacuZaplatit") {
         kosikRefresh();
@@ -87,6 +87,18 @@ function kosikZobrazCisloVkolecku() {
 }
 
 
+/*
+ logika nacitani:
+ document ready     -   nacteni zbozi (pri neprihlasen jde na prihlaseni)
+ prihlaseni         -   nacteni zbozi
+                    -   kosik empty
+                    -   getUserInfo = jmeno(horni lista), profil, kredit(horni lista)
+ page-vybratSvacu   -   nacteni zbozi
+                    -   getUserInfo (kredit)
+
+ */
+
+
 
 function kosikAdd(vlozitID) {
     kosik.push(vlozitID);
@@ -101,28 +113,38 @@ function ajaxError(xhr, textStatus, error){
     console.log(error);
 }
 function ajaxError2(data){
+    console.log("ajaxError2");
     console.log(data);
-    console.log("alertuji");
+
+    if( data.status == "error" && data.code == "not logged")
+    {
+        console.log(data.msg);
+        console.log("ajaxError2 data.msg:" + data.msg);
+        prihlaseniZobrazDialog();
+        alertZobraz(data.msg);
+        return;
+    }
+
+
     alert("Nelze se připojit k serveru!")
     //alert($.param(data));
 ;
 }
 
-function nactiData() {
 
-    objednavka = "";
-    nactiZboziAjax();
-    //nactiZbozi();
-    //alert(zbozi.list[1].name);
 
-}
-
-function profilUpdate()
+function profilNacti()
 {
+    console.log("profilNacti");
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/getUserInfo',
         success: function(data) {
+            console.log("profilNacti success");
             if(data.status == "ok")
             {
+                $('#koupitUserName').text(data.fullName==null?"":data.fullName);
+                $('#vybratSvacuKredit').text(data.fullName==null?"0 Kč":(data.balance + " Kč"));
+
+
                 $( "#profilUsernameH" ).text(data.username==null?"":data.username);
                 $( "#profilJmenoH" ).text(data.jmeno==null?"":data.jmeno);
                 $( "#profilPrijmeniH" ).text(data.jmeno==null?"":data.prijmeni);
@@ -131,6 +153,11 @@ function profilUpdate()
                 $( "#profilSkolaH" ).text(data.jmeno==null?"":data.skola);
                 $( "#profilTelefonH" ).text(data.jmeno==null?"":data.telefon);
                 //if(data.jmeno ==null) console.log("prazdne");
+            }
+            if(data.status == "error" && data.code == "not logged")
+            {
+                prihlaseniZobrazDialog();
+                alertZobraz(data.msg);
             }
         },
         error: ajaxError2
@@ -146,31 +173,36 @@ function profilUpdate()
 function prihlaseniZobrazDialog()
 {
 
-    //prihlaseniProceed();
+    //prihlaseniAjax();
     transition("#page-prihlaseni","fade");
 
 }
 
-function prihlaseniProceed()
+function prihlaseniAjax()
 {
+    console.log("prihlaseniAjax");
 // TODO vymazat heslo z input field
-    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/login?username=' + $('#prihlaseniJmeno').val() + '&password='+$('#prihlaseniHeslo').val()  }).done(function(data) {
-        //prihlasenostCheck(data);
-        console.log(data);
+    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/login?username=' + $('#prihlaseniJmeno').val() + '&password='+$('#prihlaseniHeslo').val(),
+        success : function (data) {
+            console.log("prihlaseniAjax succes");
         if( data.status == "ok")
         {
             console.log("prihlaseni ok");
             alert("přihlášen ok");
             //transition("#page-dokoncitPlatbuPozitivni","fade");
-            nactiData();
-            $('#koupitUserName').text($('#prihlaseniJmeno').val());
+            zboziNactiAjax();
+            profilNacti();
+            kosik =[];
+            kosikSoucetCeny = 0;
             transition("#page-home","fade");
 
         }
         else
         {
-            ajaxError2(data);
+            alertZobraz(data.msg);
         }
+        },
+        error: ajaxError2
     });
 
 
@@ -187,7 +219,7 @@ function logout()
 
 
 
-function registrovat() {
+function registrovatAjax() {
     if(validateRegistrace())
     {
         $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&firstName='+$('#registraceJmeno').val()+ '&lastName='+$('#registracePrijmeni').val()+ '&password='+$('#registraceHeslo').val()+ '&email='+$('#registraceEmail').val(),
@@ -213,14 +245,15 @@ function registrovat() {
     }
 }
 
-function nactiZboziAjax() {
+function zboziNactiAjax() {
+    console.log("zboziNactiAjax");
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/listProducts',
         success: function(data) {
+            console.log("zboziNactiAjax success");
             if( data.status == "error" && data.code == "not logged")
             {
                 console.log(data.msg);
                 console.log("neprihlasen");
-                alertZobraz(data.msg);
                 prihlaseniZobrazDialog();
                 return;
             }
@@ -299,7 +332,7 @@ function kosikRefresh() {
     kosikSoucetCeny= 0;
     kosik.sort();
     $("#ulKosik").empty();
-    //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace"><div style="height: 20px"></div></li>' );    
+    //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace"><div style="height: 20px"></div></li>' );
     //$( "#ulKosik" ).append( '<li class="listHeader zelena"><h3>Zaplatit sváču</h3></li>' );
     $.each(kosik, function() {
         var zboziIndex = 0;
@@ -316,6 +349,65 @@ function kosikRefresh() {
     //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace">  <div style="height: 20px"></div>  </li>' );
     //$( "#ulKosik" ).append( '<li class="listTlacitko zelena"><a onclick="javascript:objednavkaProceed()" href="#">  <h3>Zaplatit</h3></a></li>' );
     $( "#kosikSoucetCenyH" ).text("Celkem " + kosikSoucetCeny + " Kč");
+}
+
+
+
+function objednavkaOdelsatAjax(objednavka, typ) {
+    console.log("objednavkaOdelsatAjax typ:" + typ);
+    $.ajax({
+        type: 'POST',
+        url: 'http://demo.livecycle.cz/fajnsvaca/api/createOrder?proceed='+typ+'&basket='+objednavka,
+        data : objednavka,
+        success : function(data) {
+            console.log("objednavkaOdelsatAjax typ:" + typ + " success");
+
+            if( data.status == "error" && data.code == "not logged")
+            {
+                console.log("objednavkaOdelsatAjax data.msg:" + data.msg);
+                alertZobraz(data.msg);
+                prihlaseniZobrazDialog();
+                return;
+            }
+
+            if(typ==0) {
+                // TODO zjistit jeslti je ok
+                if(data.status=="ok")
+                {
+                    $('#dokoncitObjednavkuVyse').text("Objednávka ve výši " + kosikSoucetCeny + " Kč");
+                    $('#okoncitObjednavkuKredit').text("Aktuální kredit " + data.balanceBefore + " Kč");
+                    $('#okoncitObjednavkuZustatek').text("Budoucí zůstatek " + data.balanceAfter + " Kč");
+                    transition("#page-dokoncitPlatbuPozitivni","fade");
+                } else
+                {
+                    // TODO dodelat negativni stranku
+                    //transition("#page-dokoncitNegativnii","fade");
+                }
+
+            }
+            if(typ==1) {
+                // TODO dokoncit negativni cast
+                if(data.status=="ok")
+                {
+                    transition("#page-potvrzeniPlatby","fade");
+                    kosik = [];
+                    kosikRefresh();
+                    kosikPocetPolozek = 0;
+                    kosikZobrazCisloVkolecku();
+                }
+
+            }
+            if(data.status=="error")
+            {
+                alertZobraz(data.msg);
+            }
+        },
+        error: ajaxError2
+    });
+
+
+
+    return;
 }
 
 function objednavkaProceed() {
@@ -340,51 +432,17 @@ function objednavkaProceed() {
     }
     console.log(objednavka);
     //transition("#page-dokoncitPlatbuPozitivni","fade");
-    odeslatObjednavku(objednavka,0);
+    objednavkaOdelsatAjax(objednavka,0);
 
 }
 
-function odeslatObjednavku(objednavka, typ) {
-
-    $.ajax({
-        type: 'POST',
-        url: 'http://demo.livecycle.cz/fajnsvaca/api/createOrder?proceed='+typ+'&basket='+objednavka,
-        data : objednavka,
-        success : function(data) {
-
-            if(typ==0) {
-                // TODO zjistit jeslti je ok
-                if(data.status=="ok")
-                {
-                    $('#dokoncitObjednavkuVyse').text("Objednávka ve výši " + kosikSoucetCeny + " Kč");
-                    $('#okoncitObjednavkuKredit').text("Aktuální kredit " + data.balanceBefore + " Kč");
-                    $('#okoncitObjednavkuZustatek').text("Budoucí zůstatek " + data.balanceAfter + " Kč");
-                    transition("#page-dokoncitPlatbuPozitivni","fade");
-                } else
-                {
-                    alert(data.msg);
-                    transition("#page-dokoncitNegativnii","fade");
-                }
-
-            }
-            if(typ==1) {
-                // TODO zjistit jeslti je ok
-                transition("#page-potvrzeniPlatby","fade");
-            }
-        },
-        error: ajaxError2
-    });
-
-
-
-    return;
-}
 
 function alertZobraz(msg) {
     alert(msg);
 }
 
-// ------------------------------------------------ validace poli
+
+// =============================================================================== validace poli
 var nepovoleneZnaky = "";
 
 function validateDo(k) {
@@ -492,11 +550,22 @@ function validateRegistrace() {
         validnost = false;
         alertZobraz("Potvrzení hesla obsahuje nepovolené znaky: " + nepovoleneZnaky);
     }
-    if(!validatePasswordDo())
+    if(!validatePasswordDo() && validnost)
     {
         validnost = false;
         alertZobraz("Hesla se neshodují");
     }
+    if(($( "#registraceHeslo" ).val() =="") && validnost)
+    {
+        validnost = false;
+        alertZobraz("Heslo je prázdné");
+    }
+    if(($( "#registraceHeslo2" ).val() =="") && validnost)
+    {
+        validnost = false;
+        alertZobraz("Potvrzení hesla je prázdné");
+    }
+
     if(!validateCharactersDo($("#registraceEmail").val()) && validnost)
     {
         validnost = false;

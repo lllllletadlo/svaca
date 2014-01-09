@@ -43,14 +43,40 @@
     </map>
 </div>
 
+<div id="page-home" class="page-home current">
+    <img class="fajnSvacaText"  >
+    <div class="btnQuatroMenu">
+        <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
+        <a class="btnQuatro2" href="#page-vychytavky" ><div class="btnText">VYCHYTÁVKY</div></a>
+        <a class="btnQuatro3" href="#page-partneri"><div class="btnText">PARTNEŘI</div></a>
+        <a class="btnQuatro4" href="#page-podpora"><div class="btnText">PODPORA</div></a>
+    </div>
+</div>
 
+<div id="page-koupit" class="page-koupit">
+    <div class="menu" style="position: absolute; width: 20%">
+        <a class="btnMenuMenu" style="width: 100%" onclick="javascript:menuLeftShow()" href="" >&lt;&lt; MENU</a>
+    </div>
+    <div class="menuUzivatel">
+        <div>
+            <li id="koupitUserName" class="avatar">David Nonák</li>
+        </div>
+    </div>
+    <img class="fajnSvacaText"  >
+    <div class="btnQuatroMenu">
+        <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
+        <a class="btnQuatroMojeOblibene" href="#page-mojeOblibene" ><div class="btnText">MOJE OBLIBENE</div></a>
+        <a class="btnQuatroDobitKredit" href="#page-dobitKredit"><div class="btnText">DOBÍT KREDIT</div></a>
+        <a class="btnQuatroProfil" href="#page-profil"><div class="btnText">PROFIL</div></a>
+    </div>
+</div>
 
 <div id="page-vybratSvacu" class="page-vybratSvacu">
 
     <div class="menu">
         <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
-        <a class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
-        <a class="btnMenuKosik" href="#page-kosik" >Košík &or;</a>
+        <a id="vybratSvacuKredit" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik" href="#page-koupitSvacuZaplatit" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
         <h1 id="circleKosikH1" class="circleKosik">12</h1>
 
@@ -217,7 +243,7 @@
     <div class="menu">
         <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
         <a class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
-        <a class="btnMenuKosik" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKosik" href="#page-koupitSvacuZaplatit" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
     </div>
     <ul class="produtkSeznam">
@@ -249,44 +275,13 @@
             <div style="height: 20px"></div>
         </li>
         <li class="listTlacitko zelena">
-            <a onclick="javascript:odeslatObjednavku(objednavka,1)" href="#">
+            <a onclick="javascript:objednavkaOdelsatAjax(objednavka,1)" href="#">
                 <h3>Potvrdit objednávku</h3>
             </a>
         </li>
     </ul>
 
 </div>
-
-
-
-<div id="page-home" class="page-home current">
-    <img class="fajnSvacaText"  >
-    <div class="btnQuatroMenu">
-        <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
-        <a class="btnQuatro2" href="#page-vychytavky" ><div class="btnText">VYCHYTÁVKY</div></a>
-        <a class="btnQuatro3" href="#page-partneri"><div class="btnText">PARTNEŘI</div></a>
-        <a class="btnQuatro4" href="#page-podpora"><div class="btnText">PODPORA</div></a>
-    </div>
-</div>
-
-<div id="page-koupit" class="page-koupit">
-    <div class="menu" style="position: absolute; width: 20%">
-        <a class="btnMenuMenu" style="width: 100%" onclick="javascript:menuLeftShow()" href="" >&lt;&lt; MENU</a>
-    </div>
-    <div class="menuUzivatel">
-        <div>
-            <li id="koupitUserName" class="avatar">David Nonák</li>
-        </div>
-    </div>
-    <img class="fajnSvacaText"  >
-    <div class="btnQuatroMenu">
-        <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
-        <a class="btnQuatroMojeOblibene" href="#page-mojeOblibene" ><div class="btnText">MOJE OBLIBENE</div></a>
-        <a class="btnQuatroDobitKredit" href="#page-dobitKredit"><div class="btnText">DOBÍT KREDIT</div></a>
-        <a class="btnQuatroProfil" href="#page-profil"><div class="btnText">PROFIL</div></a>
-    </div>
-</div>
-
 
 
 <div id="page-homeIMG" class="page-homeIMG">
@@ -378,15 +373,19 @@
 </div>
 
 <div id="page-podpora" class="page-podpora">
-    <div onclick="nactiData()" style="
+    <div onclick="zboziNactiAjax()" style="
     position: absolute;
     left: 180px;
     top: 40px;
-    font-size: 200%;
+    font-size: 200%;padding: 10px;
+background-color: green;
+cursor: pointer;
 ">nacti data vymaz kos</div><div onclick="logout()" style="
     position: absolute;
     position: absolute;
-    left: 380px;  top: 40px;  font-size: 200%;
+    left: 450px;  top: 40px;  font-size: 200%;padding: 10px;
+background-color: red;
+cursor: pointer;
 ">logout</div>
     <img src="svaca/psdScreens/podpora.png" usemap="#proMenu">
     <div style="position: absolute;left: 580px;top: 365px;width: 167px;height: 276px;font-size: 200%;cursor: pointer;" onclick="javascript:transition('#page-podporaHledameKuryra','fade')" ></div>
@@ -471,7 +470,7 @@
             <div style="height: 40px;clear:both;"></div>
         </li>
         <li class="listTlacitko zluta">
-            <a onclick="javascript:registrovat()" href="#">
+            <a onclick="javascript:registrovatAjax()" href="#">
                 <h3>ZAREGISTROVAT SE</h3>
             </a>
         </li>
@@ -496,7 +495,7 @@
             <a onclick="javascript:registrace()" href="#">trvale přihlášen</a>
         </li>
         <li class="listTlacitko prihlaseniPrihlasit">
-            <a onclick="javascript:prihlaseniProceed()" href="#">PŘIHLÁSIT</a>
+            <a onclick="javascript:prihlaseniAjax()" href="#">PŘIHLÁSIT</a>
         </li>
         <li class="produktTyp produktHeaderSpace">
             <div style="height: 40px;clear:both;"></div>
