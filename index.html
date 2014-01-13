@@ -33,7 +33,7 @@
 <div id="menuLeftDiv" class="menuLeftDiv">
     <img class="menuLeftImg" src="svaca/imagesApp/menuLeft.png" width="800" height="1227" usemap="#menuLeftMap">
     <map name="menuLeftMap">
-        <area shape="rect" coords="0,0,110,125" alt="Sun" href="javascript:transition('#page-koupit','fade')">
+        <area shape="rect" coords="0,0,110,125" alt="Sun" href="javascript:transition('#page-vybratSvacu','fade')">
         <area shape="rect" coords="0,125,110,250" alt="Sun" href="javascript:transition('#page-mojeOblibene','fade')">
         <area shape="rect" coords="0,250,110,375" alt="Sun" href="javascript:transition('#page-dobitKredit','fade')">
         <area shape="rect" coords="0,375,110,500" alt="Sun" href="javascript:transition('#page-profil','fade')">
@@ -43,7 +43,7 @@
     </map>
 </div>
 
-<div id="page-home" class="page-home current">
+<div id="page-home" class="page-home">
     <img class="fajnSvacaText"  >
     <div class="btnQuatroMenu">
         <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
@@ -139,7 +139,7 @@
     </div>
     <ul class="produtkSeznam">
         <li class="produktTyp produktHeaderSpace">
-            <div style="height: 20px"></div>
+            <div style="height: 8em"></div>
         </li>
         <li class="listHeader zelena">
             <h3>Potvrzení</h3>
@@ -160,7 +160,7 @@
             <div style="height: 20px"></div>
         </li>
         <li class="listTlacitko modra">
-            <a onclick="javascript:transition('#page-home','fade')" href="#">
+            <a onclick="javascript:transition('#page-vybratSvacu','fade')" href="#">
                 <h3>Zpět do menu</h3>
             </a>
         </li>
@@ -239,24 +239,34 @@
 
 
 
-<div id="page-dokoncitPlatbuPozitivni" class="page-dokoncitPlatbuPozitivni">
+<div id="page-dokoncitPlatbuPozitivni" class="page-dokoncitPlatbuPozitivni current">
     <div class="menu">
         <a class="btnMenuMenu" onclick="javascript:menuLeftShow()" href="#" >&lt;&lt; MENU</a>
         <a id="dokoncitPlatbuPozitivniKredit" class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik" href="#page-koupitSvacuZaplatit" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-koupitSvacuZaplatit" >Koupit &gt;</a>
     </div>
-    <ul class="produtkSeznam">
+    <ul class="produtkSeznam ulKosikHeader">
         <li class="produktTyp produktHeaderSpace">
-            <div style="height: 20px"></div>
+            <div style="height: 4em"></div>
         </li>
         <li class="listHeader zelena">
             <h3>Zaplatit sváču</h3>
         </li>
-        <li class="produktTyp bila listText">
-            <h3 id="dokoncitObjednavkuVyse">Objednávka ve výši</h3>
-            <h3 id="okoncitObjednavkuKredit">Aktuální kredit</h3>
-            <h3 id="okoncitObjednavkuZustatek">Budoucí zůstatek</h3>
+        <li class="produktTyp bila listText listTextDokoncit">
+            <h3>Objednávka ve výši</h3><h3 id="dokoncitObjednavkuVyse">123Kč</h3>
+            <h3>Aktuální kredit</h3><h3 id="okoncitObjednavkuKredit">345Kč</h3>
+            <h3>Budoucí zůstatek</h3><h3 id="okoncitObjednavkuZustatek">678Kč</h3>
+        </li>
+
+        <li id="dokoncitPlatbuNegativniText" class="produktTyp bila listText" style="display: none; color:red">
+            <h3>Bohužel pro dokončení objednávky nemáte dostatečný kredit.</h3>
+            <br>
+            <h3>Odstraňte některé položky z košíku, nebo si dobijte kredit</h3>
+            <br>
+        </li>
+
+        <li id="dokoncitPlatbuPozitivniText" class="produktTyp bila listText">
             <h3><br></h3>
             <h3>Zvolte způsob doručení</h3>
             <h3><br></h3>
@@ -274,14 +284,20 @@
         <li class="produktTyp produktHeaderSpace">
             <div style="height: 20px"></div>
         </li>
-        <li class="listTlacitko zelena">
+        <li id="dokoncitPlatbuPotvrditButton" class="listTlacitko zelena">
             <a onclick="javascript:objednavkaOdelsatAjax(objednavka,1)" href="#">
                 <h3>Potvrdit objednávku</h3>
+            </a>
+        </li>
+        <li id="dokoncitPlatbuDobitButton" class="listTlacitko zluta" style="display: none">
+            <a onclick="javascript:transition('#page-dobitKredit','fade')" href="#">
+                <h3>Dobít kredit</h3>
             </a>
         </li>
     </ul>
 
 </div>
+
 
 
 <div id="page-homeIMG" class="page-homeIMG">
@@ -421,13 +437,13 @@ cursor: pointer;
         </li>
 
         <li class="produktTyp bila listText listTextProfil">
-            <div><h3>Přihlašovací jm.: </h3></div><div><h3 id="profilUsernameH">Ondrej009</h3></div>
-            <div><h3>Jméno: </h3></div><div><h3 id="profilJmenoH">Ondřej</h3></div>
-            <div><h3>Příjmení: </h3></div><div><h3 id="profilPrijmeniH">Nádvorník</h3></div>
-            <div><h3>E-mail: </h3></div><div><h3 id="profilEmailH">nadvornik@ondrej.cz</h3></div>
-            <div><h3>Třída: </h3></div><div><h3 id="profilTridaH">4V</h3></div>
-            <div><h3>Škola: </h3></div><div><h3 id="profilSkolaH">VŠE</h3></div>
-            <div><h3>Telefon: </h3></div><div><h3 id="profilTelefonH">722 227 722</h3></div>
+            <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH">student</h3>
+            <h3>Jméno: </h3><h3 id="profilJmenoH"></h3>
+            <h3>Příjmení: </h3><h3 id="profilPrijmeniH"></h3>
+            <h3>E-mail: </h3><h3 id="profilEmailH"></h3>
+            <h3>Třída: </h3><h3 id="profilTridaH"></h3>
+            <h3>Škola: </h3><h3 id="profilSkolaH"></h3>
+            <h3>Telefon: </h3><h3 id="profilTelefonH"></h3>
         </li>
     </ul>
 </div>
@@ -497,7 +513,7 @@ cursor: pointer;
         <li class="listTlacitko prihlaseniPrihlasit">
             <a onclick="javascript:prihlaseniAjax()" href="#">PŘIHLÁSIT</a>
         </li>
-        <li class="produktTyp produktHeaderSpace">
+        <li class="produktTyp produktHeaderSpace" style="clear: both">
             <div style="height: 40px;clear:both;"></div>
         </li>
         <li class="listTlacitko modra">

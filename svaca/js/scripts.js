@@ -7,6 +7,18 @@ var appPreffix = "svaca/";
 
 $(document).ready(function(){
 
+    // TODO hack upravy ---------
+    var viewport = {
+        width  : $(window).width(),
+        height : $(window).height()
+    };
+        // kosik nastaveni 60% height
+        $('.ulKosik').css('max-height',viewport.height*0.6);
+        $('#ulKosik').css('position','relative');
+        $('#ulKosik').css('margin-bottom','0px');
+        $('.ulKosikFooter').css('position','relative');
+    // --------------------------
+
     zboziNactiAjax();
 
     $("#pages a").click(function(e){
@@ -64,11 +76,13 @@ function transition(toPage, type) {
     }
     if(toPage.selector=="#page-vybratSvacu")
     {
-        zboziNactiAjax();
+        //TODO synchronizaci na zbozi, ale aby to neprepisovalo cisla v kosiku
+        //zboziNactiAjax();
         profilNacti();  // update kreditu
         //alert("Načítám data");
     }
     if(toPage.selector=="#page-koupitSvacuZaplatit") {
+
         kosikRefresh();
     }
 }
@@ -100,11 +114,52 @@ function kosikZobrazCisloVkolecku() {
 
 
 
-function kosikAdd(vlozitID) {
+function kosikAdd(produkt,vlozitID) {
+
+    if($(produkt).text().length>1)
+    {
+        $(produkt).text("1");
+        $(produkt).attr('class', 'produktKosik produktKosikCislo');
+    } else
+    {
+        var pocet = $(produkt).text();
+        pocet ++;
+        if(pocet<6)
+        {
+            $(produkt).text(pocet);
+        }
+        else
+        {
+            console.log("vic jak pet");
+            kosikOdebrat(vlozitID);
+            $(produkt).html("Přidat do<br>košíku");
+            $(produkt).attr('class', 'produktKosik produktKosikObr');
+            kosikZobrazCisloVkolecku();
+            return;
+        }
+    }
+
     kosik.push(vlozitID);
     kosikZobrazCisloVkolecku();
 
 }
+
+function kosikOdebrat(odebratID)
+{
+    pocet = 5;
+    for(var i= kosik.length; i>-1; i--)
+    {
+        console.log(kosik);
+        if(kosik[i]==odebratID && pocet >0)
+        {
+            console.log("mazu id:" + odebratID + " index:" + i);
+            kosik.splice(i,1);
+            pocet --;
+        }
+    }
+    console.log(kosik);
+}
+
 
 
 function ajaxError(xhr, textStatus, error){
@@ -173,6 +228,27 @@ function profilNacti()
 
 }
 
+function nacistDataPoPrihlaseni()
+{
+    kosikPocetPolozek = 0;
+    kosik =[];
+    kosikSoucetCeny = 0;
+    kosikZobrazCisloVkolecku();
+    profilNacti();
+    kosikRefresh();
+    nastavZpetProdukKosikCislo();
+    zboziNactiAjax();
+
+
+}
+
+function nastavZpetProdukKosikCislo()
+{
+    console.log("nastavZpetProdukKosikCislo");
+    $('#ulVybratSvacu').find('.produktKosikCislo').html("Přidat do<br>košíku");
+    $('#ulVybratSvacu').find('.produktKosikCislo').attr('class', 'produktKosik produktKosikObr');
+}
+
 function prihlaseniZobrazDialog()
 {
 
@@ -193,15 +269,9 @@ function prihlaseniAjax()
             console.log("prihlaseni ok");
             alert("přihlášen ok");
             //transition("#page-dokoncitPlatbuPozitivni","fade");
-            transition("#page-home","fade");
+            transition("#page-vybratSvacu","fade");
+            nacistDataPoPrihlaseni
 
-            kosikPocetPolozek = 0;
-            kosik =[];
-            kosikSoucetCeny = 0;
-            kosikZobrazCisloVkolecku();
-            profilNacti();
-            kosikRefresh();
-            zboziNactiAjax();
 
         }
         else
@@ -240,8 +310,8 @@ function registrovatAjax() {
                 if( data.status == "ok")
                 {
                     alert("Zaregistrováno!");
-                    //nactiZbozi(data);
-                    prihlaseniZobrazDialog();
+                    nacistDataPoPrihlaseni();
+                    transition("#page-vybratSvacu","fade");
 
                 }
             },
@@ -281,6 +351,16 @@ function zboziNactiAjax() {
     });
 }
 
+function checkBoxProduktTyp(cb)
+{
+    var currentId = $(cb).attr('id');
+    currentId = currentId.replace("CheckboxInput","")
+    console.log(currentId);
+    if(cb.checked) $('.'+currentId).css('display','block');
+    else $('.'+currentId).css('display','none');
+    //$('.'+currentId).toggle();
+}
+
 function nactiZbozi(data) {
     //var data2 = jQuery.parseJSON({"status":"ok","categories":[{"id":"1","icon":"products/productsHousky.png","name":"Housky"},{"id":"2","icon":"products/productsBagety.png","name":"Bagety"}],"products":[{"id":"1","icon":"products/productsSekanaVHousce.png","price":"29","name":"Sekaná v housce","category_id":"0"},{"id":"2","icon":"products/productsRyzekVHousce.png","price":"33","name":"Řízek v housce","category_id":"0"},{"id":"3","icon":"products/productsSyrVHousce.png","price":"30","name":"Smažený sýr v housce","category_id":"0"},{"id":"4","icon":"products/productsVegetBageta.png","price":"35","name":"Klobásky v housce","category_id":"0"},{"id":"5","icon":"products/productsOblozenaBageta.png","price":"43","name":"Obložená bageta","category_id":"0"},{"id":"6","icon":"products/productsVegetBageta.png","price":"38","name":"Vegetariánská bageta","category_id":"0"}]}');
     zbozi = data.products;
@@ -297,7 +377,7 @@ function nactiZbozi(data) {
 // vloz prvni kategorii
     if(kategorie[0].id==zbozi[0].category_id)
     {
-        $( "#ulVybratSvacu" ).append( '<li class="produktTyp zluta"><img class="produktTypImg" src="'+appPreffix+kategorie[0].icon+'"  ><a href=""><h2>'+kategorie[0].name+'</h2></a></li>' );
+        $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[0].color +'"><img class="produktTypImg" src="'+appPreffix+kategorie[0].icon+'"  ><a href=""><h2>'+kategorie[0].name+'</h2></a><div class="checkBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[0].name+'CheckboxInput" name="" /><label for="'+kategorie[0].name+'CheckboxInput"></label></div></li>' );
     }
 
     var poradiZbozi = 1;
@@ -317,18 +397,18 @@ function nactiZbozi(data) {
 
             if(kategorie[kategorieIndex].id==this.category_id)
             {
-                $( "#ulVybratSvacu" ).append( '<li class="produktTyp zluta"><img class="produktTypImg" src="'+appPreffix+kategorie[0].icon+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a></li>' );
+                $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+appPreffix+kategorie[kategorieIndex].icon+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="checkBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[kategorieIndex].name+'CheckboxInput" name="" /><label for="'+kategorie[kategorieIndex].name+'CheckboxInput"></label></div></li>' );
                 console.log("davam");
             }
         }
         // vloz produkt
 
         if(poradiZbozi != zbozi.length) {
-            $( "#ulVybratSvacu" ).append( '<li class="produkt"><div class="produktKosik" onclick="kosikAdd('+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+            $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
         } else
         // posledni polozka specialni format
         {
-            $( "#ulVybratSvacu" ).append( '<li class="produkt"><div class="produktKosik" onclick="kosikAdd('+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
+            $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
         }
         poradiZbozi ++;
     });
@@ -350,7 +430,7 @@ function kosikRefresh() {
             }
         }
         kosikSoucetCeny += Number(zbozi[zboziIndex].price);
-        $( "#ulKosik" ).append( '<li class="produkt">  <a class="produktKosik blueOblibene" onclick="oblibeneAdd('+this.id+')">Přidat do<br>oblíbených</a>  <a class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
+        $( "#ulKosik" ).append( '<li class="produkt">  <a class="produktKosik produktKosikObr blueOblibene" onclick="oblibeneAdd('+this.id+')">Přidat do<br>oblíbených</a>  <a class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
     });
     //$( "#ulKosik" ).append( '<li class="listHeader fialova"><h3>Celkem '+kosikSoucetCeny+' kč</h3></li>' );
     //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace">  <div style="height: 20px"></div>  </li>' );
@@ -362,6 +442,15 @@ function kosikRefresh() {
 
 function objednavkaOdelsatAjax(objednavka, typ) {
     console.log("objednavkaOdelsatAjax typ:" + typ);
+
+    //kontrola checkBoxu (budoucich radio buttonu)
+     if( $('#checkBoxVyzvednout').is(':checked')==false && $('#checkBoxDonaskaKuryrem').is(':checked')==false && typ==1)
+     {
+         alertZobraz("Vyberte způsob doručení");
+         return;
+     }
+
+
     $.ajax({
         type: 'POST',
         url: 'http://demo.livecycle.cz/fajnsvaca/api/createOrder?proceed='+typ+'&basket='+objednavka,
@@ -376,14 +465,31 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                 prihlaseniZobrazDialog();
                 return;
             }
+            if( data.status == "error" && data.code == "notBalance")
+            {
+                console.log("objednavkaOdelsatAjax data.msg:" + data.msg);
+                $('#dokoncitObjednavkuVyse').text(kosikSoucetCeny + " Kč");
+                $('#okoncitObjednavkuKredit').text(data.balanceBefore==null?"0 Kč":(data.balanceBefore+" Kč"));
+                $('#okoncitObjednavkuZustatek').text(data.balanceAfter==null?"0 Kč":(data.balanceAfter+" Kč"));
+                $('#dokoncitPlatbuNegativniText').css("display","block");
+                $('#dokoncitPlatbuDobitButton').css("display","block");
+                $('#dokoncitPlatbuPozitivniText').css("display","none");
+                $('#dokoncitPlatbuPotvrditButton').css("display","none");
+                transition("#page-dokoncitPlatbuPozitivni","fade");
+                return;
+            }
 
             if(typ==0) {
                 // TODO zjistit jeslti je ok
                 if(data.status=="ok")
                 {
-                    $('#dokoncitObjednavkuVyse').text("Objednávka ve výši " + kosikSoucetCeny + " Kč");
-                    $('#okoncitObjednavkuKredit').text("Aktuální kredit " + data.balanceBefore + " Kč");
-                    $('#okoncitObjednavkuZustatek').text("Budoucí zůstatek " + data.balanceAfter + " Kč");
+                    $('#dokoncitObjednavkuVyse').text(kosikSoucetCeny + " Kč");
+                    $('#okoncitObjednavkuKredit').text(data.balanceBefore==null?"0 Kč":(data.balanceBefore+" Kč"));
+                    $('#okoncitObjednavkuZustatek').text(data.balanceAfter==null?"0 Kč":(data.balanceAfter+" Kč"));
+                    $('#dokoncitPlatbuPozitivniText').css("display","block");
+                    $('#dokoncitPlatbuPotvrditButton').css("display","block");
+                    $('#dokoncitPlatbuNegativniText').css("display","none");
+                    $('#dokoncitPlatbuDobitButton').css("display","none");
                     transition("#page-dokoncitPlatbuPozitivni","fade");
                 } else
                 {
@@ -398,16 +504,21 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                 {
                     $('#potvrzeniPlatbyKredit').text(data.balanceAfter==null?"0 Kč":("Kredit: " + data.balanceAfter + " Kč"));
                     transition("#page-potvrzeniPlatby","fade");
+                    /*
                     kosik = [];
                     kosikRefresh();
                     kosikPocetPolozek = 0;
                     kosikZobrazCisloVkolecku();
+                    */
+                    nacistDataPoPrihlaseni();
                 }
 
             }
             if(data.status=="error")
             {
-                alertZobraz(data.msg);
+                //alertZobraz(data.msg);
+                console.log(data);
+                console.log(data.msg);
             }
         },
         error: ajaxError2
@@ -419,6 +530,11 @@ function objednavkaOdelsatAjax(objednavka, typ) {
 }
 
 function objednavkaProceed() {
+    if(kosik.length == 0)
+    {
+        alertZobraz("Košík je prázdný, nelze objednat.");
+        return;
+    }
     console.log("vytvarim objednavku");
     objednavka = "";
     kosik.sort();

@@ -178,11 +178,9 @@ a:hover, a:active {
 }
 .menu {
     width: 95%;
-    height: 60px;
 }
 .menu a {
-    height: 60px;
-    line-height: 60px;
+    line-height: 4em;
     text-decoration: none;
     color: #FFFFFF;
     font-family: Myriad Pro;
@@ -269,6 +267,7 @@ a:hover, a:active {
 }
 .produktTyp {
     padding: 0.5em;
+    position: relative;
     /*padding: 4vw;
 */
 }
@@ -338,9 +337,7 @@ a:hover, a:active {
 }
 .produktKosik {
     float: right;
-    background: url(../imagesApp/productsKosik.png) no-repeat center 15px;
-    background-color: #00cf6a;
-    padding-top: 64px;
+    background-color: #00cf6a !important;
     padding-bottom: 5px;
     text-align: center;
     padding-left: 2px;
@@ -348,6 +345,17 @@ a:hover, a:active {
     color: #ffffff !important;
     width: 15%;
     cursor: pointer;
+}
+.produktKosikObr {
+    background: url(../imagesApp/productsKosik.png) no-repeat center 15px;
+    padding-top: 64px;
+
+}
+.produktKosikCislo {
+    font-size: 400%;
+    top: 37px;
+    height: 54px;
+    padding-top: 40px;
 }
 .produktKosik a {
     color: #ffffff;
@@ -415,7 +423,7 @@ a:hover, a:active {
     padding: 0.5em 0 0.5em 70px;
 }
 .listText {
-    padding: 2em 70px 2em 70px;
+    padding: 2em 5em 2em 5em;
 }
 .listText h3 {
     /*margin: 2vw;
@@ -443,14 +451,29 @@ a:hover, a:active {
 //display: inline;
     line-height: 1.5em;
 }
-.listTextProfil div {
+.listTextProfil h3 {
     display: inline-block;
-
 }
-.listTextProfil div:nth-child(odd) {
+.listTextProfil h3:nth-child(odd) {
     width: 50%;
     text-align: right;
+}
 
+
+.listTextDokoncit h3 {
+//display: inline;
+    line-height: 1.5em;
+}
+.listTextDokoncit h3 {
+    display: inline-block;
+}
+.listTextDokoncit h3:nth-child(odd) {
+    width: 60%;
+    text-align: left;
+}
+.listTextDokoncit h3:nth-child(even) {
+    width: 30%;
+    text-align: right;
 }
 
 .listTlacitko {
@@ -536,6 +559,14 @@ a:hover, a:active {
     top: 1em;
     left: 2em;
     margin-right: 15px;
+}
+.checkBoxProduktTyp {
+    display: inline;
+    top: 50%;
+    position: absolute !important;
+    margin-top: -12px;
+    right: 7%;
+    margin-right: -12px;
 }
 .checkBox {
     width: 25px;
