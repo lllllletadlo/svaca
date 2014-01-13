@@ -1,5 +1,6 @@
 var zbozi;
 var kategorie;
+var zboziOblibene;
 var kosik =[];
 var kosikSoucetCeny = 0;
 var objednavka ="";
