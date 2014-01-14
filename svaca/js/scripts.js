@@ -301,9 +301,8 @@ function prihlaseniAjax()
             console.log("prihlaseni ok");
             alert("přihlášen ok");
             //transition("#page-dokoncitPlatbuPozitivni","fade");
+            nacistDataPoPrihlaseni();
             transition("#page-vybratSvacu","fade");
-            nacistDataPoPrihlaseni
-
 
         }
         else
