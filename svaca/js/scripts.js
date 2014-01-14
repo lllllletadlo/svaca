@@ -1,6 +1,18 @@
+/*
+ v9
+ - odebrano ctvercove menu
+ - oprava pozadi barvy headeru - typ produktu
+ - dodlany filtry headerech - typ produktu
+ - kosik - zobrazeni cisla 1-5
+ - tlac zaplatit hned pod kosikem
+ - zvětšení horního menu relativně podle velikosti písma
+ - html verze stranky kdyz neni kredit
+ */
+
+
 var zbozi;
 var kategorie;
-var zboziOblibene;
+var zboziOblibene=[];
 var kosik =[];
 var kosikSoucetCeny = 0;
 var objednavka ="";
@@ -86,6 +98,10 @@ function transition(toPage, type) {
 
         kosikRefresh();
     }
+    if(toPage.selector=="#page-mojeOblibene") {
+
+        zboziOblibneRefresh();
+    }
 }
 
 function kosikZobrazCisloVkolecku() {
@@ -114,6 +130,23 @@ function kosikZobrazCisloVkolecku() {
  */
 
 
+function zboziOblibeneAdd(vlozitID) {
+    //zjisti hestli jiz neni vlozene
+    var jizVlozene = false;
+    for(var i=0; i<zboziOblibene.length; i++)
+    {
+        if(zboziOblibene[i]==vlozitID)
+        {
+            jizVlozene = true;
+        }
+    }
+
+    if(!jizVlozene)
+    {
+        console.log("pridavam do oblibenych:" + vlozitID);
+        zboziOblibene.push(vlozitID);
+    }
+}
 
 function kosikAdd(produkt,vlozitID) {
 
@@ -147,18 +180,16 @@ function kosikAdd(produkt,vlozitID) {
 
 function kosikOdebrat(odebratID)
 {
+    console.log("odebiram z kosiku: " + odebratID);
     pocet = 5;
     for(var i= kosik.length; i>-1; i--)
     {
-        console.log(kosik);
         if(kosik[i]==odebratID && pocet >0)
         {
-            console.log("mazu id:" + odebratID + " index:" + i);
             kosik.splice(i,1);
             pocet --;
         }
     }
-    console.log(kosik);
 }
 
 
@@ -431,15 +462,39 @@ function kosikRefresh() {
             }
         }
         kosikSoucetCeny += Number(zbozi[zboziIndex].price);
-        $( "#ulKosik" ).append( '<li class="produkt">  <a class="produktKosik produktKosikObr blueOblibene" onclick="oblibeneAdd('+this.id+')">Přidat do<br>oblíbených</a>  <a class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
+        $( "#ulKosik" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr modra" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</div><div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' +zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+        // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
     });
-    //$( "#ulKosik" ).append( '<li class="listHeader fialova"><h3>Celkem '+kosikSoucetCeny+' kč</h3></li>' );
-    //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace">  <div style="height: 20px"></div>  </li>' );
-    //$( "#ulKosik" ).append( '<li class="listTlacitko zelena"><a onclick="javascript:objednavkaProceed()" href="#">  <h3>Zaplatit</h3></a></li>' );
+
     $( "#kosikSoucetCenyH" ).text("Celkem " + kosikSoucetCeny + " Kč");
 }
 
+function zboziOblibneRefresh() {
+    zboziOblibene.sort();
+    $("#ulMojeOblibene").empty();
+    for(var j = 0; j< zboziOblibene.length; j++)
+    {
+    //$.each(zboziOblibene, function() {
+        var zboziIndex = 0;
+        for(var i = 0; i< zbozi.length; i++)
+        {
+            if(zbozi[i].id == zboziOblibene[j]) {
+                zboziIndex = i;
+            }
+        }
 
+        if(j<zboziOblibene.length-1)
+        {
+            $( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+        } else
+        {
+            // posledni polozka specialni format
+            $( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div><div></div>   </li>' );
+        }
+
+        // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
+    }
+}
 
 function objednavkaOdelsatAjax(objednavka, typ) {
     console.log("objednavkaOdelsatAjax typ:" + typ);

@@ -349,7 +349,6 @@ a:hover, a:active {
 .produktKosikObr {
     background: url(../imagesApp/productsKosik.png) no-repeat center 15px;
     padding-top: 64px;
-
 }
 .produktKosikCislo {
     font-size: 400%;
@@ -397,24 +396,177 @@ a:hover, a:active {
 
 
 
+.produkt2 li {
+
+}
+.produkt2 div:first-child {
+    position: relative;
+}
+.produkt2Leva {
+    display: inline-block;
+    width: 80%;
+    min-height: 75px;
+}
+.produkt2Prava {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 20%;
+}
+.produkt2 img {
+    float: left;
+    margin: 5px 0px 0px 10px;
+}
+.produkt2Popis {
+    padding-top: 2%;
+    /*padding-top: 2vw;
+*/
+    font-family: Myriad Pro;
+    font-size: 200%;
+    line-height: 100%;
+    /*font-size: 4vw;
+*/
+}
+.produkt2Popis h3 {
+    margin-right: 3em;
+    padding-left: 95px;
+    /*margin: 2vw;
+*/
+}
+
+.produkt2Popis span {
+    font-family: Myriad Pro;
+    font-size: 75%;
+    padding-left: 95px;
+    display: block;
+    /*font-size: 3vw;
+*/
+    color: #444444;
+    margin-left: 0px;
+    padding-bottom: 1em;
+}
+.produkt2PopisZvyrazneni {
+    display: inline-block;
+    font-weight: bold;
+}
+
+
+.produkt2 .cena {
+    position: absolute;
+    margin: 2%;
+    top: 0px;
+    right: 0px;
+    padding-top: 1%;
+}
+.produkt2KosikObr {
+    top: 50%;
+    margin-top: -64px;
+}
+.produkt2KosikObr div {
+    background: url(../imagesApp/productsKosik.png) no-repeat center center;
+    padding-top: 80px;
+    text-align: center;
+    color: white;
+}
+.produkt2Line {
+    background-color: white;
+}
+.produkt2Line div {
+    clear: both;
+    border-bottom: 2px solid #d0d0d0;
+    left: 2%;
+    width: 76%;
+}
+
+
+
+.dobitKreditPopis h3 {
+
+    padding-left: 70px;
+    /*margin: 2vw;
+*/
+}
+
+.dobitKreditPopis span {
+    font-family: Myriad Pro;
+    font-size: 75%;
+    padding-left: 70px;
+    display: block;
+    margin-left: 0px;
+}
+.imgLupa div {
+    background: url(../imagesApp/productsLupa.png) no-repeat center center;
+}
+
+.partneri {
+    height: 70%;
+    width: 90%;
+    position: absolute;
+    margin: 0 5% 0 5%;
+    background-color: white;
+    text-align: center;
+}
+
+.partneri h3 {
+    font-size: 175%;
+    line-height: 1.5em !important;
+    margin-top: 10px;
+}
+.partneri h3:first-child {
+    font-size: 225%;
+    line-height: 2em !important;
+}
+.partneri span {
+    font-size: 200%;
+    line-height: 2em;
+    color: white;
+    background: black;
+}
+.partneri img {
+    content: url("../imagesApp/partneriTogether.png");
+    width: 100%;
+    max-width: 508px;
+    margin-top: 2em;
+}
+.partneri div {
+    overflow: scroll;
+    width: 100%;
+    bottom: 0px;
+    top: 16em;
+    position: absolute;
+}
+
+
 .zelena {
-    background: #4fcc6a;
+    background-color: #4fcc6a;
 }
 .modra {
-    background: #009ee0;
+    background-color: #009ee0 !important;
 }
 .zluta {
-    background: #edc400;
+    background-color: #edc400;
 }
 .fialova {
-    background: #965ab8;
+    background-color: #965ab8;
 }
 .bila {
-    background: #ffffff;
+    background-color: #ffffff;
     color: #000000;
+}
+.hneda {
+    background-color: #633737 !important;
+}
+.hnedaSvetla {
+    background-color: #956939 !important;
+}
+.colorSeda{
+    color: #666666;
 }
 .bila >a {
     color: #000000;
+}
+.colorHneda {
+    color: #633737 !important;
 }
 .listHeader {
     color: white;
@@ -433,6 +585,12 @@ a:hover, a:active {
 */
     line-height: 100%;
 }
+.listText span {
+    font-size: 175%;
+    line-height: 100%;
+    color: #666666;
+}
+
 .listTextStred h3 {
     text-align: center;
     /*margin: 2vw;
@@ -443,7 +601,6 @@ a:hover, a:active {
     line-height: 120%;
 }
 .listTextProfil {
-    color: #666666;
     white-space: pre-line;
     padding: 2em 1em 2em 1em;
 }
@@ -475,6 +632,28 @@ a:hover, a:active {
     width: 30%;
     text-align: right;
 }
+
+.podporaSite1 {
+    text-align: center;
+}
+.podporaSite1 span:first-child {
+    display: block;
+    font-size: 175%;
+    line-height: 200%;
+}
+.podporaSite1 input {
+    font-size: 175%;
+    line-height: 200%;
+}
+.podporaSite1 span:nth-child(3) {
+    display: block;
+    margin: 10px auto 10px auto;
+    width: 7em;
+    padding: 1em;
+    color: white;
+    font-size: 150%;
+}
+
 
 .listTlacitko {
     text-decoration: none;
