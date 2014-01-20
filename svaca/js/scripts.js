@@ -10,6 +10,7 @@
  */
 var viewport;
 var maxHeightVybratSvacu = false;
+var maxHeightKosik = false;
 
 var zbozi;
 var kategorie;
@@ -123,11 +124,13 @@ function transition(toPage, type) {
         $('#page-kosik').removeClass('objednavka');
 
 
-
-        var maxDelka = viewport.height - $('.ulKosik').position().top - $('.ulKosikFooter').height();
-        $('.ulKosik').css('max-height',maxDelka);
-        $('.ulKosik').css('position','relative');
-        $('.ulKosikFooter').css('position','relative');
+        if(!maxHeightKosik)
+        {
+            var maxDelka = viewport.height - $('#koupitSvacuZaplatitKredit').height() - $('.ulKosikFooter').height();
+            $('.ulKosik').css('max-height',maxDelka);
+            $('.ulKosik').css('position','relative');
+            $('.ulKosikFooter').css('position','relative');
+        }
 
 
 
@@ -506,7 +509,7 @@ function zboziNacti(data) {
     console.log(kategorie);
     $("#ulVybratSvacu").empty();
 
-
+    $( "#ulVybratSvacu" ).append( '<img class="fajnSvacaText"  >');
 // vloz prvni kategorii
     if(kategorie[0].id==zbozi[0].category_id)
     {
@@ -538,12 +541,12 @@ function zboziNacti(data) {
 
         if(poradiZbozi != zbozi.length) {
             //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
-            $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3 class="f200">' + this.name + '</h3>  <span class="f150">'+ this.description+'</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div class="f100">Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
+            $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3 class="f200">' + this.name + '</h3>  <span class="f150">'+ this.description+'</span><span class="cena f150">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div class="f100">Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
         } else
         // posledni polozka specialni format
         {
             //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
-            $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3 class="f200">' + this.name + '</h3>  <span class="f150">'+ this.description+'</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div class="100">Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
+            $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3 class="f200">' + this.name + '</h3>  <span class="f150">'+ this.description+'</span><span class="cena f150">'+ this.price+' Kč</span></div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div class="100">Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
         }
         poradiZbozi ++;
     });
@@ -554,6 +557,8 @@ function kosikRefresh() {
     kosikSoucetCeny= 0;
     kosik.sort();
     $("#ulKosik").empty();
+    $( "#ulKosik" ).append( '<img class="fajnSvacaText"  >');
+    $( "#ulKosik" ).append( '<ul id="ulKosikHeader" class="produtkSeznam ulKosikHeader"><li class="listHeader kosikHeader fialova kosikShow f250">  <h3 class="kosikHeaderText">Košík</h3>  </li>  <li class="listHeader kosikHeader zelena objShow f250">  <h3 class="kosikHeaderText">Objednávka</h3>  </li>  </ul>');
     //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace"><div style="height: 20px"></div></li>' );
     //$( "#ulKosik" ).append( '<li class="listHeader zelena"><h3>Zaplatit sváču</h3></li>' );
     //$.each(kosik, function() {
@@ -577,7 +582,7 @@ function kosikRefresh() {
 
         // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
 */
-        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+zbozi[zboziIndex].icon+'"  ><h3 class="f200">' + zbozi[zboziIndex].name + '</h3>  <span class="f150">'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow f75">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow f75">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
+        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+zbozi[zboziIndex].icon+'"  ><h3 class="f200">' + zbozi[zboziIndex].name + '</h3>  <span class="f150">'+ zbozi[zboziIndex].description+'</span><span class="cena f150">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow f75">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow f75">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
 
         if(i<kosik.length-1) produkt += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
         else produkt += '<div class="produkt2LineNO">  <div ></div>  </div>  </li>';
