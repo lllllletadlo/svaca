@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/partneriTogether.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsLupa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/css/times.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/products/vychyCinema.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/products/vychyCinemaCard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/products/vychyCinemaCardTgr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/products/vychySamsung.png" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\dobit_kredit.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\dokoncit_platbu_negativni.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\koupit_svacu_kosik.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\moje_oblibene.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\partneri.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\podpora-hledameKuryra.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\podpora.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\psdScreens\vychytavky.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/imagesApp/productsKosik.png" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsKosik.png" />
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="nova grafika&#10;optimalizace pro HD">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/fb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/logoFajnSvaca.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/logoFajnSvacaWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsCheckBoxOff.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsCheckBoxOn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsOblibeneAdd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsOdebrat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/registraceSelect.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/registracemMan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/registracemWo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/splashTed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/zeregistrovat.png" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnDobitKredit.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnKoupit.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnMojeOblibene.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnPartneri.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnPodpora.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnProfil.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnVybratSvacu.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnVychytavky.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsBagety.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsHousky.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsOblozenaBageta.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsRyzekVHousce.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsSekanaVHousce.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsSyrVHousce.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsVegetBageta.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\spritesPrihlaseniClovek.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\spritesPrihlaseniKlic.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-36-ldpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-36-ldpi.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-48-mdpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-48-mdpi.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-57-2x.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-57-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-57.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-57.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-72-2x.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-72-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-72-hdpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-72-hdpi.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-72.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-72.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-96-xhdpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-96-xhdpi.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/imagesApp/menuLeft.png" afterPath="$PROJECT_DIR$/svaca/imagesApp/menuLeft.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-hdpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-hdpi-portrait.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-ldpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-ldpi-portrait.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-mdpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-mdpi-portrait.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-xhdpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-xhdpi-portrait.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/css/css.css" afterPath="$PROJECT_DIR$/svaca/css/css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
@@ -44,22 +70,31 @@
     <favorites_list name="svaca" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42180094">
+    <splitter split-orientation="horizontal" split-proportion="0.29895562">
       <split-first>
         <leaf>
           <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1734">
+                <state line="20" column="8" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="css.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="639" column="19" selection-start="11392" selection-end="11392" vertical-scroll-proportion="0.3941048" vertical-offset="10502" max-vertical-offset="14858">
+                <state line="98" column="36" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.5271318" vertical-offset="1190" max-vertical-offset="24701">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="362" column="42" selection-start="14738" selection-end="14750" vertical-scroll-proportion="0.0" vertical-offset="5922" max-vertical-offset="11135">
                   <folding />
                 </state>
               </provider>
@@ -72,45 +107,32 @@
           <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="288" column="1" selection-start="5650" selection-end="5650" vertical-scroll-proportion="0.0" vertical-offset="4896" max-vertical-offset="14858">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="0" selection-start="2322" selection-end="2322" vertical-scroll-proportion="-11.996579" vertical-offset="11439" max-vertical-offset="13107">
+                <state line="572" column="0" selection-start="11927" selection-end="11927" vertical-scroll-proportion="0.0" vertical-offset="9423" max-vertical-offset="24701">
                   <folding>
-                    <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <marker date="1390204176248" expanded="true" signature="30360:30390" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="502" column="0" selection-start="20342" selection-end="20342" vertical-scroll-proportion="-0.8051948" vertical-offset="8251" max-vertical-offset="11135">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="438" column="430" selection-start="15248" selection-end="15279" vertical-scroll-proportion="0.0" vertical-offset="6874" max-vertical-offset="12937">
+                <state line="540" column="425" selection-start="19535" selection-end="19548" vertical-scroll-proportion="0.33333334" vertical-offset="8879" max-vertical-offset="16269">
                   <folding>
-                    <marker date="1389610711571" expanded="false" signature="13161:13178" placeholder="..." />
-                    <marker date="1389610711571" expanded="true" signature="14250:14267" placeholder="..." />
-                    <marker date="1389610711571" expanded="false" signature="15772:15782" placeholder="..." />
+                    <element signature="n#!!doc" expanded="true" />
+                    <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
+                    <marker date="1390203491599" expanded="false" signature="18038:18055" placeholder="..." />
+                    <marker date="1390203491599" expanded="true" signature="20157:20167" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -133,9 +155,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/css.css" />
-        <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
         <option value="$PROJECT_DIR$/svaca/css/css.css" />
       </list>
     </option>
@@ -226,6 +248,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagesApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -475,7 +515,15 @@
       <created>1389607160936</created>
       <updated>1389607160936</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="- aplikace v html">
+      <created>1389715985762</created>
+      <updated>1389715985762</updated>
+    </task>
+    <task id="LOCAL-00037" summary="- aplikace v html&#10;">
+      <created>1389717632957</created>
+      <updated>1389717632957</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -500,47 +548,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-188" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18378094" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13663967" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19325961" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13630573" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16165803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2673575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2673575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13663967" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16165803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18378094" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -573,12 +601,49 @@
     <MESSAGE value="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;k ukazce&#10;oprava 1&#10;" />
     <MESSAGE value="- oprava pozadi barvy headeru - typ produktu&#10;- dodlany filtry headerech - typ produktu&#10;- kosik - zobrazeni cisla 1-5&#10;- tlac zaplatit hned pod kosikem&#10;- zvětšení horního menu relativně podle velikosti písma&#10;- html verze stranky kdyz neni kredit" />
     <MESSAGE value="- oprava pozadi barvy headeru - typ produktu&#10;- dodlany filtry headerech - typ produktu&#10;- kosik - zobrazeni cisla 1-5&#10;- tlac zaplatit hned pod kosikem&#10;- zvětšení horního menu relativně podle velikosti písma&#10;- html verze stranky kdyz neni kredit&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- oprava pozadi barvy headeru - typ produktu&#10;- dodlany filtry headerech - typ produktu&#10;- kosik - zobrazeni cisla 1-5&#10;- tlac zaplatit hned pod kosikem&#10;- zvětšení horního menu relativně podle velikosti písma&#10;- html verze stranky kdyz neni kredit&#10;" />
+    <MESSAGE value="- aplikace v html" />
+    <MESSAGE value="- aplikace v html&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- aplikace v html&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="24310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="362" column="42" selection-start="14652" selection-end="14664" vertical-scroll-proportion="0.0" vertical-offset="5922" max-vertical-offset="11356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="15" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="317" column="1" selection-start="6119" selection-end="6119" vertical-scroll-proportion="0.0" vertical-offset="5389" max-vertical-offset="17867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
@@ -596,23 +661,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="467" column="24" selection-start="20644" selection-end="20644" vertical-scroll-proportion="0.0" vertical-offset="7939" max-vertical-offset="10387">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -620,9 +669,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="438" column="430" selection-start="15248" selection-end="15279" vertical-scroll-proportion="0.0" vertical-offset="6874" max-vertical-offset="12937">
           <folding>
-            <marker date="1389610711571" expanded="false" signature="13161:13178" placeholder="..." />
-            <marker date="1389610711571" expanded="true" signature="14250:14267" placeholder="..." />
-            <marker date="1389610711571" expanded="false" signature="15772:15782" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
+            <marker date="1390203491599" expanded="false" signature="18038:18055" placeholder="..." />
+            <marker date="1390203491599" expanded="true" signature="20157:20167" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -644,23 +694,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="58" selection-start="3263" selection-end="3263" vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="9095">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -668,9 +702,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="145" column="38" selection-start="3476" selection-end="3476" vertical-scroll-proportion="0.0" vertical-offset="1927" max-vertical-offset="11169">
           <folding>
-            <marker date="1389610711571" expanded="false" signature="13161:13178" placeholder="..." />
-            <marker date="1389610711571" expanded="true" signature="14250:14267" placeholder="..." />
-            <marker date="1389610711571" expanded="false" signature="15772:15782" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
+            <marker date="1390203491599" expanded="false" signature="18038:18055" placeholder="..." />
+            <marker date="1390203491599" expanded="true" signature="20157:20167" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -678,23 +713,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="549" column="10" selection-start="16050" selection-end="16050" vertical-scroll-proportion="0.0" vertical-offset="7704" max-vertical-offset="10268">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -709,9 +728,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="850">
           <folding>
-            <marker date="1389610711571" expanded="false" signature="13161:13178" placeholder="..." />
-            <marker date="1389610711571" expanded="true" signature="14250:14267" placeholder="..." />
-            <marker date="1389610711571" expanded="false" signature="15772:15782" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
+            <marker date="1390203491599" expanded="false" signature="18038:18055" placeholder="..." />
+            <marker date="1390203491599" expanded="true" signature="20157:20167" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -719,23 +739,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="479" column="38" selection-start="11622" selection-end="11629" vertical-scroll-proportion="0.0" vertical-offset="7849" max-vertical-offset="10030">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -743,9 +747,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="850">
           <folding>
-            <marker date="1389610711571" expanded="false" signature="13161:13178" placeholder="..." />
-            <marker date="1389610711571" expanded="true" signature="14250:14267" placeholder="..." />
-            <marker date="1389610711571" expanded="false" signature="15772:15782" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
+            <marker date="1390203491599" expanded="false" signature="18038:18055" placeholder="..." />
+            <marker date="1390203491599" expanded="true" signature="20157:20167" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -753,23 +758,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="398" column="17" selection-start="8229" selection-end="8229" vertical-scroll-proportion="0.0" vertical-offset="6003" max-vertical-offset="7854">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -790,49 +779,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="438" column="430" selection-start="15248" selection-end="15279" vertical-scroll-proportion="0.0" vertical-offset="6874" max-vertical-offset="12937">
-          <folding>
-            <marker date="1389610711571" expanded="false" signature="13161:13178" placeholder="..." />
-            <marker date="1389610711571" expanded="true" signature="14250:14267" placeholder="..." />
-            <marker date="1389610711571" expanded="false" signature="15772:15782" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="288" column="1" selection-start="5650" selection-end="5650" vertical-scroll-proportion="0.0" vertical-offset="4896" max-vertical-offset="14858">
+        <state line="20" column="8" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="2322" selection-end="2322" vertical-scroll-proportion="-11.996579" vertical-offset="11439" max-vertical-offset="13107">
+        <state line="362" column="42" selection-start="14738" selection-end="14750" vertical-scroll-proportion="0.0" vertical-offset="5922" max-vertical-offset="11135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="540" column="425" selection-start="19535" selection-end="19548" vertical-scroll-proportion="0.33333334" vertical-offset="8879" max-vertical-offset="16269">
           <folding>
-            <element signature="n#style#0;n#div#2;n#li#1;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#4;n#ul#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#2;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#18;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#li#3;n#ul#0;n#div#22;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#24;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
+            <marker date="1390203491599" expanded="false" signature="18038:18055" placeholder="..." />
+            <marker date="1390203491599" expanded="true" signature="20157:20167" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="36" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.5271318" vertical-offset="1190" max-vertical-offset="24701">
+          <folding />
         </state>
       </provider>
     </entry>

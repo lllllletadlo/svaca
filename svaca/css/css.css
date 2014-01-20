@@ -1,5 +1,150 @@
-/* Phone @media handheld {
-*/
+@media only screen and (min-width: 320px) {
+
+
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) {
+
+    /* Small screen, retina, stuff to override above media query */
+
+    .asd {
+        color: red
+    }
+
+
+}
+
+@media only screen and (min-width: 700px) {
+
+    /* Medium screen, non-retina */
+    .f75 {
+        font-size: 200% !important;
+    }
+    .f100 {
+        font-size: 200% !important;
+    }
+    .f150b {
+        font-size: 250% !important;
+        font-weight: bold;
+    }
+    .f150 {
+        font-size: 250% !important;
+    }
+    .f175 {
+        font-size: 250% !important;
+    }
+    .f180 {
+        font-size: 300% !important;
+    }
+    .f200 {
+        font-size: 300% !important;
+    }
+    .f250 {
+        font-size: 400% !important;
+    }
+    .prihlaseniLogo h3 {
+        font-size: 300% !important;
+    }
+    .prihlaseniLogo span {
+        font-size: 250% !important;
+    }
+    .prihlaseniButtons input {
+        font-size: 300% !important;
+    }
+    .menu a {
+        font-size: 300% !important;
+    }
+    .produktTyp a {
+        font-size: 300% !important;
+    }
+    .produktPopis {
+        font-size: 300% !important;
+    }
+    .produktPopis h3 {
+        margin: 0px !important;
+    }
+    .produktPopis span {
+        font-size: 100% !important;
+        line-height: 1.2em;
+    }
+    .produktChceckBox input[type="checkbox"]:checked+label {
+        background-size: auto !important;
+    }
+    .produktChceckBox input[type="checkbox"]+label {
+        background-size: auto !important;
+    }
+    .produktKosikObr {
+        background-size: 3em !important;
+        padding-top: 4em !important;
+        font-size: 200% !important;
+        line-height: 100% !important;
+    }
+    .produktKosikCislo {
+        font-size: 800% !important;
+        top: 37px !important;
+        height: auto !important;
+        padding-top: 0px !important;
+        line-height: 1.5em !important;
+    }
+    .produkt2KosikObr div {
+        background-size: 3em !important;
+        padding-top: 60px !important;
+        font-size: 150%  !important;
+    }
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 700px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (                min-resolution: 192dpi) and (min-width: 700px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 700px) {
+
+    /* Medium screen, retina, stuff to override above media query */
+
+}
+
+@media only screen and (min-width: 1300px) {
+
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+
+    /* Large screen, retina, stuff to override above media query */
+    .asd {
+        color: #ffff00;
+    }
+}
+
+
+.f75 {
+    font-size: 75%;
+}
+
+.f200 {
+    font-size: 200%;
+}
+.f150 {
+    font-size: 150%;
+}
+
 @font-face {
     font-family: Myriad Pro;
     font-weight: normal;
@@ -25,7 +170,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1em;
 }
 .center {
-    width: 100% !important;
     text-align: center;
 }
 a:link, a:visited {
@@ -121,11 +265,27 @@ a:hover, a:active {
 }
 .fajnSvacaText {
     content: url("../imagesApp/fajnSvacaText.png");
-    width: 90%;
-    height: 20%;
-    margin-left: 5%;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    width: 75%;
+    margin-left: 15%;
+    padding: 5%;
+}
+.logoFajnSvaca_old {
+    content: url("../imagesApp/logoFajnSvaca.png");
+    width: 312px;
+    height: 344px;
+}
+.logoFajnSvaca {
+    background: url("../imagesApp/logoFajnSvaca.png") center no-repeat;
+    background-size: contain;
+    width: 100%;
+    bottom: 3em;
+    position: absolute;
+    top: 10em;
+}
+.logoFajnSvacaWhite {
+    content: url("../imagesApp/logoFajnSvacaWhite.png");
+    width: 235px;
+    height: 259px;
 }
 .btnQuatroMenu {
     position: relative;
@@ -177,7 +337,7 @@ a:hover, a:active {
     background: url(../imagesApp/btnKoupit.png) no-repeat center;
 }
 .menu {
-    width: 95%;
+    width: 100%;
 }
 .menu a {
     line-height: 4em;
@@ -190,22 +350,34 @@ a:hover, a:active {
     display: block;
     float: left;
     text-indent: 5px;
+    text-align: center;
 }
 .btnMenuMenu {
-    width: 20%;
-    background-color: #009ee0;
+    width: 15%;
+    font-weight: bold;
 }
 .btnMenuCastka {
-    width: 40%;
+    width: 35%;
     color: #000000 !important;
     background-color: white !important;
 }
 .btnMenuKosik {
-    width: 20%;
-    background-color: #965ab8;
+    width: 25%;
+}
+.btnMenuKosikVelky {
+    width: 50%;
+}
+.btnMenuZpet {
+    width: 25%;
+}
+.objednavka .btnMenuZpet {
+    display: none;
+}
+.objednavka .fajnSvacaText {
+    display: none;
 }
 .btnMenuKoupit {
-    width: 20%;
+    width: 25%;
     background-color: #4fcc6a;
 }
 .btnQuatroVybratSvacu {
@@ -229,18 +401,21 @@ a:hover, a:active {
     background-color: #00cf6a;
 }
 .menuLeftImg {
-    width: 112px;
-    height: 875px;
+    width: 100% !important;
+    height: auto;
 }
-.menuLeftDiv {
-    display: none;
-    overflow: scroll;
+div#menuLeftDiv {
+    width: 15%;
+    display: block;
+    overflow: auto;
     position: absolute;
     z-index: 100;
-    top: 60px !important;
+    top: 4em;
     bottom: 0px;
     padding: 0px;
-    min-height: 90% !important;
+    background-color: black;
+    min-height: 10%;
+    font-size: 180%;
 }
 /* kokretni upravy pro stranky */
 .page-home .fajnSvacaText {
@@ -249,13 +424,14 @@ a:hover, a:active {
 }
 .produtkSeznam {
     padding: 0px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    /* margin-right: 5%; */
     position: absolute;
     height: 70%;
     overflow: auto;
     margin-top: 0px;
-    width: 90%;
+    width: 85%;
+    margin-bottom: 0px;
 }
 .produtkSeznam li {
     list-style-type: none;
@@ -350,6 +526,20 @@ a:hover, a:active {
     background: url(../imagesApp/productsKosik.png) no-repeat center 15px;
     padding-top: 64px;
 }
+
+.produktKosikObrObbOdebrat {
+    background: url(../imagesApp/productsOdebrat.png) no-repeat center 15px;
+    padding-top: 64px;
+}
+
+.objednavka .produktKosikObrObbOdebrat {
+    background: url(../imagesApp/productsOblibeneAdd.png) no-repeat center 15px;
+    padding-top: 64px;
+    background-color: #bc840b !important;
+}
+
+
+
 .produktKosikCislo {
     font-size: 400%;
     top: 37px;
@@ -366,17 +556,65 @@ a:hover, a:active {
     left: 3px;
     width: 80%;
 }
+
+.produktLineNO {
+    border-bottom: 0px;
+    clear: both;
+}
+
+
 .ulKosik {
     height: 60%;
+
 }
 .ulKosikHeader {
     position: relative;
-    margin: 0px 5% 0px 5%;
+    margin: 0px 0px 0px 15%;
 }
+
+.potvrzeniPlatbyUl {
+    top: 10%;
+    bottom: 0px;
+    height: auto;
+}
+
+
+.dokoncitPlatbuContainer {
+    margin: 0px 0px 0px 15%;
+    top: 15%;
+    height: 80%;
+}
+
 .ulKosikFooter {
     height: auto;
     position: absolute;
-    top: 80%;
+    top: 75%;
+}
+.ulKosikFooterTlac {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    background-color: #edc400 !important;
+    line-height: 2em;
+    font-size: 180%;
+    left: 15%;
+    width: 85%;
+}
+
+.objednavka .produktHeaderSpace div {
+    height: 20px;
+}
+.kosikShow {
+    display: block !important;
+}
+.objednavka .kosikShow {
+    display: none !important;
+}
+.objShow {
+    display: none !important;
+}
+.objednavka .objShow {
+    display: block !important;
 }
 
 .produktHeaderZaplatitSvacu {
@@ -412,33 +650,37 @@ a:hover, a:active {
     position: absolute;
     height: 100%;
     width: 20%;
+    cursor: pointer;
 }
 .produkt2 img {
     float: left;
-    margin: 5px 0px 0px 10px;
+    margin: 5px 0px 10px 10px;
 }
 .produkt2Popis {
     padding-top: 2%;
     /*padding-top: 2vw;
 */
     font-family: Myriad Pro;
-    font-size: 200%;
-    line-height: 100%;
+    line-height: 1em;
     /*font-size: 4vw;
 */
 }
 .produkt2Popis h3 {
     margin-right: 3em;
     padding-left: 95px;
+    padding-bottom: 0.5em;
+    padding-top: 0.2em;
     /*margin: 2vw;
 */
 }
 
 .produkt2Popis span {
     font-family: Myriad Pro;
-    font-size: 75%;
     padding-left: 95px;
+    padding-right: 2px;
     display: block;
+    line-height: 1em;
+    padding-bottom: 0.5em;
     /*font-size: 3vw;
 */
     color: #444444;
@@ -460,14 +702,44 @@ a:hover, a:active {
 }
 .produkt2KosikObr {
     top: 50%;
-    margin-top: -64px;
+    margin-top: -3em;
 }
 .produkt2KosikObr div {
-    background: url(../imagesApp/productsKosik.png) no-repeat center center;
-    padding-top: 80px;
+    background: url(../imagesApp/productsKosik.png) no-repeat center top;
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    line-height: 1em;
+    font-size: 100%;
+}
+
+.colorObjednatOdebrat {
+    background-color: #009ee0 !important;
+}
+.objednavka .colorObjednatOdebrat {
+    background-color: #bc840b !important;
+}
+
+.produkt2KosikObrOdebrat {
+    background: url(../imagesApp/productsOdebrat.png) no-repeat center top !important;
+}
+
+.objednavka .produkt2KosikObrOblibene {
+    background: url(../imagesApp/productsOblibeneAdd.png) no-repeat center top;
+}
+
+
+.produkt2KosikCislo {
+    top: 50%;
+    margin-top: -0.5em;
+    font-size: 400%;
+    line-height: 100%;
+}
+.produkt2KosikCislo div {
     text-align: center;
     color: white;
 }
+
 .produkt2Line {
     background-color: white;
 }
@@ -477,8 +749,32 @@ a:hover, a:active {
     left: 2%;
     width: 76%;
 }
+.produkt2LineNO div {
+    clear: both;
+}
 
+.dokoncitPlatbuNegativniText h3 {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
 
+.dokoncitPlatbuCelkemBtn {
+    padding-left: 0px !important;
+}
+
+.pozitivni .dokoncitShowPozitivni {
+    display: block;
+}
+.negativni .dokoncitShowPozitivni {
+    display: none;
+}
+.negativni .dokoncitShowNegativni {
+    display: block;
+}
+.pozitivni .dokoncitShowNegativni {
+    display: none;
+}
 
 .dobitKreditPopis h3 {
 
@@ -495,7 +791,7 @@ a:hover, a:active {
     margin-left: 0px;
 }
 .imgLupa div {
-    background: url(../imagesApp/productsLupa.png) no-repeat center center;
+    background: url(../imagesApp/productsLupa.png) no-repeat center top;
 }
 
 .partneri {
@@ -544,14 +840,17 @@ a:hover, a:active {
     background-color: #009ee0 !important;
 }
 .zluta {
-    background-color: #edc400;
+    background-color: #edc400 !important;
+}
+.zlata {
+    background-color: #bc840b !important;
 }
 .fialova {
     background-color: #965ab8;
 }
 .bila {
     background-color: #ffffff;
-    color: #000000;
+    color: #000000 !important;
 }
 .hneda {
     background-color: #633737 !important;
@@ -562,25 +861,119 @@ a:hover, a:active {
 .colorSeda{
     color: #666666;
 }
-.bila >a {
-    color: #000000;
-}
 .colorHneda {
     color: #633737 !important;
 }
+.colorBila{
+    color: #ffffff;
+}
+.colorCervena {
+    color: #d91f44;
+}
+.tmavaText {
+    color: #444444 !important;
+}
+.bila >a {
+    color: #000000;
+}
+
+.gradSedaVertical {
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjElIiBzdG9wLWNvbG9yPSIjMDMwMzAzIiBzdG9wLW9wYWNpdHk9IjAuMTUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.15) 0%, rgba(3,3,3,0.15) 1%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.15)), color-stop(1%,rgba(3,3,3,0.15)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(3,3,3,0.15) 1%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(3,3,3,0.15) 1%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(3,3,3,0.15) 1%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.15) 0%,rgba(3,3,3,0.15) 1%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26000000', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+
+}
+
+.gradModraRadius {
+    background: #4599dd; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0NTk5ZGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTc1YTkwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-radial-gradient(center, ellipse cover,  #4599dd 0%, #175a90 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#4599dd), color-stop(100%,#175a90)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #4599dd 0%,#175a90 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #4599dd 0%,#175a90 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #4599dd 0%,#175a90 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #4599dd 0%,#175a90 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4599dd', endColorstr='#175a90',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+.gradZelenaRadius {
+    background: #4cc265; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0Y2MyNjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzI4MDQyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-radial-gradient(center, ellipse cover,  #4cc265 0%, #328042 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#4cc265), color-stop(100%,#328042)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #4cc265 0%,#328042 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #4cc265 0%,#328042 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #4cc265 0%,#328042 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #4cc265 0%,#328042 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4cc265', endColorstr='#328042',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+
+.gradModraDolu {
+    background: rgb(23,90,144); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE3NWE5MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZTM4NWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(23,90,144,1) 0%, rgba(14,56,90,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(23,90,144,1)), color-stop(100%,rgba(14,56,90,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(23,90,144,1) 0%,rgba(14,56,90,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(23,90,144,1) 0%,rgba(14,56,90,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(23,90,144,1) 0%,rgba(14,56,90,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(23,90,144,1) 0%,rgba(14,56,90,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#175a90', endColorstr='#0e385a',GradientType=0 ); /* IE6-8 */
+
+}
+
+.gradZtmaveni {
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#66000000',GradientType=0 ); /* IE6-8 */
+
+}
+.gradSedaDoluTlac {
+    background: #dadada; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RhZGFkYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #dadada 0%, #fefefe 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dadada), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dadada 0%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dadada 0%,#fefefe 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dadada 0%,#fefefe 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dadada 0%,#fefefe 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#fefefe',GradientType=0 ); /* IE6-8 */
+
+}
+
+
 .listHeader {
     color: white;
-    font-size: 250%;
     font-family: Myriad Pro;
     padding: 0.5em 0 0.5em 70px;
 }
+.listHeaderCenter {
+    font-size: 250%;
+    font-family: Myriad Pro;
+    padding: 0.5em 0 0.5em 0px;
+}
 .listText {
-    padding: 2em 5em 2em 5em;
+    padding: 2em 1em 2em 1em;
 }
 .listText h3 {
     /*margin: 2vw;
 */
-    font-size: 200%;
     /*font-size: 4vw;
 */
     line-height: 100%;
@@ -591,13 +984,17 @@ a:hover, a:active {
     color: #666666;
 }
 
-.listTextStred h3 {
+.listTextStred {
     text-align: center;
-    /*margin: 2vw;
-*/
-    font-size: 200%;
-    /*font-size: 4vw;
-*/
+    padding: 4em;
+}
+.listTextStred h3{
+    text-align: center;
+    line-height: 140%;
+    font-weight: bold;
+}
+.listTextStred span{
+    text-align: center;
     line-height: 120%;
 }
 .listTextProfil {
@@ -658,7 +1055,15 @@ a:hover, a:active {
 .listTlacitko {
     text-decoration: none;
     text-align: center;
-
+}
+/* grafikaNew na gradient*/
+.listTlacitko2 {
+    width: 10em;
+    margin: auto;
+}
+.listTlacitkoOtevritosobniprofil {
+    width: 15em;
+    margin: auto;
 }
 .listAvatarBig {
     text-align: center;
@@ -673,60 +1078,171 @@ a:hover, a:active {
     /*padding: 5vw;
 */
     font-family: Myriad Pro;
-    font-size: 250%;
     /*font-size: 5vw;
 */
 }
 
-.prihlaseniTrvale {
-    background: white;
-    float: left;
-    margin-top: 0.5%;
-    width: 49.5%;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
 
-
+.prihlaseniLogo {
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
 }
-.prihlaseniTrvale a {
-    color: #b9b9b9 !important;
-
-}
-
-.prihlaseniPrihlasit {
-    background: #4fcc6a;
-    margin-top: 0.5%;
-    float: right;
-    width: 50%;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-
-}
-.prihlaseniInputy {
-    padding-bottom: 2em;
-    padding-top: 2em;
-}
-.prihlaseniInput {
-    border: 2px solid;
-    border-color: #965ab8;
+.prihlaseniLogo h3 {
+    color: white;
     font-size: 200%;
-    margin: 0.5em 0 0.5em 0;
-    padding: 0.5em;
+    margin-top: 2em;
 }
-.prihlaseniObr{
-    background-size: 100% 100% !important;
-    background-color: #965ab8 !important;
-    display: inline;
-    margin-left: 0px !important;
-    color: transparent;
+.prihlaseniLogo span {
+    color: #dcdcdc;
+    font-size: 150%;
+    line-height: 1.5em;
+    display: block;
+    padding-bottom: 1em;
 }
 
-.prihlaseniInputJmeno {
-    background: url("../imagesApp/spritesPrihlaseniClovek.png") no-repeat;
+.prihlaseniLogo_try {
+    text-align: center;
 }
-.prihlaseniInputHeslo {
-    background: url(../imagesApp/spritesPrihlaseniKlic.png) no-repeat;
+.prihlaseniLogo_try img {
+    margin-top: -86px;
+    padding-top: 25%;
 }
+.prihlaseniButtons {
+    height: 50%;
+    top: 50%;
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    padding: 0 5% 0 5%;
+}
+
+.prihlaseniButtons input {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    height: 2em;
+    font-size: 200%;
+}
+
+.prihlaseniPrihlasitButns {
+    display: inline-block;
+    min-width: 40%;
+    margin: 4% 2% 4% 2%;
+    padding: 5px 0.5em 5px 0.5em;
+    font-size: 175%;
+    line-height: 3em; /* obr facebooku */
+}
+.prihlaseniPrihlasit {
+    color: white;
+}
+.prihlaseniPrihlasitFB {
+    color: grey;
+}
+.prihlaseniFBImage {
+    content: url("../imagesApp/fb.png");
+    vertical-align: middle;
+}
+.prihlaseniZaregistrovat {
+    background: url("../imagesApp/zeregistrovat.png") no-repeat left;
+    font-size: 175%;
+    line-height: 200%;
+    color: white;
+    width: 15em;
+    margin: auto;
+    margin-top: 5em;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -7em;
+    bottom: 20%;
+}
+
+
+
+.registraceSelectDiv {
+    position: relative;
+    height: 4em;
+    margin-bottom: 2em;
+    font-size: 150%;
+}
+
+
+.registraceSelectButtons {
+
+    border: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("../imagesApp/registraceSelect.png") right;
+    background-size: 4em;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+    
+
+    font-size: 140%;
+    text-indent: 6em;
+}
+
+.registraceSelectButtons select {
+    width: 100%;
+    text-align: center;
+    height: 10%;
+    font-size: 200%;
+    text-indent: 35%;
+    margin-bottom: 1em;
+}
+
+.registrace2Container {
+    height: 100% !important;
+    position: relative  !important;
+}
+
+.registrace2Container div {
+
+}
+.registraceWarning  {
+    color: #d91f44;
+    margin-bottom: 0.5em;
+    font-size: 150%;
+    margin-top: 0.5em;
+    min-height: 0.2em;
+    line-height: 1em;
+}
+.registraceCheckBoxDiv {
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.registraceCheckBoxDiv h3 {
+    float: left;
+    margin: 0 10% 0 10%;
+    padding: 20% 0 20% 20%;
+    background-size: 30%;
+}
+.registraceCheckBoxWo {
+    background: url("../imagesApp/registracemWo.png") left no-repeat;
+}
+.registraceCheckBoxMan {
+    background: url("../imagesApp/registracemMan.png") left no-repeat;
+}
+
+.registraceCheckBoxDiv div {
+    float: left;
+    margin-top: 15%;
+}
+
+.registraceCheckBox input {
+    height: auto !important;
+    -webkit-appearance: none;
+}
+
 
 .checkBoxZaplatitSvacu {
     float: left;
@@ -796,7 +1312,7 @@ a:hover, a:active {
 
 
 .radioButtZaplatitSvacu {
-    float: left;
+    float: right;
     margin: 0px 10px 0px 0px
 }
 .radioButt {
@@ -810,8 +1326,8 @@ a:hover, a:active {
     height: 25px;
     top: 0;
     left: 0;
-    background: #eee;
-    border:1px solid #ddd;
+    background: #35485c;
+    border:1px solid #35485c;
 }
 .radioButt label:after {
     opacity: 0.2;
@@ -822,7 +1338,7 @@ a:hover, a:active {
     background: transparent;
     top: 6px;
     left: 7px;
-    border: 3px solid #333;
+    border: 3px solid #35485c;
     border-top: none;
     border-right: none;
 
@@ -842,7 +1358,68 @@ a:hover, a:active {
 }
 
 .radioButt input[type=radio]:checked + label {
-    background: #4fcc6a;
+    /*background: #4fcc6a;*/
+}
+
+
+
+
+
+.radioButtRegistrace {
+    width: 25px;
+    position: relative;
+}
+.radioButtRegistrace label {
+    cursor: pointer;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    border: 2px solid;
+    border-color: #3f5644;
+    border-radius: 50%;
+}
+.radioButtRegistrace label:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #f6e029;
+    top: 6px;
+    left: 7px;
+    border: 1px solid #2c9b74;
+    border-radius: 50%;
+
+}
+.radioButtRegistrace label:hover::after {
+    opacity: 0.5;
+}
+
+.radioButtRegistrace input[type=radio]:checked + label:after {
+    opacity: 1;
+}
+
+.radioButtRegistrace input[type=radio]:checked + label {
+    /*background: #4fcc6a;*/
+}
+
+.produktChceckBox input[type="checkbox"]{
+    opacity: 0;
+    position:absolute;
+}
+.produktChceckBox input[type="checkbox"]+label{
+    background: url('../imagesApp/productsCheckBoxOff.png') right center no-repeat;
+    padding-left: 108px;
+    padding-bottom: 32px;
+    background-size: 50%;
+}
+.produktChceckBox input[type="checkbox"]:checked+label{
+    background: url('../imagesApp/productsCheckBoxOn.png') right center no-repeat;
+    padding-left: 108px;
+    padding-bottom: 32px;
+    background-size: 50%;
 }
 
 
@@ -860,10 +1437,12 @@ a:hover, a:active {
     border-radius: 999px;
     position: absolute;
     left: 70%;
-    top: 44px;
+    top: 4em;
     margin-left: -20px;
     color: white;
     width: 25px;
     height: 25px;
     line-height: 25px;
+    border: 3px solid;
+    font-size: 200%;
 }
