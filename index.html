@@ -231,7 +231,7 @@
             <div style="height: 20px"></div>
         </li>
         <li class="listHeaderCenter bila center dokoncitPlatbuCelkemBtn dokoncitShowPozitivni f250">
-            <h3 id="kosikSoucetCenyH">Celkem 115Kč</h3>
+            <h3 id="dokoncitPlatbuSoucetCenyH">Celkem 115Kč</h3>
         </li>
         <li class="produktTyp produktHeaderSpace">
             <div style="height: 20px"></div>
@@ -530,19 +530,19 @@ cursor: pointer;
             <input id="registraceUsername_old" class="prihlaseniInput" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div>
         </li>
         <li class="bila">
-            <input id="registraceJmeno_old"" class="prihlaseniInput" type="text" title="JMÉNO" placeholder="JMÉNO" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
+            <input id="registraceJmeno_old" class="prihlaseniInput" type="text" title="JMÉNO" placeholder="JMÉNO" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
         </li>
         <li class="bila">
-            <input id="registracePrijmeni_old"" class="prihlaseniInput" type="text" title="PŘÍJMENÍ" placeholder="PŘÍJMENÍ" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div>
+            <input id="registracePrijmeni_old" class="prihlaseniInput" type="text" title="PŘÍJMENÍ" placeholder="PŘÍJMENÍ" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div>
         </li>
         <li class="bila">
-            <input id="registraceHeslo_old"" class="prihlaseniInput" type="password" title="HESLO" placeholder="HESLO" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
+            <input id="registraceHeslo_old" class="prihlaseniInput" type="password" title="HESLO" placeholder="HESLO" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
         </li>
         <li class="bila">
-            <input id="registraceHeslo2_old"" class="prihlaseniInput" type="password" title="POTVRZENÍ HESLA" placeholder="POTVRZENÍ HESLA" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value)" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div>
+            <input id="registraceHeslo2_old" class="prihlaseniInput" type="password" title="POTVRZENÍ HESLA" placeholder="POTVRZENÍ HESLA" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value)" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div>
         </li>
         <li class="bila">
-            <input id="registraceEmail_old"" class="prihlaseniInput" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
+            <input id="registraceEmail_old" class="prihlaseniInput" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
         </li>
         <li class="produktTyp bila">
             <div style="height: 40px;clear:both;"></div>
@@ -566,7 +566,7 @@ cursor: pointer;
     </div>
     <div class="prihlaseniButtons">
         <div class="registraceSelectDiv f150 gradSedaDoluTlac">
-            <select id="myselect" class="registraceSelectButtons gradSedaDoluTlac">
+            <select id="registraceSelectSkola" class="registraceSelectButtons gradSedaDoluTlac">
                 <option value="0" selected="selected">VYBERTE ŠKOLU</option>
                 <option value="1">ČVUT</option>
                 <option value="2">UK</option>
@@ -574,7 +574,7 @@ cursor: pointer;
             </select>
         </div>
         <div class="registraceSelectDiv f150 gradSedaDoluTlac">
-            <select id="myselect" class="registraceSelectButtons gradSedaDoluTlac">
+            <select id="registraceSelectTrida" class="registraceSelectButtons gradSedaDoluTlac">
                 <option value="0" selected="selected">VYBERTE TŘÍDU</option>
                 <option value="1">A</option>
                 <option value="2">B</option>
@@ -584,7 +584,7 @@ cursor: pointer;
             </select>
         </div>
 
-        <div class="prihlaseniPrihlasitButns gradModraDolu colorBila f175" onclick="javascript:transition('#page-registrace2','fade')"">
+        <div class="prihlaseniPrihlasitButns gradModraDolu colorBila f175" onclick="transition('#page-registrace2','fade')">
             POKRAČOVAT >
         </div>
     </div>

@@ -586,6 +586,7 @@ function kosikRefresh() {
     }
 
     $( "#kosikSoucetCenyH" ).text("Celkem " + kosikSoucetCeny + " Kč");
+    $( "#dokoncitPlatbuSoucetCenyH" ).text("Celkem " + kosikSoucetCeny + " Kč");
 }
 
 function zboziOblibneRefresh() {
