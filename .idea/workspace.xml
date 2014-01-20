@@ -1,53 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="nova grafika&#10;optimalizace pro HD">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/logoFajnSvaca.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/logoFajnSvacaWhite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsCheckBoxOff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsCheckBoxOn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsOblibeneAdd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/productsOdebrat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/registraceSelect.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/registracemMan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/registracemWo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/splashTed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/zeregistrovat.png" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnDobitKredit.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnKoupit.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnMojeOblibene.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnPartneri.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnPodpora.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnProfil.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnVybratSvacu.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\btnVychytavky.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsBagety.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsHousky.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsOblozenaBageta.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsRyzekVHousce.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsSekanaVHousce.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsSyrVHousce.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\productsVegetBageta.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\spritesPrihlaseniClovek.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\imagesApp\spritesPrihlaseniKlic.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-36-ldpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-36-ldpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-48-mdpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-48-mdpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-57-2x.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-57-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-57.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-57.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-72-2x.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-72-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-72-hdpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-72-hdpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/icon-72.png" afterPath="$PROJECT_DIR$/res/icon/ios/icon-72.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/icon-96-xhdpi.png" afterPath="$PROJECT_DIR$/res/icon/android/icon-96-xhdpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/imagesApp/menuLeft.png" afterPath="$PROJECT_DIR$/svaca/imagesApp/menuLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-hdpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-hdpi-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-ldpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-ldpi-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-mdpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-mdpi-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-xhdpi-portrait.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-xhdpi-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/css/css.css" afterPath="$PROJECT_DIR$/svaca/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -70,7 +25,7 @@
     <favorites_list name="svaca" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.29895562">
+    <splitter split-orientation="horizontal" split-proportion="0.4686684">
       <split-first>
         <leaf>
           <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
@@ -85,7 +40,7 @@
           <file leaf-file-name="css.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="98" column="36" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.5271318" vertical-offset="1190" max-vertical-offset="24701">
+                <state line="144" column="18" selection-start="3845" selection-end="3845" vertical-scroll-proportion="0.81576025" vertical-offset="1713" max-vertical-offset="24752">
                   <folding />
                 </state>
               </provider>
@@ -107,9 +62,9 @@
           <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="572" column="0" selection-start="11927" selection-end="11927" vertical-scroll-proportion="0.0" vertical-offset="9423" max-vertical-offset="24701">
+                <state line="575" column="0" selection-start="11958" selection-end="11958" vertical-scroll-proportion="0.0" vertical-offset="9474" max-vertical-offset="24752">
                   <folding>
-                    <marker date="1390204176248" expanded="true" signature="30360:30390" placeholder="{...}" />
+                    <marker date="1390205974743" expanded="true" signature="30391:30421" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -127,7 +82,7 @@
           <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="540" column="425" selection-start="19535" selection-end="19548" vertical-scroll-proportion="0.33333334" vertical-offset="8879" max-vertical-offset="16269">
+                <state line="540" column="425" selection-start="19535" selection-end="19548" vertical-scroll-proportion="0.33407325" vertical-offset="8879" max-vertical-offset="16269">
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
@@ -248,24 +203,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imagesApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -523,7 +460,11 @@
       <created>1389717632957</created>
       <updated>1389717632957</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="nova grafika&#10;optimalizace pro HD">
+      <created>1390204370684</created>
+      <updated>1390204370684</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -550,6 +491,7 @@
     <frame x="1592" y="-188" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -564,7 +506,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -603,7 +544,8 @@
     <MESSAGE value="- oprava pozadi barvy headeru - typ produktu&#10;- dodlany filtry headerech - typ produktu&#10;- kosik - zobrazeni cisla 1-5&#10;- tlac zaplatit hned pod kosikem&#10;- zvětšení horního menu relativně podle velikosti písma&#10;- html verze stranky kdyz neni kredit&#10;" />
     <MESSAGE value="- aplikace v html" />
     <MESSAGE value="- aplikace v html&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- aplikace v html&#10;" />
+    <MESSAGE value="nova grafika&#10;optimalizace pro HD" />
+    <option name="LAST_COMMIT_MESSAGE" value="nova grafika&#10;optimalizace pro HD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -793,7 +735,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="540" column="425" selection-start="19535" selection-end="19548" vertical-scroll-proportion="0.33333334" vertical-offset="8879" max-vertical-offset="16269">
+        <state line="540" column="425" selection-start="19535" selection-end="19548" vertical-scroll-proportion="0.33407325" vertical-offset="8879" max-vertical-offset="16269">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1390203491599" expanded="false" signature="16941:16958" placeholder="..." />
@@ -805,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="36" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.5271318" vertical-offset="1190" max-vertical-offset="24701">
+        <state line="144" column="18" selection-start="3845" selection-end="3845" vertical-scroll-proportion="0.81576025" vertical-offset="1713" max-vertical-offset="24752">
           <folding />
         </state>
       </provider>

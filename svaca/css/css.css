@@ -141,6 +141,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 .f200 {
     font-size: 200%;
 }
+.f250 {
+    font-size: 250%;
+}
 .f150 {
     font-size: 150%;
 }
