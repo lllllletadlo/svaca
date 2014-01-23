@@ -24,7 +24,6 @@ var pageNext = "#page-vybratSvacu";
 
 $(document).ready(function(){
 
-
     //$('#dokoncitPlatbuNegativniText').css("display","block");
     //$('#dokoncitPlatbuDobitButton').css("display","block");
     //$('#dokoncitPlatbuPozitivniText').css("display","none");
@@ -38,17 +37,59 @@ $(document).ready(function(){
         width  : $(window).width(),
         height : $(window).height()
     };
-        // kosik nastaveni 60% height
-        //$('.ulKosik').css('max-height',viewport.height*0.4);
-        //var kosikPosition = $('.ulKosik').offset();
+
+    $('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
+    $('#ulVybratSvacu').css('height','auto');
+    maxHeightVybratSvacu = true;
+    // kosik nastaveni 60% height
+    //$('.ulKosik').css('max-height',viewport.height*0.4);
+    //var kosikPosition = $('.ulKosik').offset();
 
 
-        //$('#ulKosik').css('position','relative');
-        //$('#ulKosik').css('margin-bottom','0px');
-        //$('.ulKosikFooter').css('position','relative');
+    //$('#ulKosik').css('position','relative');
+    //$('#ulKosik').css('margin-bottom','0px');
+    //$('.ulKosikFooter').css('position','relative');
     // --------------------------
 
+
     zboziNactiAjax();
+    //transition('#page-registrace1','fade');
+
+
+
+    $(".clickNext").keypress(function(event) {
+        if(event.keyCode == 13) {
+            if($(this).attr('id')=="prihlaseniHeslo")
+            {
+                prihlaseniAjax();
+                return;
+            }
+            if($(this).attr('id')=="registraceHeslo2")
+            {
+                registrovatAjax();
+                return;
+            }
+
+            $(this).nextAll('input:first').focus();
+            /*
+             for(var i=0; i< keyPosloupnost.length; i++)
+             {
+             if(keyPosloupnost[i]==$(this).attr('id'))
+             {
+             if(keyPosloupnost[i+1]=="prihlaseniPrihlasitSe")
+             {
+             prihlaseniAjax();
+             return;
+             }
+             $('#'+keyPosloupnost[i+1]).focus();
+             console.log("focus na:" + keyPosloupnost[i+1]);
+             return;
+             }
+             }
+             */
+        }
+    });
+
 
     $("#pages a").click(function(e){
         //if(e.target.hash.slice(1)=="") console.log("nic");
@@ -122,8 +163,6 @@ function transition(toPage, type) {
         kosikRefresh();
         //$('#page-kosik').attr('class', 'page-kosik');
         $('#page-kosik').removeClass('objednavka');
-
-
         if(!maxHeightKosik)
         {
             var maxDelka = viewport.height - $('#koupitSvacuZaplatitKredit').height() - $('.ulKosikFooter').height();
@@ -131,18 +170,18 @@ function transition(toPage, type) {
             $('.ulKosik').css('position','relative');
             $('.ulKosikFooter').css('position','relative');
         }
-
-
-
-
-        //$('#kosikZaplatitButton').attr('onClick', "javascript:pageObjednat()");
     }
     if(toPage.selector=="#page-mojeOblibene") {
 
         zboziOblibneRefresh();
     }
-    if(toPage.selector=="#page-prihlaseni") {
+    if(toPage.selector=="#page-prihlaseni")
+    {
         $('#menuLeftDiv').css('display','none');
+    }
+    if(toPage.selector=="#page-registrace1") {
+
+        selectDataAjax("listSchools","registraceSelectSkola","");
     }
 }
 
@@ -164,10 +203,10 @@ function kosikZobrazCisloVkolecku() {
  logika nacitani:
  document ready     -   nacteni zbozi (pri neprihlasen jde na prihlaseni) definovano promenou pageNext
  prihlaseni         -   nacteni zbozi
-                    -   kosik empty
-                    -   getUserInfo = jmeno(horni lista), profil, kredit(horni lista)
+ -   kosik empty
+ -   getUserInfo = jmeno(horni lista), profil, kredit(horni lista)
  page-vybratSvacu   -   nacteni zbozi
-                    -   getUserInfo (kredit)
+ -   getUserInfo (kredit)
 
  */
 
@@ -309,7 +348,7 @@ function ajaxError2(data){
 
     alert("Nelze se připojit k serveru!");
     alertZobraz($.param(data).toLowerCase());
-;
+    ;
 }
 
 
@@ -386,25 +425,38 @@ function prihlaseniZobrazDialog()
 
 function prihlaseniAjax()
 {
+    if($('#prihlaseniJmeno').val()=="" && $('#prihlaseniHeslo').val() =="")
+    {
+        alertZobraz("Vyplňte jméno a heslo.");
+        return;
+    }
     console.log("prihlaseniAjax");
 // TODO vymazat heslo z input field
-    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/login?username=' + $('#prihlaseniJmeno').val() + '&password='+$('#prihlaseniHeslo').val(),
+    //$.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/login?username=' + $('#prihlaseniJmeno').val() + '&password='+$('#prihlaseniHeslo').val(),
+    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/login',
+        data: {
+            username: $('#prihlaseniJmeno').val(),
+            password:$('#prihlaseniHeslo').val()
+        },
         success : function (data) {
             console.log("prihlaseniAjax succes");
-        if( data.status == "ok")
-        {
-            console.log("prihlaseni ok");
-            alert("přihlášen ok");
-            //transition("#page-dokoncitPlatbu","fade");
-            nacistDataPoPrihlaseni();
-            $('#menuLeftDiv').css('display','block');
-            transition("#page-vybratSvacu","fade");
+            if( data.status == "ok")
+            {
+                console.log("prihlaseni ok");
+                alert("přihlášen ok");
+                //transition("#page-dokoncitPlatbu","fade");
+                nacistDataPoPrihlaseni();
+                $('#menuLeftDiv').css('display','block');
+                transition("#page-vybratSvacu","fade");
 
-        }
-        else
-        {
-            alertZobraz(data.msg);
-        }
+            }
+            else
+            {
+                alertZobraz(data.msg);
+            }
+        },
+        complete: function() {
+            $('#prihlaseniHeslo').val('');
         },
         error: ajaxError2
     });
@@ -419,11 +471,97 @@ function logout()
 }
 
 
+function registraceSelectSkolaChange()
+{
+    $('#registraceSelectedSkola').text($('#registraceSelectSkola option:selected').text());
+    selectDataAjax("listClasses","registraceSelectTrida",$('#registraceSelectSkola option:selected').val());
+    if($('#registraceSelectSkola').find("option[value='0']").text()=="VYBERTE ŠKOLU")
+    {
+        $('#registraceSelectSkola').find("option[value='0']").remove();
+    }
+}
+function registraceSelectTridaChange()
+{
+    $('#registraceSelectedTrida').text($('#registraceSelectTrida option:selected').text());
+}
+
+// nakrmi select polozkama
+function selectNakrm(idSelectu, data)
+{
+
+    console.log("selectNakrm" + data);
+    newOptions = data.list;
+
+    var select = $('#'+idSelectu);
+    var options = select.prop('options');
+
+    $('option', select).remove();
+
+    if(idSelectu=="registraceSelectSkola") options[options.length] = new Option("VYBERTE ŠKOLU", 0);
+
+    $.each(newOptions, function() {
+        options[options.length] = new Option(this.name, this.id);
+        console.log(this.name);
+    });
+
+    if(idSelectu=="registraceSelectTrida")
+    {
+        select.val(1);
+        $('#registraceSelectedTrida').text($('#registraceSelectTrida option:selected').text());
+    }
+    console.log("nakrmeno");
+}
+
+// http://demo.livecycle.cz/fajnsvaca/api/listSchools
+// http://demo.livecycle.cz/fajnsvaca/api/listClasses?school_id=1
+function selectDataAjax(listType,idSelectu,param) {
+    console.log("selectDataAjax");
+    if(param.length>0)
+    {
+        param = "?school_id=" + param;
+    }
+    var url = 'http://demo.livecycle.cz/fajnsvaca/api/' + listType + param;
+    console.log("url:" + url);
+    $.ajax({ url:url,
+        success: function(data) {
+            if( data.status == "error" && data.code == "not logged")
+            {
+                console.log(data.msg);
+                console.log("neprihlasen");
+                prihlaseniZobrazDialog();
+                return;
+            }
+            if( data.status == "ok")
+            {
+                console.log("aa");
+                selectNakrm(idSelectu,data);
+            }
+        },
+        error: ajaxError2
+    });
+}
+
 function registrovatAjax() {
     if(validateRegistrace())
     {
-        console.log("registrovatAjax");
-        $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&firstName='+$('#registraceJmeno').val()+ '&lastName='+$('#registracePrijmeni').val()+ '&password='+$('#registraceHeslo').val()+ '&email='+$('#registraceEmail').val(),
+        var sex = "female";
+        if($( "#checkBoxRegistracekluk").is(':checked'))
+        {
+            sex = "male";
+        }
+
+        console.log("registrovatAjax sex:" + sex);
+        //$.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&firstName='+$('#registraceJmeno').val()+ '&lastName='+$('#registracePrijmeni').val()+ '&password='+$('#registraceHeslo').val()+ '&email='+$('#registraceEmail').val(),
+        $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser',
+            data: {
+                username: $('#registraceUsername').val(),
+                fullName: $('#registracePrijmeni').val(),
+                sex: sex,
+                password: $('#registraceHeslo').val(),
+                email: $('#registraceEmail').val(),
+                class: $('#registraceSelectedSkola').text(),
+                school_id: $('#registraceSelectedTrida').text()
+            },
             success: function(data) {
                 if( data.status == "error")
                 {
@@ -442,10 +580,11 @@ function registrovatAjax() {
                 if( data.status == "ok")
                 {
                     console.log("registrovatAjax data.status == ok");
-                    alert("Zaregistrováno!");
+                    //alert("Zaregistrováno!");
                     nacistDataPoPrihlaseni();
-                    transition("#page-vybratSvacu","fade");
-                    $('#menuLeftDiv').css('display','block');
+                    //transition("#page-vybratSvacu","fade");
+                    transition("#page-registraceOK","fade");
+                    //$('#menuLeftDiv').css('display','block');
 
                 }
             },
@@ -573,15 +712,15 @@ function kosikRefresh() {
         }
 
         kosikSoucetCeny += Number(zbozi[zboziIndex].price);
-/*
-        var produkt = '<li class="produkt"><div class="produktKosik produktKosikObrObbOdebrat modra" onclick="kosikRemoveNeboOblibene('+i+')"><div class="kosikShow">Odebrat<br>z košíku</div><div class="objShow">Přidat do<br>oblíbených</div></div><div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' +zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span></div>'
-        if(i<kosik.length-1) produkt += '<div class="produktLine"></div></li>'
-            else produkt += '<div class="produktLineNO"></div></li>'
-        $( "#ulKosik" ).append(produkt);
-        // old $( "#ulKosik" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr modra" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</div><div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' +zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+        /*
+         var produkt = '<li class="produkt"><div class="produktKosik produktKosikObrObbOdebrat modra" onclick="kosikRemoveNeboOblibene('+i+')"><div class="kosikShow">Odebrat<br>z košíku</div><div class="objShow">Přidat do<br>oblíbených</div></div><div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' +zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span></div>'
+         if(i<kosik.length-1) produkt += '<div class="produktLine"></div></li>'
+         else produkt += '<div class="produktLineNO"></div></li>'
+         $( "#ulKosik" ).append(produkt);
+         // old $( "#ulKosik" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr modra" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</div><div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' +zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
 
-        // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
-*/
+         // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
+         */
         var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+zbozi[zboziIndex].icon+'"  ><h3 class="f200">' + zbozi[zboziIndex].name + '</h3>  <span class="f150">'+ zbozi[zboziIndex].description+'</span><span class="cena f150">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow f75">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow f75">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
 
         if(i<kosik.length-1) produkt += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
@@ -599,7 +738,7 @@ function zboziOblibneRefresh() {
     $("#ulMojeOblibene").empty();
     for(var j = 0; j< zboziOblibene.length; j++)
     {
-    //$.each(zboziOblibene, function() {
+        //$.each(zboziOblibene, function() {
         var zboziIndex = 0;
         for(var i = 0; i< zbozi.length; i++)
         {
@@ -624,18 +763,25 @@ function zboziOblibneRefresh() {
 function objednavkaOdelsatAjax(objednavka, typ) {
     console.log("objednavkaOdelsatAjax typ:" + typ);
 
-    //kontrola checkBoxu (budoucich radio buttonu)
-     if( $('#checkBoxVyzvednout').is(':checked')==false && $('#checkBoxDonaskaKuryrem').is(':checked')==false && typ==1)
-     {
-         alertZobraz("Vyberte způsob doručení");
-         return;
-     }
-
+    var delivery = "bufet";
+    var mistoDoruceni = "";
+    if( $('#checkBoxDonaskaKuryrem').is(':checked')==true)
+    {
+        delivery = "kuryr";
+        mistoDoruceni = $('#mistoDoruceniInput').val();
+        console.log("objednavkaOdelsatAjax mistoDoruceni:" + mistoDoruceni);
+    }
+    console.log("objednavkaOdelsatAjax delivery:" + delivery);
 
     $.ajax({
         type: 'POST',
-        url: 'http://demo.livecycle.cz/fajnsvaca/api/createOrder?proceed='+typ+'&basket='+objednavka,
-        data : objednavka,
+        url: 'http://demo.livecycle.cz/fajnsvaca/api/createOrder',
+        data : {
+            proceed: typ,
+            basket: objednavka,
+            delivery: delivery,
+            deliveryPlace: mistoDoruceni
+        },
         success : function(data) {
             console.log("objednavkaOdelsatAjax typ:" + typ + " success");
 
@@ -653,11 +799,11 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                 $('#okoncitObjednavkuKredit').text(data.balanceBefore==null?(profil.balance + " Kč"):(data.balanceBefore+" Kč"));
                 $('#okoncitObjednavkuZustatek').text(data.balanceAfter==null?"0 Kč":(data.balanceAfter+" Kč"));
                 /*
-                $('#dokoncitPlatbuNegativniText').css("display","block");
-                $('#dokoncitPlatbuDobitButton').css("display","block");
-                $('#dokoncitPlatbuPozitivniText').css("display","none");
-                $('#dokoncitPlatbuPotvrditButton').css("display","none");
-                */
+                 $('#dokoncitPlatbuNegativniText').css("display","block");
+                 $('#dokoncitPlatbuDobitButton').css("display","block");
+                 $('#dokoncitPlatbuPozitivniText').css("display","none");
+                 $('#dokoncitPlatbuPotvrditButton').css("display","none");
+                 */
                 $('#page-dokoncitPlatbu').attr('class', 'page-dokoncitPlatbu negativni');
                 transition("#page-dokoncitPlatbu","fade");
                 return;
@@ -671,11 +817,11 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                     $('#okoncitObjednavkuKredit').text(data.balanceBefore==null?(profil.balance + " Kč"):(data.balanceBefore+" Kč"));
                     $('#okoncitObjednavkuZustatek').text(data.balanceAfter==null?"0 Kč":(data.balanceAfter+" Kč"));
                     /*
-                    $('#dokoncitPlatbuPozitivniText').css("display","block");
-                    $('#dokoncitPlatbuPotvrditButton').css("display","block");
-                    $('#dokoncitPlatbuNegativniText').css("display","none");
-                    $('#dokoncitPlatbuDobitButton').css("display","none");
-                    */
+                     $('#dokoncitPlatbuPozitivniText').css("display","block");
+                     $('#dokoncitPlatbuPotvrditButton').css("display","block");
+                     $('#dokoncitPlatbuNegativniText').css("display","none");
+                     $('#dokoncitPlatbuDobitButton').css("display","none");
+                     */
                     $('#page-dokoncitPlatbu').attr('class', 'page-dokoncitPlatbu pozitivni');
                     transition("#page-dokoncitPlatbu","fade");
                 } else
@@ -692,11 +838,11 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                     $('#potvrzeniPlatbyKredit').text(data.balanceAfter==null?"0 Kč":("Kredit: " + data.balanceAfter + " Kč"));
                     transition("#page-potvrzeniPlatby","fade");
                     /*
-                    kosik = [];
-                    kosikRefresh();
-                    kosikPocetPolozek = 0;
-                    kosikZobrazCisloVkolecku();
-                    */
+                     kosik = [];
+                     kosikRefresh();
+                     kosikPocetPolozek = 0;
+                     kosikZobrazCisloVkolecku();
+                     */
                     pageNext = "";
                     nacistDataPoPrihlaseni();
                 }
@@ -885,12 +1031,12 @@ function validateRegistrace() {
             $('#registraceUsername').next().text("Přihlašovací jméno obsahuje nepovolené znaky: " + nepovoleneZnaky);
         //alertZobraz("Přihlašovací jméno obsahuje nepovolené znaky: " + nepovoleneZnaky);
     }
-/*    if(!validateCharactersDo($("#registraceJmeno").val()) && validnost)
-    {
-        validnost = false;
-        alertZobraz("Jméno obsahuje nepovolené znaky: " + nepovoleneZnaky);
-    }
-*/
+    /*    if(!validateCharactersDo($("#registraceJmeno").val()) && validnost)
+     {
+     validnost = false;
+     alertZobraz("Jméno obsahuje nepovolené znaky: " + nepovoleneZnaky);
+     }
+     */
     if(!validateCharactersDo($("#registracePrijmeni").val()))
     {
         validnost = false;
@@ -955,4 +1101,21 @@ function validateRegistrace() {
     }
     return validnost;
 
+}
+// =============================================================================== ruzne funkce
+function centreSelect(box)
+{
+    for(var data={longest:0}, i=0, opts=box.options, len=opts.length; i<len; i++)
+        if(opts[i].text.length>data.longest)
+        {
+            data.longest=opts[i].text.length;
+            data.idx=i;
+        }
+
+    for(i=0,h=data.longest/2,pad=''; i<h; i++)
+        pad+='\xa0';
+
+    for(var i=0, space; i<len; i++)
+        if( i!=data.idx )
+            opts[i].text=(space=pad.substring(0,(data.longest-opts[i].text.length)/2))+opts[i].text+space;
 }

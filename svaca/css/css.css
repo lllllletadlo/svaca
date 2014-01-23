@@ -95,8 +95,11 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     }
     .produkt2KosikObr div {
         background-size: 3em !important;
-        padding-top: 60px !important;
+        padding-top: 3.5em !important;
         font-size: 150%  !important;
+    }
+    .produkt2KosikObr {
+        margin-top: -3.5em  !important;
     }
 
 }
@@ -133,20 +136,31 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     }
 }
 
-
+.f50 {
+    font-size: 50%;
+}
 .f75 {
     font-size: 75%;
 }
-
+.f100 {
+    font-size: 100%;
+}
+.f150 {
+    font-size: 150%;
+}
+.f150s {
+    font-size: 150%;
+}
+.f175 {
+    font-size: 175%;
+}
 .f200 {
     font-size: 200%;
 }
 .f250 {
     font-size: 250%;
 }
-.f150 {
-    font-size: 150%;
-}
+
 
 @font-face {
     font-family: Myriad Pro;
@@ -176,12 +190,17 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 a:link, a:visited {
-    text-decoration: underline;
+    text-decoration: none;
     color: #0000CC;
 }
-a:hover, a:active {
-    text-decoration: underline;
-    color: #660066;
+a:active {
+    opacity: 0.5;
+}
+a:hover {
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
 .menuUzivatel {
     text-align: center;
@@ -419,10 +438,29 @@ div#menuLeftDiv {
     min-height: 10%;
     font-size: 180%;
 }
+.menuLeftDiv a {
+    display: block;
+    margin-top: 4px;
+}
 /* kokretni upravy pro stranky */
 .page-home .fajnSvacaText {
     margin-top: 35px;
     margin-bottom: 35px;
+}
+.page-registraceOK > div {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -0.5em;
+    line-height: 100%;
+}
+.page-registraceOK a {
+    padding: 2%;
+    margin: auto;
+    display: block;
+    width: 3em;
+    margin-top: 5%;
 }
 
 .vybratSvacuPorduktUl {
@@ -597,6 +635,16 @@ div#menuLeftDiv {
     top: 15%;
     height: 80%;
 }
+#mistoDoruceniInput {
+    width: 100%;
+    font-family: Myriad Pro;
+    font-size: 100%;
+}
+#mistoDoruceniH {
+    padding-top: 0.2em;
+    padding-bottom: 0.5em
+}
+
 
 .ulKosikFooter {
     height: auto;
@@ -609,7 +657,6 @@ div#menuLeftDiv {
     text-align: center;
     background-color: #edc400 !important;
     line-height: 2em;
-    font-size: 180%;
     left: 15%;
     width: 85%;
 }
@@ -675,13 +722,14 @@ div#menuLeftDiv {
 */
     font-family: Myriad Pro;
     line-height: 1em;
+    min-height: 4.5em;
     /*font-size: 4vw;
 */
 }
 .produkt2Popis h3 {
     margin-right: 3em;
     padding-left: 95px;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.3em;
     padding-top: 0.2em;
     /*margin: 2vw;
 */
@@ -812,26 +860,27 @@ div#menuLeftDiv {
     background: url(../imagesApp/productsLupa.png) no-repeat center top;
 }
 
+.partneriFajnSvacaIMG {
+    width: 85%;
+    margin-left: 15%;
+}
 .partneri {
     height: 70%;
-    width: 90%;
+    width: 85%;
     position: absolute;
-    margin: 0 5% 0 5%;
     background-color: white;
     text-align: center;
+    left: 15%;
 }
 
 .partneri h3 {
-    font-size: 175%;
     line-height: 1.5em !important;
     margin-top: 10px;
 }
 .partneri h3:first-child {
-    font-size: 225%;
     line-height: 2em !important;
 }
 .partneri span {
-    font-size: 200%;
     line-height: 2em;
     color: white;
     background: black;
@@ -843,11 +892,10 @@ div#menuLeftDiv {
     margin-top: 2em;
 }
 .partneri div {
-    overflow: scroll;
+    overflow: auto;
     width: 100%;
     bottom: 0px;
     top: 16em;
-    position: absolute;
 }
 
 
@@ -1177,13 +1225,17 @@ div#menuLeftDiv {
     bottom: 20%;
 }
 
-
-
 .registraceSelectDiv {
     position: relative;
     height: 4em;
     margin-bottom: 2em;
-    font-size: 150%;
+}
+.registraceSelectDiv > div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 80%;
 }
 
 
@@ -1193,7 +1245,7 @@ div#menuLeftDiv {
     -webkit-appearance: none;
     -moz-appearance: none;
     background: url("../imagesApp/registraceSelect.png") right;
-    background-size: 4em;
+    background-size: 21% 4em;
     background-repeat: no-repeat;
     position: absolute;
     top: 0px;
@@ -1201,20 +1253,18 @@ div#menuLeftDiv {
 
     width: 100%;
     height: 100%;
-    
-
-    font-size: 140%;
-    text-indent: 6em;
 }
-
-.registraceSelectButtons select {
+.registraceSelectedDIV {
+    top: 50%;
+    height: 100%;
+    position: absolute;
     width: 100%;
-    text-align: center;
-    height: 10%;
-    font-size: 200%;
-    text-indent: 35%;
-    margin-bottom: 1em;
+    margin-top: -0.5em;
+    line-height: 100%;
+    text-indent: 20%;
 }
+
+
 
 .registrace2Container {
     height: 100% !important;
@@ -1463,4 +1513,5 @@ div#menuLeftDiv {
     line-height: 25px;
     border: 3px solid;
     font-size: 200%;
+    z-index: 100;
 }

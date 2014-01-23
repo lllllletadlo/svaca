@@ -4,22 +4,17 @@
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=1"/>
     <script src="svaca/js/jquery-1.8.3.min.js"></script>
     <script src="svaca/js/scripts.js"></script>
+    <script src="svaca/js/scriptFile.js"></script>
+    <script src="svaca/js/cordova.js"></script>
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
 </head>
 <body>
 
 <script>
-
-
-
-    function menuLeftShow()
-    {
-        $('#menuLeftDiv').toggle();
-    }
 
 </script>
 
@@ -31,55 +26,24 @@
 <div id="pages">
 
 <div id="menuLeftDiv" class="menuLeftDiv f180">
-    <img class="menuLeftImg" src="svaca/imagesApp/menuLeft.png" width="800" height="1227" usemap="#menuLeftMap">
-    <map name="menuLeftMap">
-        <area shape="rect" coords="0,0,110,125" alt="Sun" href="javascript:transition('#page-vybratSvacu','fade')">
-        <area shape="rect" coords="0,125,110,250" alt="Sun" href="javascript:transition('#page-mojeOblibene','fade')">
-        <area shape="rect" coords="0,250,110,375" alt="Sun" href="javascript:transition('#page-dobitKredit','fade')">
-        <area shape="rect" coords="0,375,110,500" alt="Sun" href="javascript:transition('#page-vychytavky','fade')">
-        <area shape="rect" coords="0,500,110,625" alt="Sun" href="javascript:transition('#page-partneri','fade')">
-        <area shape="rect" coords="0,625,110,750" alt="Sun" href="javascript:transition('#page-profil','fade')">
-        <area shape="rect" coords="0,750,110,875" alt="Sun" href="javascript:transition('#page-podpora','fade')">
-    </map>
+    <a onclick="javascript:transition('#page-vybratSvacu','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu1.png"></a>
+    <a onclick="javascript:transition('#page-mojeOblibene','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu2.png"></a>
+    <a onclick="javascript:transition('#page-dobitKredit','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu3.png"></a>
+    <a onclick="javascript:transition('#page-vychytavky','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu4.png"></a>
+    <a onclick="javascript:transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
+    <a onclick="javascript:transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
+    <a onclick="javascript:transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
 </div>
 
-<div id="page-home" class="page-home">
-    <img class="fajnSvacaText"  >
-    <div class="btnQuatroMenu">
-        <a class="btnQuatro1" href="#page-koupit" ><div class="btnText">KOUPIT SVÁČU</div></a>
-        <a class="btnQuatro2" href="#page-vychytavky" ><div class="btnText">VYCHYTÁVKY</div></a>
-        <a class="btnQuatro3" href="#page-partneri"><div class="btnText">PARTNEŘI</div></a>
-        <a class="btnQuatro4" href="#page-podpora"><div class="btnText">PODPORA</div></a>
-    </div>
-</div>
+<div id="page-vybratSvacu" class="page-vybratSvacu current">
 
-<div id="page-koupit" class="page-koupit">
-    <div class="menu" style="position: absolute; width: 20%">
-        <a class="btnMenuMenu modra" style="width: 100%" onclick="javascript:menuLeftShow()" href="" >&gt;&gt;</a>
-    </div>
-    <div class="menuUzivatel">
-        <div>
-            <li id="koupitUserName" class="avatar">David Nonák</li>
-        </div>
-    </div>
-    <img class="fajnSvacaText"  >
-    <div class="btnQuatroMenu">
-        <a class="btnQuatroVybratSvacu" href="#page-vybratSvacu" ><div class="btnText">VYBRAT SI SVÁČU</div></a>
-        <a class="btnQuatroMojeOblibene" href="#page-mojeOblibene" ><div class="btnText">MOJE OBLIBENE</div></a>
-        <a class="btnQuatroDobitKredit" href="#page-dobitKredit"><div class="btnText">DOBÍT KREDIT</div></a>
-        <a class="btnQuatroProfil" href="#page-profil"><div class="btnText">PROFIL</div></a>
-    </div>
-</div>
-
-<div id="page-vybratSvacu" class="page-vybratSvacu">
-
-    <div class="menu">
+    <div class="menu bila">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="vybratSvacuKredit" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
         <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
-
+        <div style="clear: both"></div>
     </div>
 
 
@@ -170,13 +134,13 @@
             <div style="height: 2em"></div>
         </li>
     </ul>
-    <div class=" ulKosikFooterTlac zlata objShow f250">+ Přidat celé menu do oblíbených</div>
+    <a class=" ulKosikFooterTlac zlata kosikShow f250">+ Přidat celé menu do oblíbených</a>
 
 </div>
 
 
 
-<div id="page-dokoncitPlatbu" class="page-dokoncitPlatbu negativni">
+<div id="page-dokoncitPlatbu" class="page-dokoncitPlatbu pozitivni">
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="dokoncitPlatbuKredit" class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
@@ -205,15 +169,20 @@
         <li class="produktTyp bila listText dokoncitShowPozitivni f150">
             <br>
             <div class="radioButt radioButtZaplatitSvacu">
-                <input type="radio" value="vyzvednout" id="checkBoxVyzvednout" checked name="doruceni" />
+                <input type="radio" value="vyzvednout" id="checkBoxVyzvednout" checked name="doruceni" onchange="javascript:$(this).is(':checked')==true?$('#mistoDoruceniDiv').css('display','none'):null" />
                 <label for="checkBoxVyzvednout"></label>
             </div>
             <h3 class="tmavaText">Vyzvednout u bufetu</h3><br>
             <div class="radioButt radioButtZaplatitSvacu">
-                <input type="radio" value="kuryr" id="checkBoxDonaskaKuryrem" name="doruceni" />
+                <input type="radio" value="kuryr" id="checkBoxDonaskaKuryrem" name="doruceni" onchange="javascript:$(this).is(':checked')==true?$('#mistoDoruceniDiv').css('display','block'):null" />
                 <label for="checkBoxDonaskaKuryrem"></label>
             </div>
             <h3 class="tmavaText">donáška kurýrem + 15 kč</h3><br>
+            <div id="mistoDoruceniDiv" style="display: none">
+                <h3 id="mistoDoruceniH" class="tmavaText">Místo doručení:</h3>
+                <input id="mistoDoruceniInput" type="text" />
+            </div>
+            <div style="clear: both"></div>
         </li>
         <li class="produktTyp produktHeaderSpace">
             <div style="height: 20px"></div>
@@ -262,12 +231,14 @@
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <img class="fajnSvacaText"  >
+    <div class="partneriFajnSvacaIMG">
+        <img class="fajnSvacaText"  >
+    </div>
     <div class="partneri">
-        <h3>Velké díky patří</h3>
-        <h3>partnerům bez kterých by Fajn Sváča</h3>
-        <h3>nebyla taková jaká je</h3>
-        <span>Děkujeme</span>
+        <h3 class="f200">Velké díky patří</h3>
+        <h3 class="f175">partnerům bez kterých by Fajn Sváča</h3>
+        <h3 class="f175">nebyla taková jaká je</h3>
+        <span class="f200">Děkujeme</span>
         <br>
         <div>
             <img>
@@ -282,8 +253,8 @@
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <img class="fajnSvacaText"  >
-    <ul class="produtkSeznam">
-        <li class="listHeader zluta">
+    <ul class="produtkSeznam f200">
+        <li class="listHeader zluta f150s">
             <h3>Vychytávky</h3>
         </li>
         <li class="produkt2">
@@ -295,7 +266,7 @@
 
                 </div>
                 <div class="produkt2Prava zelena">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    <div class="produkt2KosikObr imgLupa f50"><div>Zobrazit<br>info</div></div>
                 </div>
             </div>
             <div class="produkt2Line">
@@ -310,7 +281,7 @@
                     <span>Prvních 20 lidí se Samsung produktem získá v bufetu jednu bagetu dle výběru <div class="produkt2PopisZvyrazneni colorHneda">ZDARMA.</div></span>
                 </div>
                 <div class="produkt2Prava zelena">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    <div class="produkt2KosikObr imgLupa f50"><div>Zobrazit<br>info</div></div>
                 </div>
             </div>
         </li>
@@ -352,23 +323,24 @@
     <div onclick="zboziNactiAjax()" style="
     position: absolute;
     left: 180px;
-    top: 40px;
     font-size: 200%;padding: 10px;
 background-color: green;
 cursor: pointer;
 ">nacti data vymaz kos</div><div onclick="logout()" style="
     position: absolute;
     position: absolute;
-    left: 450px;  top: 40px;  font-size: 200%;padding: 10px;
+    left: 450px;  font-size: 200%;padding: 10px;
 background-color: red;
 cursor: pointer;
 ">logout</div>
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <img class="fajnSvacaText"  >
-    <ul class="produtkSeznam">
-        <li class="listHeader zluta">
+    <div class="partneriFajnSvacaIMG">
+        <img class="fajnSvacaText"  >
+    </div>
+    <ul class="produtkSeznam f200">
+        <li class="listHeader zluta f150s">
             <h3>Zájem o spolupráci</h3>
         </li>
         <li class="produkt2">
@@ -378,7 +350,7 @@ cursor: pointer;
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
 
                 </div>
-                <div class="produkt2Prava zelena">
+                <div class="produkt2Prava zelena f50">
                     <div class="produkt2KosikObr imgLupa"><div>Kontaktujte<br>nás</div></div>
                 </div>
             </div>
@@ -392,7 +364,7 @@ cursor: pointer;
                     <h3>Pomozte nám otevřít bufet na Vaší škole</h3>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</span>
                 </div>
-                <div class="produkt2Prava zelena">
+                <div class="produkt2Prava zelena  f50">
                     <div class="produkt2KosikObr imgLupa"><div>Kontaktujte<br>nás</div></div>
                 </div>
             </div>
@@ -406,7 +378,7 @@ cursor: pointer;
                     <h3>Kontaktujte nás</h3>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore aliqua.</span>
                 </div>
-                <div class="produkt2Prava zelena">
+                <div class="produkt2Prava zelena  f50">
                     <div class="produkt2KosikObr imgLupa"><div>Kontaktujte<br>nás</div></div>
                 </div>
             </div>
@@ -422,9 +394,11 @@ cursor: pointer;
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <img class="fajnSvacaText"  >
-    <ul class="produtkSeznam">
-        <li class="listHeader zluta">
+    <div class="partneriFajnSvacaIMG">
+        <img class="fajnSvacaText"  >
+    </div>
+    <ul class="produtkSeznam f200">
+        <li class="listHeader zluta f150s">
             <h3>Dobít kredit</h3>
         </li>
         <li class="produkt2">
@@ -435,7 +409,7 @@ cursor: pointer;
 
                 </div>
                  <div class="produkt2Prava modra">
-                     <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                     <div class="produkt2KosikObr imgLupa f50"><div>Zobrazit<br>info</div></div>
                  </div>
             </div>
             <div class="produkt2Line">
@@ -449,7 +423,7 @@ cursor: pointer;
                     <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
                 </div>
                 <div class="produkt2Prava modra">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    <div class="produkt2KosikObr imgLupa f50"><div>Zobrazit<br>info</div></div>
                 </div>
             </div>
             <div class="produkt2Line">
@@ -463,7 +437,7 @@ cursor: pointer;
                     <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
                 </div>
                 <div class="produkt2Prava modra">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    <div class="produkt2KosikObr imgLupa f50"><div>Zobrazit<br>info</div></div>
                 </div>
             </div>
             <div class="">
@@ -477,7 +451,9 @@ cursor: pointer;
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <img class="fajnSvacaText"  >
+    <div class="partneriFajnSvacaIMG">
+        <img class="fajnSvacaText"  >
+    </div>
     <ul class="produtkSeznam">
         <li class="produktTyp produktHeaderSpace">
             <div style="height: 20px"></div>
@@ -553,28 +529,26 @@ cursor: pointer;
         <div class="logoFajnSvaca f150"  ></div>
     </div>
     <div class="prihlaseniButtons">
-        <div class="registraceSelectDiv f150 gradSedaDoluTlac">
-            <select id="registraceSelectSkola" class="registraceSelectButtons gradSedaDoluTlac">
+        <div class="registraceSelectDiv f100">
+            <select id="registraceSelectSkola" class="registraceSelectButtons f150" onchange="registraceSelectSkolaChange()">
                 <option value="0" selected="selected">VYBERTE ŠKOLU</option>
                 <option value="1">ČVUT</option>
                 <option value="2">UK</option>
                 <option value="3">FTVS</option>
+                <option value="3">FTVS</option>
             </select>
+            <div class="gradSedaDoluTlac f150"><div id="registraceSelectedSkola" class="registraceSelectedDIV">VYBERTE ŠKOLU</div></div>
         </div>
-        <div class="registraceSelectDiv f150 gradSedaDoluTlac">
-            <select id="registraceSelectTrida" class="registraceSelectButtons gradSedaDoluTlac">
+        <div class="registraceSelectDiv gradSedaDoluTlac">
+            <select id="registraceSelectTrida" class="registraceSelectButtons f150" onchange="registraceSelectTridaChange()">
                 <option value="0" selected="selected">VYBERTE TŘÍDU</option>
-                <option value="1">A</option>
-                <option value="2">B</option>
-                <option value="3">C</option>
-                <option value="4">D</option>
-                <option value="5">E</option>
             </select>
+            <div class="gradSedaDoluTlac f150"><div id="registraceSelectedTrida" class="registraceSelectedDIV">VYBERTE TŘÍDU</div></div>
         </div>
 
-        <div class="prihlaseniPrihlasitButns gradModraDolu colorBila f175" onclick="transition('#page-registrace2','fade')">
+        <a class="prihlaseniPrihlasitButns gradModraDolu colorBila f175" onclick="transition('#page-registrace2','fade')">
             POKRAČOVAT >
-        </div>
+        </a>
     </div>
 </div>
 
@@ -582,11 +556,11 @@ cursor: pointer;
     <div class="prihlaseniLogo registrace2Container prihlaseniButtons">
         <h3>Registrace</h3>
         <span>Krok 2 z 2</span>
-        <input id="registraceUsername" class="gradSedaVertical" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
+        <input id="registraceUsername" class="gradSedaVertical clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
         <div class="registraceWarning f150b"></div>
-        <input id="registraceEmail" class="gradSedaVertical" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
+        <input id="registraceEmail" class="gradSedaVertical clickNext" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
         <div class="registraceWarning f150b"></div>
-        <input id="registracePrijmeni" class="gradSedaVertical" type="text" title="JMÉNO A PŘÍJMENÍ" placeholder="JMÉNO A PŘÍJMENÍ" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
+        <input id="registracePrijmeni" class="gradSedaVertical clickNext" type="text" title="JMÉNO A PŘÍJMENÍ" placeholder="JMÉNO A PŘÍJMENÍ" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
         <div class="registraceWarning f150b"></div>
         <div>
             <div class="registraceCheckBoxDiv">
@@ -605,14 +579,21 @@ cursor: pointer;
                 </div>
             </div>
         </div>
-        <input id="registraceHeslo" class="gradSedaVertical" type="password" title="HESLO" placeholder="HESLO" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value,this)"/>
+        <input id="registraceHeslo" class="gradSedaVertical clickNext" type="password" title="HESLO" placeholder="HESLO" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value,this)"/>
         <div class="registraceWarning f150b"></div>
-        <input id="registraceHeslo2" class="gradSedaVertical" type="password" title="POTVRZENÍ HESLA" placeholder="POTVRZENÍ HESLA" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value,this)" />
+        <input id="registraceHeslo2" class="gradSedaVertical clickNext" type="password" title="POTVRZENÍ HESLA" placeholder="POTVRZENÍ HESLA" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value,this)" />
         <div class="registraceWarning f150b"></div>
 
-        <div class="prihlaseniPrihlasitButns gradModraDolu colorBila f175" onclick="javascript:registrovatAjax()">
+        <a class="prihlaseniPrihlasitButns gradModraDolu colorBila f175" onclick="javascript:registrovatAjax()">
                 ZAREGISTROVAT
-        </div>
+        </a>
+    </div>
+</div>
+
+<div id="page-registraceOK" class="page-registraceOK gradZelenaRadius f200 colorBila">
+    <div>
+        <div>Registrace proběhla úspěšně</div>
+        <a class="gradModraDolu" onclick="javascript:transition('#page-vybratSvacu','fade');$('#menuLeftDiv').css('display','block')">OK</a>
     </div>
 </div>
 
@@ -621,21 +602,23 @@ cursor: pointer;
             <div class="logoFajnSvaca"  ></div>
         </div>
         <div class="prihlaseniButtons">
-            <input id="prihlaseniJmeno" class="gradSedaVertical f200" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div><br>
-            <input id="prihlaseniHeslo" class="gradSedaVertical f200" type="password" title="HESLO" placeholder="HESLO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
+            <input id="prihlaseniJmeno" class="gradSedaVertical f200 clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div><br>
+            <input id="prihlaseniHeslo" class="gradSedaVertical f200 clickNext" type="password" title="HESLO" placeholder="HESLO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
             <div>
-                <div class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns f175 gradModraDolu" onclick="javascript:prihlaseniAjax()">
+                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns f175 gradModraDolu" onclick="javascript:saveText()">
                     Přihlásit pomocí&nbsp;<img class="prihlaseniFBImage">
-                </div>
-                <div class="prihlaseniPrihlasit prihlaseniPrihlasitButns f175 gradModraDolu" onclick="javascript:prihlaseniAjax()">
+                </a>
+                <a id="prihlaseniPrihlasitSe" class="prihlaseniPrihlasit prihlaseniPrihlasitButns f175 gradModraDolu" onclick="javascript:prihlaseniAjax()">
                     PŘIHLÁSIT SE
-                </div>
+                </a>
             </div>
-            <div class="prihlaseniZaregistrovat f175" onclick="javascript:transition('#page-registrace1','fade')">
+            <a class="prihlaseniZaregistrovat f175" onclick="javascript:transition('#page-registrace1','fade')">
                 Zaregistrovat se
-            </div>
+            </a>
         </div>
 </div>
+
+
 
 <map name="proMenu">
     <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="#" >
