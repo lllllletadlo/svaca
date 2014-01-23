@@ -7,6 +7,7 @@
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <script src="svaca/js/jquery-1.8.3.min.js"></script>
     <script src="svaca/js/scripts.js"></script>
+    <script src="svaca/js/dataManager.js"></script>
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
 </head>
@@ -31,9 +32,33 @@
     <a onclick="javascript:transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
     <a onclick="javascript:transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
     <a onclick="javascript:transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
+    <a style="color: transparent;" onclick="javascript:transition('#page-test','fade')" href="#">TEST</a>
 </div>
 
-<div id="page-vybratSvacu" class="page-vybratSvacu current">
+<div id="page-test" class="page-test current">
+
+    <div class="menu bila">
+        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a id="vybratSvacuKredit" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
+        <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="pageContainer pageTest">
+        <div onclick="save()">save</div>
+        <div onclick="load()">get</div>
+        <input id="testInput" type="text" />
+    </div>
+
+
+
+
+    </ul>
+</div>
+
+<div id="page-vybratSvacu" class="page-vybratSvacu">
 
     <div class="menu bila">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>

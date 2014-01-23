@@ -269,6 +269,13 @@ a {
         -webkit-text-size-adjust: none;
     }
 }
+
+.pageContainer {
+    position: relative;
+    left: 15%;
+}
+
+
 .avatar {
     width: 200px;
     padding: 5px;
@@ -461,6 +468,9 @@ div#menuLeftDiv {
     display: block;
     width: 3em;
     margin-top: 5%;
+}
+.pageTest {
+    line-height: 200%;
 }
 
 .vybratSvacuPorduktUl {
