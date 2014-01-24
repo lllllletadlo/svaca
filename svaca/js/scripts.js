@@ -573,7 +573,7 @@ function registrovatAjax() {
         console.log("registrovatAjax sex:" + sex);
         //$.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&firstName='+$('#registraceJmeno').val()+ '&lastName='+$('#registracePrijmeni').val()+ '&password='+$('#registraceHeslo').val()+ '&email='+$('#registraceEmail').val(),
         console.log("skola:"+$('#registraceSelectSkola').val());
-        console.log("trida:"+$('#registraceSelectSkola').val());
+        console.log("trida:"+$('#registraceSelectTrida').val());
         $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser',
             data: {
                 username: $('#registraceUsername').val(),
@@ -581,8 +581,8 @@ function registrovatAjax() {
                 sex: sex,
                 password: $('#registraceHeslo').val(),
                 email: $('#registraceEmail').val(),
-                class: $('#registraceSelectSkola').val(),
-                school_id: $('#registraceSelectTrida').val()
+                class_id: $('#registraceSelectTrida').val(),
+                school_id: $('#registraceSelectSkola').val()
             },
             success: function(data) {
                 if( data.status == "error")
