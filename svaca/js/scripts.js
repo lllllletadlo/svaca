@@ -606,7 +606,7 @@ function registrovatAjax() {
                     nacistDataPoPrihlaseni();
                     //transition("#page-vybratSvacu","fade");
                     transition("#page-registraceOK","fade");
-                    //$('#menuLeftDiv').css('display','block');
+                    $('#menuLeftDiv').css('display','block');
 
                 }
             },
