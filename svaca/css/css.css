@@ -49,6 +49,13 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     .f250 {
         font-size: 400% !important;
     }
+
+    .prihlaseniLogo {
+        font-size: 100% !important;
+    }
+
+
+
     .prihlaseniLogo h3 {
         font-size: 300% !important;
     }
@@ -169,7 +176,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 }
 html, body {
     font: 12px/15px sans-serif;
-    background: #ff5;
+    background: #000000;
     padding: 0px;
     color: #000;
     margin: 0;
@@ -273,6 +280,7 @@ a {
 .pageContainer {
     position: relative;
     left: 15%;
+    width: 85%;
 }
 
 
@@ -1160,11 +1168,16 @@ div#menuLeftDiv {
 
 
 .prihlaseniLogo {
-    height: 50%;
+    height: 44%;
     width: 100%;
     text-align: center;
     position: absolute;
 }
+.prihlaseniLogo div {
+    top: 5em;
+    bottom: 10em;
+}
+
 .prihlaseniLogo h3 {
     color: white;
     font-size: 200%;
@@ -1186,8 +1199,8 @@ div#menuLeftDiv {
     padding-top: 25%;
 }
 .prihlaseniButtons {
-    height: 50%;
-    top: 50%;
+    height: 55%;
+    top: 45%;
     position: absolute;
     text-align: center;
     width: 90%;
@@ -1198,8 +1211,8 @@ div#menuLeftDiv {
     width: 100%;
     background-color: white;
     text-align: center;
-    height: 2em;
-    font-size: 200%;
+    height: 3em;
+    margin-bottom: 1.5em;
 }
 
 .prihlaseniPrihlasitButns {

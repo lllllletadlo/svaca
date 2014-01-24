@@ -12,6 +12,9 @@ var viewport;
 var maxHeightVybratSvacu = false;
 var maxHeightKosik = false;
 
+var dataZbozi;                  // jSON
+var dataKategorie;              // jSON
+var dataProfil;                 // jSON
 var zbozi;
 var kategorie;
 var profil;
@@ -38,7 +41,9 @@ $(document).ready(function(){
         height : $(window).height()
     };
 
-    $('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
+    //$('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
+    $('#ulVybratSvacu').css('max-height',viewport.height - $('#vybratSvacuKredit').height());
+    //alert($('#vybratSvacuKredit').height());
     $('#ulVybratSvacu').css('height','auto');
     maxHeightVybratSvacu = true;
     // kosik nastaveni 60% height
@@ -53,6 +58,7 @@ $(document).ready(function(){
 
 
     zboziNactiAjax();
+	profilNactiAjax();
     //transition('#page-registrace1','fade');
 
 
@@ -142,13 +148,13 @@ function transition(toPage, type) {
     if(toPage.selector=="#page-profil")
     {
         console.log("profilNacti");
-        profilNacti();
+        profilNactiAjax();
     }
     if(toPage.selector=="#page-vybratSvacu")
     {
         //TODO synchronizaci na zbozi, ale aby to neprepisovalo cisla v kosiku
         //zboziNactiAjax();
-        profilNacti();  // update kreditu
+        profilNactiAjax();  // update kreditu
         //alert("Načítám data");
 
         if(!maxHeightVybratSvacu)
@@ -346,37 +352,25 @@ function ajaxError2(data){
     }
 
 
-    alert("Nelze se připojit k serveru!");
-    alertZobraz($.param(data).toLowerCase());
+    //alert("Nelze se připojit k serveru!");
+    alertZobraz(JSON.stringify(data));
     ;
 }
 
 
 
-function profilNacti()
+function profilNactiAjax()
 {
-    console.log("profilNacti");
+    console.log("profilNactiAjax");
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/getUserInfo',
         success: function(data) {
-            console.log("profilNacti success");
+            console.log("profilNactiAjax success");
+			dataProfil = data;
+            storageSave("dataProfil");
             profil = data;
             if(data.status == "ok")
             {
-                $('#koupitUserName').text(data.fullName==null?"":data.fullName);
-                $('#vybratSvacuKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
-                $('#potvrzeniPlatbyKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
-                $('#koupitSvacuZaplatitKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
-                $('#dokoncitPlatbuKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
-
-
-                $( "#profilUsernameH" ).text(data.username==null?"":data.username);
-                $( "#profilJmenoH" ).text(data.jmeno==null?"":data.jmeno);
-                $( "#profilPrijmeniH" ).text(data.jmeno==null?"":data.prijmeni);
-                $( "#profilEmailH" ).text(data.jmeno==null?"":data.email);
-                $( "#profilTridaH" ).text(data.jmeno==null?"":data.trida);
-                $( "#profilSkolaH" ).text(data.jmeno==null?"":data.skola);
-                $( "#profilTelefonH" ).text(data.jmeno==null?"":data.telefon);
-                //if(data.jmeno ==null) console.log("prazdne");
+                profilNastavPole(data);
             }
             if(data.status == "error" && data.code == "not logged")
             {
@@ -384,14 +378,40 @@ function profilNacti()
                 alertZobraz(data.msg);
             }
         },
-        error: ajaxError2
+        error: function(data)
+        {
+            ajaxError2(data);
+            storageLoad("dataProfil");
+            if(!jQuery.isEmptyObject(dataProfil))
+            {
+				console.log("asdads");
+                profilNastavPole(dataProfil);
+            }
+        }
 
 
     });
+}
+
+function profilNastavPole(data)
+{
+    $('#koupitUserName').text(data.fullName==null?"":data.fullName);
+	console.log("dnastavuji kredit:" + data.balance);
+    $('#vybratSvacuKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
+	
+    $('#potvrzeniPlatbyKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
+    $('#koupitSvacuZaplatitKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
+    $('#dokoncitPlatbuKredit').text(data.balance==null?"0 Kč":("Kredit: " + data.balance + " Kč"));
 
 
-
-
+    $( "#profilUsernameH" ).text(data.username==null?"":data.username);
+    $( "#profilJmenoH" ).text(data.jmeno==null?"":data.jmeno);
+    $( "#profilPrijmeniH" ).text(data.jmeno==null?"":data.prijmeni);
+    $( "#profilEmailH" ).text(data.jmeno==null?"":data.email);
+    $( "#profilTridaH" ).text(data.jmeno==null?"":data.trida);
+    $( "#profilSkolaH" ).text(data.jmeno==null?"":data.skola);
+    $( "#profilTelefonH" ).text(data.jmeno==null?"":data.telefon);
+    //if(data.jmeno ==null) console.log("prazdne");
 }
 
 function nacistDataPoPrihlaseni()
@@ -400,7 +420,7 @@ function nacistDataPoPrihlaseni()
     kosik =[];
     kosikSoucetCeny = 0;
     kosikZobrazCisloVkolecku();
-    profilNacti();
+    profilNactiAjax();
     kosikRefresh();
     nastavZpetProdukKosikCislo();
     zboziNactiAjax();
@@ -559,8 +579,8 @@ function registrovatAjax() {
                 sex: sex,
                 password: $('#registraceHeslo').val(),
                 email: $('#registraceEmail').val(),
-                class: $('#registraceSelectedSkola').text(),
-                school_id: $('#registraceSelectedTrida').text()
+                class: $('#registraceSelectSkola').val(),
+                school_id: $('#registraceSelectTrida').val()
             },
             success: function(data) {
                 if( data.status == "error")
@@ -598,6 +618,8 @@ function zboziNactiAjax() {
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/listProducts',
         success: function(data) {
             console.log("zboziNactiAjax success");
+            dataZbozi = data;
+            storageSave("dataZbozi");
             if( data.status == "error" && data.code == "not logged")
             {
                 console.log(data.msg);
@@ -613,8 +635,6 @@ function zboziNactiAjax() {
             if( data.status == "ok")
             {
                 zboziNacti(data);
-                //transition("#page-vybratSvacu","fade");
-                //transition("#page-dokoncitPlatbu","fade");
                 if(pageNext!="")
                 {
                     transition(pageNext,"fade");
@@ -622,7 +642,18 @@ function zboziNactiAjax() {
 
             }
         },
-        error: ajaxError2
+        error: function(data) {
+            ajaxError2(data);
+            storageLoad("dataZbozi");
+            if(!jQuery.isEmptyObject(dataZbozi))
+            {
+                zboziNacti(dataZbozi);
+                if(pageNext!="")
+                {
+                    transition(pageNext,"fade");
+                }
+            }
+        }
     });
 }
 

@@ -35,11 +35,11 @@
     <a style="color: transparent;" onclick="javascript:transition('#page-test','fade')" href="#">TEST</a>
 </div>
 
-<div id="page-test" class="page-test current">
+<div id="page-test" class="page-test">
 
     <div class="menu bila">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
-        <a id="vybratSvacuKredit" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a id="vybratSvacuKreditpp" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
         <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
@@ -58,11 +58,11 @@
     </ul>
 </div>
 
-<div id="page-vybratSvacu" class="page-vybratSvacu">
+<div id="page-vybratSvacu" class="page-vybratSvacu current">
 
     <div class="menu bila">
         <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
-        <a id="vybratSvacuKredit" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a id="vybratSvacuKredit" class="btnMenuCastka" href="#page-koupit" >Kredit: 0 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
         <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
@@ -335,7 +335,7 @@
         </li>
         <li class="bila podporaSite1">
             <span>Zanechte nám své telefoní číslo</span>
-            <input placeholder="např. 777 666 555">
+            <input type="" placeholder="např. 777 666 555">
             <span class="zelena">Odeslat</span>
             <br>
         </li>
@@ -480,9 +480,6 @@ cursor: pointer;
         <img class="fajnSvacaText"  >
     </div>
     <ul class="produtkSeznam">
-        <li class="produktTyp produktHeaderSpace">
-            <div style="height: 20px"></div>
-        </li>
         <li class="listHeader zelena f250">
             <h3>Můj profil</h3>
         </li>
@@ -491,7 +488,7 @@ cursor: pointer;
         </li>
 
         <li class="produktTyp bila listText listTextProfil colorSeda f200">
-            <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH">student</h3>
+            <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH"></h3>
             <h3>Jméno: </h3><h3 id="profilJmenoH"></h3>
             <h3>Příjmení: </h3><h3 id="profilPrijmeniH"></h3>
             <h3>E-mail: </h3><h3 id="profilEmailH"></h3>
@@ -630,10 +627,10 @@ cursor: pointer;
             <input id="prihlaseniJmeno" class="gradSedaVertical f200 clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div><br>
             <input id="prihlaseniHeslo" class="gradSedaVertical f200 clickNext" type="password" title="HESLO" placeholder="HESLO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
             <div>
-                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns f175 gradModraDolu" onclick="javascript:saveText()">
+                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns f200 gradModraDolu" onclick="javascript:saveText()">
                     Přihlásit pomocí&nbsp;<img class="prihlaseniFBImage">
                 </a>
-                <a id="prihlaseniPrihlasitSe" class="prihlaseniPrihlasit prihlaseniPrihlasitButns f175 gradModraDolu" onclick="javascript:prihlaseniAjax()">
+                <a id="prihlaseniPrihlasitSe" class="prihlaseniPrihlasit prihlaseniPrihlasitButns f200 gradModraDolu" onclick="javascript:prihlaseniAjax()">
                     PŘIHLÁSIT SE
                 </a>
             </div>
