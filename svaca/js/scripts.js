@@ -606,6 +606,7 @@ function registrovatAjax() {
                     nacistDataPoPrihlaseni();
                     //transition("#page-vybratSvacu","fade");
                     transition("#page-registraceOK","fade");
+                    // TODO vlozit az za registraceOK
                     $('#menuLeftDiv').css('display','block');
 
                 }
