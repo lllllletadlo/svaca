@@ -53,6 +53,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     .prihlaseniLogo {
         font-size: 100% !important;
     }
+    .prihlaseniZaregistrovat {
+
+    }
 
 
 
@@ -1233,9 +1236,9 @@ div#menuLeftDiv {
     content: url("../imagesApp/fb.png");
     vertical-align: middle;
 }
-.prihlaseniZaregistrovat {
+
+.prihlaseniZaregistrovat_old {
     background: url("../imagesApp/zeregistrovat.png") no-repeat left;
-    font-size: 175%;
     line-height: 200%;
     color: white;
     width: 15em;
@@ -1246,6 +1249,12 @@ div#menuLeftDiv {
     left: 50%;
     margin-left: -7em;
     bottom: 20%;
+    font-size: 175%;
+}
+
+.prihlaseniZaregistrovat_old {
+    background: url("../imagesApp/zeregistrovat.png") no-repeat left;
+    color: white;
 }
 
 .registraceSelectDiv {

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="priprava offline rozhrani&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/css/css.css" afterPath="$PROJECT_DIR$/svaca/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/dataManager.js" afterPath="$PROJECT_DIR$/svaca/js/dataManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,13 +27,13 @@
     <favorites_list name="svaca" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44129288">
+    <splitter split-orientation="horizontal" split-proportion="0.81134564">
       <split-first>
         <leaf>
-          <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="1734">
+                <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.13672923" vertical-offset="0" max-vertical-offset="1734">
                   <folding />
                 </state>
               </provider>
@@ -43,19 +42,19 @@
           <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="22" selection-start="1240" selection-end="1240" vertical-scroll-proportion="-15.64" vertical-offset="510" max-vertical-offset="26265">
+                <state line="1256" column="17" selection-start="31679" selection-end="31679" vertical-scroll-proportion="-17.76" vertical-offset="20908" max-vertical-offset="26418">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="scripts.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="575" column="19" selection-start="16330" selection-end="16330" vertical-scroll-proportion="0.37067774" vertical-offset="9354" max-vertical-offset="19516">
+                <state line="581" column="23" selection-start="0" selection-end="43453" vertical-scroll-proportion="-8.92" vertical-offset="9501" max-vertical-offset="19550">
                   <folding>
-                    <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-                    <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+                    <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+                    <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -77,7 +76,7 @@
           <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="312" column="16" selection-start="0" selection-end="36967" vertical-scroll-proportion="0.0" vertical-offset="5304" max-vertical-offset="26265">
+                <state line="315" column="16" selection-start="0" selection-end="37132" vertical-scroll-proportion="0.0" vertical-offset="5355" max-vertical-offset="26418">
                   <folding />
                 </state>
               </provider>
@@ -86,7 +85,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="554" column="45" selection-start="23964" selection-end="23985" vertical-scroll-proportion="0.38163558" vertical-offset="8948" max-vertical-offset="11033">
+                <state line="559" column="47" selection-start="24332" selection-end="24332" vertical-scroll-proportion="0.5744681" vertical-offset="8948" max-vertical-offset="11033">
                   <folding />
                 </state>
               </provider>
@@ -104,10 +103,10 @@
           <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="495" column="31" selection-start="13613" selection-end="13636" vertical-scroll-proportion="-9.64" vertical-offset="8021" max-vertical-offset="19516">
+                <state line="495" column="31" selection-start="13613" selection-end="13636" vertical-scroll-proportion="-9.64" vertical-offset="8021" max-vertical-offset="19550">
                   <folding>
-                    <marker date="1390564501911" expanded="false" signature="22358:22375" placeholder="..." />
-                    <marker date="1390564501911" expanded="false" signature="23455:23472" placeholder="..." />
+                    <marker date="1390568679228" expanded="false" signature="22488:22505" placeholder="..." />
+                    <marker date="1390568679228" expanded="false" signature="23585:23602" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -151,11 +150,11 @@
         <option value="$PROJECT_DIR$/svaca/js/phonegap.js" />
         <option value="$PROJECT_DIR$/svaca/js/cordova.js" />
         <option value="$PROJECT_DIR$/svaca/js/scriptFile.js" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/svaca/js/dataManager.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/svaca/css/css.css" />
         <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
+        <option value="$PROJECT_DIR$/config.xml" />
       </list>
     </option>
   </component>
@@ -216,6 +215,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,7 +268,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +563,11 @@
       <created>1390484436171</created>
       <updated>1390484436171</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="priprava offline rozhrani&#10;">
+      <created>1390564562979</created>
+      <updated>1390564562979</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -591,11 +594,12 @@
     <frame x="55" y="-8" width="1553" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19325961" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19261214" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.084974095" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -605,7 +609,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -623,7 +626,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="asdasd&#10;" />
     <MESSAGE value="gtrdfdfg" />
     <MESSAGE value="gtrdfdfg&#10;dxfgds" />
     <MESSAGE value="gtrdfdfg&#10;dxfgds&#10;awrea" />
@@ -648,7 +650,8 @@
     <MESSAGE value="-přidáno místo doručení&#10;-dropDown škola a třída zarovnávání na střed&#10;-opraveno hlavní levé menu&#10;-enter key při zadávání polí&#10; - optimalizace ostatnich obrazovek pro HD" />
     <MESSAGE value="-přidáno místo doručení&#10;-dropDown škola a třída zarovnávání na střed&#10;-opraveno hlavní levé menu&#10;-enter key při zadávání polí&#10; - optimalizace ostatnich obrazovek pro HD&#10;" />
     <MESSAGE value="priprava offline rozhrani" />
-    <option name="LAST_COMMIT_MESSAGE" value="priprava offline rozhrani" />
+    <MESSAGE value="priprava offline rozhrani&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="priprava offline rozhrani&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -693,8 +696,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="4" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="19431">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -745,8 +748,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="4" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="19431">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -797,8 +800,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="4" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="19431">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -877,8 +880,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="438" column="430" selection-start="15248" selection-end="15279" vertical-scroll-proportion="0.0" vertical-offset="6874" max-vertical-offset="12937">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -908,8 +911,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="145" column="38" selection-start="3476" selection-end="3476" vertical-scroll-proportion="0.0" vertical-offset="1927" max-vertical-offset="11169">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -932,8 +935,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="850">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -949,8 +952,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="850">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -984,13 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/phonegap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="57" selection-start="535" selection-end="539" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="4029">
@@ -1005,13 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="22" selection-start="1240" selection-end="1240" vertical-scroll-proportion="-15.64" vertical-offset="510" max-vertical-offset="26265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="632" column="102" selection-start="29011" selection-end="29011" vertical-scroll-proportion="-206.66667" vertical-offset="0" max-vertical-offset="11033">
@@ -1019,13 +1008,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1256" column="17" selection-start="31679" selection-end="31679" vertical-scroll-proportion="-17.76" vertical-offset="20908" max-vertical-offset="26418">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="575" column="19" selection-start="16330" selection-end="16330" vertical-scroll-proportion="0.37067774" vertical-offset="9354" max-vertical-offset="19516">
+        <state line="581" column="23" selection-start="0" selection-end="43453" vertical-scroll-proportion="-8.92" vertical-offset="9501" max-vertical-offset="19550">
           <folding>
-            <marker date="1390564501911" expanded="true" signature="22358:22375" placeholder="..." />
-            <marker date="1390564501911" expanded="true" signature="23455:23472" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="22488:22505" placeholder="..." />
+            <marker date="1390568679228" expanded="true" signature="23585:23602" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.13672923" vertical-offset="0" max-vertical-offset="1734">
+          <folding />
         </state>
       </provider>
     </entry>
