@@ -171,7 +171,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     }
 
     .prihlaseniPrihlasitButns {
-        font-size: 175%;
+        font-size: 300%;
     }
 
     .registrace1horni h3 {
