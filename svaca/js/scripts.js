@@ -176,7 +176,7 @@ function transition(toPage, type) {
         $('#page-kosik').removeClass('objednavka');
         if(!maxHeightKosik)
         {
-            var maxDelka = viewport.height - $('#koupitSvacuZaplatitKredit').height() - $('.ulKosikFooter').height();
+            var maxDelka = viewport.height - $('#koupitSvacuZaplatitKredit').height() - $('.ulKosikFooter').height()-$('#ulKosikTlacitkoCeleMenu').height();
             $('.ulKosik').css('max-height',maxDelka);
             $('.ulKosik').css('position','relative');
             $('.ulKosikFooter').css('position','relative');

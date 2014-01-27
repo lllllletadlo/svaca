@@ -99,7 +99,7 @@
         width: 150px;
     }
     .page-potvrzeniPlatby .produktTyp {
-        font-size: 150%;
+        font-size: 200%;
     }
     .partneri h3 {
         font-size: 200%;
@@ -110,7 +110,9 @@
     .partneri span {
         font-size: 200%;
     }
-
+    .dokoncitPlatbuContainer {
+        top: 7.2em;
+    }
 
 }
 
@@ -238,7 +240,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     }
 
     .produkt2Popis span {
-        font-size: 350%;
+        font-size: 300%;
         margin-left: 17%;
     }
 
@@ -265,7 +267,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
         font-size: 400%;
     }
     .listText {
-        padding: 2em 1em 2em 3em;
+        padding: 2em 3em 2em 3em;
     }
     #mistoDoruceniInput {
         font-size: 150%;
@@ -285,7 +287,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
         font-size: 600%;
     }
 
-
+    .dokoncitPlatbuContainer {
+        top: 12em;
+    }
 
 
 
@@ -314,7 +318,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     .produkt2KosikObr div {
         background-size: 3em !important;
         padding-top: 3.5em !important;
-        font-size: 200%  !important;
+        font-size: 150%  !important;
     }
     .produkt2KosikObr {
         margin-top: -3.5em  !important;
@@ -489,7 +493,7 @@ a {
 }
 .in, .out {
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 100ms;
+    -webkit-animation-duration: 250ms;
 }
 @-webkit-keyframes fade-in {
     from {
@@ -612,6 +616,7 @@ a {
 }
 .menu {
     width: 100%;
+    background-color: white;
 }
 .menu a {
     line-height: 4em;
@@ -876,9 +881,9 @@ div#menuLeftDiv {
 
 
 .dokoncitPlatbuContainer {
-    margin: 0px 0px 0px 15%;
-    top: 15%;
-    height: 80%;
+    margin: auto 0px auto 15%;
+    height: auto;
+    bottom: 0px;
 }
 #mistoDoruceniInput {
     width: 100%;
@@ -996,6 +1001,7 @@ div#menuLeftDiv {
     top: 0px;
     right: 20%;
     padding-top: 1%;
+    color: #7d5024;
 }
 .produkt2KosikObr {
     top: 50%;
@@ -1032,7 +1038,7 @@ div#menuLeftDiv {
 .produkt2KosikCislo {
     top: 50%;
     margin-top: -0.5em;
-    font-size: 400%;
+    font-size: 500%;
     line-height: 100%;
     position: absolute;
     width: 100%;
