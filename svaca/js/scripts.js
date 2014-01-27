@@ -192,8 +192,8 @@ function transition(toPage, type) {
 
 
         var delka = viewport.height - $('#prihlaseniContainerZaregistrovat').offset().top;
-        //alert($('#prihlaseniContainerZaregistrovat').offset().top);
-        $('#prihlaseniContainerZaregistrovat').css('height',delka);
+        alert($('#prihlaseniContainerZaregistrovat').offset().top);
+        $('#prihlaseniContainerZaregistrovat').css('height',(delka));
     }
     if(toPage.selector=="#page-registrace1") {
 
