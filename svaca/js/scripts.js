@@ -24,8 +24,13 @@ var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
 var pageNext = "#page-vybratSvacu";
+//var pageNext = "#page-dokoncitPlatbu";
 
 $(document).ready(function(){
+
+
+
+
 
     //$('#dokoncitPlatbuNegativniText').css("display","block");
     //$('#dokoncitPlatbuDobitButton').css("display","block");
@@ -72,7 +77,7 @@ $(document).ready(function(){
             }
             if($(this).attr('id')=="registraceHeslo2")
             {
-                registrovatAjax();
+                registraceAjax();
                 return;
             }
 
@@ -184,25 +189,35 @@ function transition(toPage, type) {
     if(toPage.selector=="#page-prihlaseni")
     {
         $('#menuLeftDiv').css('display','none');
+
+
+        var delka = viewport.height - $('#prihlaseniContainerZaregistrovat').offset().top;
+        //alert($('#prihlaseniContainerZaregistrovat').offset().top);
+        $('#prihlaseniContainerZaregistrovat').css('height',delka);
     }
     if(toPage.selector=="#page-registrace1") {
 
         selectDataAjax("listSchools","registraceSelectSkola","");
     }
-}
+    if(toPage.selector=="#page-registracePrihlaseniOK") {
 
-function kosikZobrazCisloVkolecku() {
-    var kosikPocetPolozek = kosik.length;
-    if(kosikPocetPolozek>0) {
-        $("#circleKosikH1").text(kosikPocetPolozek);
-        $("#circleKosikH1").css('display','block');
-    } else
-    {
-        $("#circleKosikH1").css('display','none');
+        //pageNext = "#page-vybratSvacu";
+        setTimeout( function()
+        {
+            transition("#page-vybratSvacu","fade");
+            $('#menuLeftDiv').css('display','block');
+        }, 2000);
     }
 
 
+
 }
+
+
+
+// ----------------------------------- nakup -------------------------------------------------------
+
+
 
 
 /*
@@ -216,6 +231,18 @@ function kosikZobrazCisloVkolecku() {
 
  */
 
+function kosikZobrazCisloVkolecku() {
+    var kosikPocetPolozek = kosik.length;
+    if(kosikPocetPolozek>0) {
+        $("#circleKosikH1").text(kosikPocetPolozek);
+        $("#circleKosikH1").css('display','block');
+    } else
+    {
+        $("#circleKosikH1").css('display','none');
+    }
+
+
+}
 
 function zboziOblibeneAdd(vlozitID) {
     //zjisti hestli jiz neni vlozene
@@ -463,11 +490,12 @@ function prihlaseniAjax()
             if( data.status == "ok")
             {
                 console.log("prihlaseni ok");
-                alert("přihlášen ok");
+                //alert("přihlášen ok");
                 //transition("#page-dokoncitPlatbu","fade");
+                transition("#page-registracePrihlaseniOK","fade");
                 nacistDataPoPrihlaseni();
-                $('#menuLeftDiv').css('display','block');
-                transition("#page-vybratSvacu","fade");
+                $("#registracePrihlaseniOKdiv").text("Přihlášení proběhlo úspěšně");
+               pageNext = "";
 
             }
             else
@@ -561,7 +589,7 @@ function selectDataAjax(listType,idSelectu,param) {
     });
 }
 
-function registrovatAjax() {
+function registraceAjax() {
     if(validateRegistrace())
     {
         var sex = "female";
@@ -570,7 +598,7 @@ function registrovatAjax() {
             sex = "male";
         }
 
-        console.log("registrovatAjax sex:" + sex);
+        console.log("registraceAjax sex:" + sex);
         //$.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/registerUser?username=' + $('#registraceUsername').val() + '&firstName='+$('#registraceJmeno').val()+ '&lastName='+$('#registracePrijmeni').val()+ '&password='+$('#registraceHeslo').val()+ '&email='+$('#registraceEmail').val(),
         console.log("skola:"+$('#registraceSelectSkola').val());
         console.log("trida:"+$('#registraceSelectTrida').val());
@@ -587,7 +615,7 @@ function registrovatAjax() {
             success: function(data) {
                 if( data.status == "error")
                 {
-                    console.log("registrovatAjax data.status == error");
+                    console.log("registraceAjax data.status == error");
                     if( data.code == "usernameExists")
                     {
                         $('#registraceUsername').next().text(data.msg);
@@ -601,14 +629,12 @@ function registrovatAjax() {
                 }
                 if( data.status == "ok")
                 {
-                    console.log("registrovatAjax data.status == ok");
+                    console.log("registraceAjax data.status == ok");
                     //alert("Zaregistrováno!");
                     nacistDataPoPrihlaseni();
                     //transition("#page-vybratSvacu","fade");
-                    transition("#page-registraceOK","fade");
-                    // TODO vlozit az za registraceOK
-                    $('#menuLeftDiv').css('display','block');
-
+                    pageNext = "#page-registracePrihlaseniOK";
+                    // TODO vlozit az za registracePrihlaseniOK
                 }
             },
             error: ajaxError2
@@ -671,6 +697,9 @@ function checkBoxProduktTyp(cb)
 }
 
 function zboziNacti(data) {
+    // priprava dat
+    var kategorieIndexMinula = 0;
+    var kategorieIndexBudouci = 0;
     //var data2 = jQuery.parseJSON({"status":"ok","categories":[{"id":"1","icon":"products/productsHousky.png","name":"Housky"},{"id":"2","icon":"products/productsBagety.png","name":"Bagety"}],"products":[{"id":"1","icon":"products/productsSekanaVHousce.png","price":"29","name":"Sekaná v housce","category_id":"0"},{"id":"2","icon":"products/productsRyzekVHousce.png","price":"33","name":"Řízek v housce","category_id":"0"},{"id":"3","icon":"products/productsSyrVHousce.png","price":"30","name":"Smažený sýr v housce","category_id":"0"},{"id":"4","icon":"products/productsVegetBageta.png","price":"35","name":"Klobásky v housce","category_id":"0"},{"id":"5","icon":"products/productsOblozenaBageta.png","price":"43","name":"Obložená bageta","category_id":"0"},{"id":"6","icon":"products/productsVegetBageta.png","price":"38","name":"Vegetariánská bageta","category_id":"0"}]}');
     zbozi = data.products;
     kategorie = data.categories;
@@ -680,47 +709,72 @@ function zboziNacti(data) {
     //zbozi = jQuery.parseJSON( '[{"id":"1","icon":"bageta.jpg","price":"47","name":"Bageta","category_id":"0"},{"id":"2","icon":"chleba.jpg","price":"21","name":"Chleba","category_id":"0"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"}]' );
     //zbozi = jQuery.parseJSON( '[{"id":"1","icon":"bageta.jpg","price":"47","name":"Bageta","category_id":"0"},{"id":"2","icon":"chleba.jpg","price":"21","name":"Chleba","category_id":"0"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"},{"id":"3","icon":"susenky.jpg","price":"12","name":"Sušenky","category_id":"1"}]' );
     console.log(kategorie);
+
+    // vymazani kontejneru
     $("#ulVybratSvacu").empty();
 
     $( "#ulVybratSvacu" ).append( '<img class="fajnSvacaText"  >');
-// vloz prvni kategorii
-    if(kategorie[0].id==zbozi[0].category_id)
-    {
-        $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[0].color +'"><img class="produktTypImg" src="'+appPreffix+kategorie[0].icon+'"  ><a href=""><h2>'+kategorie[0].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[0].name+'CheckboxInput" name="" /><label for="'+kategorie[0].name+'CheckboxInput"></label></div></li>' );
-    }
 
-    var poradiZbozi = 1;
+
+    var poradiZbozi = 0;
     $.each(zbozi, function()
     {
-        // vloz kategorii jestli je jina nez doposud
-        // najdi kategorii vyhovujici zbozi
-        if(kategorie[kategorieIndex].id!=this.category_id)
+
+        // vlozeni kategorie
+        // vloz kategorii jestli: kategorie zbozi je jina nez doposud || prvni zbozi
+        if(kategorie[kategorieIndex].id!=this.category_id || poradiZbozi==0)
         {
-//console.log("davam kategorii");
-            console.log(kategorieIndex);
-            console.log(kategorie[kategorieIndex].id);
+            // najdi kategorii pro novou kategorii zbozi
             while(kategorie[kategorieIndex].id!=this.category_id && kategorieIndex<kategorie.length-1)
             {
                 kategorieIndex ++;
             }
 
+            // vloz ukonceni predchozi kategorie
+            // vlozi zakonceni predchozi kategorie
+            if(poradiZbozi>0)
+            {
+                $( "#ulVybratSvacu" ).append( '<li style="height: 3em;background-color:'+ kategorie[kategorieIndexMinula].color +'"></li>');
+            }
+            kategorieIndexMinula = kategorieIndex;
+            // vloz novou kategorii
             if(kategorie[kategorieIndex].id==this.category_id)
             {
                 $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+appPreffix+kategorie[kategorieIndex].icon+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[kategorieIndex].name+'CheckboxInput" name="" /><label for="'+kategorie[kategorieIndex].name+'CheckboxInput"></label></div></li>' );
                 console.log("davam");
             }
         }
-        // vloz produkt
 
-        if(poradiZbozi != zbozi.length) {
-            //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
-            $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3 class="f200">' + this.name + '</h3>  <span class="f150">'+ this.description+'</span><span class="cena f150">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div class="f100">Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
-        } else
-        // posledni polozka specialni format
+        // zjisteni jestli jde o posledni produkt v kategorii
+        var posledniVkategorii = false;
+        if(poradiZbozi == zbozi.length-1)
         {
-            //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
-            $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3 class="f200">' + this.name + '</h3>  <span class="f150">'+ this.description+'</span><span class="cena f150">'+ this.price+' Kč</span></div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div class="100">Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
+            posledniVkategorii = true;
+            console.log("hledam: je posledni");
+        } else
+        {
+            console.log(poradiZbozi + "kategorie" + zbozi[poradiZbozi].category_id);
+            if(kategorie[kategorieIndex].id!=zbozi[poradiZbozi+1].category_id)
+            {
+                posledniVkategorii = true;
+            }
         }
+
+
+        // vloz produkt
+        if( this.name!="Doručení kurýrem")
+        {
+            if(!posledniVkategorii) {
+                //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
+            } else
+            // posledni polozka specialni format
+            {
+                //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
+                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span></div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
+            }
+        }
+
         poradiZbozi ++;
     });
 }
@@ -731,7 +785,7 @@ function kosikRefresh() {
     kosik.sort();
     $("#ulKosik").empty();
     $( "#ulKosik" ).append( '<img class="fajnSvacaText"  >');
-    $( "#ulKosik" ).append( '<ul id="ulKosikHeader" class="produtkSeznam ulKosikHeader"><li class="listHeader kosikHeader fialova kosikShow f250">  <h3 class="kosikHeaderText">Košík</h3>  </li>  <li class="listHeader kosikHeader zelena objShow f250">  <h3 class="kosikHeaderText">Objednávka</h3>  </li>  </ul>');
+    $( "#ulKosik" ).append( '<ul id="ulKosikHeader" class="produtkSeznam ulKosikHeader"><li class="listHeader kosikHeader fialova kosikShow f250">  <h2 class="kosikHeaderText">Košík</h2>  </li>  <li class="listHeader kosikHeader zelena objShow f250">  <h3 class="kosikHeaderText">Objednávka</h3>  </li>  </ul>');
     //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace"><div style="height: 20px"></div></li>' );
     //$( "#ulKosik" ).append( '<li class="listHeader zelena"><h3>Zaplatit sváču</h3></li>' );
     //$.each(kosik, function() {
@@ -755,7 +809,7 @@ function kosikRefresh() {
 
          // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
          */
-        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+zbozi[zboziIndex].icon+'"  ><h3 class="f200">' + zbozi[zboziIndex].name + '</h3>  <span class="f150">'+ zbozi[zboziIndex].description+'</span><span class="cena f150">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow f75">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow f75">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
+        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+zbozi[zboziIndex].icon+'"  ><h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span><span class="cena">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
 
         if(i<kosik.length-1) produkt += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
         else produkt += '<div class="produkt2LineNO">  <div ></div>  </div>  </li>';
@@ -1152,4 +1206,14 @@ function centreSelect(box)
     for(var i=0, space; i<len; i++)
         if( i!=data.idx )
             opts[i].text=(space=pad.substring(0,(data.longest-opts[i].text.length)/2))+opts[i].text+space;
+}
+
+function testMinObsahu(nextPage)
+{
+    if(kosik.length<1)
+    {
+        alertZobraz("Nejrpve si vyber dnešní sváču");
+        return;
+    }
+    transition(nextPage,"fade");
 }
