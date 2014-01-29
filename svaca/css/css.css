@@ -1,4 +1,4 @@
-@media only screen and (min-width: 320px)  and (max-width: 719px){
+@media only screen and (min-width: 320px)  and (max-width: 700px){
 
     .prihlaseniZaregistrovat {
         font-size: 400%;
@@ -47,7 +47,7 @@
         padding-bottom: 2.5em;
     }
     .produktTyp {
-        padding: 0.5em;
+        padding: 0.5em 0 0.5em 0;
     }
     .produktTyp a {
         font-size: 200% !important;
@@ -57,15 +57,24 @@
         padding-top: 0.2em;
         padding-bottom: 0.3em;
         margin-right: 3em;
-        margin-left: 27%;
+        margin-left: 15%; /* obrazek*/
+        padding-left: 15px; /* 10obrazku + 5 odsazeni*/
     }
     .produkt2Popis span {
-        padding-left: 95px;
         font-size: 150%;
         padding-bottom: 0.5em;
+        margin-left: 15%;
+        padding-left: 15px;
     }
     .produkt2Line div {
         border-bottom: 2px solid;
+    }
+    .produkt2 img {
+        width: 15%;
+    }
+    .produktTypImg {
+        width: 12%;
+        margin-left: 10px;
     }
 
     .produkt2PopisNoImage h3 {
@@ -131,7 +140,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 701px) {
 
     /* Medium screen, non-retina */
     .f75 {
@@ -226,7 +235,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
         font-size: 300% !important;
     }
     .produktTyp {
-        padding: 1.5em;
+        padding: 1.5em 0px 1.5em 0px;
     }
 
     .produktTyp a {
@@ -236,12 +245,14 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
         font-size: 450%;
         padding-bottom: 0.1em;
         margin-right: 2.2em;
-        margin-left: 17%;
+        margin-left: 15%; /* obrazek*/
+        padding-left: 15px; /* 10obrazku + 5 odsazeni*/
     }
 
     .produkt2Popis span {
         font-size: 300%;
-        margin-left: 17%;
+        margin-left: 15%; /* obrazek*/
+        padding-left: 15px; /* 10obrazku + 5 odsazeni*/
     }
 
     .produkt2Line div {
@@ -250,6 +261,10 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 
     .produkt2 img {
         width: 15%;
+    }
+    .produktTypImg {
+        width: 12%;
+        margin-left: 10px;
     }
 
     .radioButt label:after {
@@ -493,14 +508,22 @@ a {
 }
 .in, .out {
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 250ms;
+    -webkit-animation-duration: 300ms;
 }
 @-webkit-keyframes fade-in {
     from {
-        opacity: 0;
+        opacity: 1;
     }
     to {
         opacity: 1;
+    }
+}
+@-webkit-keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 .fade.in {
@@ -508,6 +531,7 @@ a {
     z-index: 10;
 }
 .fade.out {
+    -webkit-animation-name: fade-out;
     z-index: 0;
 }
 /* iPhone-specific styles */
@@ -684,6 +708,16 @@ a {
     width: 100% !important;
     height: auto;
 }
+.menuLeftImgActive:before {
+    border-left: 0.2em solid #4fcc6a;
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 1px;
+    margin: auto;
+    z-index: 1000;
+}
+
 div#menuLeftDiv {
     width: 15%;
     display: block;
@@ -700,6 +734,7 @@ div#menuLeftDiv {
 .menuLeftDiv a {
     display: block;
     margin-top: 4px;
+    position: relative;
 }
 /* kokretni upravy pro stranky */
 .page-home .fajnSvacaText {
@@ -741,6 +776,7 @@ div#menuLeftDiv {
     position: absolute;
     height: 70%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
     margin-top: 0px;
     width: 85%;
     margin-bottom: 0px;
@@ -762,6 +798,7 @@ div#menuLeftDiv {
     display: inline-block;
     position: relative;
     vertical-align: middle;
+    padding-left: 5px;
 }
 .produkt a {
     color: #000000;
@@ -973,7 +1010,7 @@ div#menuLeftDiv {
 */
     font-family: Myriad Pro;
     line-height: 1em;
-    min-height: 4.5em;
+
     /*font-size: 4vw;
 */
 }
@@ -1086,16 +1123,14 @@ div#menuLeftDiv {
 
 .dobitKreditPopis h3 {
 
-    margin-left: 70px !important;
+
     /*margin: 2vw;
 */
 }
 
 .dobitKreditPopis span {
     font-family: Myriad Pro;
-    padding-left: 70px;
     display: block;
-    margin-left: 0px;
 }
 .imgLupa div {
     background: url(../imagesApp/productsLupa.png) no-repeat center top;
@@ -1269,7 +1304,10 @@ div#menuLeftDiv {
 .listHeader {
     color: white;
     font-family: Myriad Pro;
-    padding: 0.5em 0 0.5em 70px;
+    padding: 0.5em 0 0.5em 15px;
+}
+.listHeader h2 {
+    margin-left: 12%;
 }
 .listHeaderCenter {
     font-size: 250%;

@@ -26,10 +26,18 @@ var appPreffix = "svaca/";
 var pageNext = "#page-vybratSvacu";
 //var pageNext = "#page-dokoncitPlatbu";
 
+// static
+var donaskaKuryremCena= 15;
+
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+
+
 $(document).ready(function(){
 
 
-
+    $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
 
     //$('#dokoncitPlatbuNegativniText').css("display","block");
@@ -148,8 +156,14 @@ function transition(toPage, type) {
         return;
     }
 
-    // operace nad strankamy
+    // --------------------------- operace nad strankamy
     console.log("zmena stranky na:" + toPage.selector);
+
+    // oznaceni aktivniho menuLeft
+    $('#menuLeftDiv').find(".menuLeftImgActive").removeClass("menuLeftImgActive");
+    var menuLeft = toPage.selector.split("-");
+    $('#menuLeftDiv' + menuLeft[1]).addClass("menuLeftImgActive");
+
     if(toPage.selector=="#page-profil")
     {
         console.log("profilNacti");
@@ -157,6 +171,7 @@ function transition(toPage, type) {
     }
     if(toPage.selector=="#page-vybratSvacu")
     {
+        kosikZobrazCisloVkolecku();
         //TODO synchronizaci na zbozi, ale aby to neprepisovalo cisla v kosiku
         //zboziNactiAjax();
         profilNactiAjax();  // update kreditu
@@ -206,7 +221,7 @@ function transition(toPage, type) {
         {
             transition("#page-vybratSvacu","fade");
             $('#menuLeftDiv').css('display','block');
-        }, 2000);
+        }, 1500);
     }
 
 
@@ -234,11 +249,11 @@ function transition(toPage, type) {
 function kosikZobrazCisloVkolecku() {
     var kosikPocetPolozek = kosik.length;
     if(kosikPocetPolozek>0) {
-        $("#circleKosikH1").text(kosikPocetPolozek);
-        $("#circleKosikH1").css('display','block');
+        $(".circleKosik").text(kosikPocetPolozek);
+        $(".circleKosik").css('display','block');
     } else
     {
-        $("#circleKosikH1").css('display','none');
+        $(".circleKosik").css('display','none');
     }
 
 
@@ -393,16 +408,16 @@ function profilNactiAjax()
         success: function(data) {
             console.log("profilNactiAjax success");
 			dataProfil = data;
-            storageSave("dataProfil");
             profil = data;
             if(data.status == "ok")
             {
                 profilNastavPole(data);
+                storageSave("dataProfil");
             }
             if(data.status == "error" && data.code == "not logged")
             {
                 prihlaseniZobrazDialog();
-                alertZobraz(data.msg);
+                //alertZobraz(data.msg);
             }
         },
         error: function(data)
@@ -432,11 +447,10 @@ function profilNastavPole(data)
 
 
     $( "#profilUsernameH" ).text(data.username==null?"":data.username);
-    $( "#profilJmenoH" ).text(data.jmeno==null?"":data.jmeno);
-    $( "#profilPrijmeniH" ).text(data.jmeno==null?"":data.prijmeni);
+    $( "#profilFullNameH" ).text(data.fullName==null?"":data.fullName);
     $( "#profilEmailH" ).text(data.jmeno==null?"":data.email);
     $( "#profilTridaH" ).text(data.jmeno==null?"":data.trida);
-    $( "#profilSkolaH" ).text(data.jmeno==null?"":data.skola);
+    $( "#profilSkolaH" ).text(data.jmeno==null?"":data.skola_id);
     $( "#profilTelefonH" ).text(data.jmeno==null?"":data.telefon);
     //if(data.jmeno ==null) console.log("prazdne");
 }
@@ -1004,23 +1018,43 @@ function alertZobraz(msg) {
 // =============================================================================== validace poli
 var nepovoleneZnaky = "";
 
-function validateDo(k) {
+function validateDo(keyCode, rule) {
+    var k = keyCode;
+    if(rule==null)
+    {
+        return true;
+    }
     // TODO regularni vyraz
-    // zmena z 64 na 63 - 64 = @
-    // pismena mala velka, cisla, backpsace, mezera, enter
-    return ((k > 63 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 13 || k == 32 || (k >= 48 && k <= 57));
+    // 63 = @
+
+    if(rule=="username")
+    {
+        // pismena mala velka, cisla, backpsace, mezera, enter
+        return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 13 || k == 32 || (k >= 48 && k <= 57));
+    }
+    if(rule=="email")
+    {
+        //k = String.fromCharCode(k);
+        //var isEmail_re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        //if(String(k).search (isEmail_re) != -1) return true;
+
+        //var reg = new RegExp("^[0-9a-zA-Z]+@[0-9a-zA-Z]+[\.]{1}[0-9a-zA-Z]+[\.]?[0-9a-zA-Z]+$");
+        //return reg.test(k);
+
+        return true;
+    }
 }
 
 // validace znaku
-function validateKeyCharacters(e) {
+function validateKeyCharacters(e,rule) {
     var k;
     document.all ? k = e.keyCode : k = e.which;
-    return validateDo(k)
+    return validateDo(k,rule)
 }
 
 // validace vlozeneho textu
-function validateCharacters(e,input) {
-    if(!validateCharactersDo(e))
+function validateCharacters(e,input,rule) {
+    if(!validateCharactersDo(e,rule))
     {
         // resi se vypsanim textu pod input
         //alert("Text obsahuje nepovolené znaky: " + nepovoleneZnaky);
@@ -1030,9 +1064,26 @@ function validateCharacters(e,input) {
     }
 }
 
-function validateCharactersDo(e) {
+function validateCharactersDo(e,rule) {
     console.log("validateCharactersDo e=" + e);
     nepovoleneZnaky = "";
+
+    if(rule=="email")
+    {
+        var isEmail_re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        if(String(e).search (isEmail_re) != -1)
+        {
+            console.log("email true");
+            return true;
+        }
+        else
+        {
+            console.log("email false");
+            return false;
+        }
+    }
+
+
     var validnost = true;
     if(e==null || e=="")
     {
@@ -1045,7 +1096,7 @@ function validateCharactersDo(e) {
         //alert("kontroluji:" + e.substring(i,i+1));
         //alert(validateKeyCharacters(e.substring(i,i+1)));
         var k = e.substring(i,i+1).charCodeAt(0);
-        if(!validateDo(k))
+        if(!validateDo(k,rule))
         {
             nepovoleneZnaky += e.substring(i,i+1);
         }
@@ -1108,7 +1159,7 @@ function validatePasswordDo(e) {
 function validateRegistrace() {
     //console.log("aaaaccc" + );
     var validnost = true;
-    if(!validateCharactersDo($("#registraceUsername").val()))
+    if(!validateCharactersDo($("#registraceUsername").val(),"username"))
     {
         validnost = false;
         if(nepovoleneZnaky=="prazdne")
@@ -1125,6 +1176,14 @@ function validateRegistrace() {
      alertZobraz("Jméno obsahuje nepovolené znaky: " + nepovoleneZnaky);
      }
      */
+
+    if(!validateCharactersDo($("#registracePrijmeni").val().indexOf(" ") != -1))
+    {
+
+        $('#registracePrijmeni').next().text("Vložte jméno a příjmení");
+
+    }
+
     if(!validateCharactersDo($("#registracePrijmeni").val()))
     {
         validnost = false;
@@ -1174,9 +1233,11 @@ function validateRegistrace() {
         //alertZobraz("Hesla se neshodují");
         $('#registraceHeslo2').next().text("Zadaná hesla se neshodují");
     }
-    if(!validateCharactersDo($("#registraceEmail").val()))
+    if(!validateCharactersDo($("#registraceEmail").val(),"email"))
     {
         validnost = false;
+        $('#registraceEmail').next().text("Zadaný email není platný");
+     /*
         //alertZobraz("E-mail obsahuje nepovolené znaky: " + nepovoleneZnaky);
         if(nepovoleneZnaky=="prazdne")
         {
@@ -1186,6 +1247,7 @@ function validateRegistrace() {
         {
             $('#registraceEmail').next().text("Email obsahuje nepovolené znaky: " + nepovoleneZnaky);
         }
+        */
     }
     return validnost;
 
@@ -1216,4 +1278,33 @@ function testMinObsahu(nextPage)
         return;
     }
     transition(nextPage,"fade");
+}
+
+function doruceniChange()
+{
+    // aktualni hodnoty
+    var dokoncitObjednavkuVyse = $('#dokoncitObjednavkuVyse').text().split(" ");
+    var okoncitObjednavkuZustatek = $('#okoncitObjednavkuZustatek').text().split(" ");
+    var dokoncitPlatbuSoucetCenyH = $('#dokoncitPlatbuSoucetCenyH').text().split(" ");
+
+    // pricteni odecteni
+    if($('#checkBoxVyzvednout').is(':checked')==true)
+    {
+        $('#mistoDoruceniDiv').css('display','none');
+        dokoncitObjednavkuVyse = Number(dokoncitObjednavkuVyse[0]) - donaskaKuryremCena;
+        okoncitObjednavkuZustatek = Number(okoncitObjednavkuZustatek[0]) + donaskaKuryremCena;
+        dokoncitPlatbuSoucetCenyH = Number(dokoncitPlatbuSoucetCenyH[1]) - donaskaKuryremCena;
+    } else
+    {
+        $('#mistoDoruceniDiv').css('display','block');
+        dokoncitObjednavkuVyse = Number(dokoncitObjednavkuVyse[0]) + donaskaKuryremCena;
+        okoncitObjednavkuZustatek = Number(okoncitObjednavkuZustatek[0]) - donaskaKuryremCena;
+        dokoncitPlatbuSoucetCenyH = Number(dokoncitPlatbuSoucetCenyH[1]) + donaskaKuryremCena;
+    }
+
+    // zapsani hodnot
+    $('#dokoncitObjednavkuVyse').text(dokoncitObjednavkuVyse + " Kč");
+    $('#okoncitObjednavkuZustatek').text(okoncitObjednavkuZustatek + " Kč");
+    $('#dokoncitPlatbuSoucetCenyH').text("Celkem " + dokoncitPlatbuSoucetCenyH + " Kč");
+
 }

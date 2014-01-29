@@ -7,6 +7,7 @@
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <script src="svaca/js/jquery-1.8.3.min.js"></script>
     <script src="svaca/js/scripts.js"></script>
+    <script src="svaca/js/fastclick.js"></script>
     <script src="svaca/js/dataManager.js"></script>
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
@@ -25,14 +26,14 @@
 <div id="pages">
 
 <div id="menuLeftDiv" class="menuLeftDiv f180">
-    <a onclick="javascript:transition('#page-vybratSvacu','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu1.png"></a>
-    <a onclick="javascript:transition('#page-mojeOblibene','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu2.png"></a>
-    <a onclick="javascript:transition('#page-dobitKredit','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu3.png"></a>
-    <a onclick="javascript:transition('#page-vychytavky','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu4.png"></a>
-    <a onclick="javascript:transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
-    <a onclick="javascript:transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
-    <a onclick="javascript:transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
-    <a style="color: transparent;" onclick="javascript:transition('#page-test','fade')" href="#">TEST</a>
+    <a id="menuLeftDivvybratSvacu" class="menuLeftImgActive" onclick="javascript:transition('#page-vybratSvacu','fade')" href="#"><img class="menuLeftImg menuLeftImgActive" src="svaca/imagesApp/leftMenu1.png"></a>
+    <a id="menuLeftDivmojeOblibene" onclick="javascript:transition('#page-mojeOblibene','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu2.png"></a>
+    <a id="menuLeftDivdobitKredit" onclick="javascript:transition('#page-dobitKredit','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu3.png"></a>
+    <a id="menuLeftDivvychytavky" onclick="javascript:transition('#page-vychytavky','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu4.png"></a>
+    <a id="menuLeftDivpartneri" onclick="javascript:transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
+    <a id="menuLeftDivprofil" onclick="javascript:transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
+    <a id="menuLeftDivpodpora" onclick="javascript:transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
+    <a style="color: gray;line-height: 100%;" onclick="javascript:transition('#page-test','fade')" href="#">v0.17</a>
 </div>
 
 <div id="page-test" class="page-test">
@@ -42,7 +43,6 @@
         <a id="vybratSvacuKreditpp" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
-        <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
         <div style="clear: both"></div>
     </div>
 
@@ -78,7 +78,7 @@ cursor: pointer;
         <a id="vybratSvacuKredit" class="btnMenuCastka" href="#" >Kredit: 0 Kč</a>
         <a class="btnMenuKosik fialova" onclick="testMinObsahu('#page-kosik')"  href="#" >Košík &or;</a>
         <a class="btnMenuKoupit" onclick="testMinObsahu('#page-kosik')" href="#" >Koupit &gt;</a>
-        <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
+        <h1 class="circleKosik f200">12</h1>
         <div style="clear: both"></div>
     </div>
 
@@ -143,6 +143,7 @@ cursor: pointer;
         <a class="btnMenuKosik fialova kosikShow" onclick="javascript:pageKosik()" href="#" >Košík &or;</a>
         <a class="btnMenuKosikVelky fialova objShow" onclick="javascript:pageKosik()" href="#" >Upravit košík &gt;</a>
         <a class="btnMenuZpet zelena" href="#page-vybratSvacu" >Zpět &lt;&lt;</a>
+        <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
         <div style="clear: both"></div>
     </div>
 
@@ -211,15 +212,15 @@ cursor: pointer;
         <li class="produktTyp bila listText lineHeight15em dokoncitShowPozitivni f150">
             <br>
             <div class="radioButt radioButtZaplatitSvacu">
-                <input type="radio" value="vyzvednout" id="checkBoxVyzvednout" checked name="doruceni" onchange="javascript:$(this).is(':checked')==true?$('#mistoDoruceniDiv').css('display','none'):null" />
+                <input type="radio" value="vyzvednout" id="checkBoxVyzvednout" checked name="doruceni" onchange="doruceniChange()" />
                 <label for="checkBoxVyzvednout"></label>
             </div>
             <h2 class="tmavaText">Vyzvednout u bufetu</h2><br>
             <div class="radioButt radioButtZaplatitSvacu">
-                <input type="radio" value="kuryr" id="checkBoxDonaskaKuryrem" name="doruceni" onchange="javascript:$(this).is(':checked')==true?$('#mistoDoruceniDiv').css('display','block'):null" />
+                <input type="radio" value="kuryr" id="checkBoxDonaskaKuryrem" name="doruceni" onchange="doruceniChange()" />
                 <label for="checkBoxDonaskaKuryrem"></label>
             </div>
-            <h2 class="tmavaText">donáška kurýrem + 15 kč</h2><br>
+            <h2 id="dokoncitPlatbuDonaskaKuryremH" class="tmavaText">donáška kurýrem + 15 kč</h2><br>
             <div id="mistoDoruceniDiv" style="display: none">
                 <h2 id="mistoDoruceniH" class="tmavaText">Kde budu další přestávku</h2>
                 <input id="mistoDoruceniInput" placeholder="Napiš nám místo, kde tě zastihneme, kde ti sváču můžeme předat." type="text" />
@@ -282,7 +283,7 @@ cursor: pointer;
         <h3>nebyla taková jaká je</h3>
         <span>Děkujeme</span>
         <br>
-        <div>
+        <div class="bila">
             <img>
         </div>
     </div>
@@ -495,8 +496,7 @@ cursor: pointer;
 
         <li class="produktTyp bila listText listTextProfil colorSeda f200">
             <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH"></h3>
-            <h3>Jméno: </h3><h3 id="profilJmenoH"></h3>
-            <h3>Příjmení: </h3><h3 id="profilPrijmeniH"></h3>
+            <h3>Příjmení: </h3><h3 id="profilFullNameH"></h3>
             <h3>E-mail: </h3><h3 id="profilEmailH"></h3>
             <h3>Třída: </h3><h3 id="profilTridaH"></h3>
             <h3>Škola: </h3><h3 id="profilSkolaH"></h3>
@@ -534,7 +534,7 @@ cursor: pointer;
             <input id="registraceHeslo2_old" class="prihlaseniInput" type="password" title="POTVRZENÍ HESLA" placeholder="POTVRZENÍ HESLA" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value)" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div>
         </li>
         <li class="bila">
-            <input id="registraceEmail_old" class="prihlaseniInput" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
+            <input id="registraceEmail_old" class="prihlaseniInput" type="email" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value)"/><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
         </li>
         <li class="produktTyp bila">
             <div style="height: 40px;clear:both;"></div>
@@ -580,9 +580,9 @@ cursor: pointer;
     <div class="prihlaseniLogo registrace2Container prihlaseniButtons">
         <h3>Registrace</h3>
         <span>Krok 2 z 2</span>
-        <input id="registraceUsername" class="gradSedaVertical clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
+        <input id="registraceUsername" class="gradSedaVertical clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" onkeypress="return validateKeyCharacters(event,'username')" onblur="validateCharacters(this.value,this,'username')"/>
         <div class="registraceWarning f150b"></div>
-        <input id="registraceEmail" class="gradSedaVertical clickNext" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
+        <input id="registraceEmail" class="gradSedaVertical clickNext" type="text" title="HESLO" placeholder="E-MAIL" onkeypress="return validateKeyCharacters(event,'email')" onblur="validateCharacters(this.value,this,'email')"/>
         <div class="registraceWarning f150b"></div>
         <input id="registracePrijmeni" class="gradSedaVertical clickNext" type="text" title="JMÉNO A PŘÍJMENÍ" placeholder="JMÉNO A PŘÍJMENÍ" onkeypress="return validateKeyCharacters(event)" onblur="validateCharacters(this.value,this)"/>
         <div class="registraceWarning f150b"></div>
