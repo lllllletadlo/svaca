@@ -478,7 +478,6 @@ function nastavZpetProdukKosikCislo()
 
 function prihlaseniZobrazDialog()
 {
-
     //prihlaseniAjax();
     transition("#page-prihlaseni","fade");
 
