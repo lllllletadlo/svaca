@@ -59,6 +59,8 @@ $(document).ready(function(){
     //alert($('#vybratSvacuKredit').height());
     $('#ulVybratSvacu').css('height','auto');
     maxHeightVybratSvacu = true;
+
+    $('#pages > div').css('min-height',viewport.height);
     // kosik nastaveni 60% height
     //$('.ulKosik').css('max-height',viewport.height*0.4);
     //var kosikPosition = $('.ulKosik').offset();
@@ -221,7 +223,7 @@ function transition(toPage, type) {
         {
             transition("#page-vybratSvacu","fade");
             $('#menuLeftDiv').css('display','block');
-        }, 1500);
+        }, 1000);
     }
 
 
@@ -380,7 +382,7 @@ function ajaxError(xhr, textStatus, error){
     console.log(textStatus);
     console.log(error);
 }
-function ajaxError2(data){
+function ajaxError2(data,zobrazUzivateli){
     console.log("ajaxError2");
     console.log(data);
 
@@ -395,8 +397,16 @@ function ajaxError2(data){
 
 
     //alert("Nelze se připojit k serveru!");
-    alertZobraz(JSON.stringify(data));
-    ;
+    if($("#testAlertyCheckBox").is(":checked"))
+    {
+        alertZobraz(JSON.stringify(data));
+    }
+
+    if(zobrazUzivateli)
+    {
+        alertZobraz("Nelze se připojit k serveru!")
+    }
+
 }
 
 
@@ -956,7 +966,10 @@ function objednavkaOdelsatAjax(objednavka, typ) {
                 console.log(data.msg);
             }
         },
-        error: ajaxError2
+        error: function(data)
+        {
+            ajaxError2(data,true);
+        }
     });
 
 

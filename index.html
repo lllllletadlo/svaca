@@ -26,20 +26,20 @@
 <div id="pages">
 
 <div id="menuLeftDiv" class="menuLeftDiv f180">
-    <a id="menuLeftDivvybratSvacu" class="menuLeftImgActive" onclick="javascript:transition('#page-vybratSvacu','fade')" href="#"><img class="menuLeftImg menuLeftImgActive" src="svaca/imagesApp/leftMenu1.png"></a>
-    <a id="menuLeftDivmojeOblibene" onclick="javascript:transition('#page-mojeOblibene','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu2.png"></a>
-    <a id="menuLeftDivdobitKredit" onclick="javascript:transition('#page-dobitKredit','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu3.png"></a>
-    <a id="menuLeftDivvychytavky" onclick="javascript:transition('#page-vychytavky','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu4.png"></a>
-    <a id="menuLeftDivpartneri" onclick="javascript:transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
-    <a id="menuLeftDivprofil" onclick="javascript:transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
-    <a id="menuLeftDivpodpora" onclick="javascript:transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
-    <a style="color: gray;line-height: 100%;" onclick="javascript:transition('#page-test','fade')" href="#">v0.17</a>
+    <a id="menuLeftDivvybratSvacu" class="menuLeftImgActive" onclick="transition('#page-vybratSvacu','fade')" href="#"><img class="menuLeftImg menuLeftImgActive" src="svaca/imagesApp/leftMenu1.png"></a>
+    <a id="menuLeftDivmojeOblibene" onclick="transition('#page-mojeOblibene','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu2.png"></a>
+    <a id="menuLeftDivdobitKredit" onclick="transition('#page-dobitKredit','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu3.png"></a>
+    <a id="menuLeftDivvychytavky" onclick="transition('#page-vychytavky','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu4.png"></a>
+    <a id="menuLeftDivpartneri" onclick="transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
+    <a id="menuLeftDivprofil" onclick="transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
+    <a id="menuLeftDivpodpora" onclick="transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
+    <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v0.17</a>
 </div>
 
 <div id="page-test" class="page-test">
 
     <div class="menu">
-        <a class="btnMenuMenu modra colorBila" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra colorBila" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="vybratSvacuKreditpp" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
@@ -53,28 +53,15 @@
     </div>
 
 
-    <div onclick="zboziNactiAjax()" style="
-    position: absolute;
-    left: 180px;
-    font-size: 200%;padding: 10px;
-background-color: green;
-cursor: pointer;
-">nacti data vymaz kos</div><div onclick="logout()" style="
-    position: absolute;
-    position: absolute;
-    left: 450px;  font-size: 200%;padding: 10px;
-background-color: red;
-cursor: pointer;
-">logout</div>
-
-
-    </ul>
+    <div onclick="zboziNactiAjax()" style="margin-left: 15%;font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>
+    <div onclick="logout()" style="margin-left: 15%;  font-size: 200%;padding: 10px;background-color: red;cursor: pointer;">logout</div>
+    <div style="margin-left: 15%;  font-size: 200%;padding: 10px;cursor: pointer;">alerty <input id="testAlertyCheckBox" type="checkbox"></div>
 </div>
 
 <div id="page-vybratSvacu" class="page-vybratSvacu current">
 
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="vybratSvacuKredit" class="btnMenuCastka" href="#" >Kredit: 0 Kč</a>
         <a class="btnMenuKosik fialova" onclick="testMinObsahu('#page-kosik')"  href="#" >Košík &or;</a>
         <a class="btnMenuKoupit" onclick="testMinObsahu('#page-kosik')" href="#" >Koupit &gt;</a>
@@ -93,7 +80,7 @@ cursor: pointer;
 
 <div id="page-potvrzeniPlatby" class="page-potvrzeniPlatby">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="potvrzeniPlatbyKredit" class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
@@ -125,7 +112,7 @@ cursor: pointer;
             <div style="height: 20px"></div>
         </li>
         <li class="listTlacitko listTlacitkoOtevritosobniprofil modra gradZtmaveni f250">
-            <a onclick="javascript:transition('#page-profil','fade')" href="#">
+            <a onclick="transition('#page-profil','fade')" href="#">
                 <h3>OTEVŘÍT OSOBNÍ PROFIL</h3>
             </a>
         </li>
@@ -138,10 +125,10 @@ cursor: pointer;
 <!--                class="page-kosik objednavka" -->
 <div id="page-kosik" class="page-kosik">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="koupitSvacuZaplatitKredit" class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
-        <a class="btnMenuKosik fialova kosikShow" onclick="javascript:pageKosik()" href="#" >Košík &or;</a>
-        <a class="btnMenuKosikVelky fialova objShow" onclick="javascript:pageKosik()" href="#" >Upravit košík &gt;</a>
+        <a class="btnMenuKosik fialova kosikShow" onclick="pageKosik()" href="#" >Košík &or;</a>
+        <a class="btnMenuKosikVelky fialova objShow" onclick="pageKosik()" href="#" >Upravit košík &gt;</a>
         <a class="btnMenuZpet zelena" href="#page-vybratSvacu" >Zpět &lt;&lt;</a>
         <h1 id="circleKosikH1" class="circleKosik f200">12</h1>
         <div style="clear: both"></div>
@@ -165,7 +152,7 @@ cursor: pointer;
             </a>
         </li>
         <li class="listTlacitko listTlacitko2 gradModraDolu kosikShow f250">
-            <a onclick="javascript:objednavkaProceed()" href="#">
+            <a onclick="objednavkaProceed()" href="#">
                 <h3 class="listTlacitkoText">ZAPLATIT</h3>
             </a>
         </li>
@@ -181,7 +168,7 @@ cursor: pointer;
 <!-- negativni nebo pozitivni -->
 <div id="page-dokoncitPlatbu" class="page-dokoncitPlatbu pozitivni">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
         <a id="dokoncitPlatbuKredit" class="btnMenuCastka" style="color: #000000;" href="#page-koupit" >Kredit: 123,5 Kč</a>
         <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
         <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
@@ -201,9 +188,9 @@ cursor: pointer;
         </li>
 
         <li class="produktTyp bila listTextStred f250 fontWeightBold dokoncitShowNegativni">
-            <span class="colorCervena">Bohužel pro dokončení objednávky nemáte dostatečný kredit.</h2>
+            <span class="colorCervena">Bohužel pro dokončení objednávky nemáte dostatečný kredit.</span>
             <br><br>
-            <span class="colorCervena">Odstraňte některé položky z košíku, nebo si dobijte kredit</h2>
+            <span class="colorCervena">Odstraňte některé položky z košíku, nebo si dobijte kredit</span>
             <br><br>
         </li>
         <li class="listHeader zelena dokoncitShowPozitivni f250">
@@ -237,12 +224,12 @@ cursor: pointer;
             <div style="height: 20px"></div>
         </li>
         <li id="dokoncitPlatbuPotvrditButton" class="listTlacitko listTlacitko2 modra gradModraDolu dokoncitShowPozitivni f250">
-            <a onclick="javascript:objednavkaOdelsatAjax(objednavka,1)" href="#">
+            <a onclick="objednavkaOdelsatAjax(objednavka,1)" href="#">
                 <h3>ZAPLATIT</h3>
             </a>
         </li>
         <li id="dokoncitPlatbuDobitButton" class="listTlacitko listTlacitko2 zluta gradZtmaveni dokoncitShowNegativni f250">
-            <a onclick="javascript:transition('#page-dobitKredit','fade')" href="#">
+            <a onclick="transition('#page-dobitKredit','fade')" href="#">
                 <h3>DOBÍT KREDIT</h3>
             </a>
         </li>
@@ -253,7 +240,7 @@ cursor: pointer;
 <div id="page-mojeOblibene" class="page-mojeOblibene">
 
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
 
     <ul id="ulMojeOblibeneHeader" class="produtkSeznam">
@@ -272,7 +259,7 @@ cursor: pointer;
 
 <div id="page-partneri" class="page-parnertneri">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <div class="partneriFajnSvacaIMG">
         <img class="fajnSvacaText"  >
@@ -293,7 +280,7 @@ cursor: pointer;
 
 <div id="page-vychytavky" class="page-vychytavky">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <div class="partneriFajnSvacaIMG">
         <img class="fajnSvacaText"  >
@@ -339,7 +326,7 @@ cursor: pointer;
 
 <div id="page-podporaSite1" class="page-podpora">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <img class="fajnSvacaText"  >
     <ul class="produtkSeznam">
@@ -355,7 +342,7 @@ cursor: pointer;
         </li>
         <li class="bila podporaSite1">
             <span>Zanechte nám své telefoní číslo</span>
-            <input type="" placeholder="např. 777 666 555">
+            <input type="text" placeholder="např. 777 666 555">
             <span class="zelena">Odeslat</span>
             <br>
         </li>
@@ -366,7 +353,7 @@ cursor: pointer;
 
 <div id="page-podpora" class="page-podpora">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <div class="partneriFajnSvacaIMG">
         <img class="fajnSvacaText"  >
@@ -424,7 +411,7 @@ cursor: pointer;
 
 <div id="page-dobitKredit" class="page-dobitKredit">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <div class="partneriFajnSvacaIMG">
         <img class="fajnSvacaText"  >
@@ -481,7 +468,7 @@ cursor: pointer;
 
 <div id="page-profil" class="page-profil">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
     <div class="partneriFajnSvacaIMG">
         <img class="fajnSvacaText"  >
@@ -507,7 +494,7 @@ cursor: pointer;
 
 <div id="page-registrace_old" class="page-registrace_old">
     <div class="menu">
-        <a class="btnMenuMenu modra" onclick="javascript:menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
         <a class="btnMenuCastka" style="color: #000000;width: 80%;" href="#" >Registrace</a>
     </div>
     <img class="fajnSvacaText"  >
@@ -543,7 +530,7 @@ cursor: pointer;
             <div style="height: 40px;clear:both;"></div>
         </li>
         <li class="listTlacitko zluta">
-            <a onclick="javascript:registraceAjax()" href="#">
+            <a onclick="registraceAjax()" href="#">
                 <h3>ZAREGISTROVAT SE</h3>
             </a>
         </li>
@@ -608,7 +595,7 @@ cursor: pointer;
         <input id="registraceHeslo2" class="gradSedaVertical clickNext" type="password" title="POTVRZENÍ HESLA" placeholder="POTVRZENÍ HESLA" onkeypress="return validateKeyCharacters(event)" onblur="validatePassword(this.value,this)" />
         <div class="registraceWarning f150b"></div>
 
-        <a class="prihlaseniPrihlasitButns gradModraDolu colorBila" onclick="javascript:registraceAjax()">
+        <a class="prihlaseniPrihlasitButns gradModraDolu colorBila" onclick="registraceAjax()">
                 ZAREGISTROVAT
         </a>
     </div>
@@ -617,7 +604,7 @@ cursor: pointer;
 <div id="page-registracePrihlaseniOK" class="page-registraceOK gradZelenaRadius f200 colorBila">
     <div>
         <div id="registracePrihlaseniOKdiv">Registrace proběhla úspěšně</div>
-        <a class="gradModraDolu" onclick="javascript:transition('#page-vybratSvacu','fade');$('#menuLeftDiv').css('display','block')">OK</a>
+        <a class="gradModraDolu" onclick="transition('#page-vybratSvacu','fade');$('#menuLeftDiv').css('display','block')">OK</a>
     </div>
 </div>
 
@@ -626,20 +613,20 @@ cursor: pointer;
             <div class="logoFajnSvaca"  ></div>
         </div>
         <div class="prihlaseniButtons">
-            <input id="prihlaseniJmeno" class="f200 clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div><br>
-            <input id="prihlaseniHeslo" class="f200 clickNext" type="password" title="HESLO" placeholder="HESLO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
+            <input id="prihlaseniJmeno" class="clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div><br>
+            <input id="prihlaseniHeslo" class="clickNext" type="password" title="HESLO" placeholder="HESLO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
             <div>
-                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns gradModraDolu" onclick="javascript:saveText()">
+                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns gradModraDolu" onclick="saveText()">
                     Přihlásit pomocí&nbsp;<img class="prihlaseniFBImage">
                 </a>
-                <a id="prihlaseniPrihlasitSe" class="prihlaseniPrihlasit prihlaseniPrihlasitButns gradModraDolu" onclick="javascript:prihlaseniAjax()">
+                <a id="prihlaseniPrihlasitSe" class="prihlaseniPrihlasit prihlaseniPrihlasitButns gradModraDolu" onclick="prihlaseniAjax()">
                     PŘIHLÁSIT SE
                 </a>
             </div>
 
             <div id="prihlaseniContainerZaregistrovat" class="containerVerticalCenter">
                 <div class="verticalCenter">
-                    <a class="prihlaseniZaregistrovat" onclick="javascript:transition('#page-registrace1','fade')">
+                    <a class="prihlaseniZaregistrovat" onclick="transition('#page-registrace1','fade')">
                         Zaregistrovat se
                     </a>
                 </div>
@@ -650,7 +637,7 @@ cursor: pointer;
 
 
 <map name="proMenu">
-    <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="javascript:menuLeftShow()" href="#" >
+    <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="menuLeftShow()" href="#" >
 </map>
 
 </div>

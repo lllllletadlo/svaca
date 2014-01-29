@@ -102,7 +102,7 @@
     }
 
     #mistoDoruceniInput {
-        font-size: 100%;
+        font-size: 150%;
     }
     .page-potvrzeniPlatby .logoFajnSvacaWhite {
         width: 150px;
@@ -121,6 +121,12 @@
     }
     .dokoncitPlatbuContainer {
         top: 7.2em;
+    }
+    .produktChceckBox input[type="checkbox"] {
+        right: 0px;
+        top: 100%;
+        width: 50%;
+        height: 100%;
     }
 
 }
@@ -194,7 +200,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     }
 
     .prihlaseniButtons input {
-        font-size: 300% !important;
+        font-size: 400% !important;
         margin-bottom: 0.5em;
     }
 
@@ -305,18 +311,21 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     .dokoncitPlatbuContainer {
         top: 12em;
     }
-
-
-
-
-
-
     .produktChceckBox input[type="checkbox"]:checked+label {
         background-size: auto !important;
     }
     .produktChceckBox input[type="checkbox"]+label {
         background-size: auto !important;
     }
+    .produktChceckBox input[type="checkbox"] {
+        width: 100%;
+        height: 300%;
+    }
+
+
+
+
+
     .produktKosikObr {
         background-size: 3em !important;
         padding-top: 4em !important;
@@ -342,7 +351,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     .page-potvrzeniPlatby .produktTyp {
         font-size: 400%;
     }
-
+    .checkBoxProduktTyp {
+        top: 50px;
+    }
 
 }
 
@@ -611,32 +622,9 @@ a {
     /* font-size: 4vw;
 */
 }
-.btnQuatro1 {
-    background: url(../imagesApp/btnKoupit.png) no-repeat center;
-    background-color: #f8c300;
-}
-.btnQuatro2 {
-    left: 50%;
-    background: url(../imagesApp/btnVychytavky.png) no-repeat center;
-    background-color: #b251a5;
-}
-.btnQuatro3 {
-    top: 50%;
-    background: url(../imagesApp/btnPartneri.png) no-repeat center;
-    background-color: #0099d9;
-}
-.btnQuatro4 {
-    left: 50%;
-    top: 50%;
-    background: url(../imagesApp/btnPodpora.png) no-repeat center;
-    background-color: #00d36b;
-}
+
 .btnText {
     margin-top: 75%;
-}
-.btnObr1 {
-    margin-top: 75%;
-    background: url(../imagesApp/btnKoupit.png) no-repeat center;
 }
 .menu {
     width: 100%;
@@ -684,26 +672,7 @@ a {
     width: 25%;
     background-color: #4fcc6a;
 }
-.btnQuatroVybratSvacu {
-    background: url(../imagesApp/btnVybratSvacu.png) no-repeat center;
-    background-color: #f8c300;
-}
-.btnQuatroMojeOblibene {
-    left: 50%;
-    background: url(../imagesApp/btnMojeOblibene.png) no-repeat center;
-    background-color: #a256af;
-}
-.btnQuatroDobitKredit {
-    top: 50%;
-    background: url(../imagesApp/btnDobitKredit.png) no-repeat center;
-    background-color: #0099d9;
-}
-.btnQuatroProfil {
-    left: 50%;
-    top: 50%;
-    background: url(../imagesApp/btnProfil.png) no-repeat center;
-    background-color: #00cf6a;
-}
+
 .menuLeftImg {
     width: 100% !important;
     height: auto;
@@ -728,7 +697,7 @@ div#menuLeftDiv {
     bottom: 0px;
     padding: 0px;
     background-color: black;
-    min-height: 10%;
+    min-height: 10% !important;
     font-size: 180%;
 }
 .menuLeftDiv a {
@@ -1481,7 +1450,7 @@ div#menuLeftDiv {
     width: 100%;
     background-color: white;
     text-align: center;
-    height: 3em;
+    height: 2.5em;
     border: 0px;
 }
 
@@ -1619,12 +1588,9 @@ div#menuLeftDiv {
     margin-right: 15px;
 }
 .checkBoxProduktTyp {
-    display: inline;
-    top: 50%;
+    display: inline-block;
     position: absolute !important;
-    margin-top: -12px;
-    right: 7%;
-    margin-right: -12px;
+    right: 5%;
 }
 .checkBox {
     width: 25px;
@@ -1768,6 +1734,7 @@ div#menuLeftDiv {
 .produktChceckBox input[type="checkbox"]{
     opacity: 0;
     position:absolute;
+
 }
 .produktChceckBox input[type="checkbox"]+label{
     background: url('../imagesApp/productsCheckBoxOff.png') right center no-repeat;
