@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="pripominky p1&#10;- grafika&#10;- obr po prihlaseni&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/js/fastclick.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/css/css.css" afterPath="$PROJECT_DIR$/svaca/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -32,10 +27,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.47867298">
       <split-first>
         <leaf>
-          <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="62" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.5862069" vertical-offset="0" max-vertical-offset="1734">
+                <state line="32" column="62" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1734">
                   <folding />
                 </state>
               </provider>
@@ -62,7 +57,7 @@
           <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="10" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="22355">
+                <state line="33" column="10" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="22338">
                   <folding />
                 </state>
               </provider>
@@ -71,7 +66,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="498" column="54" selection-start="20806" selection-end="20821" vertical-scroll-proportion="7.8461537" vertical-offset="8466" max-vertical-offset="11152">
+                <state line="498" column="54" selection-start="20806" selection-end="20821" vertical-scroll-proportion="0.0" vertical-offset="8466" max-vertical-offset="11356">
                   <folding />
                 </state>
               </provider>
@@ -117,14 +112,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="scripts.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="452" column="63" selection-start="12642" selection-end="12642" vertical-scroll-proportion="-0.1648707" vertical-offset="7684" max-vertical-offset="22202">
-                  <folding>
-                    <marker date="1390924942292" expanded="false" signature="24425:24454" placeholder="..." />
-                    <marker date="1390924942292" expanded="false" signature="24763:24780" placeholder="..." />
-                  </folding>
+                <state line="479" column="1" selection-start="13309" selection-end="13309" vertical-scroll-proportion="-0.1648707" vertical-offset="8143" max-vertical-offset="22185">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -221,7 +213,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -232,66 +224,12 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svaca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.idesettings.debugger.javascript" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -316,14 +254,6 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -334,8 +264,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -343,6 +277,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
@@ -629,7 +567,15 @@
       <created>1390835762225</created>
       <updated>1390835762225</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="pripominky Jara">
+      <created>1390985936299</created>
+      <updated>1390985936299</updated>
+    </task>
+    <task id="LOCAL-00060" summary="pripominky Jara&#10;">
+      <created>1390986320137</created>
+      <updated>1390986320137</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -668,12 +614,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16165803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13989638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -688,8 +634,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="gtrdfdfg&#10;dxfgds&#10;awrea&#10;rgrd&#10;pp&#10;gg" />
-    <MESSAGE value="imageVerze 2.0" />
     <MESSAGE value="imageVerze 2.0&#10;image dodatek" />
     <MESSAGE value="imageVerze 2.0&#10;" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale" />
@@ -713,7 +657,9 @@
     <MESSAGE value="offline&#10;oprava chyby id-trida v2&#10;oprava zobrazeni menu" />
     <MESSAGE value="pripominky p1&#10;- grafika&#10;- obr po prihlaseni" />
     <MESSAGE value="pripominky p1&#10;- grafika&#10;- obr po prihlaseni&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="pripominky p1&#10;- grafika&#10;- obr po prihlaseni&#10;" />
+    <MESSAGE value="pripominky Jara" />
+    <MESSAGE value="pripominky Jara&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="pripominky Jara&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1030,7 +976,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/dataManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="43" selection-start="0" selection-end="1941" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1377">
+        <state line="52" column="31" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="1377">
           <folding />
         </state>
       </provider>
@@ -1044,28 +990,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="718" column="1" selection-start="14733" selection-end="14733" vertical-scroll-proportion="0.0" vertical-offset="11749" max-vertical-offset="30838">
+        <state line="228" column="5" selection-start="0" selection-end="41946" vertical-scroll-proportion="0.0" vertical-offset="3778" max-vertical-offset="30838">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="498" column="54" selection-start="20806" selection-end="20821" vertical-scroll-proportion="7.8461537" vertical-offset="8466" max-vertical-offset="11152">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="10" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="22355">
+        <state line="34" column="30" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="11356">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="62" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.5862069" vertical-offset="0" max-vertical-offset="1734">
+        <state line="32" column="62" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="479" column="1" selection-start="13309" selection-end="13309" vertical-scroll-proportion="-0.1648707" vertical-offset="8143" max-vertical-offset="22185">
           <folding />
         </state>
       </provider>
