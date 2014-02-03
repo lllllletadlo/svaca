@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/js/phonegap-desktop.js" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\js\cordova.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Inited\projekty\svaca\webStorm\svaca\svaca\js\phonegap.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -36,7 +31,7 @@
           <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.44674966" vertical-offset="0" max-vertical-offset="1785">
+                <state line="25" column="64" selection-start="958" selection-end="958" vertical-scroll-proportion="0.49514562" vertical-offset="68" max-vertical-offset="1768">
                   <folding />
                 </state>
               </provider>
@@ -134,7 +129,7 @@
           <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="484" column="4" selection-start="13668" selection-end="13668" vertical-scroll-proportion="7.5978913" vertical-offset="3030" max-vertical-offset="22763">
+                <state line="484" column="4" selection-start="13668" selection-end="13668" vertical-scroll-proportion="7.620846" vertical-offset="3030" max-vertical-offset="22763">
                   <folding>
                     <marker date="1391442838302" expanded="false" signature="25285:25314" placeholder="..." />
                     <marker date="1391442838302" expanded="false" signature="25623:25640" placeholder="..." />
@@ -183,8 +178,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
-    <option name="y" value="-8" />
+    <option name="x" value="1709" />
+    <option name="y" value="-73" />
     <option name="width" value="1553" />
     <option name="height" value="916" />
   </component>
@@ -669,7 +664,11 @@
       <created>1390995743709</created>
       <updated>1390995743709</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="ukladani souboru&#10;">
+      <created>1391443189855</created>
+      <updated>1391443189855</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -693,9 +692,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-8" width="1553" height="916" extended-state="6" />
+    <frame x="1709" y="-73" width="1553" height="916" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39617833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -710,7 +710,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3968912" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -728,7 +727,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="imageVerze 2.0&#10;image dodatek" />
     <MESSAGE value="imageVerze 2.0&#10;" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale&#10;uprava scale2" />
@@ -753,7 +751,8 @@
     <MESSAGE value="pripominky p1&#10;- grafika&#10;- obr po prihlaseni&#10;" />
     <MESSAGE value="pripominky Jara" />
     <MESSAGE value="pripominky Jara&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="pripominky Jara&#10;" />
+    <MESSAGE value="ukladani souboru&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="ukladani souboru&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1054,7 +1053,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.44674966" vertical-offset="0" max-vertical-offset="1785">
+        <state line="25" column="64" selection-start="958" selection-end="958" vertical-scroll-proportion="0.49514562" vertical-offset="68" max-vertical-offset="1768">
           <folding />
         </state>
       </provider>
