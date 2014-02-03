@@ -31,7 +31,7 @@
           <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="64" selection-start="958" selection-end="958" vertical-scroll-proportion="0.49514562" vertical-offset="68" max-vertical-offset="1768">
+                <state line="26" column="80" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.51872396" vertical-offset="68" max-vertical-offset="1785">
                   <folding />
                 </state>
               </provider>
@@ -281,6 +281,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svaca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -668,7 +682,11 @@
       <created>1391443189855</created>
       <updated>1391443189855</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="ukladani souboru&#10;">
+      <created>1391443655198</created>
+      <updated>1391443655198</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1053,7 +1071,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="64" selection-start="958" selection-end="958" vertical-scroll-proportion="0.49514562" vertical-offset="68" max-vertical-offset="1768">
+        <state line="26" column="80" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.51872396" vertical-offset="68" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
