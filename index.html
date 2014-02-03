@@ -9,9 +9,74 @@
     <script src="svaca/js/scripts.js"></script>
     <script src="svaca/js/fastclick.js"></script>
     <script src="svaca/js/dataManager.js"></script>
+    <script src="svaca/js/phonegap-desktop.js"></script>
+
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
 </head>
+<script type="text/javascript" charset="utf-8">
+    // Wait for Cordova to load
+
+    window.appRootDirName = ".myapp";
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        console.log("device is ready");
+        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function fail() {
+        console.log("failed to get filesystem");
+    }
+
+    function gotFS(fileSystem) {
+        console.log("filesystem got");
+        fileSystem.root.getDirectory(window.appRootDirName, {
+            create : true,
+            exclusive : false
+        }, dirReady, fail);
+    }
+
+    function dirReady(entry) {
+        window.appRootDir = entry;
+        console.log(JSON.stringify(window.appRootDir));
+        downloadImage("http://jbkflex.files.wordpress.com/2011/09/demo.png", aa, bb);
+    }
+
+    function downloadImage(url, success, err){
+        console.log('download image ' + url);
+
+        var fileName = new Date().getTime() + ".png";
+        ft = new FileTransfer();
+        ft.download(
+                url,
+                window.appRootDir.fullPath + "/" + fileName,
+                function(entry) {
+                    console.log("download complete: " + entry.fullPath);
+                    success(entry.fullPath);
+                },
+                function(error) {
+                    console.log("download error source " + error.source);
+                    console.log("download error target " + error.target);
+                    console.log("upload error code" + error.code);
+                    err(error);
+                }
+        );
+    }
+
+    function aa(data)
+    {
+        console.log("aa"+data);
+    }
+    function bb(data)
+    {
+        console.log("bb"+data);
+    }
+
+</script>
+
+
 <body>
 
 <script>
@@ -34,28 +99,6 @@
     <a id="menuLeftDivprofil" onclick="transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
     <a id="menuLeftDivpodpora" onclick="transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
     <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v0.17</a>
-</div>
-
-<div id="page-test" class="page-test">
-
-    <div class="menu">
-        <a class="btnMenuMenu modra colorBila" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
-        <a id="vybratSvacuKreditpp" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
-        <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
-        <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
-        <div style="clear: both"></div>
-    </div>
-
-    <div class="pageContainer pageTest f250">
-        <div onclick="save()">save</div>
-        <div onclick="load()">get</div>
-        <input id="testInput" type="text" />
-    </div>
-
-
-    <div onclick="zboziNactiAjax()" style="margin-left: 15%;font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>
-    <div onclick="logout()" style="margin-left: 15%;  font-size: 200%;padding: 10px;background-color: red;cursor: pointer;">logout</div>
-    <div style="margin-left: 15%;  font-size: 200%;padding: 10px;cursor: pointer;">alerty <input id="testAlertyCheckBox" type="checkbox"></div>
 </div>
 
 <div id="page-vybratSvacu" class="page-vybratSvacu current">
@@ -616,7 +659,7 @@
             <input id="prihlaseniJmeno" class="clickNext" type="text" title="PŘIHLAŠOVACÍ JMÉNO" placeholder="PŘIHLAŠOVACÍ JMÉNO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputJmeno"></div><br>
             <input id="prihlaseniHeslo" class="clickNext" type="password" title="HESLO" placeholder="HESLO" /><div class="prihlaseniInput prihlaseniObr prihlaseniInputHeslo"></div>
             <div>
-                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns gradModraDolu" onclick="saveText()">
+                <a class="prihlaseniPrihlasitFB prihlaseniPrihlasitButns gradModraDolu" onclick="storeIntelligrapeLogo()">
                     Přihlásit pomocí&nbsp;<img class="prihlaseniFBImage">
                 </a>
                 <a id="prihlaseniPrihlasitSe" class="prihlaseniPrihlasit prihlaseniPrihlasitButns gradModraDolu" onclick="prihlaseniAjax()">
@@ -634,7 +677,33 @@
         </div>
 </div>
 
+<div id="page-test" class="page-test">
 
+    <div class="menu">
+        <a class="btnMenuMenu modra colorBila" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a id="vybratSvacuKreditpp" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="pageContainer pageTest f250">
+        <div onclick="save()">save</div>
+        <div onclick="load()">get</div>
+        <input id="testInput" type="text" />
+
+        <div onclick="zboziNactiAjax()" style="font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>
+        <div onclick="logout()" style="font-size: 200%;padding: 10px;background-color: red;cursor: pointer;">logout</div>
+        <div style="font-size: 200%;padding: 10px;cursor: pointer;">alerty <input id="testAlertyCheckBox" type="checkbox"></div>
+        <input type="button" value="test obr" onclick="nactiObr()">
+        <img id="testImg" width="100%" height="100%">
+        <input type="button" value="path obr" onclick="alert($('.menuLeftImg').attr('src'))">
+    </div>
+
+
+
+
+</div>
 
 <map name="proMenu">
     <area shape="rect" coords="0,0,150,98" alt="Sun" onclick="menuLeftShow()" href="#" >
