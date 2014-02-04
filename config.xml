@@ -6,6 +6,8 @@
         id        = "cz.inited.fajnsvaca"
         version   = "0.0.17">
 
+    <preference name="phonegap-version" value="3.1.0" />
+
     <name>Fajn Sváča</name>
 
     <description>Revoluce ve školním stravování</description>
@@ -16,15 +18,19 @@
         Enable individual API permissions here.
         The "device" permission is required for the 'deviceready' event.
     -->
+
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+
     <feature name="http://api.phonegap.com/1.0/device" />
 
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
-            <preference name="permissions"                value="none"/>
+
     -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
     <!-- <preference name="phonegap-version"      value="3.3.0" /> -->      <!-- all: current version of PhoneGap -->
