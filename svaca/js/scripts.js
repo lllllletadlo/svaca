@@ -36,22 +36,6 @@ window.addEventListener('load', function() {
 
 $(document).ready(function(){
 
-    storeIntelligrapeLogo();
-    function storeIntelligrapeLogo(){
-        var url = "http://www.intelligrape.com/images/logo.png"; // image url
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-            var imagePath = fs.root.fullPath + "/logo.png"; // full file path
-            var fileTransfer = new FileTransfer();
-            fileTransfer.download(url, imagePath, function (entry) {
-                console.log("hotovo");
-                alert(entry.fullPath); // entry is fileEntry object
-            }, function (error) {
-                alert.log("Some error");
-            });
-        })
-    }
-
-
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
 
@@ -143,6 +127,21 @@ $(document).ready(function(){
 
 
 
+    storeIntelligrapeLogo();
+    function storeIntelligrapeLogo(){
+        alert("jdu na vec!")
+        var url = "http://www.intelligrape.com/images/logo.png"; // image url
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+            var imagePath = fs.root.fullPath + "/logo.png"; // full file path
+            var fileTransfer = new FileTransfer();
+            fileTransfer.download(url, imagePath, function (entry) {
+                console.log("hotovo");
+                alert(entry.fullPath); // entry is fileEntry object
+            }, function (error) {
+                alert.log("Some error");
+            });
+        })
+    }
 
 
 });

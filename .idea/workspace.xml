@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -56,19 +56,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="scripts.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="10" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="22916">
+                <state line="131" column="26" selection-start="3687" selection-end="3687" vertical-scroll-proportion="0.5961123" vertical-offset="1675" max-vertical-offset="22899">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="51" selection-start="655" selection-end="655" vertical-scroll-proportion="0.18847007" vertical-offset="0" max-vertical-offset="12291">
+                <state line="24" column="10" selection-start="1117" selection-end="1117" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="12291">
                   <folding />
                 </state>
               </provider>
@@ -99,7 +99,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="660" column="118" selection-start="29580" selection-end="29580" vertical-scroll-proportion="0.0" vertical-offset="10724" max-vertical-offset="12291">
+                <state line="660" column="118" selection-start="29584" selection-end="29584" vertical-scroll-proportion="0.0" vertical-offset="10724" max-vertical-offset="12291">
                   <folding />
                 </state>
               </provider>
@@ -122,10 +122,10 @@
           <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="484" column="4" selection-start="13668" selection-end="13668" vertical-scroll-proportion="0.8258294" vertical-offset="7378" max-vertical-offset="22763">
+                <state line="483" column="4" selection-start="13695" selection-end="13695" vertical-scroll-proportion="0.827791" vertical-offset="7361" max-vertical-offset="22746">
                   <folding>
-                    <marker date="1391442838302" expanded="false" signature="25285:25314" placeholder="..." />
-                    <marker date="1391442838302" expanded="false" signature="25623:25640" placeholder="..." />
+                    <marker date="1391504279642" expanded="false" signature="25312:25341" placeholder="..." />
+                    <marker date="1391504279642" expanded="false" signature="25650:25667" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -164,9 +164,9 @@
         <option value="$PROJECT_DIR$/svaca/js/fastclick.js" />
         <option value="$PROJECT_DIR$/svaca/css/css.css" />
         <option value="$PROJECT_DIR$/svaca/js/phonegap-desktop.js" />
-        <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
       </list>
     </option>
   </component>
@@ -683,7 +683,11 @@
       <created>1391443823727</created>
       <updated>1391443823727</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="ukladani souboru&#10;">
+      <created>1391503884026</created>
+      <updated>1391503884026</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -710,6 +714,7 @@
     <frame x="1592" y="-188" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39617833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -724,7 +729,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26603577" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39617833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1106,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="10" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="22916">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="54" selection-start="760" selection-end="773" vertical-scroll-proportion="-14.96" vertical-offset="0" max-vertical-offset="1887">
@@ -1122,7 +1119,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="51" selection-start="655" selection-end="655" vertical-scroll-proportion="0.18847007" vertical-offset="0" max-vertical-offset="12291">
+        <state line="24" column="10" selection-start="1117" selection-end="1117" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="12291">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="26" selection-start="3687" selection-end="3687" vertical-scroll-proportion="0.5961123" vertical-offset="1675" max-vertical-offset="22899">
           <folding />
         </state>
       </provider>
