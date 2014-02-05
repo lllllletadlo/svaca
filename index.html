@@ -14,68 +14,15 @@
     <script src="file.js"></script>
     <script src="file-transfer.js"></script>
 
+    <script src="svaca/js/jquery.imagesloaded.min.js"></script>
+    <script src="svaca/js/imgcache.js"></script>
+
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
 </head>
 <script type="text/javascript" charset="utf-8">
     // Wait for Cordova to load
 
-    window.appRootDirName = ".myapp";
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    function onDeviceReady() {
-        console.log("device is ready");
-        //window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-        //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function fail() {
-        console.log("failed to get filesystem");
-    }
-
-    function gotFS(fileSystem) {
-        console.log("filesystem got");
-        fileSystem.root.getDirectory(window.appRootDirName, {
-            create : true,
-            exclusive : false
-        }, dirReady, fail);
-    }
-
-    function dirReady(entry) {
-        window.appRootDir = entry;
-        console.log(JSON.stringify(window.appRootDir));
-        downloadImage("http://jbkflex.files.wordpress.com/2011/09/demo.png", aa, bb);
-    }
-
-    function downloadImage(url, success, err){
-        console.log('download image ' + url);
-
-        var fileName = new Date().getTime() + ".png";
-        ft = new FileTransfer();
-        ft.download(
-                url,
-                window.appRootDir.fullPath + "/" + fileName,
-                function(entry) {
-                    console.log("download complete: " + entry.fullPath);
-                    success(entry.fullPath);
-                },
-                function(error) {
-                    console.log("download error source " + error.source);
-                    console.log("download error target " + error.target);
-                    console.log("upload error code" + error.code);
-                    err(error);
-                }
-        );
-    }
-
-    function aa(data)
-    {
-        console.log("aa"+data);
-    }
-    function bb(data)
-    {
-        console.log("bb"+data);
-    }
 
 </script>
 
@@ -701,6 +648,8 @@
         <input type="button" value="test obr" onclick="nactiObr()">
         <img id="testImg" width="100%" height="100%">
         <input type="button" value="path obr" onclick="alert($('.menuLeftImg').attr('src'))">
+        <input type="button" value="imgCach" onclick="imgCach()">
+
     </div>
 
 

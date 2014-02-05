@@ -74,3 +74,41 @@ function storageSave(type)
     if(type.indexOf("dataKategorie") != -1) window.localStorage.setItem("dataKategorie", JSON.stringify(dataKategorie) );
     if(type.indexOf("dataProfil") != -1) window.localStorage.setItem("dataProfil", JSON.stringify(dataProfil) );
 }
+
+
+//=====================================================
+
+
+var imgCach = function() {
+    console.log("imgCach start");
+    //return;
+    /* Note: this is using version 2.x of the imagesloaded library, use of current version might differ */
+    $('#ulVybratSvacu').imagesLoaded(function($images, $proper, $broken ) {
+
+        // see console output for debug info
+        ImgCache.options.debug = true;
+        ImgCache.options.usePersistentCache = true;
+
+        ImgCache.init(function() {
+            // 1. cache images
+            for (var i = 0; i < $proper.length; i++) {
+                ImgCache.cacheFile($($proper[i]).attr('src'));
+            }
+            // 2. broken images get replaced
+            for (var i = 0; i < $broken.length; i++) {
+                ImgCache.useCachedFile($($broken[i]));
+            }
+
+        });
+    });
+};
+
+/*
+if (typeof(cordova) !== 'undefined') {
+    // cordova test
+    document.addEventListener('deviceready', startTest, false);
+} else {
+    // normal browser test
+    $(document).ready(startTest);
+}
+*/

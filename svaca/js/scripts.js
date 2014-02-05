@@ -127,7 +127,7 @@ $(document).ready(function(){
 
 
 
-    storeIntelligrapeLogo();
+    //storeIntelligrapeLogo();
 
 
 
@@ -802,17 +802,30 @@ function zboziNacti(data) {
         // vloz produkt
         if( this.name!="Doručení kurýrem")
         {
+            var imgUrl;
+            if(this.icon == "products/productsSyrVHousce.png")
+            {
+                imgUrl  = "http://nd01.jxs.cz/936/269/508ae8620c_36426171_o2.gif";
+            } else
+            {
+                imgUrl = appPreffix+this.icon;
+                imgUrl = "http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png";
+            }
+
+
             if(!posledniVkategorii) {
                 //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
-                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
+                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
             } else
             // posledni polozka specialni format
             {
                 //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
-                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+this.icon+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span></div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
+                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span></div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
             }
         }
 
+        //ImgCache.clearCache();
+        imgCach();
         poradiZbozi ++;
     });
 }
