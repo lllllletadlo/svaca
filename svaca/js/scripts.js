@@ -24,7 +24,7 @@ var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
 var pageNext = "#page-vybratSvacu";
-var pageNext = "#page-test";
+//var pageNext = "#page-test";
 
 var obrInterni = ["productsOblozenaBageta.png","productsRyzekVHousce.png"];
 
@@ -539,8 +539,15 @@ function prihlaseniAjax()
 
 function logout()
 {
-    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/logout' }).done(function(data) {
-    });
+    $.ajax({
+        url:'http://demo.livecycle.cz/fajnsvaca/api/logout',
+        complete: function() {
+            alert("Odhlášen!");
+        },
+        error: function() {
+            alert("Error!");
+            console.log(data);
+        }});
 }
 
 

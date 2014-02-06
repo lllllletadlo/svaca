@@ -284,11 +284,24 @@ function cacheObr(filePath)
     });
 }
 
+function cacheClear()
+{
+    ImgCache.clearCache(
+        function(){
+            alert("succes");
+        },
+        function(){
+            alert("error")
+        }
+    );
+}
+
 
 function cacheSaveImages(containerID)
 {
     $("#"+containerID).find("img").each(function() {
         if($(this).attr("src")==null) return;
+        //console.log("uu"+$(this).attr("src"));
         if(!cacheFileIsCached($(this).attr("src")))
         {
             console.log("ukladam do cache: " + $(this).attr("src"));
@@ -298,16 +311,77 @@ function cacheSaveImages(containerID)
     alert("hotovo");
 }
 
+//var imagess;
+
+
 function cacheLoadImages(containerID)
 {
+
+    var imagess=$("#"+containerID).find("img");
+    p = imagess.length;
+    console.log(p);
+    cacheLoadImage(p,imagess)
+
+}
+
+function cacheLoadImage(p, imagess)
+{
+    target = imagess.eq(p);
+    if(target.attr("src")==null)
+    {
+        if(p>1)
+        {
+            p--;
+            cacheLoadImage(p, imagess);
+            return;
+        }
+        else
+        {
+            return;
+        }
+    }
+    ImgCache.useCachedFile(target, function(){
+            p--;
+            if(p>0)
+            {
+                cacheLoadImage(p,imagess);
+            }
+
+        },
+        function(){
+            console.log('something bad');
+        }
+
+    );
+
+
+}
+
+function cacheLoadImages_nejde(containerID)
+{
+
+
     $("#"+containerID).find("img").each(function() {
         if($(this).attr("src")==null) return;
         if(cacheFileIsCached($(this).attr("src")))
         {
-            console.log("beru z cache: " + $(this).attr("src"));
-            ImgCache.useCachedFile($(this));
+            alert("sfd");
+            console.log("beru zz cache: " + $(this).attr("src"));
+            target = $(this);
+            target = $('#testImg1');
+            ImgCache.useCachedFile(target, function(){
+                alert('now using local copy');
+            },
+                function(){
+                    console.log('something bad');
+                }
+
+            );
+
         }
     });
+
+
     alert("hotovo");
 }
 

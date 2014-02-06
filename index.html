@@ -637,25 +637,27 @@
         <div style="clear: both"></div>
     </div>
 
-    <div class="pageContainer pageTest f250">
-        <img id="testImg1" width="auto" height="auto" src="http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png" width="100%" height="100%">
-        <input type="button" value="cache init" onclick="cacheInit()">
-        <input type="button" value="cacheIt" onclick="cacheIt()">
-        <input type="button" value="getCache" onclick="getCache()">
-        <input type="button" value="ulVybratSvacu do cache" onclick="cacheSaveImages('ulVybratSvacu')">
-        <input type="button" value="ulVybratSvacu z cache" onclick="cacheLoadImages('ulVybratSvacu')">
-        <div onclick="save()">save</div>
-        <div onclick="load()">get</div>
-        <input id="testInput" type="text" />
+    <div class="pageContainersMenu">
+        <div class="f250 lineHeight15em">
+            <img id="testImg1" width="auto" height="auto" src="http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png" width="100%" height="100%">
+            <input type="button" value="cache init!" onclick="cacheInit()">
+            <input type="button" value="cache obr" onclick="cacheIt()">
+            <input type="button" value="obr z cache" onclick="getCache()">
+            <input type="button" value="ulVybratSvacu do cache" onclick="cacheSaveImages('ulVybratSvacu')">
+            <input type="button" value="ulVybratSvacu z cache" onclick="cacheLoadImages('ulVybratSvacu')">
+            <input type="button" value="clear Cache" onclick="cacheClear()">
+            <div onclick="save()">save</div>
+            <div onclick="load()">get</div>
+            <input id="testInput" type="text" />
 
-        <div onclick="zboziNactiAjax()" style="font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>
-        <div onclick="logout()" style="font-size: 200%;padding: 10px;background-color: red;cursor: pointer;">logout</div>
-        <div style="font-size: 200%;padding: 10px;cursor: pointer;">alerty <input id="testAlertyCheckBox" type="checkbox"></div>
-        <input type="button" value="test obr" onclick="nactiObr()">
-        <img id="testImg" width="100%" height="100%">
-        <input type="button" value="path obr" onclick="alert($('.menuLeftImg').attr('src'))">
-        <input type="button" value="imgCach" onclick="imgCach()">
-
+            <div onclick="zboziNactiAjax()" style="font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>
+            <div onclick="logout()" style="font-size: 200%;padding: 10px;background-color: red;cursor: pointer;">logout</div>
+            <div style="font-size: 200%;padding: 10px;cursor: pointer;">alerty <input id="testAlertyCheckBox" type="checkbox"></div>
+            <input type="button" value="test obr" onclick="nactiObr()">
+            <img id="testImg" width="100%" height="100%">
+            <input type="button" value="path obr" onclick="alert($('.menuLeftImg').attr('src'))">
+            <input type="button" value="imgCach" onclick="imgCach()">
+        </div>
     </div>
 
 

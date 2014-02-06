@@ -122,6 +122,11 @@
     .dokoncitPlatbuContainer {
         top: 7.2em;
     }
+
+    .pageContainersMenu {
+        top: 7.2em;
+    }
+
     .produktChceckBox input[type="checkbox"] {
         right: 0px;
         top: 100%;
@@ -308,7 +313,10 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
         font-size: 600%;
     }
 
-    .dokoncitPlatbuContainer {
+    .pageContainersMenu {
+        top: 12em;
+    }
+    .testContainer {
         top: 12em;
     }
     .produktChceckBox input[type="checkbox"]:checked+label {
@@ -890,6 +898,15 @@ div#menuLeftDiv {
     margin: auto 0px auto 15%;
     height: auto;
     bottom: 0px;
+}
+.pageContainersMenu {
+    margin: auto 0px auto 15%;
+    height: auto;
+    bottom: 0px;
+    padding: 0px;
+    position: absolute;
+    overflow: auto;
+    width: 85%;
 }
 #mistoDoruceniInput {
     width: 100%;
