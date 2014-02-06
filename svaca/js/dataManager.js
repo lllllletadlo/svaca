@@ -111,7 +111,10 @@ var cacheListShaFileName = [];
     }
 
 
-
+function devicereadyTest()
+{
+    alert("deviceready");
+}
 
 function cacheInit()
 {
