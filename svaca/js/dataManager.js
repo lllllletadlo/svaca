@@ -101,23 +101,36 @@ function storeIntelligrapeLogo(){
 
 var cacheListShaFileName = [];
 
-
+/*
     if (typeof(cordova) !== 'undefined') {
         // cordova test
-        document.addEventListener('deviceready', cacheInit, false);
+        document.addEventListener('deviceready', deviceready, false);
     } else {
         // normal browser test
-        $(document).ready(cacheInit);
+        $(document).ready(docReady);
     }
+*/
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+    document.addEventListener("deviceready", deviceready, false);
+} else {
+    docReady(); //this is the browser
+}
 
-
-function devicereadyTest()
+var typ;
+function deviceready()
 {
-    alert("deviceready");
+    typ = "deviceready";
+    cacheInit();
+}
+function docReady()
+{
+    typ = "docReady";
+    cacheInit();
 }
 
 function cacheInit()
 {
+    alert(typ);
     ImgCache.options.debug = true;
     ImgCache.options.usePersistentCache = true;
     ImgCache.options.chromeQuota = 50*1024*1024;

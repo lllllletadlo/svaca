@@ -79,8 +79,11 @@
           <file leaf-file-name="dataManager.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/js/dataManager.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="303" column="1" selection-start="9910" selection-end="9910" vertical-scroll-proportion="-9.32" vertical-offset="4884" max-vertical-offset="9078">
-                  <folding />
+                <state line="316" column="1" selection-start="10213" selection-end="10213" vertical-scroll-proportion="-9.32" vertical-offset="5105" max-vertical-offset="9299">
+                  <folding>
+                    <marker date="1391707587396" expanded="true" signature="3168:3269" placeholder="{...}" />
+                    <marker date="1391707587396" expanded="true" signature="3275:3350" placeholder="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -156,7 +159,7 @@
           <file leaf-file-name="dataManager.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/js/dataManager.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="115" column="25" selection-start="3404" selection-end="3404" vertical-scroll-proportion="0.5216426" vertical-offset="1451" max-vertical-offset="9078">
+                <state line="132" column="13" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.672586" vertical-offset="1604" max-vertical-offset="9299">
                   <folding />
                 </state>
               </provider>
@@ -690,7 +693,11 @@
       <created>1391702149820</created>
       <updated>1391702149820</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="ukladani souboru&#10;">
+      <created>1391705602402</created>
+      <updated>1391705602402</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1165,7 +1172,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/dataManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="25" selection-start="3404" selection-end="3404" vertical-scroll-proportion="0.5216426" vertical-offset="1451" max-vertical-offset="9078">
+        <state line="132" column="13" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.672586" vertical-offset="1604" max-vertical-offset="9299">
           <folding />
         </state>
       </provider>
