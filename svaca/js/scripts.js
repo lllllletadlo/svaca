@@ -37,7 +37,6 @@ window.addEventListener('load', function() {
 
 
 $(document).ready(function(){
-
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
 

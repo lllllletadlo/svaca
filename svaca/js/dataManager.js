@@ -100,13 +100,17 @@ function storeIntelligrapeLogo(){
 */
 
 var cacheListShaFileName = [];
- if (typeof(cordova) !== 'undefined') {
- // cordova test
- document.addEventListener('deviceready', cacheInit, false);
- } else {
- // normal browser test
- $(document).ready(cacheInit);
- }
+
+
+    if (typeof(cordova) !== 'undefined') {
+        // cordova test
+        document.addEventListener('deviceready', cacheInit, false);
+    } else {
+        // normal browser test
+        $(document).ready(cacheInit);
+    }
+
+
 
 
 function cacheInit()
@@ -281,7 +285,20 @@ function cacheObr(filePath)
 }
 
 
-function cacheSaveLoadImages(containerID)
+function cacheSaveImages(containerID)
+{
+    $("#"+containerID).find("img").each(function() {
+        if($(this).attr("src")==null) return;
+        if(!cacheFileIsCached($(this).attr("src")))
+        {
+            console.log("ukladam do cache: " + $(this).attr("src"));
+            ImgCache.cacheFile($(this).attr("src"));
+        }
+    });
+    alert("hotovo");
+}
+
+function cacheLoadImages(containerID)
 {
     $("#"+containerID).find("img").each(function() {
         if($(this).attr("src")==null) return;
@@ -291,7 +308,9 @@ function cacheSaveLoadImages(containerID)
             ImgCache.useCachedFile($(this));
         }
     });
+    alert("hotovo");
 }
+
 
 // existuje img v cache?
 function cacheFileIsCached(filePath)
@@ -372,15 +391,10 @@ function cacheIt()
 function getCache()
 {
     target = $('#testImg1');
-    ImgCache.cacheFile(target.attr('src'), function(){
         ImgCache.useCachedFile(target, function(){
             alert('now using local copy');
-        }, function(){
-            alert('could not load from cache');
-        })
-    });
+        });
 }
-
 
 
 function cacheTest2()
