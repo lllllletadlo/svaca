@@ -24,7 +24,9 @@ var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
 var pageNext = "#page-vybratSvacu";
-//var pageNext = "#page-dokoncitPlatbu";
+var pageNext = "#page-test";
+
+var obrInterni = ["productsOblozenaBageta.png","productsRyzekVHousce.png"];
 
 // static
 var donaskaKuryremCena= 15;
@@ -133,21 +135,7 @@ $(document).ready(function(){
 
 });
 
-function storeIntelligrapeLogo(){
-    alert("jdu na vec!")
-    var url = "http://www.intelligrape.com/images/logo.png"; // image url
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-        alert("LocalFileSystem");
-        var imagePath = fs.root.fullPath + "/logo.png"; // full file path
-        var fileTransfer = new FileTransfer();
-        fileTransfer.download(url, imagePath, function (entry) {
-            alert("hotovo");
-            alert(entry.fullPath); // entry is fileEntry object
-        }, function (error) {
-            alert.log("Some error");
-        });
-    })
-}
+
 
 function transition(toPage, type) {
 
@@ -812,20 +800,25 @@ function zboziNacti(data) {
                 imgUrl = "http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png";
             }
 
+            var produktLi='<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div></div></div>';
 
+            // oddelovaci line
             if(!posledniVkategorii) {
                 //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
-                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="produkt2Line">  <div ></div>  </div>  </li>' );
+
+                produktLi += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
             } else
             // posledni polozka specialni format
             {
                 //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
-                $( "#ulVybratSvacu" ).append( '<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span></div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div>  </div>  </div>  <div class="">  <div ></div>  </div>  </li>' );
+                produktLi += ' <div class="">  <div ></div>  </div>  </li>';
             }
+            $( "#ulVybratSvacu" ).append(produktLi);
         }
 
+        //cacheObr(imgUrl,this.id);
         //ImgCache.clearCache();
-        imgCach();
+        //imgCach();
         poradiZbozi ++;
     });
 }

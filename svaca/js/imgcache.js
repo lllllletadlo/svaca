@@ -117,10 +117,7 @@ var ImgCache = {
 
 	// if no local_root set, set relative path
 	var _getCachedFilePath = function(img_src, local_root) {
-        console.log("zacatek" + img_src);
 		var hash= SHA1(img_src);
-        console.log("fffffffffffffffffffff"+hash);
-        console.log("konec");
 		var ext = FileGetExtension(URIGetFileName(img_src));
 		var filename = hash + (ext ? ('.' + ext) : '');
 		return (local_root ? local_root + '/' : '') + filename;
