@@ -188,9 +188,6 @@ function transition_efekt(toPage, type) {
 
 function transitionAfter(toPage)
 {
-
-
-
     // --------------------------- operace nad strankamy
     console.log("zmena stranky na:" + toPage.selector);
 
@@ -267,7 +264,20 @@ function transitionAfter(toPage)
 
     if(toPage.selector=="#page-dokoncitPlatbu") {
 
-        $( "#checkBoxVyzvednout").prop('checked', true);
+        $("#checkBoxVyzvednout").prop("checked","true");
+        $('#mistoDoruceniDiv').css('display','none');
+    }
+
+    if(toPage.selector=="#page-potvrzeniPlatby") {
+
+
+        if($("#checkBoxDonaskaKuryrem").is(":checked"))
+        {
+            $("#potvrzeniPlatbyVyzvednutiText").html("Bude doručena příští přestávku kurýrem.");
+        } else
+        {
+            $("#potvrzeniPlatbyVyzvednutiText").html("Vyzvednut si jí můžete příští přestávku v našem bufetu.");
+        }
     }
 }
 
@@ -516,8 +526,8 @@ function nacistDataPoPrihlaseni()
     kosikRefresh();
     nastavZpetProdukKosikCislo();
     zboziNactiAjax();
-
-
+    $( "#checkBoxVyzvednout").prop('checked', true);
+    $( "#mistoDoruceniInput").val("");
 }
 
 function nastavZpetProdukKosikCislo()
@@ -948,7 +958,7 @@ function objednavkaOdelsatAjax(objednavka, typ) {
     {
         mistoDoruceni = $('#mistoDoruceniInput').val();
 
-        if(mistoDoruceni=="")
+        if(mistoDoruceni=="" && typ == 1)
         {
             alertZobraz("Zadej místo doručení");
             return;
