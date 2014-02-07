@@ -129,9 +129,9 @@
 
     .produktChceckBox input[type="checkbox"] {
         right: 0px;
-        top: 100%;
+        top: 50%;
         width: 50%;
-        height: 100%;
+        height: 180%;
     }
 
 }
@@ -1588,8 +1588,12 @@ div#menuLeftDiv {
 }
 
 .registraceCheckBox input {
-    height: auto !important;
     -webkit-appearance: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin: 0px;
+    background-color: transparent;
 }
 
 
@@ -1642,8 +1646,9 @@ div#menuLeftDiv {
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+
 .checkBox label:hover::after {
-    opacity: 0.5;
+    --opacity: 0.5;
 }
 
 .checkBox input[type=checkbox]:checked + label:after {
@@ -1713,7 +1718,6 @@ div#menuLeftDiv {
     position: relative;
 }
 .radioButtRegistrace label {
-    cursor: pointer;
     position: absolute;
     width: 40px;
     height: 40px;

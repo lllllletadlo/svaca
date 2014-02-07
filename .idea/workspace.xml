@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="        0.0.18b&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno&#10;&#10;">
+    <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="        0.0.18&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno&#10;&#10;        0.0.18b&#10;        - vpnuti android-windowSoftInputMode (zobrazuje samovolne klavesnici v hlavnim okne)&#10;        - oprava pocitani ceny pri navraceni se do kosiku&#10;        - zmena textu -kuryra- pri dokonceni platby&#10;        - oprava touch na radiobutonu registrace&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/css/css.css" afterPath="$PROJECT_DIR$/svaca/css/css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -27,13 +26,13 @@
     <favorites_list name="svaca" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3280674">
+    <splitter split-orientation="horizontal" split-proportion="0.36071616">
       <split-first>
         <leaf>
           <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="0" selection-start="296" selection-end="852" vertical-scroll-proportion="0.14686824" vertical-offset="0" max-vertical-offset="2159">
+                <state line="21" column="8" selection-start="861" selection-end="901" vertical-scroll-proportion="0.38552916" vertical-offset="0" max-vertical-offset="2176">
                   <folding />
                 </state>
               </provider>
@@ -51,7 +50,7 @@
           <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="901" column="19" selection-start="17454" selection-end="17472" vertical-scroll-proportion="-12.0" vertical-offset="15017" max-vertical-offset="30566">
+                <state line="1649" column="28" selection-start="38600" selection-end="38628" vertical-scroll-proportion="-12.68" vertical-offset="27716" max-vertical-offset="30634">
                   <folding />
                 </state>
               </provider>
@@ -98,10 +97,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="css.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1219" column="1" selection-start="0" selection-end="41269" vertical-scroll-proportion="0.0" vertical-offset="20508" max-vertical-offset="30566">
+                <state line="1218" column="0" selection-start="24272" selection-end="24272" vertical-scroll-proportion="0.2138229" vertical-offset="20508" max-vertical-offset="30634">
                   <folding />
                 </state>
               </provider>
@@ -110,7 +109,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="98" column="51" selection-start="4184" selection-end="4213" vertical-scroll-proportion="-9.039216" vertical-offset="1205" max-vertical-offset="11645">
+                <state line="574" column="0" selection-start="25777" selection-end="25842" vertical-scroll-proportion="-7.0392156" vertical-offset="9399" max-vertical-offset="11645">
                   <folding />
                 </state>
               </provider>
@@ -139,10 +138,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="267" column="53" selection-start="7533" selection-end="7533" vertical-scroll-proportion="0.38956714" vertical-offset="4035" max-vertical-offset="23953">
+                <state line="263" column="0" selection-start="7371" selection-end="7371" vertical-scroll-proportion="-11.32" vertical-offset="4035" max-vertical-offset="23953">
                   <folding>
                     <marker date="1391773322250" expanded="false" signature="26140:26169" placeholder="..." />
                     <marker date="1391773322250" expanded="false" signature="26478:26495" placeholder="..." />
@@ -195,10 +194,10 @@
         <option value="$PROJECT_DIR$/svaca/js/phonegap-desktop.js" />
         <option value="$PROJECT_DIR$/../../eclipse/fajnSvaca/platforms/android/assets/www/index.html" />
         <option value="$PROJECT_DIR$/svaca/js/imgcache.js" />
-        <option value="$PROJECT_DIR$/svaca/css/css.css" />
         <option value="$PROJECT_DIR$/svaca/js/dataManager.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
+        <option value="$PROJECT_DIR$/svaca/css/css.css" />
         <option value="$PROJECT_DIR$/config.xml" />
       </list>
     </option>
@@ -711,7 +710,11 @@
       <created>1391765868917</created>
       <updated>1391765868917</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="        0.0.18&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno&#10;&#10;        0.0.18b&#10;        - vpnuti android-windowSoftInputMode (zobrazuje samovolne klavesnici v hlavnim okne)&#10;        - oprava pocitani ceny pri navraceni se do kosiku&#10;        - zmena textu -kuryra- pri dokonceni platby">
+      <created>1391773782617</created>
+      <updated>1391773782617</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -770,7 +773,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="imageVerze 2.0&#10;uprava scale" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale&#10;uprava scale2" />
     <MESSAGE value="imageVerze 2.0&#10;uprava scale&#10;uprava scale2&#10;oprava klik na menu ve vyberu svaciny, pridano prihlaseni, scale 0.7" />
     <MESSAGE value="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;ostatni IMG&#10;" />
@@ -795,7 +797,8 @@
     <MESSAGE value="pripominky Jara&#10;" />
     <MESSAGE value="ukladani souboru&#10;" />
     <MESSAGE value="        0.0.18&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno" />
-    <option name="LAST_COMMIT_MESSAGE" value="        0.0.18&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno" />
+    <MESSAGE value="        0.0.18&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno&#10;&#10;        0.0.18b&#10;        - vpnuti android-windowSoftInputMode (zobrazuje samovolne klavesnici v hlavnim okne)&#10;        - oprava pocitani ceny pri navraceni se do kosiku&#10;        - zmena textu -kuryra- pri dokonceni platby" />
+    <option name="LAST_COMMIT_MESSAGE" value="        0.0.18&#10;        - verze phonegap 3.1.0&#10;        - pridany API File a FileTransfer&#10;        - zakladni funkce pro ulozeni a obnoveni obrazku (zatim test)&#10;        - vypnuti efektu prechodu&#10;        - android-windowSoftInputMode&#10;        - oprava: radio buton kuryr se znovu nastavy na bufet&#10;        - misto vyzvednuti musi byt vyplneno&#10;&#10;        0.0.18b&#10;        - vpnuti android-windowSoftInputMode (zobrazuje samovolne klavesnici v hlavnim okne)&#10;        - oprava pocitani ceny pri navraceni se do kosiku&#10;        - zmena textu -kuryra- pri dokonceni platby" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1188,13 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="901" column="19" selection-start="17454" selection-end="17472" vertical-scroll-proportion="-12.0" vertical-offset="15017" max-vertical-offset="30566">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/imgcache.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="143" column="38" selection-start="6056" selection-end="6062" vertical-scroll-proportion="-14.04" vertical-offset="2080" max-vertical-offset="9418">
@@ -1214,13 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="77" selection-start="8515" selection-end="8533" vertical-scroll-proportion="-5.7058825" vertical-offset="3024" max-vertical-offset="11645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="0" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="23953">
@@ -1235,9 +1224,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="77" selection-start="8515" selection-end="8533" vertical-scroll-proportion="-5.7058825" vertical-offset="3024" max-vertical-offset="11645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1649" column="28" selection-start="38600" selection-end="38628" vertical-scroll-proportion="-12.68" vertical-offset="27716" max-vertical-offset="30634">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="296" selection-end="852" vertical-scroll-proportion="0.14686824" vertical-offset="0" max-vertical-offset="2159">
+        <state line="21" column="8" selection-start="861" selection-end="901" vertical-scroll-proportion="0.38552916" vertical-offset="0" max-vertical-offset="2176">
           <folding />
         </state>
       </provider>

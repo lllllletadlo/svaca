@@ -19,6 +19,7 @@
         - vpnuti android-windowSoftInputMode (zobrazuje samovolne klavesnici v hlavnim okne)
         - oprava pocitani ceny pri navraceni se do kosiku
         - zmena textu -kuryra- pri dokonceni platby
+        - oprava touch na radiobutonu registrace
     -->
 
 
