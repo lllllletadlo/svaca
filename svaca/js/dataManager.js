@@ -110,27 +110,12 @@ var cacheListShaFileName = [];
         $(document).ready(docReady);
     }
 */
-if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-    document.addEventListener("deviceready", deviceready, false);
-} else {
-    docReady(); //this is the browser
-}
 
-var typ;
-function deviceready()
-{
-    typ = "deviceready";
-    cacheInit();
-}
-function docReady()
-{
-    typ = "docReady";
-    cacheInit();
-}
+
+
 
 function cacheInit()
 {
-    alert(typ);
     ImgCache.options.debug = true;
     ImgCache.options.usePersistentCache = true;
     ImgCache.options.chromeQuota = 50*1024*1024;

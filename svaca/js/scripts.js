@@ -35,8 +35,15 @@ window.addEventListener('load', function() {
     FastClick.attach(document.body);
 }, false);
 
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+    document.addEventListener("deviceready", init, false);
+} else {
+    init(); //this is the browser
+}
 
-$(document).ready(function(){
+function init()
+{
+    cacheInit();
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
 
@@ -132,11 +139,28 @@ $(document).ready(function(){
 
 
 
-});
+}
 
 
 
 function transition(toPage, type) {
+
+    //$('#menuLeftDiv').css('display','none');
+    var toPage = $(toPage),
+        fromPage = $("#pages .current");
+
+    if(toPage.hasClass("current") || toPage === fromPage) {
+        return;
+    };
+
+
+        toPage.addClass("current");
+        fromPage.removeClass("current");
+
+    transitionAfter(toPage);
+}
+
+function transition_efekt(toPage, type) {
 
     //$('#menuLeftDiv').css('display','none');
     var toPage = $(toPage),
@@ -157,8 +181,15 @@ function transition(toPage, type) {
     if(!("WebKitTransitionEvent" in window)){
         toPage.addClass("current");
         fromPage.removeClass("current");
-        return;
+        //return;
     }
+    transitionAfter(toPage);
+}
+
+function transitionAfter(toPage)
+{
+
+
 
     // --------------------------- operace nad strankamy
     console.log("zmena stranky na:" + toPage.selector);
@@ -173,6 +204,7 @@ function transition(toPage, type) {
         console.log("profilNacti");
         profilNactiAjax();
     }
+
     if(toPage.selector=="#page-vybratSvacu")
     {
         kosikZobrazCisloVkolecku();
@@ -188,6 +220,7 @@ function transition(toPage, type) {
             maxHeightVybratSvacu = true;
         }
     }
+
     if(toPage.selector=="#page-kosik") {
 
         kosikRefresh();
@@ -201,10 +234,12 @@ function transition(toPage, type) {
             $('.ulKosikFooter').css('position','relative');
         }
     }
+
     if(toPage.selector=="#page-mojeOblibene") {
 
         zboziOblibneRefresh();
     }
+
     if(toPage.selector=="#page-prihlaseni")
     {
         $('#menuLeftDiv').css('display','none');
@@ -214,10 +249,12 @@ function transition(toPage, type) {
         //alert(viewport.height + "-"+ $('#prihlaseniContainerZaregistrovat').offset().top + "delka:" + delka);
         $('#prihlaseniContainerZaregistrovat').css('height',(delka));
     }
+
     if(toPage.selector=="#page-registrace1") {
 
         selectDataAjax("listSchools","registraceSelectSkola","");
     }
+
     if(toPage.selector=="#page-registracePrihlaseniOK") {
 
         //pageNext = "#page-vybratSvacu";
@@ -228,8 +265,10 @@ function transition(toPage, type) {
         }, 1000);
     }
 
+    if(toPage.selector=="#page-dokoncitPlatbu") {
 
-
+        $( "#checkBoxVyzvednout").prop('checked', true);
+    }
 }
 
 
@@ -797,6 +836,8 @@ function zboziNacti(data) {
         if( this.name!="Doručení kurýrem")
         {
             var imgUrl;
+            imgUrl = appPreffix+this.icon;
+            /* test cache
             if(this.icon == "products/productsSyrVHousce.png")
             {
                 imgUrl  = "http://nd01.jxs.cz/936/269/508ae8620c_36426171_o2.gif";
@@ -805,7 +846,7 @@ function zboziNacti(data) {
                 imgUrl = appPreffix+this.icon;
                 imgUrl = "http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png";
             }
-
+*/
             var produktLi='<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div></div></div>';
 
             // oddelovaci line
@@ -905,8 +946,15 @@ function objednavkaOdelsatAjax(objednavka, typ) {
     var mistoDoruceni = "";
     if( $('#checkBoxDonaskaKuryrem').is(':checked')==true)
     {
-        delivery = "kuryr";
         mistoDoruceni = $('#mistoDoruceniInput').val();
+
+        if(mistoDoruceni=="")
+        {
+            alertZobraz("Zadej místo doručení");
+            return;
+        }
+
+        delivery = "kuryr";
         console.log("objednavkaOdelsatAjax mistoDoruceni:" + mistoDoruceni);
     }
     console.log("objednavkaOdelsatAjax delivery:" + delivery);
