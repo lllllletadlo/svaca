@@ -389,9 +389,7 @@ var ImgCache = {
 			return;
 
 		var filename = URIGetFileName(img_src);
-
 		var filePath = _getCachedFilePath(img_src); // we need only a relative path
-
 
 		var _gotFileEntry = function(entry) {
 			if (ImgCache.options.useDataURI) {

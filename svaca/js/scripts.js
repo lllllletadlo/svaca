@@ -23,6 +23,8 @@ var kosik =[];
 var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
+var appServerUrlPreffix = "http://demo.livecycle.cz/fajnsvaca";
+var cachePreffix = "";
 var pageNext = "#page-vybratSvacu";
 //var pageNext = "#page-test";
 
@@ -36,14 +38,14 @@ window.addEventListener('load', function() {
 }, false);
 
 if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-    document.addEventListener("deviceready", init, false);
+    document.addEventListener("deviceready", cacheInit, false);
 } else {
-    init(); //this is the browser
+    cacheInit(); //this is the browser
 }
 
 function init()
 {
-    cacheInit();
+    //cacheInit();
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
 
@@ -779,6 +781,7 @@ function checkBoxProduktTyp(cb)
 
 function zboziNacti(data) {
     // priprava dat
+    var imgUrl = "";
     var kategorieIndexMinula = 0;
     var kategorieIndexBudouci = 0;
     //var data2 = jQuery.parseJSON({"status":"ok","categories":[{"id":"1","icon":"products/productsHousky.png","name":"Housky"},{"id":"2","icon":"products/productsBagety.png","name":"Bagety"}],"products":[{"id":"1","icon":"products/productsSekanaVHousce.png","price":"29","name":"Sekaná v housce","category_id":"0"},{"id":"2","icon":"products/productsRyzekVHousce.png","price":"33","name":"Řízek v housce","category_id":"0"},{"id":"3","icon":"products/productsSyrVHousce.png","price":"30","name":"Smažený sýr v housce","category_id":"0"},{"id":"4","icon":"products/productsVegetBageta.png","price":"35","name":"Klobásky v housce","category_id":"0"},{"id":"5","icon":"products/productsOblozenaBageta.png","price":"43","name":"Obložená bageta","category_id":"0"},{"id":"6","icon":"products/productsVegetBageta.png","price":"38","name":"Vegetariánská bageta","category_id":"0"}]}');
@@ -801,6 +804,8 @@ function zboziNacti(data) {
     $.each(zbozi, function()
     {
 
+
+
         // vlozeni kategorie
         // vloz kategorii jestli: kategorie zbozi je jina nez doposud || prvni zbozi
         if(kategorie[kategorieIndex].id!=this.category_id || poradiZbozi==0)
@@ -821,7 +826,8 @@ function zboziNacti(data) {
             // vloz novou kategorii
             if(kategorie[kategorieIndex].id==this.category_id)
             {
-                $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+appPreffix+kategorie[kategorieIndex].icon+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[kategorieIndex].name+'CheckboxInput" name="" /><label for="'+kategorie[kategorieIndex].name+'CheckboxInput"></label></div></li>' );
+                imgUrl = cacheGetImgUrl(appPreffix+kategorie[kategorieIndex].icon);
+                $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+imgUrl+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[kategorieIndex].name+'CheckboxInput" name="" /><label for="'+kategorie[kategorieIndex].name+'CheckboxInput"></label></div></li>' );
                 console.log("davam");
             }
         }
@@ -843,20 +849,11 @@ function zboziNacti(data) {
 
 
         // vloz produkt
+       // TODO vynechat zbozi ktere neni k zobrazeni
         if( this.name!="Doručení kurýrem")
         {
-            var imgUrl;
-            imgUrl = appPreffix+this.icon;
-            /* test cache
-            if(this.icon == "products/productsSyrVHousce.png")
-            {
-                imgUrl  = "http://nd01.jxs.cz/936/269/508ae8620c_36426171_o2.gif";
-            } else
-            {
-                imgUrl = appPreffix+this.icon;
-                imgUrl = "http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png";
-            }
-*/
+            imgUrl = cacheGetImgUrl(this.icon);
+
             var produktLi='<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div></div></div>';
 
             // oddelovaci line

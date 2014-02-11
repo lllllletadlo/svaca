@@ -125,12 +125,40 @@ function cacheInit()
     ImgCache.init(function(){
         console.log('cache space ready');
         cacheListShaFileNameGet();
+        cachePreffix=ImgCache.getCacheFolderURI();
+        init();
     }, function(){
         console.log('cache space problem!');
+        init();
     });
 }
 
+// vyhleda obr v cache, jestli neni vrati puvodni url
+// ulozi do cache?
+function cacheGetImgUrl(filePath)
+{
+    var cacheImgName = cacheFileIsCachedReturnName(appServerUrlPreffix+"/"+filePath);
+    console.log("cacheImgName" + cacheImgName);
+    if(cacheImgName!="")
+    {
+        return cachePreffix + "/" + cacheImgName;
+    }
+    else
+    {
 
+        // zalohuj
+        ImgCache.cacheFile(appServerUrlPreffix+"/"+filePath,
+            function(){
+                //console.log("ukladam do cache: " +filePath);
+            },
+            function(){
+                console.log("error ulozeni obr do cache!")
+            }
+        );
+
+        return appServerUrlPreffix+"/"+filePath;
+    }
+}
 
 function cacheObr2(filePath)
 {
@@ -402,6 +430,27 @@ function cacheFileIsCached(filePath)
     }
 
     return exist;
+
+}
+
+// existuje img v cache
+// ano - vrat jeho hash jmeno
+function cacheFileIsCachedReturnName(filePath)
+{
+    var cacheImgName = "";
+    var testFileShaName = cacheFileShaName(filePath);
+    console.log("file path:" + filePath);
+    console.log("hledam:" + testFileShaName);
+    for(var i=0; i<cacheListShaFileName.length;i++)
+    {
+        //console.log("cahce file:" + cacheListShaFileName[i]);
+        if(testFileShaName==cacheListShaFileName[i])
+        {
+            cacheImgName = cacheListShaFileName[i];
+        }
+    }
+
+    return cacheImgName;
 
 }
 
