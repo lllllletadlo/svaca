@@ -144,6 +144,7 @@ function cacheInit()
 
 function cacheInit2()
 {
+        alert("cacheListShaFileNameGet");
         cacheListShaFileNameGet();
         init();
 }
