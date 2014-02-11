@@ -116,25 +116,29 @@ var cacheListShaFileName = [];
 
 function cacheInit()
 {
-    alert('cacheInit');
+
     ImgCache.options.debug = true;
     ImgCache.options.usePersistentCache = true;
     ImgCache.options.chromeQuota = 50*1024*1024;
 
     console.log("cacheInit");
-    alert('cacheInitfunction');
-    ImgCache.init(function(){
-        console.log('cache space ready');
-        alert('cache ready');
-        cacheListShaFileNameGet();
-        alert('cache preffix');
-        cachePreffix=ImgCache.getCacheFolderURI();
-        //init();
-    }, function(){
-        alert('cache problem');
-        console.log('cache space problem!');
-        //init();
-    });
+    if(!ImgCache.ready)
+    {
+        ImgCache.init(function(){
+            console.log('cache space ready');
+            cacheListShaFileNameGet();
+            cachePreffix=ImgCache.getCacheFolderURI();
+            init();
+        }, function(){
+            alert('cache problem');
+            console.log('cache space problem!');
+            init();
+        });
+    } else
+    {
+        init();
+    }
+
 }
 
 // vyhleda obr v cache, jestli neni vrati puvodni url
@@ -142,7 +146,7 @@ function cacheInit()
 function cacheGetImgUrl(filePath)
 {
     var cacheImgName = cacheFileIsCachedReturnName(appServerUrlPreffix+"/"+filePath);
-    console.log("cacheImgName" + cacheImgName);
+    //console.log("cacheImgName" + cacheImgName);
     if(cacheImgName!="")
     {
         return cachePreffix + "/" + cacheImgName;
@@ -243,6 +247,7 @@ function cacheObr3(filePath)
 
 function cacheListShaFileNameGet()
 {
+
     //console.log(ImgCache.getCacheFolderURI());  // filesystem:http://localhost:63342/temporary/imgcache
     //console.log("Root = " + ImgCache.filesystem.root.fullPath);
     //console.log("sha:" + SHA1("http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png"));
@@ -250,11 +255,12 @@ function cacheListShaFileNameGet()
     ImgCache.filesystem.root.getDirectory("imgcache", {create: true, exclusive: false},
         function(dirEntry)
         {
+            //alert("asdasdasdsdfffffffffffffffffffffffffffffffffffad");
             var directoryReader = dirEntry.createReader();
             directoryReader.readEntries(function(entries) {
                 var i;
                 for (i=0; i<entries.length; i++) {
-                    console.log(entries[i].name);
+                    console.log("cacheListShaFileNameGet: "+entries[i].name);
                     cacheListShaFileName[i] = entries[i].name;
 
                 }
@@ -266,6 +272,7 @@ function cacheListShaFileNameGet()
         ,
         function(dirEntry)
         {
+            alert("asdasdasdsdfffffffffffffffffffffffffffffffffffad------------------");
             console.log("cacheListShaFileNameGet dirEntry problem");
         }
     );
@@ -443,14 +450,16 @@ function cacheFileIsCachedReturnName(filePath)
 {
     var cacheImgName = "";
     var testFileShaName = cacheFileShaName(filePath);
-    console.log("file path:" + filePath);
-    console.log("hledam:" + testFileShaName);
+    //console.log("file path:" + filePath);
+    //console.log("hledam:" + testFileShaName);
     for(var i=0; i<cacheListShaFileName.length;i++)
     {
         //console.log("cahce file:" + cacheListShaFileName[i]);
+        //console.log("porovnavam s" + cacheListShaFileName[i]);
         if(testFileShaName==cacheListShaFileName[i])
         {
             cacheImgName = cacheListShaFileName[i];
+            //console.log("nasel jsem:" + testFileShaName);
         }
     }
 

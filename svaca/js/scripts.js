@@ -37,7 +37,6 @@ var donaskaKuryremCena= 15;
 
 function init()
 {
-    alert("init");
     //cacheInit();
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
@@ -900,7 +899,8 @@ function kosikRefresh() {
 
          // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
          */
-        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+appPreffix+zbozi[zboziIndex].icon+'"  ><h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span><span class="cena">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
+        var imgUrl = cacheGetImgUrl(zbozi[zboziIndex].icon);
+        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span><span class="cena">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
 
         if(i<kosik.length-1) produkt += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
         else produkt += '<div class="produkt2LineNO">  <div ></div>  </div>  </li>';
