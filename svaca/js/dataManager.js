@@ -122,13 +122,16 @@ function cacheInit()
     ImgCache.options.chromeQuota = 50*1024*1024;
 
     console.log("cacheInit");
-
+    alert('cacheInitfunction');
     ImgCache.init(function(){
         console.log('cache space ready');
+        alert('cache ready');
         cacheListShaFileNameGet();
+        alert('cache preffix');
         cachePreffix=ImgCache.getCacheFolderURI();
         init();
     }, function(){
+        alert('cache problem');
         console.log('cache space problem!');
         init();
     });

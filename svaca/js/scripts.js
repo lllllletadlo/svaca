@@ -37,6 +37,7 @@ var donaskaKuryremCena= 15;
 
 function init()
 {
+    alert("init");
     //cacheInit();
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 

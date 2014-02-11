@@ -28,10 +28,8 @@
         FastClick.attach(document.body);
     }, false);
 
-    alert("a");
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
         document.addEventListener("deviceready", cacheInit, false);
-        alert("b");
     } else {
         cacheInit(); //this is the browser
     }
