@@ -126,7 +126,7 @@ function cacheInit()
     {
         ImgCache.init(function(){
             console.log('cache space ready');
-            cacheListShaFileNameGet();
+            //cacheListShaFileNameGet();
             cachePreffix=ImgCache.getCacheFolderURI();
             init();
         }, function(){
@@ -144,8 +144,8 @@ function cacheInit()
 
 function cacheInit2()
 {
-        alert("cacheListShaFileNameGet");
-        cacheListShaFileNameGet();
+        //alert("cacheListShaFileNameGet");
+        //cacheListShaFileNameGet();
         init();
 }
 
@@ -260,18 +260,20 @@ function cacheListShaFileNameGet()
     //console.log("Root = " + ImgCache.filesystem.root.fullPath);
     //console.log("sha:" + SHA1("http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png"));
 
+    //alert("start cacheListShaFileNameGet");
     ImgCache.filesystem.root.getDirectory("imgcache", {create: true, exclusive: false},
         function(dirEntry)
         {
-            //alert("asdasdasdsdfffffffffffffffffffffffffffffffffffad");
             var directoryReader = dirEntry.createReader();
             directoryReader.readEntries(function(entries) {
                 var i;
+                var str ="";
                 for (i=0; i<entries.length; i++) {
                     console.log("cacheListShaFileNameGet: "+entries[i].name);
                     cacheListShaFileName[i] = entries[i].name;
-
+                    str += entries[i].name + "\n";
                 }
+                alert(str);
             }, function (error) {
                 alert("cacheListShaFileNameGet " + error.code);
             })
@@ -280,10 +282,10 @@ function cacheListShaFileNameGet()
         ,
         function(dirEntry)
         {
-            alert("asdasdasdsdfffffffffffffffffffffffffffffffffffad------------------");
             console.log("cacheListShaFileNameGet dirEntry problem");
         }
     );
+    //alert("end cacheListShaFileNameGet");
 }
 
 /***********************************************

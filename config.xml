@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "cz.inited.fajnsvaca"
-        version   = "0.0.18b">
+        version   = "0.0.19">
     <!--
         0.0.18
         - verze phonegap 3.1.0

@@ -28,9 +28,8 @@
         FastClick.attach(document.body);
     }, false);
 
-    alert("start");
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-        document.addEventListener("deviceready", cacheInit2, false);
+        document.addEventListener("deviceready", init, false);
     } else {
         window.addEventListener('load', function() {
             cacheInit();
@@ -661,8 +660,7 @@
             <input type="button" value="cache init!" onclick="cacheInit()">
             <input type="button" value="cache obr" onclick="cacheIt()">
             <input type="button" value="obr z cache" onclick="getCache()">
-            <input type="button" value="ulVybratSvacu do cache" onclick="cacheSaveImages('ulVybratSvacu')">
-            <input type="button" value="ulVybratSvacu z cache" onclick="cacheLoadImages('ulVybratSvacu')">
+            <input type="button" value="cacheListShaFileNameGet" onclick="cacheListShaFileNameGet()">
             <input type="button" value="clear Cache" onclick="cacheClear()">
             <div onclick="save()">save</div>
             <div onclick="load()">get</div>
