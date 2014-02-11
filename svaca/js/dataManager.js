@@ -122,8 +122,6 @@ function cacheInit()
     ImgCache.options.chromeQuota = 50*1024*1024;
 
     console.log("cacheInit");
-    if(!ImgCache.ready)
-    {
         ImgCache.init(function(){
             console.log('cache space ready');
             //cacheListShaFileNameGet();
@@ -134,11 +132,6 @@ function cacheInit()
             console.log('cache space problem!');
             init();
         });
-    } else
-    {
-        cacheListShaFileNameGet();
-        init();
-    }
 
 }
 
