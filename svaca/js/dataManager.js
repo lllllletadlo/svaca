@@ -129,11 +129,11 @@ function cacheInit()
         cacheListShaFileNameGet();
         alert('cache preffix');
         cachePreffix=ImgCache.getCacheFolderURI();
-        init();
+        //init();
     }, function(){
         alert('cache problem');
         console.log('cache space problem!');
-        init();
+        //init();
     });
 }
 
