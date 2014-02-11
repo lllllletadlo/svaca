@@ -38,7 +38,7 @@ var donaskaKuryremCena= 15;
 function init()
 {
     alert("init");
-    cacheListShaFileNameGet();
+    //cacheListShaFileNameGet();
     //cacheInit();
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
