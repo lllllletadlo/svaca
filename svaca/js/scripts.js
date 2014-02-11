@@ -1402,3 +1402,12 @@ function nactiObr()
 
     $('#testImg').attr('src',$('#testInput').val());
 }
+
+function firstProductUrl()
+{
+    alert( $("#ulVybratSvacu").find("li[data-id=1]").find("img").attr("src") );
+}
+function firstKosikUrl()
+{
+    alert( $("#ulKosik").find("li").find("img").attr("src") );
+}
