@@ -116,6 +116,7 @@ var cacheListShaFileName = [];
 
 function cacheInit()
 {
+    alert('cacheInit');
     ImgCache.options.debug = true;
     ImgCache.options.usePersistentCache = true;
     ImgCache.options.chromeQuota = 50*1024*1024;

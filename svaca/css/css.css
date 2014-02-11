@@ -714,6 +714,11 @@ div#menuLeftDiv {
     position: relative;
 }
 /* kokretni upravy pro stranky */
+
+.page-screen {
+    background: black;
+    z-index: 1000;
+}
 .page-home .fajnSvacaText {
     margin-top: 35px;
     margin-bottom: 35px;

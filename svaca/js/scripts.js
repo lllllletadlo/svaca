@@ -33,15 +33,7 @@ var obrInterni = ["productsOblozenaBageta.png","productsRyzekVHousce.png"];
 // static
 var donaskaKuryremCena= 15;
 
-window.addEventListener('load', function() {
-    FastClick.attach(document.body);
-}, false);
 
-if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-    document.addEventListener("deviceready", cacheInit, false);
-} else {
-    cacheInit(); //this is the browser
-}
 
 function init()
 {

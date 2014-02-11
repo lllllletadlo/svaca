@@ -22,7 +22,19 @@
     <title>Fajn sváča</title>
 </head>
 <script type="text/javascript" charset="utf-8">
-    // Wait for Cordova to load
+
+
+    window.addEventListener('load', function() {
+        FastClick.attach(document.body);
+    }, false);
+
+    alert("a");
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+        document.addEventListener("deviceready", cacheInit, false);
+        alert("b");
+    } else {
+        cacheInit(); //this is the browser
+    }
 
 
 </script>
@@ -52,7 +64,11 @@
     <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v0.18</a>
 </div>
 
-<div id="page-vybratSvacu" class="page-vybratSvacu current">
+
+<div id="page-screen" class="page-screen current">
+</div>
+
+<div id="page-vybratSvacu" class="page-vybratSvacu">
 
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
