@@ -136,9 +136,16 @@ function cacheInit()
         });
     } else
     {
+        cacheListShaFileNameGet();
         init();
     }
 
+}
+
+function cacheInit2()
+{
+        cacheListShaFileNameGet();
+        init();
 }
 
 // vyhleda obr v cache, jestli neni vrati puvodni url
