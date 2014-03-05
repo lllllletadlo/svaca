@@ -1,4 +1,236 @@
-@media only screen and (min-width: 320px)  and (max-width: 700px){
+@media only screen and (min-width: 0px)  and (max-width: 499px){
+
+    #pages {
+        font-size: 60%;
+    }
+
+    .prihlaseniPrihlasitButns {
+        min-height: 20px !important;
+        padding: 0.3em 0 0.3em 0 !important;
+        margin: 6% 3% 0 4% !important;
+        font-size: 130%;
+        width: 42%;
+    }
+    .prihlaseniButtons {
+        top: 46% !important;
+    }
+
+    .prihlaseniFBImage {
+        width: 20%;
+    }
+    .prihlaseniZaregistrovat {
+        font-size: 400%;
+        padding: 0.5em;
+        padding-left: 3em;
+        background-size: 20% !important;
+        font-size: 170%;
+    }
+    .prihlaseniButtons input {
+        font-size: 150% !important;
+        margin-bottom: 0.5em;
+    }
+    .prihlaseniLogo > div {
+        top: 5em !important;
+        bottom: 5em !important;
+    }
+
+    .registrace1horni {
+        height: 50% !important;
+    }
+    .registrace1horni h3 {
+        margin-top: 1.4em !important;
+    }
+    .logoFajnSvaca {
+        bottom: 4em !important;
+        top: 9em !important;
+    }
+
+    .registrace1dolni {
+        top: 50% !important;
+    }
+
+
+
+    .registraceSelectButtons {
+        font-size: 150%;
+        background-size: 21% 4em  !important;
+
+    }
+
+    .registraceSelectDiv {
+        height: 4em;
+    }
+    .registraceSelectDiv > div {
+        width: 80%;
+        font-size: 150%;
+    }
+    .registraceCheckBoxDiv div {
+        margin-top: 17%;
+    }
+    .registraceCheckBoxDiv h3 {
+        background-size: 30%;
+    }
+
+    .registrace2Container h3 {
+        font-size: 200%;
+        margin-top: 1.4em;
+        color: white;
+    }
+    .registrace2Container span {
+        color: #dcdcdc;
+        font-size: 150%;
+        line-height: 1.5em;
+        display: block;
+        padding-bottom: 3.5em;
+    }
+    .radioButtRegistrace label {
+        width: 18px !important;
+        height: 18px !important;
+        border: 1px solid !important;
+    }
+    .radioButtRegistrace label:after {
+        width: 12px !important;
+        height: 12px !important;
+        top: 2px !important;
+        left: 2px !important;
+    }
+    .registraceCheckBox input {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+
+    .menu a {
+        line-height: 3em !important;
+    }
+    div#menuLeftDiv {
+        top: 3em !important;
+    }
+    .menuLeftDiv a {
+        margin-top: 0px !important;
+    }
+    .menuLeftImgActive:before {
+        bottom: 3px !important;
+    }
+
+
+    .produkt2Leva {
+        min-height: 41px !important;
+    }
+    .produkt2KosikObr div {
+        background-size: 35% !important;
+        padding-top: 25px !important;
+        background-position-y: 20% !important;
+
+    }
+
+
+    .circleKosik {
+        padding: 0% !important;
+        border: 1px solid !important;
+    }
+
+    .produktChceckBox input[type="checkbox"]:checked+label {
+        padding-bottom: 17px !important;
+        background-size: 40% !important;
+
+    }
+
+
+
+
+
+    .produktTyp {
+        padding: 0.5em 0 0.5em 0;
+    }
+    .produktTyp a {
+        font-size: 200% !important;
+    }
+    .produkt2Popis h3 {
+        font-size: 200%;
+        padding-top: 0.2em;
+        padding-bottom: 0.3em;
+        margin-right: 3em;
+        margin-left: 15%; /* obrazek*/
+        padding-left: 15px; /* 10obrazku + 5 odsazeni*/
+    }
+    .produkt2Popis span {
+        font-size: 150%;
+        padding-bottom: 0.5em;
+        margin-left: 15%;
+        padding-left: 15px;
+    }
+    .produkt2Line div {
+        border-bottom: 2px solid;
+    }
+    .produkt2 img {
+        width: 15%;
+    }
+    .produktTypImg {
+        width: 12%;
+        margin-left: 10px;
+    }
+
+    .produkt2PopisNoImage h3 {
+        padding-top: 0.2em;
+        padding-bottom: 0.3em;
+    }
+
+    .radioButt label:after {
+        width: 9px;
+        height: 5px;
+        border: 3px solid #35485c;
+        top: 6px;
+        left: 7px;
+    }
+
+    .radioButt label {
+        width: 25px;
+        height: 25px;
+    }
+    .listHeader {
+        font-size: 200% !important;
+    }
+    .listText {
+        padding: 2em 1em 2em 1em;
+    }
+
+    #mistoDoruceniInput {
+        font-size: 150%;
+    }
+    .page-potvrzeniPlatby .logoFajnSvacaWhite {
+        width: 150px;
+    }
+    .page-potvrzeniPlatby .produktTyp {
+        font-size: 200%;
+    }
+    .partneri h3 {
+        font-size: 200%;
+    }
+    .partneri h3:first-child {
+        font-size: 250% !important;
+    }
+    .partneri span {
+        font-size: 200%;
+    }
+    .dokoncitPlatbuContainer {
+        top: 7.2em;
+    }
+
+    .pageContainersMenu {
+        top: 7.2em;
+    }
+
+    .produktChceckBox input[type="checkbox"] {
+        right: 0px;
+        top: 50%;
+        width: 50%;
+        height: 180%;
+    }
+
+}
+
+@media only screen and (min-width: 500px)  and (max-width: 700px){
 
     .prihlaseniZaregistrovat {
         font-size: 400%;
