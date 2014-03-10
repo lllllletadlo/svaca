@@ -57,9 +57,41 @@ var donaskaKuryremCena= 15;
 
 
 
+function flogin(){
+    FB.getLoginStatus(function(r) {
+        if (r.status === 'connected') {
+            processFacebook();
+        } else {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    processFacebook();
+                } else {
+                    // user is not logged in
+                }
+            }, {
+                scope: 'email'
+            });
+        }
+    });
+}
+function processFacebook() {
+    FB.api('/me', function(response) {
+        if (response.error) {
+            alert('Unexpected Facebook Login Error: ' + JSON.stringify(response.error));
+        } else {
+            console.log(response);
+            var login_data = '';
+            for (var key in response) {
+                if (key == 'id' || key == 'name' || key == 'email' || key == 'gender')
+                    login_data += key + '=' + encodeURIComponent(response[key]) + '&';
+            }
+            // do further processing as per your application
+        }
+    });
+}
 
 
-function flogin() {
+function flogin_old() {
     FB.login(
         function(response) {
             if (response.session) {
