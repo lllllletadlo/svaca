@@ -49,6 +49,11 @@
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
+
+    <feature name="org.apache.cordova.facebook.Connect">
+        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+    </feature>
+
     <gap:plugin name="com.phonegap.plugins.facebookconnect">
         <param name="APP_ID" value="207808999413453" />
         <param name="APP_NAME" value="Fajn Sváča" />
@@ -64,7 +69,7 @@
     <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <!-- <preference name="phonegap-version"      value="3.3.0" /> -->      <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"      value="3.3.0" /> -->      <!-- all: current version of PhoneGap -->
     <preference name="EnableViewportScale"        value="true" />
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
