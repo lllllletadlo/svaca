@@ -22,7 +22,9 @@
     <script src="facebook-js-sdk.js"></script>
     <script src="cordova.js"></script>
 
-
+    <script src="svaca/js/cordova_test.js"></script>
+    <script src="svaca/js/facebook-js-sdk_test.js"></script>
+    <script src="svaca/js/cdv-plugin-fb-connect_test.js"></script>
 
 
     <link rel="stylesheet" href="svaca/css/css.css" />
@@ -690,6 +692,40 @@
             <input type="button" value="path obr" onclick="alert($('.menuLeftImg').attr('src'))">
             <input type="button" value="imgCach" onclick="imgCach()">
             <input type="button" value="localStorage clear" onclick="localStorage.clear();">
+
+
+            <button onclick="flogin()">Login</button>
+            <button onclick="me()">Me</button>
+            <!--<button onclick="getSession()">Get session</button>-->
+            <button onclick="getLoginStatus()">Get login</button>
+            <button onclick="flogout()">Logout</button>
+            <button onclick="facebookWallPost()">facebookWallPost</button>
+            <button onclick="publishStoryFriend()">friendstory</button>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+<div id="page-test2" class="page-test2">
+
+    <div class="menu">
+        <a class="btnMenuMenu modra colorBila" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
+        <a id="vybratSvacuKreditpp" class="btnMenuCastka" href="#page-koupit" >Kredit: 123,5 Kč</a>
+        <a class="btnMenuKosik fialova" href="#page-kosik" >Košík &or;</a>
+        <a class="btnMenuKoupit" href="#page-kosik" >Koupit &gt;</a>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="pageContainersMenu">
+        <div id="data" class="f250 lineHeight15em">
+
         </div>
     </div>
 
