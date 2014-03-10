@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e752cbb2-694e-47c5-836c-a53ab7bfb1e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/starOff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/starOn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svaca/imagesApp/trash_v2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/css/css.css" afterPath="$PROJECT_DIR$/svaca/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/dataManager.js" afterPath="$PROJECT_DIR$/svaca/js/dataManager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svaca/js/scripts.js" afterPath="$PROJECT_DIR$/svaca/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="svaca.iws" />
@@ -32,13 +25,13 @@
     <favorites_list name="svaca" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4868842">
+    <splitter split-orientation="horizontal" split-proportion="0.3875724">
       <split-first>
         <leaf>
-          <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="0" selection-start="1010" selection-end="1153" vertical-scroll-proportion="0.50830567" vertical-offset="0" max-vertical-offset="2414">
+                <state line="24" column="22" selection-start="939" selection-end="939" vertical-scroll-proportion="0.16981132" vertical-offset="255" max-vertical-offset="2414">
                   <folding />
                 </state>
               </provider>
@@ -79,7 +72,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="688" column="90" selection-start="31960" selection-end="31960" vertical-scroll-proportion="-443.57693" vertical-offset="163" max-vertical-offset="12138">
+                <state line="687" column="90" selection-start="31894" selection-end="31894" vertical-scroll-proportion="-443.57693" vertical-offset="146" max-vertical-offset="12121">
                   <folding />
                 </state>
               </provider>
@@ -107,10 +100,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="102" selection-start="3048" selection-end="3048" vertical-scroll-proportion="0.33294392" vertical-offset="888" max-vertical-offset="12138">
+                <state line="21" column="46" selection-start="993" selection-end="993" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="12121">
                   <folding />
                 </state>
               </provider>
@@ -198,8 +191,8 @@
         <option value="$PROJECT_DIR$/svaca/js/dataManager.js" />
         <option value="$PROJECT_DIR$/svaca/css/css.css" />
         <option value="$PROJECT_DIR$/svaca/js/scripts.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -865,7 +858,11 @@
       <created>1394040784705</created>
       <updated>1394040784705</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="        0.0.21&#10;        -stranka oblibene&#10;        - moznost pridat menu do oblibenych&#10;        - FB plugin a test&#10;        - zmena plugineu device">
+      <created>1394447801434</created>
+      <updated>1394447801434</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -892,11 +889,12 @@
     <frame x="1592" y="-188" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39617833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17693523" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17693523" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1119171" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -906,7 +904,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26577044" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39617833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12738854" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -924,7 +921,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="html cely prubeh proklik nakoupeni s drobnymi chybami&#10;k ukazce&#10;oprava 1&#10;" />
     <MESSAGE value="- oprava pozadi barvy headeru - typ produktu&#10;- dodlany filtry headerech - typ produktu&#10;- kosik - zobrazeni cisla 1-5&#10;- tlac zaplatit hned pod kosikem&#10;- zvětšení horního menu relativně podle velikosti písma&#10;- html verze stranky kdyz neni kredit" />
     <MESSAGE value="- oprava pozadi barvy headeru - typ produktu&#10;- dodlany filtry headerech - typ produktu&#10;- kosik - zobrazeni cisla 1-5&#10;- tlac zaplatit hned pod kosikem&#10;- zvětšení horního menu relativně podle velikosti písma&#10;- html verze stranky kdyz neni kredit&#10;" />
     <MESSAGE value="- aplikace v html" />
@@ -949,7 +945,8 @@
     <MESSAGE value="        0.0.19&#10;        - podpora nacitani noveho zbozi" />
     <MESSAGE value="        0.0.19&#10;        - podpora nacitani noveho zbozi&#10;" />
     <MESSAGE value="        0.0.20&#10;        - css optimalizace pro iPhone" />
-    <option name="LAST_COMMIT_MESSAGE" value="        0.0.20&#10;        - css optimalizace pro iPhone" />
+    <MESSAGE value="        0.0.21&#10;        -stranka oblibene&#10;        - moznost pridat menu do oblibenych&#10;        - FB plugin a test&#10;        - zmena plugineu device" />
+    <option name="LAST_COMMIT_MESSAGE" value="        0.0.21&#10;        -stranka oblibene&#10;        - moznost pridat menu do oblibenych&#10;        - FB plugin a test&#10;        - zmena plugineu device" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1321,7 +1318,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/dataManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="53" selection-start="1626" selection-end="1638" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="10540">
+        <state line="145" column="18" selection-start="4314" selection-end="4314" vertical-scroll-proportion="0.0" vertical-offset="2465" max-vertical-offset="10540">
           <folding />
         </state>
       </provider>
@@ -1333,14 +1330,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="20" selection-start="6543" selection-end="6559" vertical-scroll-proportion="-12.04" vertical-offset="5088" max-vertical-offset="36040">
+        <state line="1492" column="0" selection-start="28233" selection-end="28233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="36040">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/svaca/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1014" column="9" selection-start="31819" selection-end="31819" vertical-scroll-proportion="0.0" vertical-offset="17238" max-vertical-offset="28475">
+        <state line="81" column="15" selection-start="2061" selection-end="2061" vertical-scroll-proportion="-30.68" vertical-offset="457" max-vertical-offset="28475">
           <folding>
             <marker date="1394447374787" expanded="true" signature="5139:9127" placeholder="{...}" />
             <marker date="1394447374787" expanded="true" signature="5343:5421" placeholder="{...}" />
@@ -1350,16 +1347,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="688" column="90" selection-start="31960" selection-end="31960" vertical-scroll-proportion="-443.57693" vertical-offset="163" max-vertical-offset="12138">
+        <state line="24" column="22" selection-start="939" selection-end="939" vertical-scroll-proportion="0.16981132" vertical-offset="255" max-vertical-offset="2414">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1010" selection-end="1153" vertical-scroll-proportion="0.50830567" vertical-offset="0" max-vertical-offset="2414">
+        <state line="21" column="46" selection-start="993" selection-end="993" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="12121">
           <folding />
         </state>
       </provider>
