@@ -61,10 +61,10 @@ function init()
 {
 
 
-
+    fbInit();
 
     //FB.getLoginStatus(handleStatusChange);
-    alert(FB.getUserID());
+    //alert(FB.getUserID());
 
 
 
