@@ -56,7 +56,7 @@
 
     <gap:plugin name="com.phonegap.plugins.facebookconnect">
         <param name="APP_ID" value="207808999413453" />
-        <param name="APP_NAME" value="Fajn Sváča" />
+        <param name="APP_NAME" value="fajnsvaca" />
     </gap:plugin>
 
 
