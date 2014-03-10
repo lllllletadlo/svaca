@@ -66,7 +66,7 @@ function init()
 
 
 
-    alert('1');
+    alert('1a');
     FB.init({
         appId: '207808999413453',
         nativeInterface: CDV.FB,
@@ -74,12 +74,12 @@ function init()
     });
     alert('2');
 
-    FB.getLoginStatus(handleStatusChange);
-    alert('3');
+    //FB.getLoginStatus(handleStatusChange);
+    alert(FB.getUserID());
 
-    authUser();
-    updateAuthElements();
-    alert('4');
+    //authUser();
+    //updateAuthElements();
+    //alert('4');
 
 
 
