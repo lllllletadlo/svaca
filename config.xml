@@ -33,7 +33,7 @@
     -->
 
 
-    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="phonegap-version"/>
 
     <name>Fajn Sváča</name>
 
