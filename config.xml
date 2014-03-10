@@ -51,7 +51,7 @@
     <gap:plugin name="org.apache.cordova.file-transfer" />
 
 
-    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.3.2">
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
         <param name="APP_ID" value="207808999413453" />
         <param name="APP_NAME" value="fajnsvaca" />
     </gap:plugin>
