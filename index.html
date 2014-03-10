@@ -18,6 +18,10 @@
 
     <script src="svaca/js/scripts.js"></script>
 
+    <script src="svaca/js/cdv-plugin-fb-connect.js"></script>
+    <script src="svaca/js/facebook-js-sdk.js"></script>
+    <script src="svaca/js/cordova.js"></script>
+
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
 </head>
@@ -29,10 +33,12 @@
     }, false);
 
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-        document.addEventListener("deviceready", cacheInit, false);
+        //document.addEventListener("deviceready", cacheInit, false);
+        document.addEventListener("deviceready", init, false);
     } else {
         window.addEventListener('load', function() {
-            cacheInit();
+            //cacheInit();
+            init();
         }, false);
     }
 
@@ -61,7 +67,7 @@
     <a id="menuLeftDivpartneri" onclick="transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
     <a id="menuLeftDivprofil" onclick="transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
     <a id="menuLeftDivpodpora" onclick="transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
-    <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v0.20</a>
+    <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v0.21</a>
 </div>
 
 
@@ -170,7 +176,7 @@
             <div style="height: 2em"></div>
         </li>
     </ul>
-    <a id="ulKosikTlacitkoCeleMenu" class="ulKosikFooterTlac zlata kosikShow f250">+ Přidat celé menu do oblíbených</a>
+    <a id="ulKosikTlacitkoCeleMenu" class="ulKosikFooterTlac zlata kosikShow f250" onclick="zboziOblibenaMenaAdd()">+ Přidat celé menu do oblíbených</a>
 
 </div>
 
@@ -253,17 +259,18 @@
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
 
-    <ul id="ulMojeOblibeneHeader" class="produtkSeznam">
-        <li class="produktTyp produktHeaderSpace">
-            <div style="height: 20px"></div>
-        </li>
-        <li class="listHeader fialova">
-            <h3>Moje oblíbené</h3>
-        </li>
-    </ul>
+    <div class="pageContainer2">
+        <div>
+            <img class="fajnSvacaText"  >
+        </div>
+        <ul id="ulMojeOblibeneHeader">
+            <li class="listHeader fialova">
+                <h3>Moje oblíbené</h3>
+            </li>
+        </ul>
+        <ul id="ulMojeOblibene">    </ul>
+    </div>
 
-    <ul id="ulMojeOblibene" class="produtkSeznam ulKosik">
-    </ul>
 
 </div>
 
@@ -292,45 +299,44 @@
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <div class="partneriFajnSvacaIMG">
-        <img class="fajnSvacaText"  >
-    </div>
-    <ul class="produtkSeznam">
-        <li class="listHeader zluta f250">
-            <h2>Vychytávky</h2>
-        </li>
-        <li class="produkt2">
-            <div>
-                <div class="produkt2Leva bila produkt2Popis">
-                    <img src="svaca/products/vychyCinemaCardTgr.png"  >
-                    <h3>Každé pondělí s kartou Cinema City Club</h3>
-                    <span>Každé pondělí získáš po předložení Cinema City Club karty menu za <div class="produkt2PopisZvyrazneni colorHneda">zvýhodněnou cenu.</div></span>
+    <div class="pageContainer2">
+        <div>
+            <img class="fajnSvacaText"  >
+        </div>
+        <ul>
+            <li class="listHeader zluta f250">
+                <h2>Vychytávky</h2>
+            </li>
+            <li class="produkt2">
+                <div>
+                    <div class="produkt2Leva bila produkt2Popis">
+                        <img src="svaca/products/vychyCinemaCardTgr.png"  >
+                        <h3>Každé pondělí s kartou Cinema City Club</h3>
+                        <span>Každé pondělí získáš po předložení Cinema City Club karty menu za <div class="produkt2PopisZvyrazneni colorHneda">zvýhodněnou cenu.</div></span>
 
+                    </div>
+                    <div class="produkt2Prava zelena">
+                        <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    </div>
                 </div>
-                <div class="produkt2Prava zelena">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                <div class="produkt2Line">
+                    <div ></div>
                 </div>
-            </div>
-            <div class="produkt2Line">
-                <div ></div>
-            </div>
-        </li>
-        <li class="produkt2">
-            <div>
-                <div class="produkt2Leva bila produkt2Popis">
-                    <img src="svaca/products/vychySamsung.png"  >
-                    <h3>Každé úterý se Samsung produktem</h3>
-                    <span>Prvních 20 lidí se Samsung produktem získá v bufetu jednu bagetu dle výběru <div class="produkt2PopisZvyrazneni colorHneda">ZDARMA.</div></span>
+            </li>
+            <li class="produkt2">
+                <div>
+                    <div class="produkt2Leva bila produkt2Popis">
+                        <img src="svaca/products/vychySamsung.png"  >
+                        <h3>Každé úterý se Samsung produktem</h3>
+                        <span>Prvních 20 lidí se Samsung produktem získá v bufetu jednu bagetu dle výběru <div class="produkt2PopisZvyrazneni colorHneda">ZDARMA.</div></span>
+                    </div>
+                    <div class="produkt2Prava zelena">
+                        <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    </div>
                 </div>
-                <div class="produkt2Prava zelena">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
-                </div>
-            </div>
-        </li>
-        <li class="listHeader hnedaSvetla">
-            <h3 style="font-size: 100%;line-height: 2em;">Další vychytávky připravujeme</h3>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </div>
 
 
@@ -423,83 +429,87 @@
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <div class="partneriFajnSvacaIMG">
-        <img class="fajnSvacaText"  >
-    </div>
-    <ul class="produtkSeznam">
-        <li class="listHeader zluta f250">
-            <h2>Dobít kredit</h2>
-        </li>
-        <li class="produkt2">
-            <div>
-                <div class="produkt2Leva bila produkt2Popis dobitKreditPopis">
-                    <h3>Dobít na bufetu</h3>
-                    <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
+    <div class="pageContainer2">
+        <div class="">
+            <img class="fajnSvacaText"  >
+        </div>
+        <ul>
+            <li class="listHeader zluta f250">
+                <h2>Dobít kredit</h2>
+            </li>
+            <li class="produkt2">
+                <div>
+                    <div class="produkt2Leva bila produkt2Popis dobitKreditPopis">
+                        <h3>Dobít na bufetu</h3>
+                        <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
 
+                    </div>
+                     <div class="produkt2Prava modra">
+                         <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                     </div>
                 </div>
-                 <div class="produkt2Prava modra">
-                     <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
-                 </div>
-            </div>
-            <div class="produkt2Line">
-                <div ></div>
-            </div>
-        </li>
-        <li class="produkt2">
-            <div>
-                <div class="produkt2Leva bila produkt2Popis dobitKreditPopis">
-                    <h3>Poslat žádost rodiči o dobití kreditu</h3>
-                    <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
+                <div class="produkt2Line">
+                    <div ></div>
                 </div>
-                <div class="produkt2Prava modra">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+            </li>
+            <li class="produkt2">
+                <div>
+                    <div class="produkt2Leva bila produkt2Popis dobitKreditPopis">
+                        <h3>Poslat žádost rodiči o dobití kreditu</h3>
+                        <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
+                    </div>
+                    <div class="produkt2Prava modra">
+                        <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    </div>
                 </div>
-            </div>
-            <div class="produkt2Line">
-                <div ></div>
-            </div>
-        </li>
-        <li class="produkt2">
-            <div>
-                <div class="produkt2Leva bila produkt2Popis dobitKreditPopis">
-                    <h3>Dobít pomocí Premium SMS</h3>
-                    <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
+                <div class="produkt2Line">
+                    <div ></div>
                 </div>
-                <div class="produkt2Prava modra">
-                    <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+            </li>
+            <li class="produkt2">
+                <div>
+                    <div class="produkt2Leva bila produkt2Popis dobitKreditPopis">
+                        <h3>Dobít pomocí Premium SMS</h3>
+                        <span>Lconsectetur adipisicing elit, seagna aliqua.Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua Lconsectetur adipisicing elit, seagna aliqua</span>
+                    </div>
+                    <div class="produkt2Prava modra">
+                        <div class="produkt2KosikObr imgLupa"><div>Zobrazit<br>info</div></div>
+                    </div>
                 </div>
-            </div>
-            <div class="">
-                <div ></div>
-            </div>
-        </li>
-    </ul>
+                <div class="">
+                    <div ></div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <div id="page-profil" class="page-profil">
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <div class="partneriFajnSvacaIMG">
-        <img class="fajnSvacaText"  >
-    </div>
-    <ul class="produtkSeznam">
-        <li class="listHeader zelena f250">
-            <h2>Můj profil</h2>
-        </li>
-        <li class="produktTyp bila listAvatarBig">
-            <div class="avatarBig" />
-        </li>
+    <div class="pageContainer2">
+        <div>
+            <img class="fajnSvacaText"  >
+        </div>
+        <ul>
+            <li class="listHeader zelena f250">
+                <h2>Můj profil</h2>
+            </li>
+            <li class="produktTyp bila listAvatarBig">
+                <div class="avatarBig" />
+            </li>
 
-        <li class="produktTyp bila listText listTextProfil colorSeda f200">
-            <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH"></h3>
-            <h3>Příjmení: </h3><h3 id="profilFullNameH"></h3>
-            <h3>E-mail: </h3><h3 id="profilEmailH"></h3>
-            <h3>Třída: </h3><h3 id="profilTridaH"></h3>
-            <h3>Škola: </h3><h3 id="profilSkolaH"></h3>
-            <h3>Telefon: </h3><h3 id="profilTelefonH"></h3>
-        </li>
-    </ul>
+            <li class="produktTyp bila listText listTextProfil colorSeda f200">
+                <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH"></h3>
+                <h3>Příjmení: </h3><h3 id="profilFullNameH"></h3>
+                <h3>E-mail: </h3><h3 id="profilEmailH"></h3>
+                <h3>Třída: </h3><h3 id="profilTridaH"></h3>
+                <h3>Škola: </h3><h3 id="profilSkolaH"></h3>
+                <h3>Telefon: </h3><h3 id="profilTelefonH"></h3>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <div id="page-registrace_old" class="page-registrace_old">
@@ -676,6 +686,7 @@
             <img id="testImg" width="100%" height="100%">
             <input type="button" value="path obr" onclick="alert($('.menuLeftImg').attr('src'))">
             <input type="button" value="imgCach" onclick="imgCach()">
+            <input type="button" value="localStorage clear" onclick="localStorage.clear();">
         </div>
     </div>
 

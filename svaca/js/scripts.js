@@ -12,14 +12,19 @@ var viewport;
 var maxHeightVybratSvacu = false;
 var maxHeightKosik = false;
 
-var dataZbozi;                  // jSON
-var dataKategorie;              // jSON
-var dataProfil;                 // jSON
-var zbozi;
-var kategorie;
+var dataZbozi;                  // jSON prijaty ze serveru
+var dataKategorie;              // jSON prijaty ze serveru
+var dataProfil;                 // jSON prijaty ze serveru
+
+var zbozi;                      // jSON cast z dataZbozi
+var kategorie;                  // jSON cast z dataZbozi
 var profil;
-var zboziOblibene=[];
-var kosik =[];
+
+var kosik =[];                  // idcka zbozi
+var zboziOblibene=[];           // idcka ze zbozi
+var zboziOblibenaMena=[];     // [[1,2], "nazevMenu", "vlozeno"], [[1,2],  "nazevMenu", "vlozeno"]
+// [[1,2], nazev, datumVlozeni], [[1,2], nazev, datumVlozeni]
+
 var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
@@ -33,10 +38,65 @@ var obrInterni = ["productsOblozenaBageta.png","productsRyzekVHousce.png"];
 // static
 var donaskaKuryremCena= 15;
 
+//var a = [5,3,4];
+//var c = ["as","gg"];
+//var a = new Array();
+//a[0] = [5,3,4];
+//a[1] = "asd";
+//zboziOblibenaMena.push([a][c]);
+//zboziOblibenaMena.push([[5,3,4]["as","gg"]]);
+//zboziOblibenaMena.push(a);
+//alert(zboziOblibenaMena.length);
+//alert(JSON.stringify(zboziOblibene));
+//storage("getItem","zboziOblibene","jSON");
+//storage("setItem","zboziOblibene","jSON");
+//storage("getItem","zboziOblibene","jSON");
+//alert(JSON.stringify(zboziOblibenaMena));
+
+//zboziOblibneRefresh();
+
 
 
 function init()
 {
+
+
+
+
+
+
+
+    alert('1');
+    FB.init({
+        appId: '207808999413453',
+        nativeInterface: CDV.FB,
+        useCachedDialogs: false
+    });
+    alert('2');
+
+    FB.getLoginStatus(handleStatusChange);
+    alert('3');
+
+    authUser();
+    updateAuthElements();
+    alert('4');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //cacheListShaFileNameGet();
     //cacheInit();
     $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
@@ -56,12 +116,14 @@ function init()
         height : $(window).height()
     };
 
+    /* tady nelze pocitat height protoze neni vykresleno a je 0.
+        pocita se pred prvnim transitions viz dole
     //$('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
     $('#ulVybratSvacu').css('max-height',viewport.height - $('#vybratSvacuKredit').height());
     //alert($('#vybratSvacuKredit').height());
     $('#ulVybratSvacu').css('height','auto');
     maxHeightVybratSvacu = true;
-
+*/
     $('#pages > div').css('min-height',viewport.height);
     // kosik nastaveni 60% height
     //$('.ulKosik').css('max-height',viewport.height*0.4);
@@ -76,6 +138,8 @@ function init()
 
     zboziNactiAjax();
 	profilNactiAjax();
+    storage("getItem","zboziOblibene","jSON");
+    storage("getItem","zboziOblibenaMena","jSON");
     //transition('#page-registrace1','fade');
 
 
@@ -207,6 +271,7 @@ function transitionAfter(toPage)
 
         if(!maxHeightVybratSvacu)
         {
+
             $('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
             $('#ulVybratSvacu').css('height','auto');
             maxHeightVybratSvacu = true;
@@ -307,7 +372,21 @@ function kosikZobrazCisloVkolecku() {
 
 }
 
-function zboziOblibeneAdd(vlozitID) {
+function zboziOblibeneAddStar(produkt,vlozitID)
+{
+    if($(produkt).attr("class")=="cena star starOn")
+    {
+        $(produkt).attr("class","cena star starOff");
+    } else
+    {
+        $(produkt).attr("class","cena star starOn");
+    }
+
+    zboziOblibeneAddRem(vlozitID);
+}
+
+// zboziOblibene prida(jestli neni) nebo odebere(jestli je)
+function zboziOblibeneAddRem(vlozitID, produkt) {
     //zjisti hestli jiz neni vlozene
     var jizVlozene = false;
     for(var i=0; i<zboziOblibene.length; i++)
@@ -315,6 +394,9 @@ function zboziOblibeneAdd(vlozitID) {
         if(zboziOblibene[i]==vlozitID)
         {
             jizVlozene = true;
+            zboziOblibeneRemove(vlozitID);
+            $(produkt).attr("class","cena star starOff");
+            kosikRefreshStars(vlozitID,"starOff");
         }
     }
 
@@ -322,41 +404,148 @@ function zboziOblibeneAdd(vlozitID) {
     {
         console.log("pridavam do oblibenych:" + vlozitID);
         zboziOblibene.push(vlozitID);
+        $(produkt).attr("class","cena star starOn");
+        kosikRefreshStars(vlozitID,"starOn");
+    }
+
+    storage("setItem","zboziOblibene","jSON");
+}
+
+function zboziOblibeneRemove(odebratID)
+{
+    console.log("odebiram z oblibenych::" + odebratID);
+    var index;
+    for(var i=0;i<zboziOblibene.length; i++)
+    {
+        if(zboziOblibene[i]==odebratID) index = i;
+    }
+    zboziOblibene.splice(index,1);
+
+    for(var i=0;i<zboziOblibene.length; i++)
+    {
+        console.log(zboziOblibene[i]);
     }
 }
 
-// prida zbozi do kosiku, updatuje zobrazeni v page-vybratSvacu:
+// vlozi kosik do zboziOblibenaMena
+// nesmi jiz takove tam byt (na poradi polozek nezalezi)
+function zboziOblibenaMenaAdd()
+{
+
+    // kontrola jestli takove menu uz v oblibenych neni
+    var menuExist = false;
+    var shoda = true;
+    for(var i=0;i<zboziOblibenaMena.length;i++)
+    {
+        // jestli pocet produktu v menu je stejny jako pocet produktu v kosiku
+        if(zboziOblibenaMena[i][0].length==kosik.length)
+        {
+            // porovna existenci kazdeho produktu v menu[i] s kazdym produktem v kosiku
+            var vsechnyZmenuVkosiku = true;
+            for(var j=0;j<zboziOblibenaMena[i][0].length;j++)
+            {
+                // jedna vec z menu[x].menu vuci kosiku
+                var jedenZmenuVkosi = false;
+                for(var k=0;k<kosik.length;k++)
+                {
+                    if(kosik[k]==zboziOblibenaMena[i][0][j])
+                    {
+                        jedenZmenuVkosi = true;
+                    }
+                }
+
+                if(!jedenZmenuVkosi)
+                {
+                    vsechnyZmenuVkosiku = false;
+                }
+            }
+            if(vsechnyZmenuVkosiku)
+            {
+                menuExist = true;
+            }
+        }
+
+
+    }
+
+    if(menuExist)
+    {
+        alertZobraz("Takové menu je již v oblíbených");
+    }
+    else
+    {
+        var menuName=prompt("Pojmenujte své menu","Menu1");
+        if(menuName!=null && menuName!="")
+        {
+            var menuPolozky = [];
+            for(var i=0;i<kosik.length;i++)
+            {
+                menuPolozky.push(kosik[i]);
+            }
+            var menu = [];
+            menu[0] = menuPolozky;
+            menu[1] = menuName;
+            zboziOblibenaMena.push(menu);
+            storage("setItem","zboziOblibenaMena","jSON");
+            console.log("pridano menu do oblibenych");
+            alertZobraz("Menu bylo přidáno do oblíbených");
+        }
+    }
+
+}
+
+function zboziOblibenaMenaRem(menuIndex)
+{
+    zboziOblibenaMena.splice(menuIndex,1);
+    alertZobraz("Menu bylo odebráno z oblíbených");
+    storage("setItem","zboziOblibenaMena","jSON");
+    zboziOblibneRefresh();
+}
+
+// prida zbozi do kosiku s temito funkcemi:
 // misto kosiku da cislo
 // jestli je cislo vestsi nez pet, opet se zobrazi kosik
 // updatuje se cislo v kolecku
 function kosikAdd(produkt,vlozitID) {
 
-    if($(produkt).text().length>1)
+    if(produkt!=null)
     {
-        $(produkt).find('div').html("1");
-        $(produkt).attr('class', 'produkt2KosikCislo');
-    } else
-    {
-        var pocet = $(produkt).find('div').text();
-        pocet ++;
-        if(pocet<6)
+        if($(produkt).text().length>1)
         {
-            $(produkt).find('div').text(pocet);
-        }
-        else
+            $(produkt).find('div').html("1");
+            $(produkt).attr('class', 'produkt2KosikCislo');
+        } else
         {
-            console.log("vic jak pet");
-            kosikOdebrat5kusu(vlozitID);
-            $(produkt).find('div').html("Přidat do<br>košíku");
-            $(produkt).attr('class', 'produkt2KosikObr');
-            kosikZobrazCisloVkolecku();
-            return;
+            var pocet = $(produkt).find('div').text();
+            pocet ++;
+            if(pocet<6)
+            {
+                $(produkt).find('div').text(pocet);
+            }
+            else
+            {
+                console.log("vic jak pet");
+                kosikOdebrat5kusu(vlozitID);
+                $(produkt).find('div').html("Přidat do<br>košíku");
+                $(produkt).attr('class', 'produkt2KosikObr');
+                kosikZobrazCisloVkolecku();
+                return;
+            }
         }
     }
+
 
     kosik.push(vlozitID);
     kosikZobrazCisloVkolecku();
 
+}
+
+function kosikAddMenu(menuID) {
+    for(var i= 0;i< zboziOblibenaMena[menuID][0].length; i++)
+    {
+        kosik.push(zboziOblibenaMena[menuID][0][i]);
+    }
+    alertZobraz("Menu bylo přidáno do košíku");
 }
 
 // odebere z kosiku polozku
@@ -468,7 +657,7 @@ function profilNactiAjax()
             if(data.status == "ok")
             {
                 profilNastavPole(data);
-                storageSave("dataProfil");
+                storage("setItem","dataProfil","jSON");
             }
             if(data.status == "error" && data.code == "not logged")
             {
@@ -479,7 +668,7 @@ function profilNactiAjax()
         error: function(data)
         {
             ajaxError2(data);
-            storageLoad("dataProfil");
+            storage("getItem","dataProfil","jSON");
             if(!jQuery.isEmptyObject(dataProfil))
             {
 				console.log("asdads");
@@ -724,7 +913,7 @@ function zboziNactiAjax() {
         success: function(data) {
             console.log("zboziNactiAjax success");
             dataZbozi = data;
-            storageSave("dataZbozi");
+            storage("setItem","dataZbozi","jSON");
             if( data.status == "error" && data.code == "not logged")
             {
                 console.log(data.msg);
@@ -749,7 +938,7 @@ function zboziNactiAjax() {
         },
         error: function(data) {
             ajaxError2(data);
-            storageLoad("dataZbozi");
+            storage("getItem","dataZbozi","jSON");
             if(!jQuery.isEmptyObject(dataZbozi))
             {
                 zboziNacti(dataZbozi);
@@ -882,12 +1071,24 @@ function kosikRefresh() {
     //$.each(kosik, function() {
     for(var i = 0; i< kosik.length; i++)
     {
+        // najdi index pole
         var zboziIndex = 0;
         for(var j = 0; j< zbozi.length; j++)
         {
             if(zbozi[j].id == kosik[i]) {
                 zboziIndex = j;
             }
+
+        }
+
+        var oblibeneClass = "starOff";
+        // zjisti jestli je v oblibenych a ma se zobrazit hvezda
+        for(var j = 0; j< zboziOblibene.length; j++)
+        {
+            if(zboziOblibene[j] == kosik[i]) {
+                oblibeneClass = "starOn";
+            }
+
         }
 
         kosikSoucetCeny += Number(zbozi[zboziIndex].price);
@@ -901,7 +1102,7 @@ function kosikRefresh() {
          // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
          */
         var imgUrl = cacheGetImgUrl(zbozi[zboziIndex].icon);
-        var produkt = '<li class="produkt2"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span><span class="cena">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
+        var produkt = '<li class="produkt2" data-id="'+kosik[i]+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span><span class="cena">'+ zbozi[zboziIndex].price+' Kč</span> <div class="cena star '+oblibeneClass+'" onclick="zboziOblibeneAddRem('+kosik[i]+', this)" ></div>  </div>  <div class="produkt2Prava colorObjednatOdebrat">  <div class="produkt2KosikObr" onclick="kosikRemoveNeboOblibene('+i+')"><div class="produkt2KosikObrOdebrat kosikShow">Odebrat<br>z košíku</div><div class="produkt2KosikObrOblibene objShow">Přidat do<br>oblíbenych</div></div>  </div>  </div>';
 
         if(i<kosik.length-1) produkt += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
         else produkt += '<div class="produkt2LineNO">  <div ></div>  </div>  </li>';
@@ -913,9 +1114,26 @@ function kosikRefresh() {
     $( "#dokoncitPlatbuSoucetCenyH" ).text("Celkem " + kosikSoucetCeny + " Kč");
 }
 
+
+// zapne/vypne hvezdu oblibeni u shodnych produktu
+function kosikRefreshStars(kosikID,classa)
+{
+    $("#ulKosik").find("li").each(function(index){
+        if($(this).attr("data-id")==kosikID)
+        {
+            console.log(index);
+            var divStar = $(this).find('div[class*="star"]');
+            //$(divStar).attr("class","cena star starOff ");
+            $(divStar).attr("class","cena star " + classa);
+
+        }
+});
+}
+
 function zboziOblibneRefresh() {
     zboziOblibene.sort();
     $("#ulMojeOblibene").empty();
+
     for(var j = 0; j< zboziOblibene.length; j++)
     {
         //$.each(zboziOblibene, function() {
@@ -927,14 +1145,62 @@ function zboziOblibneRefresh() {
             }
         }
 
-        if(j<zboziOblibene.length-1)
+        imgUrl = cacheGetImgUrl(zbozi[zboziIndex].icon);
+
+            //$( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+        var produktLi='<li class="produkt2" data-id="'+zbozi[zboziIndex].id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span><span class="cena">'+ zbozi[zboziIndex].price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+zbozi[zboziIndex].id+')"><div>Přidat do<br>košíku</div></div></div></div>';
+
+        // posledni polozka bez line
+        if(j==zboziOblibene.length-1 && zboziOblibenaMena.length ==0)
         {
-            $( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+            produktLi += ' <div class="">  <div ></div>  </div>  </li>';
         } else
         {
-            // posledni polozka specialni format
-            $( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div><div></div>   </li>' );
+            produktLi += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
         }
+
+        $( "#ulMojeOblibene" ).append(produktLi);
+    }
+
+    // ----------------------- pridani menu
+
+    for(var j = 0; j< zboziOblibenaMena.length; j++)
+    {
+        var zboziIndex = 0;
+        for(var i = 0; i< zbozi.length; i++)
+        {
+            if(zbozi[i].id == zboziOblibene[j]) {
+                zboziIndex = i;
+            }
+        }
+
+
+
+        //$( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+        var produktPre='<li class="produkt2" data-id="'+zbozi[zboziIndex].id+'"> <div> <div class="produkt2Leva bila produkt2Menu"><h3>' + zboziOblibenaMena[j][1] + '</h3> <span class="cena">29 Kč</span>'
+
+        var produktIn = "";
+        for(var p = 0; p< zboziOblibenaMena[j][0].length; p++)
+        {
+            var zboziIndex = zboziOblibenaMena[j][0][p];
+            var imgUrl = cacheGetImgUrl(zbozi[zboziIndex].icon);
+            produktIn += '<img src="'+imgUrl+'"  >';
+        }
+        var produktSu = '<div class="cena star trash" onclick="zboziOblibenaMenaRem('+j+')"></div> </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAddMenu('+j+')"><div>Přidat do<br>košíku</div></div></div></div>';
+
+        // oddelovaci line
+        if(j!=zboziOblibenaMena.length-1) {
+            //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+
+            produktSu += '<div class="produkt2Line">  <div ></div>  </div>  </li>';
+        } else
+        // posledni polozka specialni format
+        {
+            //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
+            produktSu += ' <div class="">  <div ></div>  </div>  </li>';
+        }
+        $( "#ulMojeOblibene" ).append(produktPre+produktIn+produktSu);
+
 
         // old $( "#ulKosik" ).append( '<li class="produkt"><a class="produktKosik produktKosikObr blueOblibene" onclick="zboziOblibeneAdd('+this+')">Přidat do<br>oblíbených</a><a class="produktPopis" href="#">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+zbozi[zboziIndex].price+' Kč</span>  <h3>'+zbozi[zboziIndex].name+'</h3>  <span>'+zbozi[zboziIndex].description+'</span>  </a>  <div class="produktLine"></div>  </li>' );
     }

@@ -42,26 +42,46 @@ function load()
     $('#testInput').val(neco);
 }
 
-function storageLoad(type)
+// nacte podle nazvu promene a jeho typu pr: storageLoad("dataZbozi",false);
+// getItemSetItem:  "getItem" nebo "setItem"
+// variableNames:   "dataZbozi,dataProfil"
+// typ:             jSON,string
+function storage(getItemSetItem,variableNames,typ)
 {
 	//console.log("zobbrazuji:" + (window.localStorage.getItem("dataProfil")));
-    var arr = type.split(",");
+    var arr = variableNames.split(",");
     for(var i=0;i<arr.length;i++)
     {
-        console.log("storageLoad: "+ arr[i]);
-        if(type.indexOf(arr[i]) != -1)
+        console.log("storage: "+ arr[i]);
+
+        // pro getItem kontrola na null
+        if(getItemSetItem=="getItem" && window.localStorage.getItem(arr[i])!=null)
         {
-            if(window.localStorage.getItem(arr[i])!=null)
+            //dataZbozi = JSON.parse(window.localStorage.getItem("dataZbozi"));
+            if(typ=="string")
             {
-                console.log(arr[i]);
-                console.log(window.localStorage.getItem(arr[i]));
-                //dataZbozi = JSON.parse(window.localStorage.getItem("dataZbozi"));
+                eval(arr[i] + ' = window.localStorage.getItem("'+arr[i]+'")');
+            }
+            if(typ=="jSON")
+            {
                 eval(arr[i] + ' = JSON.parse(window.localStorage.getItem("'+arr[i]+'"))');
+            }
+        }
+        if(getItemSetItem=="setItem")
+        {
+            //dataZbozi = JSON.parse(window.localStorage.getItem("dataZbozi"));
+            if(typ=="string")
+            {
+                eval(arr[i] + ' = window.localStorage.setItem("'+arr[i]+'"'+arr[i]+')');
+            }
+            if(typ=="jSON")
+            {
+                eval('window.localStorage.setItem("'+arr[i]+'",JSON.stringify('+arr[i]+'))');
             }
         }
     }
 }
-
+/*
 function storageSave(type)
 {
     console.log("storageSave:" + type);
@@ -75,6 +95,7 @@ function storageSave(type)
     if(type.indexOf("dataKategorie") != -1) window.localStorage.setItem("dataKategorie", JSON.stringify(dataKategorie) );
     if(type.indexOf("dataProfil") != -1) window.localStorage.setItem("dataProfil", JSON.stringify(dataProfil) );
 }
+*/
 //==================================================== image cache =====================================================
 //==================================================== pure phoneGap API File a FileTransfer
 // nepouzivam

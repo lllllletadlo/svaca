@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "cz.inited.fajnsvaca"
-        version   = "0.0.20">
+        version   = "0.0.21">
     <!--
         0.0.18
         - verze phonegap 3.1.0
@@ -25,6 +25,11 @@
         - podpora nacitani noveho zbozi
         0.0.20
         - css optimalizace pro iPhone
+        0.0.21
+        -stranka oblibene
+        - moznost pridat menu do oblibenych
+        - FB plugin a test
+        - zmena plugineu device
     -->
 
 
@@ -41,10 +46,14 @@
         The "device" permission is required for the 'deviceready' event.
     -->
 
+    <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="com.phonegap.plugins.facebookconnect">
+        <param name="APP_ID" value="207808999413453" />
+        <param name="APP_NAME" value="Fajn Sváča" />
+    </gap:plugin>
 
-    <feature name="http://api.phonegap.com/1.0/device" />
 
     <!--
         If you do not want any permissions to be added to your app, add the
