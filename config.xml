@@ -50,11 +50,8 @@
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
 
-    <feature name="org.apache.cordova.facebook.Connect">
-        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
-    </feature>
 
-    <gap:plugin name="com.phonegap.plugins.facebookconnect">
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.3.2">
         <param name="APP_ID" value="207808999413453" />
         <param name="APP_NAME" value="fajnsvaca" />
     </gap:plugin>

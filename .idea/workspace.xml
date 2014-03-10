@@ -31,7 +31,7 @@
           <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="47" selection-start="2021" selection-end="2021" vertical-scroll-proportion="0.8679245" vertical-offset="204" max-vertical-offset="2499">
+                <state line="51" column="0" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.5849057" vertical-offset="340" max-vertical-offset="2448">
                   <folding />
                 </state>
               </provider>
@@ -902,7 +902,11 @@
       <created>1394467182966</created>
       <updated>1394467182966</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="        0.0.21&#10;        -stranka oblibene&#10;        - moznost pridat menu do oblibenych&#10;        - FB plugin a test&#10;        - zmena plugineu device&#10;">
+      <created>1394468480662</created>
+      <updated>1394468480662</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1468,7 +1472,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="47" selection-start="2021" selection-end="2021" vertical-scroll-proportion="0.8679245" vertical-offset="204" max-vertical-offset="2499">
+        <state line="51" column="0" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.5849057" vertical-offset="340" max-vertical-offset="2448">
           <folding />
         </state>
       </provider>
