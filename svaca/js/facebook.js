@@ -42,15 +42,16 @@ function fbInit()
 function fbLogin(){
     log("fbLogin start");
     FB.getLoginStatus(function(r) {
-        log("r.status" + r.status);
+        log("r.status:" + r.status);
         if (r.status === 'connected') {
             alert("connected");
             fbServerAuth();
         } else {
             log("login start");
             FB.login(function(response) {
-                log("response.session:" + response.session);
+                log("response");
                 log("response.authResponse:" + response.authResponse);
+                log("response.session:" + response.session);
                 log("response:" + response);
                 if (response.authResponse) {
                     alertZobraz("auth");
