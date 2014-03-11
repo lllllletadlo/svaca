@@ -597,6 +597,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     .testContainer {
         top: 12em;
     }
+
     .produktChceckBox input[type="checkbox"]:checked+label {
         background-size: auto !important;
     }
@@ -1033,6 +1034,13 @@ div#menuLeftDiv {
 }
 .pageTest {
     line-height: 200%;
+}
+.logContainer {
+    height: 6em;
+    overflow: auto;
+    background: white;
+    border: 1px solid;
+    margin-top: 3px;
 }
 
 .vybratSvacuPorduktUl {

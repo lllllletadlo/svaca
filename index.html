@@ -674,6 +674,10 @@
 
     <div class="pageContainersMenu">
         <div class="f250 lineHeight15em">
+            <div id="logContainer" class="logContainer">
+                <div id="log" class="testLog"></div>
+            </div>
+
             <img id="testImg1" width="auto" height="auto" src="http://www.coca-cola.cz/download/007/106/portfolio_COLA_ZERO_07.png" width="100%" height="100%">
             <input type="button" value="cache init!" onclick="cacheInit()">
             <input type="button" value="cache obr" onclick="cacheIt()">
@@ -701,6 +705,8 @@
             <button onclick="fbStatus()">FB status</button>
             <button onclick="alert(FB.getUserID())">fbID</button>
             <button onclick="fbLogout()">Logout</button>
+            <button onclick="alert($('#log').height())">aa</button>
+
         </div>
     </div>
 

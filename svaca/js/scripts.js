@@ -68,9 +68,8 @@ function init()
     response.gender = "male";
     response.id = "1509071250";
     response.last_name = "adsad";
-    enterFBapp(response);
-    //FB.getLoginStatus(handleStatusChange);
-    //alert(FB.getUserID());
+    //enterFBapp(response);
+
 
 
 
@@ -336,6 +335,9 @@ function transitionAfter(toPage)
         {
             $("#potvrzeniPlatbyVyzvednutiText").html("Vyzvednut si jí můžete příští přestávku v našem bufetu.");
         }
+    }
+    if(toPage.selector=="#page-test") {
+        $("#logContainer").scrollTop( $("#log").height() );
     }
 }
 
@@ -1674,4 +1676,10 @@ function firstProductUrl()
 function firstKosikUrl()
 {
     alert( $("#ulKosik").find("li").find("img").attr("src") );
+}
+function log(msg)
+{
+    $("#log").html($('#log').html() + "<br>" + msg);
+    $("#logContainer").scrollTop( $("#log").height() );
+
 }
