@@ -253,7 +253,7 @@
 
 }
 
-@media only screen and (min-width: 451px)  and (max-width: 650px){
+@media only screen and (min-width: 451px)  and (max-width: 750px){
 
     .prihlaseniZaregistrovat {
         font-size: 400%;
@@ -418,7 +418,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 
 }
 
-@media only screen and (min-width: 651px) {
+@media only screen and (min-width: 751px) {
 
     /* Medium screen, non-retina */
     .f75 {
@@ -713,6 +713,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     src: url("MyriadPro-Regular.otf") format("opentype");
 }
 html, body {
+    font-family: Myriad Pro;
     font: 12px/15px sans-serif;
     background: #000000;
     padding: 0px;
@@ -1329,20 +1330,22 @@ div#menuLeftDiv {
 .produkt2 .star {
     width: 1em;
     height: 1em;
-    margin-right: 1em;
-    top: 1.7em;
+    top: 0.7em;
+    cursor: pointer;
+    padding-right: 1em;
+    padding-top: 1em;
 }
 .produkt2 .starOff {
-    background: url(../imagesApp/starOff.png) no-repeat center top;
-    background-size: 100%;
+    background: url(../imagesApp/starOff.png) no-repeat center bottom;
+    background-size: 50%;
 }
 .produkt2 .starOn {
-    background: url(../imagesApp/starOn.png) no-repeat center top;
-    background-size: 100%;
+    background: url(../imagesApp/starOn.png) no-repeat center bottom;
+    background-size: 50%;
 }
 .produkt2 .trash {
-    background: url(../imagesApp/trash_v2.png) no-repeat center top;
-    background-size: 100%;
+    background: url(../imagesApp/trash_v2.png) no-repeat center bottom;
+    background-size: 50%;
 }
 .produkt2KosikObr {
     top: 50%;

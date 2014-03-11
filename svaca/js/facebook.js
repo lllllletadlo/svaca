@@ -15,14 +15,17 @@ function fbInit()
 function fbLogin(){
     FB.getLoginStatus(function(r) {
         if (r.status === 'connected') {
+            alert("connected");
             fbServerAuth();
         } else {
             FB.login(function(response) {
                 if (response.authResponse) {
-                    fbServerAuth();
-                } else {
-                    // user is not logged in
-                    alertZobraz("Nepodařilo se přihlásit");
+                    alertZobraz("auth");
+                    //enterFBapp(response);
+                }
+                if (response.session) {
+                    alertZobraz("session");
+                    //enterFBapp(response);
                 }
             }, {
                 scope: 'email'
@@ -47,8 +50,38 @@ function fbLogout() {
     });
 }
 
-function fbServerAuth()
-{
+function enterFBapp(response) {
+        // uz jsem prihlasen, jdu do aplikace
+        $.ajax({
+            type: "POST",
+            url: appServerUrlPreffix + "/api/loginFB.json",
+            data: {
+                firstname: response.first_name,
+                gender: response.gender,
+                id: response.id,
+                last_name: response.last_name
+            },
+            dataType: "json",
+            success: function(data) {
+                alert("succes");
+                if (data.msg) alert(data.msg);
+                if (data.status == "ok") {
+                    console.log(data);
+                    //location.href=data.goto;
+                    return;
+                }
+                if (data.status == "error") {
+                    alert("error");
+                    $('[name=password]').val('');
+                    $('[name=password]').focus();
+                }
+                return;
+            },
+            error: function(data) {
+                console.log(data);
+                alert('chyba:' + data);
+            }
+        });
 
 }
 

@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "cz.inited.fajnsvaca"
-        version   = "0.0.21">
+        version   = "0.0.22">
     <!--
         0.0.18
         - verze phonegap 3.1.0
@@ -30,6 +30,9 @@
         - moznost pridat menu do oblibenych
         - FB plugin a test
         - zmena plugineu device
+        0.0.22
+        - oprava zobrazeni iPhone, vypnuti height=device-height
+        - uprava fb login
     -->
 
 

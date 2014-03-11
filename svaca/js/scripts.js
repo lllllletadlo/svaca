@@ -63,6 +63,12 @@ function init()
 
     fbInit();
 
+    var response = new Object();
+    response.first_name = "asd";
+    response.gender = "male";
+    response.id = "1509071250";
+    response.last_name = "adsad";
+    enterFBapp(response);
     //FB.getLoginStatus(handleStatusChange);
     //alert(FB.getUserID());
 
