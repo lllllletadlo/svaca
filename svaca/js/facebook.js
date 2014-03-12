@@ -83,10 +83,13 @@ function enterFBapp(response) {
     {
         log("enterFBapp");
         // fake
-        response = new Object();
-        response.id = "15090712";
+        //response = new Object();
+        //response.id = "15090712";
         //response.id = "1509071250";
         // fake end
+        log("enterFBapp");
+        log(response.id, response.first_name,response.last_name,response.gender);
+
         if(response==null) //nemelo by se stat
         {
             response = new Object();
