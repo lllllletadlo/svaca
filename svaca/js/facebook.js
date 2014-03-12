@@ -94,6 +94,7 @@ function enterFBapp(response) {
         {
             response = new Object();
             response.id= FB.getUserID();
+            alert("new Object");
         }
             $.ajax({
                 type: "POST",

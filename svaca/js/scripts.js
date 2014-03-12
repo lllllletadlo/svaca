@@ -1725,7 +1725,7 @@ function registraceDoplnit(response)
     $("#registraceUsername").val(response.id);
     $('#registraceUsername').prop("disabled", true);
     $("#registraceEmail").val("");
-    $("#registracePrijmeni").val(response.first_name==nul?"":response.first_name + " " + response.last_name==nul?"":response.last_name);
+    $("#registracePrijmeni").val(response.first_name==null?"":response.first_name + " " + response.last_name==null?"":response.last_name);
     if(response.gender == "male")
     {
         $("#checkBoxRegistracekluk").prop("checked","true");
