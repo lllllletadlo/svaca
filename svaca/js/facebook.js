@@ -87,15 +87,8 @@ function enterFBapp(response) {
         //response.id = "15090712";
         //response.id = "1509071250";
         // fake end
-        log("enterFBapp");
-        log(response.id, response.first_name,response.last_name,response.gender);
+        log(response.id + response.first_name + response.last_name + response.gender);
 
-        if(response==null) //nemelo by se stat
-        {
-            response = new Object();
-            response.id= FB.getUserID();
-            alert("new Object");
-        }
             $.ajax({
                 type: "POST",
                 url: appServerUrlPreffix + "/api/loginFB.json",

@@ -1161,7 +1161,7 @@ function zboziOblibneRefresh() {
         $( "#ulMojeOblibene" ).append(produktLi);
     }
 
-    // ----------------------- pridani menu
+    // --------------------------------------------------- oblibena mana zvlast zde
 
     for(var j = 0; j< zboziOblibenaMena.length; j++)
     {
@@ -1175,15 +1175,14 @@ function zboziOblibneRefresh() {
 
 
 
-        //$( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
-        var produktPre='<li class="produkt2" data-id="'+zbozi[zboziIndex].id+'"> <div> <div class="produkt2Leva bila produkt2Menu"><h3>' + zboziOblibenaMena[j][1] + '</h3> <span class="cena">29 Kč</span>'
-
+        var celkovaCena = 0;
         var produktIn = "";
         for(var p = 0; p< zboziOblibenaMena[j][0].length; p++)
         {
             var zboziIndex = zboziOblibenaMena[j][0][p];
             var imgUrl = cacheGetImgUrl(zbozi[zboziIndex].icon);
             produktIn += '<img src="'+imgUrl+'"  >';
+            celkovaCena += parseInt(zbozi[zboziIndex].price);
         }
         var produktSu = '<div class="cena star trash" onclick="zboziOblibenaMenaRem('+j+')"></div> </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAddMenu('+j+')"><div>Přidat do<br>košíku</div></div></div></div>';
 
@@ -1198,6 +1197,10 @@ function zboziOblibneRefresh() {
             //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div style="clear:both"></div>  </li>' );
             produktSu += ' <div class="">  <div ></div>  </div>  </li>';
         }
+
+        //$( "#ulMojeOblibene" ).append( '<li class="produkt"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+zbozi[zboziIndex].icon+'"  >  <span class="cena">'+ zbozi[zboziIndex].price +' Kč</span>  <h3>' + zbozi[zboziIndex].name + '</h3>  <span>'+ zbozi[zboziIndex].description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
+        var produktPre='<li class="produkt2" data-id="'+zbozi[zboziIndex].id+'"> <div> <div class="produkt2Leva bila produkt2Menu"><h3>' + zboziOblibenaMena[j][1] + '</h3> <span class="cena">'+celkovaCena+' Kč</span>';
+
         $( "#ulMojeOblibene" ).append(produktPre+produktIn+produktSu);
 
 
