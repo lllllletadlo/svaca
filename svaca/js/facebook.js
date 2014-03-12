@@ -2,65 +2,59 @@ function fbInit()
 {
     try {
         FB.init({
-            appId: '207808999413453',
+            appId: fbAppID,
             nativeInterface: CDV.FB,
             useCachedDialogs: false
         });
     } catch (e) {
-        alert("Error facebook inicializace:" +e);
+        log("Error facebook inicializace:" +e);
     }
-
-
-
-
-    if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
-    if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
-    if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
-
-    FB.Event.subscribe('auth.login', function(response) {
-        alert('auth.login event');
-    });
-
-    FB.Event.subscribe('auth.logout', function(response) {
-        alert('auth.logout event');
-    });
-
-    FB.Event.subscribe('auth.sessionChange', function(response) {
-        alert('auth.sessionChange event');
-    });
-
-    FB.Event.subscribe('auth.statusChange', function(response) {
-        alert('auth.statusChange event');
-    });
-
 
 
 }
 
+function doFBLogin() {
+    log("doFBLogin start");
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            log("fbLogin connected");
+            enterFBapp(response);
+        } else {
+            FB.login(function(response)
+            {
+                log("login start");
+                if (response.authResponse) {
+                    enterFBapp(response);
+                }
+                else
+                {// user cancelled login zustat na strance
+                    log("user cancelled login");
+                }
+            }, {
+                    scope: 'email'
+            });
+        }
+    });
+}
 
-
-function fbLogin(){
+function fbLogin_old(){
     log("fbLogin start");
     FB.getLoginStatus(function(r) {
         log("r.status:" + r.status);
         if (r.status === 'connected') {
-            alert("connected");
-            fbServerAuth();
+            enterFBapp();
         } else {
             log("login start");
             FB.login(function(response) {
                 log("response");
                 log("response.authResponse:" + response.authResponse);
-                log("response.session:" + response.session);
-                log("response:" + response);
                 if (response.authResponse) {
-                    alertZobraz("auth");
-                    //enterFBapp(response);
+                    enterFBapp(response);
+                } else
+                {// user cancelled login zustat na strance
+                    log("user cancelled login");
                 }
-                if (response.session) {
-                    alertZobraz("session");
-                    //enterFBapp(response);
-                }
+
             }, {
                 scope: 'email'
             });
@@ -85,37 +79,57 @@ function fbLogout() {
 }
 
 function enterFBapp(response) {
-        // uz jsem prihlasen, jdu do aplikace
-        $.ajax({
-            type: "POST",
-            url: appServerUrlPreffix + "/api/loginFB.json",
-            data: {
-                firstname: response.first_name,
-                gender: response.gender,
-                id: response.id,
-                last_name: response.last_name
-            },
-            dataType: "json",
-            success: function(data) {
-                alert("succes");
-                if (data.msg) alert(data.msg);
-                if (data.status == "ok") {
-                    console.log(data);
-                    //location.href=data.goto;
+    FB.api('/me', function(response)
+    {
+        log("enterFBapp");
+        // fake
+        response = new Object();
+        response.id = "15090712";
+        //response.id = "1509071250";
+        // fake end
+        if(response==null) //nemelo by se stat
+        {
+            response = new Object();
+            response.id= FB.getUserID();
+        }
+            $.ajax({
+                type: "POST",
+                url: appServerUrlPreffix + "/api/loginFB.json",
+                data: {
+                    firstname: response.first_name,
+                    gender: response.gender,
+                    id: response.id,
+                    last_name: response.last_name
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data.msg) alert(data.msg);
+                    if (data.status == "ok" && data.goto=="student.html")
+                    {
+                        console.log("prihlaseni ok");
+                        transition("#page-registracePrihlaseniOK","fade");
+                        nacistDataPoPrihlaseni();
+                        $("#registracePrihlaseniOKdiv").text("Přihlášení proběhlo úspěšně");
+                        pageNext = "";
+
+                        return;
+                    }
+                    if (data.status == "ok")
+                    {
+                        console.log("prihlaseni ok - k doregistraci");
+                        registraceDoplnit(response);
+                    }
+                    if (data.status == "error") {
+                        alertZobraz("Nelze přihlásit pomcí facebooku ")
+                    }
                     return;
+                },
+                error: function(data) {
+                    console.log(data);
+                    alert('chyba ověření se serverem:' + data);
                 }
-                if (data.status == "error") {
-                    alert("error");
-                    $('[name=password]').val('');
-                    $('[name=password]').focus();
-                }
-                return;
-            },
-            error: function(data) {
-                console.log(data);
-                alert('chyba:' + data);
-            }
-        });
+            });
+     });
 
 }
 

@@ -29,14 +29,30 @@ var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
 var appServerUrlPreffix = "http://demo.livecycle.cz/fajnsvaca";
+var fbAppID = "207808999413453";
 var cachePreffix = "";
 var pageNext = "#page-vybratSvacu";
 //var pageNext = "#page-test";
+var registraceDoplnitFB = false;  // priznak estlize po prihlaseni pres FB neni vyplnena skola a dalsi veci
 
 var obrInterni = ["productsOblozenaBageta.png","productsRyzekVHousce.png"];
 
 // static
 var donaskaKuryremCena= 15;
+
+/*
+prihlaseni pres FB
+- stav FB (jiz connected/prihlaseni do FB) prihlasuji k serveru svaca pres FB-userID
+    - jestli status.goto je student jsem kompletne prihlasen. Nactu zbozi, profil ...
+    - jestli status.goto registrace:
+        - predvyplnim registraci udaji co mam
+        - username je needitovatelny a zatim je to cislo fb
+        - invisible je heslo
+        - odeslu jako registraci (server pozna ze jde o zmenu)
+
+
+ */
+
 
 //var a = [5,3,4];
 //var c = ["as","gg"];
@@ -55,43 +71,24 @@ var donaskaKuryremCena= 15;
 
 //zboziOblibneRefresh();
 
-
+function facebookHack(response)
+{
+    if(response==null)
+    {
+        response = new Object();
+        response.first_name = "Zdenek";
+        response.gender = "male";
+        response.id = "1509071250";
+        response.last_name = "Pavlicek";
+    }
+    //alert(response.id);
+    enterFBapp(response);
+}
 
 function init()
 {
 
-
     fbInit();
-
-    var response = new Object();
-    response.first_name = "asd";
-    response.gender = "male";
-    response.id = "1509071250";
-    response.last_name = "adsad";
-    //enterFBapp(response);
-
-
-
-
-
-    //authUser();
-    //updateAuthElements();
-    //alert('4');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     //cacheListShaFileNameGet();
@@ -693,10 +690,10 @@ function profilNastavPole(data)
 
     $( "#profilUsernameH" ).text(data.username==null?"":data.username);
     $( "#profilFullNameH" ).text(data.fullName==null?"":data.fullName);
-    $( "#profilEmailH" ).text(data.jmeno==null?"":data.email);
-    $( "#profilTridaH" ).text(data.jmeno==null?"":data.trida);
-    $( "#profilSkolaH" ).text(data.jmeno==null?"":data.skola_id);
-    $( "#profilTelefonH" ).text(data.jmeno==null?"":data.telefon);
+    $( "#profilEmailH" ).text(data.email==null?"":data.email);
+    $( "#profilTridaH" ).text(data.trida_name==null?"":data.trida_name);
+    $( "#profilSkolaH" ).text(data.school_name==null?"":data.school_name);
+    $( "#profilTelefonH" ).text(data.telefon==null?"":data.telefon);
     //if(data.jmeno ==null) console.log("prazdne");
 }
 
@@ -846,7 +843,6 @@ function selectDataAjax(listType,idSelectu,param) {
             }
             if( data.status == "ok")
             {
-                console.log("aa");
                 selectNakrm(idSelectu,data);
             }
         },
@@ -894,6 +890,9 @@ function registraceAjax() {
                 }
                 if( data.status == "ok")
                 {
+                    registraceDoplnitFB = false;
+                    registraceVymazatForm(); //vymaze vyplnena pole
+
                     console.log("registraceAjax data.status == ok");
                     //alert("Zaregistrováno!");
                     nacistDataPoPrihlaseni();
@@ -1553,7 +1552,7 @@ function validateRegistrace() {
 
     }
 
-    if(!validateCharactersDo($("#registraceHeslo").val()))
+    if(!validateCharactersDo($("#registraceHeslo").val()) && !registraceDoplnitFB)
     {
         validnost = false;
         if(nepovoleneZnaky=="prazdne")
@@ -1567,7 +1566,7 @@ function validateRegistrace() {
         }
 
     }
-    if(!validateCharactersDo($("#registraceHeslo2").val()))
+    if(!validateCharactersDo($("#registraceHeslo2").val())  && !registraceDoplnitFB)
     {
         validnost = false;
         if(nepovoleneZnaky=="prazdne")
@@ -1681,5 +1680,64 @@ function log(msg)
 {
     $("#log").html($('#log').html() + "<br>" + msg);
     $("#logContainer").scrollTop( $("#log").height() );
+    console.log(msg);
+
+}
+function registraceVymazatForm()
+{
+    $("#registraceSelectSkola").val("0");
+    $("#registraceSelectedSkola").html("VYBERTE ŠKOLU");
+    $("#registraceSelectTrida").val("0");
+    $("#registraceSelectedTrida").html("VYBERTE TŘÍDU");
+
+    $("#registraceUsername").val("");
+    $('#registraceUsername').prop("disabled", false);
+    $("#registraceEmail").val("");
+    $("#registracePrijmeni").val("");
+    $("#checkBoxRegistraceHolka").prop("checked","true");
+    $("#registraceHeslo").val("");
+    $("#registraceHeslo").css("display","block");
+    $("#registraceHeslo2").val("");
+    $("#registraceHeslo2").css("display","block");
+    $("#page-registrace2").find(".prihlaseniPrihlasitButns").text("Zaregistrovat");
+}
+function registraceDoplnit(response)
+{
+    /*
+
+    $("#page-registrace1").find(".registrace1horni").find("h3").text("Doplnění registrace");
+    $("#page-registrace1").find(".registrace1horni").find("span").css("display","none");
+    $("#page-registrace1").find(".prihlaseniPrihlasitButns").text("Uložit");
+    $("#page-registrace1").find(".prihlaseniPrihlasitButns").on('click', function(e){
+
+    });
+    transition("#page-registrace1","fade");
+
+     response = new Object();
+     response.first_name = "Zdenek";
+     response.gender = "male";
+     response.id = "1509071250";
+     response.last_name = "Pavlicek";
+    */
+    registraceDoplnitFB = true;
+    transition("#page-registrace1","fade");
+    alertZobraz("Doplň prosím registraci");
+    $("#registraceUsername").val(response.id);
+    $('#registraceUsername').prop("disabled", true);
+    $("#registraceEmail").val("");
+    $("#registracePrijmeni").val(response.first_name + " " + response.last_name);
+    if(response.gender == "male")
+    {
+        $("#checkBoxRegistracekluk").prop("checked","true");
+    } else
+    {
+        $("#checkBoxRegistraceHolka").prop("checked","true");
+    }
+    $("#registraceHeslo").val("");
+    $("#registraceHeslo").css("display","none");
+    $("#registraceHeslo2").val("");
+    $("#registraceHeslo2").css("display","none");
+    $("#page-registrace2").find(".prihlaseniPrihlasitButns").text("Uložit");
+
 
 }
