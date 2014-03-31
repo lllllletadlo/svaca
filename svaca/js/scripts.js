@@ -1210,6 +1210,7 @@ function zboziOblibneRefresh() {
 }
 
 function objednavkaOdelsatAjax(objednavka, typ) {
+
     console.log("objednavkaOdelsatAjax typ:" + typ);
 
     var delivery = "bufet";
