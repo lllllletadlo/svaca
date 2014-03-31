@@ -31,7 +31,7 @@ var appPreffix = "svaca/";
 var appServerUrlPreffix = "http://demo.livecycle.cz/fajnsvaca";
 var fbAppID = "207808999413453";
 var cachePreffix = "";
-var pageNext = "#page-vybratSvacu";
+var pageNext = "";
 //var pageNext = "#page-test";
 var registraceDoplnitFB = false;  // priznak estlize po prihlaseni pres FB neni vyplnena skola a dalsi veci
 
@@ -89,19 +89,8 @@ function init()
 {
 
     fbInit();
-
-
-    //cacheListShaFileNameGet();
     //cacheInit();
-    $('#dokoncitPlatbuDonaskaKuryremH').text("Donáška kurýrem + "+donaskaKuryremCena+" kč");
 
-
-    //$('#dokoncitPlatbuNegativniText').css("display","block");
-    //$('#dokoncitPlatbuDobitButton').css("display","block");
-    //$('#dokoncitPlatbuPozitivniText').css("display","none");
-    //$('#dokoncitPlatbuPotvrditButton').css("display","none");
-    //$('#menuLeftDiv').css("display","none");
-    //$('#menuLeftDiv').css("display","none");
 
 
     // TODO hack upravy ---------
@@ -112,12 +101,13 @@ function init()
 
     /* tady nelze pocitat height protoze neni vykresleno a je 0.
         pocita se pred prvnim transitions viz dole
-    //$('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
-    $('#ulVybratSvacu').css('max-height',viewport.height - $('#vybratSvacuKredit').height());
-    //alert($('#vybratSvacuKredit').height());
-    $('#ulVybratSvacu').css('height','auto');
-    maxHeightVybratSvacu = true;
-*/
+        //$('#ulVybratSvacu').css('max-height',viewport.height - $('#ulVybratSvacu').position().top);
+        $('#ulVybratSvacu').css('max-height',viewport.height - $('#vybratSvacuKredit').height());
+        //alert($('#vybratSvacuKredit').height());
+        $('#ulVybratSvacu').css('height','auto');
+        maxHeightVybratSvacu = true;
+    */
+
     $('#pages > div').css('min-height',viewport.height);
     // kosik nastaveni 60% height
     //$('.ulKosik').css('max-height',viewport.height*0.4);
@@ -129,9 +119,9 @@ function init()
     //$('.ulKosikFooter').css('position','relative');
     // --------------------------
 
-
+    profilNactiAjax();
+    pageNext = "#page-vybratSvacu";
     zboziNactiAjax();
-	profilNactiAjax();
     storage("getItem","zboziOblibene","jSON");
     storage("getItem","zboziOblibenaMena","jSON");
     //transition('#page-registrace1','fade');
@@ -668,7 +658,6 @@ function profilNactiAjax()
             storage("getItem","dataProfil","jSON");
             if(!jQuery.isEmptyObject(dataProfil))
             {
-				console.log("asdads");
                 profilNastavPole(dataProfil);
             }
         }
@@ -780,6 +769,18 @@ function logout()
         }});
 }
 
+function registraceSkolaNext()
+{
+
+    if($("#registraceSelectTrida option:selected").text()=="VYBERTE TŘÍDU")
+    {
+       alertZobraz("Pro pokračování je třeba vyplnit školu a třídu");
+    }
+    else
+    {
+        transition('#page-registrace2','fade')
+    }
+}
 
 function registraceSelectSkolaChange()
 {
@@ -822,8 +823,8 @@ function selectNakrm(idSelectu, data)
     console.log("nakrmeno");
 }
 
-// http://demo.livecycle.cz/fajnsvaca/api/listSchools
-// http://demo.livecycle.cz/fajnsvaca/api/listClasses?school_id=1
+//nacte skoly a nastavi select podle dataProfil http://demo.livecycle.cz/fajnsvaca/api/listSchools
+//nacte tridu kdyz se zavola s parametrem skoly http://demo.livecycle.cz/fajnsvaca/api/listClasses?school_id=1
 function selectDataAjax(listType,idSelectu,param) {
     console.log("selectDataAjax");
     if(param.length>0)
@@ -912,7 +913,6 @@ function zboziNactiAjax() {
         success: function(data) {
             console.log("zboziNactiAjax success");
             dataZbozi = data;
-            storage("setItem","dataZbozi","jSON");
             if( data.status == "error" && data.code == "not logged")
             {
                 console.log(data.msg);
@@ -928,6 +928,7 @@ function zboziNactiAjax() {
             if( data.status == "ok")
             {
                 zboziNacti(data);
+                storage("setItem","dataZbozi","jSON");
                 if(pageNext!="")
                 {
                     transition(pageNext,"fade");
@@ -1007,7 +1008,7 @@ function zboziNacti(data) {
             // vloz novou kategorii
             if(kategorie[kategorieIndex].id==this.category_id)
             {
-                imgUrl = cacheGetImgUrl(appPreffix+kategorie[kategorieIndex].icon);
+                imgUrl = cacheGetImgUrl(kategorie[kategorieIndex].icon);
                 $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+imgUrl+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[kategorieIndex].name+'CheckboxInput" name="" /><label for="'+kategorie[kategorieIndex].name+'CheckboxInput"></label></div></li>' );
                 console.log("davam");
             }

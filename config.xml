@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "cz.inited.fajnsvaca"
-        version   = "0.0.23">
+        version   = "0.0.24">
     <!--
         0.0.18
         - verze phonegap 3.1.0
@@ -36,6 +36,8 @@
         0.0.23
         - pridan spash screen pro ios a celkove pro vsechny platformy
         - oprava drobnych chyb
+        0.0.24
+        - oprava chyb (cerna obrazovky kdyz neni sit)
     -->
 
 

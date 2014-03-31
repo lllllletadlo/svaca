@@ -115,7 +115,7 @@
 
 
     .produkt2Leva {
-        min-height: 41px !important;
+        min-height: 41px;
     }
     .produkt2KosikObr div {
         background-size: 35% !important;
@@ -344,6 +344,10 @@
         margin-left: 10px;
     }
 
+    .produkt2Leva {
+        min-height: 75px;
+    }
+
     .produkt2PopisNoImage h3 {
         padding-top: 0.2em;
         padding-bottom: 0.3em;
@@ -543,6 +547,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 
     .produkt2Line div {
         border-bottom: 4px solid;
+    }
+    .produkt2Leva {
+        min-height: 110px;
     }
 
     .produkt2 img {
@@ -1283,7 +1290,6 @@ div#menuLeftDiv {
 .produkt2Leva {
     display: inline-block;
     width: 80%;
-    min-height: 75px;
 }
 .produkt2Prava {
     display: inline-block;
