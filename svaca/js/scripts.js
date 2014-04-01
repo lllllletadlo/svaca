@@ -961,6 +961,16 @@ function checkBoxProduktTyp(cb)
     //$('.'+currentId).toggle();
 }
 
+function checkBoxProduktTyp_old(cb)
+{
+    var currentId = $(cb).attr('id');
+    currentId = currentId.replace("CheckboxInput","")
+    console.log(currentId);
+    if(cb.checked) $('.'+currentId).css('display','block');
+    else $('.'+currentId).css('display','none');
+    //$('.'+currentId).toggle();
+}
+
 function zboziNacti(data) {
     // priprava dat
     var imgUrl = "";
@@ -1009,7 +1019,7 @@ function zboziNacti(data) {
             if(kategorie[kategorieIndex].id==this.category_id)
             {
                 imgUrl = cacheGetImgUrl(kategorie[kategorieIndex].icon);
-                $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+imgUrl+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="'+kategorie[kategorieIndex].name+'CheckboxInput" name="" /><label for="'+kategorie[kategorieIndex].name+'CheckboxInput"></label></div></li>' );
+                $( "#ulVybratSvacu" ).append( '<li class="produktTyp" style="background-color:'+ kategorie[kategorieIndex].color +'"><img class="produktTypImg" src="'+imgUrl+'"  ><a href=""><h2>'+kategorie[kategorieIndex].name+'</h2></a><div class="produktChceckBox checkBoxProduktTyp"><input type="checkbox" onclick="checkBoxProduktTyp(this)" checked="checked" value="1" id="kategorie'+kategorie[kategorieIndex].id+'CheckboxInput" name="" /><label for="kategorie'+kategorie[kategorieIndex].id+'CheckboxInput"></label></div></li>' );
                 console.log("davam");
             }
         }
@@ -1036,7 +1046,7 @@ function zboziNacti(data) {
         {
             imgUrl = cacheGetImgUrl(this.icon);
 
-            var produktLi='<li class="produkt2 '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div></div></div>';
+            var produktLi='<li class="produkt2 kategorie'+kategorie[kategorieIndex].id+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div></div></div>';
 
             // oddelovaci line
             if(!posledniVkategorii) {

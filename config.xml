@@ -3,8 +3,8 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "cz.inited.fajnsvaca"
-        version   = "0.0.24">
+        id        = "cz.initedsolutions.fajnsvaca"
+        version   = "1.0">
     <!--
         0.0.18
         - verze phonegap 3.1.0
@@ -38,6 +38,9 @@
         - oprava drobnych chyb
         0.0.24
         - oprava chyb (cerna obrazovky kdyz neni sit)
+        1.0
+        - oprava chyb - filtr na kategorii s carkou nefungoval
+        ready na iTunes
     -->
 
 
