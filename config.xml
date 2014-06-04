@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "cz.initedsolutions.fajnsvaca"
-        version   = "1.0">
+        version   = "1.2">
     <!--
         0.0.18
         - verze phonegap 3.1.0
@@ -41,6 +41,11 @@
         1.0
         - oprava chyb - filtr na kategorii s carkou nefungoval
         ready na iTunes
+        1.1
+        - tl odhlásit v nastavení
+        1.2
+        - pamatovani prihlaseni
+        - oprava zobrazeni okna "Zaplatit svacu" u high screen bylo dole
     -->
 
 

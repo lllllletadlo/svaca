@@ -20,6 +20,8 @@ var zbozi;                      // jSON cast z dataZbozi
 var kategorie;                  // jSON cast z dataZbozi
 var profil;
 
+var userInfo = {name:"", pass:""};               // heslo
+
 var kosik =[];                  // idcka zbozi
 var zboziOblibene=[];           // idcka ze zbozi
 var zboziOblibenaMena=[];     // [[1,2], "nazevMenu", "vlozeno"], [[1,2],  "nazevMenu", "vlozeno"]
@@ -60,8 +62,7 @@ prihlaseni pres FB
 //a[0] = [5,3,4];
 //a[1] = "asd";
 //zboziOblibenaMena.push([a][c]);
-//zboziOblibenaMena.push([[5,3,4]["as","gg"]]);
-//zboziOblibenaMena.push(a);
+//zboziOblibenaMena.push([[5,3,4]["as","gg"]]);//zboziOblibenaMena.push(a);
 //alert(zboziOblibenaMena.length);
 //alert(JSON.stringify(zboziOblibene));
 //storage("getItem","zboziOblibene","jSON");
@@ -87,6 +88,22 @@ function facebookHack(response)
 
 function init()
 {
+    //userInfo.name = "a";
+    //userInfo.pass = "b";
+    //("setItem","userInfo","jSON");
+
+
+    storage("getItem","userInfo","jSON");
+    console.log(userInfo);
+    if(userInfo.name!= null && userInfo.pass!= null)
+    {
+        if(userInfo.name.length>0 && userInfo.pass.length>0)
+        {
+            $('#prihlaseniJmeno').val(userInfo.name);
+            $('#prihlaseniHeslo').val(userInfo.pass);
+            prihlaseniAjax("silent");
+        }
+    }
 
     fbInit();
     //cacheInit();
@@ -299,6 +316,7 @@ function transitionAfter(toPage)
     if(toPage.selector=="#page-registracePrihlaseniOK") {
 
         //pageNext = "#page-vybratSvacu";
+        $('#menuLeftDiv').css('display','none');
         setTimeout( function()
         {
             transition("#page-vybratSvacu","fade");
@@ -714,7 +732,7 @@ function prihlaseniZobrazDialog()
 
 }
 
-function prihlaseniAjax()
+function prihlaseniAjax(type)
 {
     if($('#prihlaseniJmeno').val()=="" && $('#prihlaseniHeslo').val() =="")
     {
@@ -727,18 +745,30 @@ function prihlaseniAjax()
     $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/login',
         data: {
             username: $('#prihlaseniJmeno').val(),
-            password:$('#prihlaseniHeslo').val()
+            password: $('#prihlaseniHeslo').val()
         },
         success : function (data) {
             console.log("prihlaseniAjax succes");
             if( data.status == "ok")
             {
-                console.log("prihlaseni ok");
+                console.log("prihlaseni okk");
                 //alert("přihlášen ok");
                 //transition("#page-dokoncitPlatbu","fade");
                 transition("#page-registracePrihlaseniOK","fade");
+                if(type!="silent")
+                {
+                    $("#registracePrihlaseniOKdiv").text("Přihlášení proběhlo úspěšně");
+                    $("#page-registracePrihlaseniOK a").css("display","block");
+                } else
+                {
+                    $("#registracePrihlaseniOKdiv").text("Načítám data");
+                    $("#page-registracePrihlaseniOK a").css("display","none");
+                }
                 nacistDataPoPrihlaseni();
-                $("#registracePrihlaseniOKdiv").text("Přihlášení proběhlo úspěšně");
+
+                userInfo.name = $('#prihlaseniJmeno').val();
+                userInfo.pass = $('#prihlaseniHeslo').val();
+                storage("setItem","userInfo","jSON");
                pageNext = "";
 
             }
@@ -758,6 +788,10 @@ function prihlaseniAjax()
 
 function logout()
 {
+    userInfo.name = "";
+    userInfo.pass = "";
+    storage("setItem","userInfo","jSON");
+
     $.ajax({
         url:'http://demo.livecycle.cz/fajnsvaca/api/logout',
         complete: function() {
@@ -772,7 +806,7 @@ function logout()
 function registraceSkolaNext()
 {
 
-    if($("#registraceSelectTrida option:selected").text()=="VYBERTE TŘÍDU")
+    if($("#registraceSelectTrida option:selected").text()=="NEJPRVE VYBERTE ŠKOLU")
     {
        alertZobraz("Pro pokračování je třeba vyplnit školu a třídu");
     }
@@ -1048,7 +1082,7 @@ function zboziNacti(data) {
 
             var produktLi='<li class="produkt2 kategorie'+kategorie[kategorieIndex].id+'" data-id="'+this.id+'"> <div> <div class="produkt2Leva bila produkt2Popis"><img src="'+imgUrl+'"  ><h3>' + this.name + '</h3>  <span>'+ this.description+'</span><span class="cena">'+ this.price+' Kč</span>  </div>  <div class="produkt2Prava zelena">  <div class="produkt2KosikObr" onclick="kosikAdd(this,'+this.id+')"><div>Přidat do<br>košíku</div></div></div></div>';
 
-            // oddelovaci line
+            // oddelovaci line, (slaba carka u kazedeho produktu)
             if(!posledniVkategorii) {
                 //prvni verze $( "#ulVybratSvacu" ).append( '<li class="produkt '+kategorie[kategorieIndex].name+'" data-id="'+this.id+'"><div class="produktKosik produktKosikObr" onclick="kosikAdd(this,'+this.id+')">Přidat do<br>košíku</div>  <div class="produktPopis" href="">  <img src="'+appPreffix+this.icon+'"  >  <span class="cena">'+ this.price +' Kč</span>  <h3>' + this.name + '</h3>  <span>'+ this.description+'</span>  </div>  <div class="produktLine"></div>  </li>' );
 
@@ -1060,6 +1094,12 @@ function zboziNacti(data) {
                 produktLi += ' <div class="">  <div ></div>  </div>  </li>';
             }
             $( "#ulVybratSvacu" ).append(produktLi);
+        }
+
+        // posledni zakoncovaci linka kategorie zbozi
+        if(poradiZbozi == zbozi.length-1)
+        {
+            $( "#ulVybratSvacu" ).append( '<li style="height: 3em;background-color:'+ kategorie[kategorieIndexMinula].color +'"></li>');
         }
 
         //cacheObr(imgUrl,this.id);
@@ -1500,9 +1540,24 @@ function validatePasswordDo(e) {
     if(e==null) return true;
     if(validateCharactersDo(e))
     {
-        console.log("validatePasswordDo reseni shody");
+        $('#registraceHeslo').next().text("");
+        $('#registraceHeslo2').next().text("");
+
+        // reseni delky hesel
+        if($("#registraceHeslo").val().length<4)
+        {
+            validnost = false;
+            $('#registraceHeslo').next().text("Heslo musí dlouhé alespoň 4 znaky");
+        }
+        if($("#registraceHeslo2").val().length<4)
+        {
+            validnost = false;
+            $('#registraceHeslo2').next().text("Heslo musí dlouhé alespoň 4 znaky");
+        }
+
+
         // reseni shody hesel
-        if($( "#registraceHeslo2" ).val() !="")
+        if(validnost)
         {
             if($("#registraceHeslo").val() != $("#registraceHeslo2").val())
             {
@@ -1512,6 +1567,53 @@ function validatePasswordDo(e) {
             } else
             {
                 console.log("validatePasswordDo hesla jsou shodna");
+                $('#registraceHeslo2').next().text("");
+            }
+        }
+
+
+
+
+    } else
+    {
+        validnost = false;
+    }
+    return validnost;
+
+}
+
+function validatePasswordDo_old(e) {
+    console.log("validatePasswordDo");
+    var validnost = true;
+    // validnost textu
+    if(e==null) return true;
+    if(validateCharactersDo(e))
+    {
+        console.log("validatePasswordDo reseni shody");
+        // reseni shody hesel
+        if($( "#registraceHeslo2" ).val() !="")
+        {
+            if($("#registraceHeslo").val() != $("#registraceHeslo2").val())
+            {
+                validnost = false;
+                console.log("validatePasswordDo hesla nejou shodna");
+                $('#registraceHeslo2').next().text("Zadaná hesla se neshodují");
+            }
+            else if($("#registraceHeslo").val().length<5)
+            {
+                validnost = false;
+                console.log("validatePasswordDo hesla nejou shodna");
+                $('#registraceHeslo').next().text("Heslo musí dlouhé alespoň 4 znaky");
+            }
+            else if($("#registraceHeslo2").val().length<5)
+            {
+                validnost = false;
+                console.log("validatePasswordDo hesla nejou shodna");
+                $('#registraceHeslo2').next().text("Heslo musí dlouhé alespoň 4 znaky");
+            } else
+            {
+                console.log("validatePasswordDo hesla jsou shodna");
+                $('#registraceHeslo').next().text("");
                 $('#registraceHeslo2').next().text("");
             }
         }
@@ -1594,12 +1696,12 @@ function validateRegistrace() {
             $('#registraceHeslo2').next().text("Potvrzení hesla obsahuje nepovolené znaky: " + nepovoleneZnaky);
         }
     }
-    if(!validatePasswordDo("test"))
+    if(!validatePasswordDo("nutne"))
     {
         console.log("validatePasswordDo false");
         validnost = false;
         //alertZobraz("Hesla se neshodují");
-        $('#registraceHeslo2').next().text("Zadaná hesla se neshodují");
+        //$('#registraceHeslo2').next().text("Zadaná hesla se neshodují kk");
     }
     if(!validateCharactersDo($("#registraceEmail").val(),"email"))
     {

@@ -23,17 +23,10 @@
     <script src="facebook-js-sdk.js"></script>
     <script src="svaca/js/facebook.js"></script>
 
-
-    <script src="svaca/js/cordova_test.js"></script>
-    <script src="svaca/js/facebook-js-sdk_test.js"></script>
-    <script src="svaca/js/cdv-plugin-fb-connect_test.js"></script>
-
-
     <link rel="stylesheet" href="svaca/css/css.css" />
     <title>Fajn sváča</title>
 </head>
 <script type="text/javascript" charset="utf-8">
-
 
     window.addEventListener('load', function() {
         FastClick.attach(document.body);
@@ -75,7 +68,7 @@
     <a id="menuLeftDivpartneri" onclick="transition('#page-partneri','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu5.png"></a>
     <a id="menuLeftDivprofil" onclick="transition('#page-profil','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu6.png"></a>
     <a id="menuLeftDivpodpora" onclick="transition('#page-podpora','fade')" href="#"><img class="menuLeftImg" src="svaca/imagesApp/leftMenu7.png"></a>
-    <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v1.0</a>
+    <a style="color: gray;line-height: 100%;" onclick="transition('#page-test','fade')" href="#">v1.2</a>
 </div>
 
 
@@ -234,7 +227,7 @@
             <h2 id="dokoncitPlatbuDonaskaKuryremH" class="tmavaText">donáška kurýrem + 15 kč</h2><br>
             <div id="mistoDoruceniDiv" style="display: none">
                 <h2 id="mistoDoruceniH" class="tmavaText">Kde budu další přestávku</h2>
-                <input id="mistoDoruceniInput" placeholder="Napiš nám místo, kde tě zastihneme, kde ti sváču můžeme předat." type="text" />
+                <input id="mistoDoruceniInput" placeholder="Napiš nám místo, kde tě zastihneme" type="text" />
             </div>
             <div style="clear: both"></div>
         </li>
@@ -430,6 +423,13 @@
             </div>
         </li>
     </ul>
+    <div class="odhlasit">
+        <li class="listTlacitko listTlacitko2 gradCervenaDolu kosikShow f250">
+            <a onclick="logout();zboziNactiAjax()" href="#">
+                <h3 class="listTlacitkoText">ODHLÁSIT</h3>
+            </a>
+        </li>
+    </div>
 </div>
 
 
@@ -480,12 +480,12 @@
             </li>
 
             <li class="produktTyp bila listText listTextProfil colorSeda f150">
-                <h3>Přihlašovací jm.: </h3><h3 id="profilUsernameH"></h3>
-                <h3>Příjmení: </h3><h3 id="profilFullNameH"></h3>
-                <h3>E-mail: </h3><h3 id="profilEmailH"></h3>
-                <h3>Třída: </h3><h3 id="profilTridaH"></h3>
-                <h3>Škola: </h3><h3 id="profilSkolaH"></h3>
-                <h3>Telefon: </h3><h3 id="profilTelefonH"></h3>
+                <h3>Přihlašovací jm.:&nbsp;</h3><h3 id="profilUsernameH"></h3>
+                <h3>Příjmení:&nbsp;</h3><h3 id="profilFullNameH"></h3>
+                <h3>E-mail:&nbsp;</h3><h3 id="profilEmailH"></h3>
+                <h3>Třída:&nbsp;</h3><h3 id="profilTridaH"></h3>
+                <h3>Škola:&nbsp;</h3><h3 id="profilSkolaH"></h3>
+                <h3>Telefon:&nbsp;</h3><h3 id="profilTelefonH"></h3>
             </li>
         </ul>
     </div>
@@ -551,7 +551,7 @@
         </div>
         <div class="registraceSelectDiv">
             <select id="registraceSelectTrida" class="registraceSelectButtons" onchange="registraceSelectTridaChange()">
-                <option value="0" selected="selected">VYBERTE TŘÍDU</option>
+                <option value="0" selected="selected">NEJPRVE VYBERTE ŠKOLU</option>
             </select>
             <div class="gradSedaDoluTlac"><div id="registraceSelectedTrida" class="registraceSelectedDIV">VYBERTE TŘÍDU</div></div>
         </div>
@@ -658,9 +658,9 @@
             <input type="button" value="clear Cache" onclick="cacheClear()">
             <input type="button" value="prvni produkt url" onclick="firstProductUrl()">
             <input type="button" value="prvni kosik url" onclick="firstKosikUrl()">
-            <div onclick="save()">save</div>
-            <div onclick="load()">get</div>
-            <input id="testInput" type="text" />
+            <div onclick="testsave()">save</div>
+            <div onclick="testload()">get</div>
+            <input id="testInput" type="text" onkeypress="vali(this,'length')" />
 
             <div onclick="zboziNactiAjax()" style="font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>
             <div onclick="logout()" style="font-size: 200%;padding: 10px;background-color: red;cursor: pointer;">logout</div>

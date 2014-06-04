@@ -27,13 +27,15 @@ synchro aplikace
 */
 
 
-function save()
+
+
+function testsave()
 {
     var neco = $('#testInput').val();
     console.log(neco);
     window.localStorage.setItem("key", neco );
 }
-function load()
+function testload()
 {
     var neco = window.localStorage.getItem("key");
     //var neco = window.localStorage.getItem("uu");

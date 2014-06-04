@@ -16,6 +16,7 @@ function fbInit()
 function doFBLogin() {
     log("doFBLogin start");
     FB.getLoginStatus(function(response) {
+        log("getLoginStatus");
         if (response.status === 'connected') {
             log("fbLogin connected");
             enterFBapp(response);
