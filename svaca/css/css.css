@@ -748,7 +748,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 a:link, a:visited {
     text-decoration: none;
-    color: #0000CC;
+  /*  color: #0000CC;*/
 }
 a:active {
     opacity: 0.5;
@@ -890,7 +890,7 @@ ul {
 .fajnSvacaText {
     content: url("../imagesApp/fajnSvacaText.png");
     width: 90%;
-    margin: 5% 5% 5% 5%;
+    margin: 3% 5% 3% 5%;
 }
 .logoFajnSvaca_old {
     content: url("../imagesApp/logoFajnSvaca.png");
