@@ -30,7 +30,6 @@
 
     window.addEventListener('load', function() {
         FastClick.attach(document.body);
-          alert("Jsem  tu");
           init();
           cacheInit();
     }, false);
@@ -40,7 +39,6 @@
         document.addEventListener("deviceready", init, false);
     } else {
         window.addEventListener('load', function() {
-            alert("Jsem  vedle");
             init();
             cacheInit();
         }, false);
