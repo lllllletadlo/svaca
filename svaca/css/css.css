@@ -10,6 +10,8 @@
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+  		-webkit-tap-highlight-color: transparent; /* For some Androids */
 		}
 
 	input
@@ -19,6 +21,8 @@
 	-moz-user-select: auto !important;
 	-ms-user-select: auto !important;
 	user-select: auto !important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  	-webkit-tap-highlight-color: transparent; /* For some Androids */
 	}
 
     .prihlaseniPrihlasitButns {
