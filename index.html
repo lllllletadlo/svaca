@@ -19,8 +19,8 @@
 
     <script src="svaca/js/scripts.js"></script>
 
-  <!--   <script src="cdv-plugin-fb-connect.js"></script>
-    <script src="facebook-js-sdk.js"></script> -->
+   <!--   <script src="cdv-plugin-fb-connect.js"></script>
+    <script src="facebook-js-sdk.js"></script>    -->
     <script src="svaca/js/facebook.js"></script>
 
     <link rel="stylesheet" href="svaca/css/css.css" />
@@ -30,6 +30,9 @@
 
     window.addEventListener('load', function() {
         FastClick.attach(document.body);
+          alert("Jsem  tu");
+          init();
+          cacheInit();
     }, false);
 
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
@@ -37,8 +40,9 @@
         document.addEventListener("deviceready", init, false);
     } else {
         window.addEventListener('load', function() {
-            cacheInit();
+            alert("Jsem  vedle");
             init();
+            cacheInit();
         }, false);
     }
 
