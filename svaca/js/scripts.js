@@ -8,6 +8,7 @@
  - zvětšení horního menu relativně podle velikosti písma
  - html verze stranky kdyz neni kredit
  */
+var serverUrl = "http://inited.cz/demo/FajnSvaca/";
 var viewport;
 var maxHeightVybratSvacu = false;
 var maxHeightKosik = false;
@@ -654,7 +655,8 @@ function ajaxError2(data,zobrazUzivateli){
 function profilNactiAjax()
 {
     console.log("profilNactiAjax");
-    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/getUserInfo',
+    //$.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/getUserInfo',
+    $.ajax({ url: $("#serverUrl").val() + "Novak.json",
         success: function(data) {
             console.log("profilNactiAjax success");
 			dataProfil = data;
@@ -729,6 +731,7 @@ function prihlaseniZobrazDialog()
 {
     //prihlaseniAjax();
     transition("#page-prihlaseni","fade");
+    alert("Prihlaseni yobrayit dialog");
 
 }
 
