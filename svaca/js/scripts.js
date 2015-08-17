@@ -31,7 +31,7 @@ var zboziOblibenaMena=[];     // [[1,2], "nazevMenu", "vlozeno"], [[1,2],  "naze
 var kosikSoucetCeny = 0;
 var objednavka ="";
 var appPreffix = "svaca/";
-var appServerUrlPreffix = "http://demo.livecycle.cz/fajnsvaca";
+var appServerUrlPreffix = "http://inited.cz/demo/FajnSvaca/";
 var fbAppID = "207808999413453";
 var cachePreffix = "";
 var pageNext = "";
@@ -656,11 +656,12 @@ function profilNactiAjax()
 {
     console.log("profilNactiAjax");
     //$.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/getUserInfo',
-    $.ajax({ url: $("#serverUrl").val() + "Novak.json",
+    $.ajax({ url: serverUrl + "Novak.json",
         success: function(data) {
             console.log("profilNactiAjax success");
 			dataProfil = data;
             profil = data;
+            //alert(JSON.stringify(profil));
             if(data.status == "ok")
             {
                 profilNastavPole(data);
@@ -946,7 +947,8 @@ function registraceAjax() {
 
 function zboziNactiAjax() {
     console.log("zboziNactiAjax");
-    $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/listProducts',
+  //  $.ajax({ url:'http://demo.livecycle.cz/fajnsvaca/api/listProducts',
+  $.ajax({ url: serverUrl + "Jidlo.json",
         success: function(data) {
             console.log("zboziNactiAjax success");
             dataZbozi = data;
