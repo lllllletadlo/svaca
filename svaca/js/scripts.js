@@ -1028,7 +1028,7 @@ function zboziNacti(data) {
     // vymazani kontejneru
     $("#ulVybratSvacu").empty();
 
-    $( "#ulVybratSvacu" ).append( '<img class="fajnSvacaText"  >');
+   // $( "#ulVybratSvacu" ).append( '<img class="fajnSvacaText"  >');
 
 
     var poradiZbozi = 0;
