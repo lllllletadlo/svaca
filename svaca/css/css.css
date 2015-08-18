@@ -111,6 +111,14 @@
     }
 
 
+    .divfajnSvacaTextVybrat {
+    margin-top:10px;
+    margin-left:15%;
+    line-height:38px;   
+    width:85%;    
+	   }
+
+
 	 .fajnSvacaText {
     display: inline-block;
     vertical-align: middle ;
@@ -436,6 +444,13 @@
     }
 
 
+    .divfajnSvacaTextVybrat {
+    margin-top:10px;
+    margin-left:15%;
+    line-height:87px;   
+    width:85%;    
+	   }
+
     .fajnSvacaText {
     display: inline-block;
     vertical-align: middle ;
@@ -697,6 +712,12 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
     width:100%;
     background-color: white !important;	
     }
+    .divfajnSvacaTextVybrat {
+    margin-top:10px;
+    margin-left:15%;
+    line-height:144px;   
+    width:85%;    
+	   }
 
     .divfajnSvacaText3{
     margin-left:15%;
