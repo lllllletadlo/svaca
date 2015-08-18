@@ -258,13 +258,14 @@
 
 <div id="page-mojeOblibene" class="page-mojeOblibene">
 
+
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
 
     <div class="pageContainer2">
-        <div>
-            <img class="fajnSvacaText"  >
+        <div class="divfajnSvacaText">
+          <img class="fajnSvacaText"  >  
         </div>
         <ul id="ulMojeOblibeneHeader">
             <li class="listHeader fialova">
@@ -281,9 +282,11 @@
     <div class="menu">
         <a class="btnMenuMenu modra" onclick="menuLeftShow()" href="#" >&gt;&gt;</a>
     </div>
-    <div class="partneriFajnSvacaIMG">
-        <img class="fajnSvacaText"  >
-    </div>
+    <div class="pageContainer2">
+        <div class="divfajnSvacaText">
+          <img class="fajnSvacaText"  >  
+        </div>
+    
     <div class="partneri">
         <h3>Velké díky patří</h3>
         <h3>partnerům bez kterých by Fajn Sváča</h3>
@@ -293,6 +296,7 @@
         <div class="bila">
             <img>
         </div>
+    </div>
     </div>
 </div>
 
@@ -662,7 +666,6 @@
             <input type="button" value="prvni kosik url" onclick="firstKosikUrl()">
             <div onclick="testsave()">save</div>
             <div onclick="testload()">get</div>
-            <div><a href="www.inited.cz">Odkaz</a></div>
             <input id="testInput" type="text" onkeypress="vali(this,'length')" />
 
             <div onclick="zboziNactiAjax()" style="font-size: 200%;padding: 10px;background-color: green;cursor: pointer;">nacti data vymaz kos</div>

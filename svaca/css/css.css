@@ -889,10 +889,20 @@ ul {
     height: 126px;
     margin-left: -76px;
 }
+.divfajnSvacaText{
+    line-height:87px;   
+    width:100%;
+    background-color: white !important;	
+}
+
+
 .fajnSvacaText {
-    content: url("../imagesApp/fajnSvacaText.png");
-    width: 90%;
-    margin: 3% 5% 3% 5%;
+    display: inline-block;
+    vertical-align: middle ;
+    height: 100%;
+    content: url("../imagesApp/fajnSvacaText.png") center;
+    width: 88%;
+    margin: auto 5%;    
 }
 .logoFajnSvaca_old {
     content: url("../imagesApp/logoFajnSvaca.png");
@@ -1088,7 +1098,7 @@ div#menuLeftDiv {
     position: relative;
 }
 .produktTyp a {
-    color: white;
+    color: black;
     font-family: Myriad Pro;
     display: inline-block;
     position: relative;
@@ -1477,11 +1487,11 @@ div#menuLeftDiv {
 }
 .partneri {
     height: 70%;
-    width: 85%;
+    width: 100%;
     position: absolute;
     background-color: white;
     text-align: center;
-    left: 15%;
+ /*   left: 15%;*/
 }
 
 .partneri h3 {
@@ -1495,11 +1505,13 @@ div#menuLeftDiv {
     line-height: 2em;
     font-weight: bold;
 }
+
 .partneri img {
     content: url("../imagesApp/partneriTogether.png");
     width: 80%;
     margin-top: 2em;
 }
+
 .partneri div {
     overflow: auto;
     width: 100%;
