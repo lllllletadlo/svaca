@@ -1551,10 +1551,10 @@ div#menuLeftDiv {
 
 /* prozatimni */
 .page-podpora div.odhlasit {
+	margin-left: 15%;
     position: absolute;
     bottom: 5%;
-    width: 90%;
-    left: 13%;
+    width: 85%;
 }
 
 
