@@ -151,7 +151,7 @@ function cacheInit()
             cachePreffix=ImgCache.getCacheFolderURI();
             //init();
         }, function(){
-            alert('cache problem');
+            //alert('cache problem');
             console.log('cache space problem!');
             //init();
         });
