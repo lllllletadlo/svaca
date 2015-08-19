@@ -1119,7 +1119,7 @@ function kosikRefresh() {
     kosikSoucetCeny= 0;
     kosik.sort();
     $("#ulKosik").empty();
-    $( "#ulKosik" ).append( '<img class="fajnSvacaText"  >');
+   // $( "#ulKosik" ).append( '<img class="fajnSvacaText"  >');
     $( "#ulKosik" ).append( '<ul id="ulKosikHeader" class="produtkSeznam ulKosikHeader"><li class="listHeader kosikHeader fialova kosikShow f250">  <h2 class="kosikHeaderText">Košík</h2>  </li>  <li class="listHeader kosikHeader zelena objShow f250">  <h3 class="kosikHeaderText">Objednávka</h3>  </li>  </ul>');
     //$( "#ulKosik" ).append( '<li class="produktTyp produktHeaderSpace"><div style="height: 20px"></div></li>' );
     //$( "#ulKosik" ).append( '<li class="listHeader zelena"><h3>Zaplatit sváču</h3></li>' );
